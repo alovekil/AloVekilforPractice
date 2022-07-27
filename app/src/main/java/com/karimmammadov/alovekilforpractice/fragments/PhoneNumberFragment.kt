@@ -15,7 +15,7 @@ class PhoneNumberFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        dropDownNumberMenu()
+       // dropDownNumberMenu()
     }
 
     override fun onCreateView(
@@ -33,12 +33,13 @@ class PhoneNumberFragment : Fragment() {
             val fragmentManager = getFragmentManager()
             val fragmentTransaction = fragmentManager?.beginTransaction()
             val fragmentNumber = OTPCodeFragment()
-            fragmentTransaction?.replace(R.id.frameLayout,fragmentNumber)?.commit()
+            fragmentTransaction?.replace(R.id.frameLayout, fragmentNumber)?.commit()
         }
     }
-
+}
+/*
     private fun dropDownNumberMenu(){
-        val popupMenu = PopupMenu(activity,btn_numberFilter)
+        val popupMenu = PopupMenu(this.activity,btn_numberFilter)
         popupMenu.inflate(R.menu.popup_numberfiltermenu)
         popupMenu.setOnMenuItemClickListener {
             when(it.itemId){
@@ -66,4 +67,4 @@ class PhoneNumberFragment : Fragment() {
             }
         }
     }
-}
+ */

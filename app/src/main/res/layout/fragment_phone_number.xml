@@ -14,20 +14,21 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_marginTop="165dp">
-
+<!--
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_numberFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
-            android:textColor="@color/RGB_black"
-            android:textStyle="normal"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:textColorHint="#c5c5c5"
-            android:id="@+id/btn_numberFilter"
             android:hint="055"
-            android:textSize="20dp"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"/>
+            android:textColor="@color/RGB_black"
+            android:textColorHint="#c5c5c5"
+            android:textSize="20dp"/>
+-->
         <EditText
+            android:id="@+id/phoneEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/RGB_white"
@@ -36,7 +37,6 @@ android:layout_height="match_parent">
             android:layout_marginBottom="5dp"
             android:hint="Phone number"
             android:inputType="phone"
-            android:layout_marginLeft="5dp"
             android:padding="10dp"
             android:layout_marginRight="20dp"
             android:textColor="@color/RGB_black"
