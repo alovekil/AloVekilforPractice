@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.PopupMenu
 
 import com.karimmammadov.alovekilforpractice.R
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.view.*
+import kotlinx.android.synthetic.main.fragment_o_t_p_code.view.*
 import kotlinx.android.synthetic.main.fragment_phone_number.*
 
 

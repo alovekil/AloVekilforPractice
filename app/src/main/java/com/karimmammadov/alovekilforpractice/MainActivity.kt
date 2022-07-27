@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.karimmammadov.alovekilforpractice.fragments.PhoneNumberFragment
+import com.karimmammadov.alovekilforpractice.fragments.PhoneNumberLawyerFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         btn_customer.setTextColor(Color.parseColor("#000000"))
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        val fragmentNumber = PhoneNumberFragment()
+        val fragmentNumber = PhoneNumberLawyerFragment()
         fragmentTransaction.replace(R.id.frameLayout,fragmentNumber).commit()
     }
 }
