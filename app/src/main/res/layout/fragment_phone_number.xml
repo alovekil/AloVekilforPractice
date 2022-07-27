@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="165dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:background="@drawable/bg_button"
+            android:textColor="@color/RGB_black"
+            android:textStyle="normal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColorHint="#c5c5c5"
+            android:id="@+id/btn_numberFilter"
+            android:hint="055"
+            android:textSize="20dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/RGB_white"
+            android:textStyle="normal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:hint="Phone number"
+            android:inputType="phone"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/RGB_black"
+            android:textColorHint="#c5c5c5"
+            android:textSize="20dp"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_enterNumber"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/bgn_enter"
+        android:text="Next"
+        android:textColor="@color/RGB_white" />
+
+</LinearLayout>
