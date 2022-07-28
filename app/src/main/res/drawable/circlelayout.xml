@@ -8,10 +8,10 @@
                 android:bottom="200dp" />
             <solid android:color="#FFFFFF" />
 
-            <solid android:color="@color/goy_reng"/>
+            <solid android:color="@color/RGB_blue"/>
 
             <stroke
-                android:color="@color/goy_reng"
+                android:color="@color/RGB_blue"
                 android:width="0dp"/>
             <corners android:radius="60dp"/>
 
