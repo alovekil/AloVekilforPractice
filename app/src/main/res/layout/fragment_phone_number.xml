@@ -31,17 +31,17 @@ android:layout_height="match_parent">
             android:id="@+id/phoneEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/RGB_white"
-            android:textStyle="normal"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
+            android:background="@color/anothercolor1"
             android:hint="Phone number"
             android:inputType="phone"
             android:padding="10dp"
-            android:layout_marginRight="20dp"
             android:textColor="@color/RGB_black"
             android:textColorHint="#c5c5c5"
             android:textSize="20dp"
+            android:textStyle="normal"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </LinearLayout>
