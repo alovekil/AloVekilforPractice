@@ -1,20 +1,38 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
+import android.app.ProgressDialog
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import android.widget.Toast
+import com.google.firebase.FirebaseException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthOptions
+import com.google.firebase.auth.PhoneAuthProvider
 
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.fragment_o_t_p_code.view.*
 import kotlinx.android.synthetic.main.fragment_phone_number.*
+import kotlinx.android.synthetic.main.fragment_phone_number.view.*
+import java.util.concurrent.TimeUnit
 
 
 class PhoneNumberFragment : Fragment() {
+
+    private  var forceResendingToken: PhoneAuthProvider.ForceResendingToken?=null
+    private var mCallBack:PhoneAuthProvider.OnVerificationStateChangedCallbacks?=null
+    private var mVerificationId:String?=null
+    private lateinit var progressDialog: ProgressDialog
+    private lateinit var firebaseAuth: FirebaseAuth
+    private  fun Tag() = "MAIN_TAG"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,20 +44,65 @@ class PhoneNumberFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_phone_number, container, false)
+        val view=inflater.inflate(R.layout.fragment_phone_number, container, false)
+
+        firebaseAuth= FirebaseAuth.getInstance()
+        progressDialog= ProgressDialog(activity)
+        progressDialog.setTitle("Please Wait")
+        progressDialog.setCanceledOnTouchOutside(false)
+
+        mCallBack=object :PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+            override fun onVerificationCompleted(p0: PhoneAuthCredential) {
+                Log.d(Tag(),"onverficationcompleted: ")
+
+            }
+            override fun onVerificationFailed(p0: FirebaseException) {
+                progressDialog.dismiss()
+                Log.d(Tag(),"onVerficationfailed ${p0}")
+                Toast.makeText(activity,"${p0.message}",Toast.LENGTH_SHORT).show()
+            }
+            override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
+                Log.d(Tag(),"onCodesent:${p0}")
+                mVerificationId=p0
+                forceResendingToken=p1
+                progressDialog.dismiss()
+                Toast.makeText(activity,"Verification Code sent...",Toast.LENGTH_SHORT).show()
+                val fragmentManager = getFragmentManager()
+                val fragmentTransaction = fragmentManager?.beginTransaction()
+                val fragmentNumber = OTPCodeFragment()
+                fragmentTransaction?.replace(R.id.frameLayout, fragmentNumber)?.commit()
+                super.onCodeSent(p0, p1)
+            }
+        }
+
+        view.btn_enterNumber.setOnClickListener{
+            //input phone number
+            val phone=phoneEdit.text.toString().trim()
+            //validate phone number
+            if(TextUtils.isEmpty(phone)){
+                Toast.makeText(this.activity,"Please enter your phone number...",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                startphoneverification(phone)
+            }
+        }
+        return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        btn_enterNumber.setOnClickListener {
-            val fragmentManager = getFragmentManager()
-            val fragmentTransaction = fragmentManager?.beginTransaction()
-            val fragmentNumber = OTPCodeFragment()
-            fragmentTransaction?.replace(R.id.frameLayout, fragmentNumber)?.commit()
-        }
+    private fun startphoneverification(phone: String){
+        progressDialog.setMessage("Verifiying Phone Number...")
+        progressDialog.show()
+        val option= PhoneAuthOptions.newBuilder(firebaseAuth)
+            .setPhoneNumber(phone)
+            .setTimeout(60L,TimeUnit.SECONDS)
+            .setActivity(requireActivity())
+            .setCallbacks(mCallBack!!)
+            .build()
+        PhoneAuthProvider.verifyPhoneNumber(option)
     }
 }
+
+
 /*
     private fun dropDownNumberMenu(){
         val popupMenu = PopupMenu(this.activity,btn_numberFilter)

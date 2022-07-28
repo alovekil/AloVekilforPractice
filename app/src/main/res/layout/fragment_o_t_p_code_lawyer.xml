@@ -114,6 +114,32 @@
             android:textStyle="bold"
             android:imeOptions="actionDone"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/RGB_black"
+            android:textSize="16sp"
+            android:text="@string/didn_t_receive_the_otp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textResendOTP"
+            android:layout_marginStart="8dp"
+            android:text="@string/resend_otp"
+            android:textColor="@color/RGB_yellow"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            />
+
+
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_enterCode"
