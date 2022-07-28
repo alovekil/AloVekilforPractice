@@ -56,8 +56,8 @@
                 android:layout_width="183dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="75dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
@@ -68,8 +68,8 @@
                 app:fontFamily="@font/fonts" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="225dp"
+                android:layout_height="18dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="113dp"
                 android:orientation="horizontal">
@@ -99,8 +99,8 @@
             </LinearLayout>
 
             <RelativeLayout
-                android:layout_width="282dp"
-                android:layout_height="220dp"
+                android:layout_width="306dp"
+                android:layout_height="238dp"
                 android:layout_marginLeft="45dp"
                 android:layout_marginTop="5dp">
 
@@ -130,7 +130,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="10dp"
@@ -168,7 +168,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button6"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/button3"
                     android:layout_marginTop="5dp"
@@ -218,8 +218,25 @@
                     android:textColor="@color/RGB_white"
                     android:textSize="30sp" />
 
+                <Button
+                    android:id="@+id/button11"
+
+                    android:layout_width="133dp"
+                    android:layout_height="34dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="173dp"
+                    android:layout_marginBottom="29dp"
+                    android:background="@null"
+                    android:text="@string/cancel"
+                    android:textColor="@color/RGB_white"
+                    android:textSize="20sp"
+                    android:visibility="visible"
+                    tools:visibility="visible" />
+
 
             </RelativeLayout>
+
         </LinearLayout>
 
     </LinearLayout>
