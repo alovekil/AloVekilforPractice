@@ -6,5 +6,11 @@
     <color name="RGB_red">#ED1A4F</color>
     <color name="RGB_yellow">#FC8217</color>
     <color name="RGB_black">#3D3D3D</color>
-    <color name="RGB_white">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="goy_reng">#274E96</color>
+    <color name="pink_reng">#BD0094</color>
+    <color name="narinci_reng">#FC8217</color>
+    <color name="aciq_yasil_reng">#00B8A8</color>
+    <color name="aciq_qara_reng">#3D3D3D</color>
 </resources>

@@ -3,6 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/drawable/circle.xml" value="0.167" />
+        <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/drawable/circle2.xml" value="0.167" />
+        <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/drawable/circlelayout.xml" value="0.167" />
+        <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/font-v26/fonts.xml" value="0.234375" />
+        <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/font/fonts.xml" value="0.234375" />
+        <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/font/lobster_regular.xml" value="0.234375" />
+        <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/drawable/circle.xml" value="0.167" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_customer_register.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_lawyer_register.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_o_t_p_code.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_o_t_p_code_lawyer.xml" value="0.33" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_phone_number.xml" value="0.1621376811594203" />
+        <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/menu/popup_numberfiltermenu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bg_button.xml" value="0.1125" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bgn_enter.xml" value="0.1125" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bgn_pinkbutton.xml" value="0.1125" />
