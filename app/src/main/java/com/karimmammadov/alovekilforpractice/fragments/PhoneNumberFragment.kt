@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit
 class PhoneNumberFragment : Fragment() {
 
     private  var forceResendingToken: PhoneAuthProvider.ForceResendingToken?=null
-    private var mCallBack:PhoneAuthProvider.OnVerificationStateChangedCallbacks?=null
+    private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? =null
     private var mVerificationId:String?=null
     private lateinit var progressDialog: ProgressDialog
     private lateinit var firebaseAuth: FirebaseAuth
@@ -51,7 +51,7 @@ class PhoneNumberFragment : Fragment() {
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
-        mCallBack=object :PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+        mCallBacks=object :PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
             override fun onVerificationCompleted(p0: PhoneAuthCredential) {
                 Log.d(Tag(),"onverficationcompleted: ")
 
@@ -83,20 +83,20 @@ class PhoneNumberFragment : Fragment() {
                 Toast.makeText(this.activity,"Please enter your phone number...",Toast.LENGTH_SHORT).show()
             }
             else{
-                startphoneverification(phone)
+                startPhoneNumberVerification(phone)
             }
         }
         return view
     }
 
-    private fun startphoneverification(phone: String){
+    private fun startPhoneNumberVerification(phone: String){
         progressDialog.setMessage("Verifiying Phone Number...")
         progressDialog.show()
         val option= PhoneAuthOptions.newBuilder(firebaseAuth)
             .setPhoneNumber(phone)
             .setTimeout(60L,TimeUnit.SECONDS)
             .setActivity(requireActivity())
-            .setCallbacks(mCallBack!!)
+            .setCallbacks(mCallBacks!!)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(option)
     }

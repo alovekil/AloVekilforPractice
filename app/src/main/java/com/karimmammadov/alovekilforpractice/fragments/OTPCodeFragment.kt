@@ -22,10 +22,11 @@ import org.w3c.dom.Text
 import java.util.concurrent.TimeUnit
 
 class OTPCodeFragment : Fragment() {
-
+    private var forceResendingToken : PhoneAuthProvider.ForceResendingToken? = null
     private var mVerificationId:String?=null
     private lateinit var progressDialog: ProgressDialog
     private lateinit var firebaseAuth: FirebaseAuth
+    private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -122,25 +123,45 @@ class OTPCodeFragment : Fragment() {
                         inputCode4.text.toString() +
                         inputCode5.text.toString() +
                         inputCode6.text.toString()
-
             }
+            verifyingPhoneNumberWithCode(mVerificationId, code = "")
+        }
+
+        view.textResendOTP.setOnClickListener {
+                 resendVerificationCode(phone = "+994",forceResendingToken)
         }
         return view
     }
 
-    private fun verifyphonenumber(verification:String?,code:String){
+    private fun verifyingPhoneNumberWithCode(verification:String?,code:String){
         progressDialog.setMessage("Verifying code...")
         progressDialog.show()
         val credential = PhoneAuthProvider.getCredential(verification!!,code)
-        signinwithphoneauth(credential)
+        signInWithPhoneAuthCredential(credential)
     }
 
-    private fun signinwithphoneauth(credential: PhoneAuthCredential) {
-        firebaseAuth.signInWithCredential(credential).addOnSuccessListener {
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+        firebaseAuth.signInWithCredential(credential)
+            .addOnSuccessListener {
             val phone= firebaseAuth.currentUser?.phoneNumber
             Toast.makeText(this.activity,"Logged in a ${phone}",Toast.LENGTH_SHORT).show()
         }.addOnFailureListener {e->
+            progressDialog.dismiss()
             Toast.makeText(this.activity,"${e.message}",Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun resendVerificationCode(phone: String,token: PhoneAuthProvider.ForceResendingToken?){
+        progressDialog.setMessage("Resending Code...")
+        progressDialog.show()
+        val options = PhoneAuthOptions.newBuilder(firebaseAuth)
+            .setPhoneNumber(phone)
+            .setTimeout(60L, TimeUnit.SECONDS)
+            .setActivity(requireActivity())
+            .setCallbacks(mCallBacks!!)
+            .setForceResendingToken(token!!)
+            .build()
+
+        PhoneAuthProvider.verifyPhoneNumber(options)
     }
 }
