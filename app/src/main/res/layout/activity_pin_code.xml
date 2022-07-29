@@ -77,6 +77,7 @@
                 <View
                     android:layout_width="15dp"
                     android:layout_height="15dp"
+
                     android:background="@drawable/circle" />
 
                 <View
@@ -97,10 +98,10 @@
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/circle" />
             </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="306dp"
-                android:layout_height="238dp"
+    <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/numberLayout"
                 android:layout_marginLeft="45dp"
                 android:layout_marginTop="5dp">
 
@@ -232,12 +233,8 @@
                     android:textSize="20sp"
                     android:visibility="visible"
                     tools:visibility="visible" />
-
-
             </RelativeLayout>
-
         </LinearLayout>
-
     </LinearLayout>
 </RelativeLayout>
 
