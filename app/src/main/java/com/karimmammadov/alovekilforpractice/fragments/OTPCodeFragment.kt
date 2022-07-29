@@ -126,8 +126,8 @@ class OTPCodeFragment : Fragment() {
                         inputCode5.text.toString() +
                         inputCode6.text.toString()
             }
-            sharedPreferences?.getString("id",mVerificationId)
-            verifyingPhoneNumberWithCode(mVerificationId, code = "")
+           val verificationId =  sharedPreferences?.getString("id",mVerificationId)
+            verifyingPhoneNumberWithCode(verificationId, code = "")
         }
 
         view.textResendOTP.setOnClickListener {
