@@ -126,20 +126,17 @@ class OTPCodeFragment : Fragment() {
                         inputCode5.text.toString() +
                         inputCode6.text.toString()
             }
-           val verificationId =  sharedPreferences?.getString("id",mVerificationId)
-            verifyingPhoneNumberWithCode(verificationId, code = "")
+           val verificationId =  sharedPreferences?.getString("id",mVerificationId!!)
+            verifyingPhoneNumberWithCode(verificationId!!, code = "")
         }
 
-        view.textResendOTP.setOnClickListener {
-                 resendVerificationCode(phone = "+994",forceResendingToken)
-        }
         return view
     }
 
-    private fun verifyingPhoneNumberWithCode(verification:String?,code:String){
+    private fun verifyingPhoneNumberWithCode(verification:String,code:String){
         progressDialog.setMessage("Verifying code...")
         progressDialog.show()
-        val credential = PhoneAuthProvider.getCredential(verification!!,code)
+        val credential = PhoneAuthProvider.getCredential(verification,code)
         signInWithPhoneAuthCredential(credential)
     }
 
