@@ -2,6 +2,7 @@ package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.ProgressDialog
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -26,6 +27,7 @@ class OTPCodeFragment : Fragment() {
     private var mVerificationId:String?=null
     private lateinit var progressDialog: ProgressDialog
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var sharedPreferences: SharedPreferences
     private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -124,6 +126,7 @@ class OTPCodeFragment : Fragment() {
                         inputCode5.text.toString() +
                         inputCode6.text.toString()
             }
+            sharedPreferences?.getString("id",mVerificationId)
             verifyingPhoneNumberWithCode(mVerificationId, code = "")
         }
 

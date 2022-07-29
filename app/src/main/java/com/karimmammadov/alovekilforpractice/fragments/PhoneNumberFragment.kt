@@ -1,21 +1,22 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.ProgressDialog
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.PopupMenu
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.view.*
@@ -37,6 +38,7 @@ class PhoneNumberFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        // dropDownNumberMenu()
+
     }
 
     override fun onCreateView(
@@ -45,7 +47,7 @@ class PhoneNumberFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view=inflater.inflate(R.layout.fragment_phone_number, container, false)
-
+        val sharedPreferences=this.activity?.getSharedPreferences("com.karimmammadov.alovekilforpractice.fragments", MODE_PRIVATE)
         firebaseAuth= FirebaseAuth.getInstance()
         progressDialog= ProgressDialog(activity)
         progressDialog.setTitle("Please Wait")
@@ -64,7 +66,10 @@ class PhoneNumberFragment : Fragment() {
             override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
                 Log.d(Tag(),"onCodesent:${p0}")
                 mVerificationId=p0
+
                 forceResendingToken=p1
+
+                sharedPreferences?.edit()?.putString("id",p0)
                 progressDialog.dismiss()
                 Toast.makeText(activity,"Verification Code sent...",Toast.LENGTH_SHORT).show()
                 val fragmentManager = getFragmentManager()
