@@ -1,6 +1,7 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.ProgressDialog
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -24,7 +25,7 @@ import java.util.concurrent.TimeUnit
 
 class OTPCodeFragment : Fragment() {
     private var forceResendingToken : PhoneAuthProvider.ForceResendingToken? = null
-    private var mVerificationId:String?=null
+   // private var mVerificationId:String?=null
     private lateinit var progressDialog: ProgressDialog
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var sharedPreferences: SharedPreferences
@@ -41,7 +42,8 @@ class OTPCodeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_o_t_p_code, container, false)
-
+        sharedPreferences=this.requireActivity()!!.getSharedPreferences("com.karimmammadov.alovekilforpractice.fragments", MODE_PRIVATE)
+        progressDialog= ProgressDialog(activity)
         view.inputCode1.addTextChangedListener(object: TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
@@ -126,8 +128,9 @@ class OTPCodeFragment : Fragment() {
                         inputCode5.text.toString() +
                         inputCode6.text.toString()
             }
-           val verificationId =  sharedPreferences?.getString("id",mVerificationId!!)
-            verifyingPhoneNumberWithCode(verificationId!!, code = "")
+            val args = this.arguments
+            val inputData = args?.get("data")
+            verifyingPhoneNumberWithCode(inputData.toString(), code = "")
         }
 
         return view

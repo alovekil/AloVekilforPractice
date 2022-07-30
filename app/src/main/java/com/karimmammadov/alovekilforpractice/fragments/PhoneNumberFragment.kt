@@ -12,6 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.setFragmentResultListener
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -34,7 +36,7 @@ class PhoneNumberFragment : Fragment() {
     private lateinit var progressDialog: ProgressDialog
     private lateinit var firebaseAuth: FirebaseAuth
     private  fun Tag() = "MAIN_TAG"
-
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        // dropDownNumberMenu()
@@ -47,7 +49,7 @@ class PhoneNumberFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view=inflater.inflate(R.layout.fragment_phone_number, container, false)
-        val sharedPreferences=this.activity?.getSharedPreferences("com.karimmammadov.alovekilforpractice.fragments", MODE_PRIVATE)
+        sharedPreferences=this.requireActivity()!!.getSharedPreferences("com.karimmammadov.alovekilforpractice.fragments", MODE_PRIVATE)
         firebaseAuth= FirebaseAuth.getInstance()
         progressDialog= ProgressDialog(activity)
         progressDialog.setTitle("Please Wait")
@@ -66,15 +68,15 @@ class PhoneNumberFragment : Fragment() {
             override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
                 Log.d(Tag(),"onCodesent:${p0}")
                 mVerificationId=p0
-
                 forceResendingToken=p1
-
-                sharedPreferences?.edit()?.putString("id",p0)
+                val bundle = Bundle()
+                bundle.putString("data",p0)
                 progressDialog.dismiss()
                 Toast.makeText(activity,"Verification Code sent...",Toast.LENGTH_SHORT).show()
                 val fragmentManager = getFragmentManager()
                 val fragmentTransaction = fragmentManager?.beginTransaction()
                 val fragmentNumber = OTPCodeFragment()
+                fragmentNumber.arguments = bundle
                 fragmentTransaction?.replace(R.id.frameLayout, fragmentNumber)?.commit()
                 super.onCodeSent(p0, p1)
             }
