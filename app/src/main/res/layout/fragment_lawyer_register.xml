@@ -98,7 +98,8 @@
         android:layout_marginTop="150dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
-        android:text="Next"
+        android:text="Next" android:textSize="20dp"
+        android:textStyle="bold"
         android:textColor="@color/RGB_white"
         android:background="@drawable/bgn_enter"/>
 

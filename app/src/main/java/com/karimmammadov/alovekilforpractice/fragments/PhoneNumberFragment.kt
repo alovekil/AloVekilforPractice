@@ -1,7 +1,6 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.ProgressDialog
-import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -12,8 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.setFragmentResultListener
+import androidx.fragment.app.FragmentManager
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -69,14 +67,14 @@ class PhoneNumberFragment : Fragment() {
                 Log.d(Tag(),"onCodesent:${p0}")
                 mVerificationId=p0
                 forceResendingToken=p1
-                val bundle = Bundle()
-                bundle.putString("data",p0)
                 progressDialog.dismiss()
                 Toast.makeText(activity,"Verification Code sent...",Toast.LENGTH_SHORT).show()
                 val fragmentManager = getFragmentManager()
+                val arguments = Bundle()
+                arguments.putString("VALUE1", p0)
                 val fragmentTransaction = fragmentManager?.beginTransaction()
                 val fragmentNumber = OTPCodeFragment()
-                fragmentNumber.arguments = bundle
+                fragmentNumber.setArguments(arguments)
                 fragmentTransaction?.replace(R.id.frameLayout, fragmentNumber)?.commit()
                 super.onCodeSent(p0, p1)
             }

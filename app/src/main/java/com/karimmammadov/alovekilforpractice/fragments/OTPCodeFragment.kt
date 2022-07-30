@@ -2,17 +2,15 @@ package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.ProgressDialog
 import android.content.Context.MODE_PRIVATE
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
@@ -20,7 +18,6 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.fragment_o_t_p_code.*
 import kotlinx.android.synthetic.main.fragment_o_t_p_code.view.*
-import org.w3c.dom.Text
 import java.util.concurrent.TimeUnit
 
 class OTPCodeFragment : Fragment() {
@@ -128,18 +125,20 @@ class OTPCodeFragment : Fragment() {
                         inputCode5.text.toString() +
                         inputCode6.text.toString()
             }
-            val args = this.arguments
-            val inputData = args?.get("data")
-            verifyingPhoneNumberWithCode(inputData.toString(), code = "")
+            val bundle = this.arguments
+            if (bundle != null) {
+                val value1 = bundle.getString("VALUE1", "")
+                verifyingPhoneNumberWithCode(value1.toString(), code = "")
+            }
         }
 
         return view
     }
 
-    private fun verifyingPhoneNumberWithCode(verification:String,code:String){
+    private fun verifyingPhoneNumberWithCode(verification:String?,code:String){
         progressDialog.setMessage("Verifying code...")
         progressDialog.show()
-        val credential = PhoneAuthProvider.getCredential(verification,code)
+        val credential = PhoneAuthProvider.getCredential(verification!!,code)
         signInWithPhoneAuthCredential(credential)
     }
 
