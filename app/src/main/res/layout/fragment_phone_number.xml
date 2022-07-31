@@ -30,18 +30,27 @@
                     android:textColorHint="#c5c5c5"
                     android:textSize="20dp"/>
         -->
-        <EditText
-            android:id="@+id/phoneEdit"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/RGB_white"
+            android:text="Phone Number"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/RGB_black"/>
+        <EditText
+            android:id="@+id/phoneEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroudnblackbox"
             android:textStyle="normal"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:hint="Phone number"
             android:inputType="phone"
-            android:padding="10dp"
-            android:layout_marginRight="20dp"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:textColor="@color/RGB_black"
             android:textColorHint="#c5c5c5"
             android:textSize="20dp"
@@ -54,7 +63,8 @@
             android:layout_marginTop="250dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
-            android:textSize="20dp"
+            android:textSize="16sp"
+            android:padding="20dp"
             android:textStyle="bold"
             android:background="@drawable/bgn_enter"
             android:text="Next"
@@ -64,27 +74,27 @@
 
     <LinearLayout
         android:id="@+id/codeLl"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
             android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
             android:gravity="center_horizontal"
-            android:layout_marginTop="60dp">
+            android:orientation="vertical">
 
             <TextView
                 style="@style/TextAppearance.MaterialComponents.Caption"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="65dp"
-                android:layout_marginLeft="40dp"
                 android:gravity="center_vertical"
                 android:text="A six-digit code has been
             sent to your number"
@@ -92,6 +102,7 @@
                 android:textSize="18sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -100,130 +111,136 @@
 
             <EditText
                 android:id="@+id/inputCode1"
-                android:background="@drawable/backgroundbox"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/backgroundbox"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
                 android:inputType="number"
+                android:maxLength="1"
                 android:textColor="@color/RGB_black"
                 android:textSize="24sp"
-                android:gravity="center"
-                tools:ignore="LabelFor"
-                android:importantForAutofill="no"
-                android:maxLength="1"
                 android:textStyle="bold"
-                android:imeOptions="actionNext"/>
+                tools:ignore="LabelFor" />
+
             <EditText
                 android:id="@+id/inputCode2"
-                android:background="@drawable/backgroundbox"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/backgroundbox"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
                 android:inputType="number"
+                android:maxLength="1"
                 android:textColor="@color/RGB_black"
                 android:textSize="24sp"
-                android:gravity="center"
-                tools:ignore="LabelFor"
-                android:importantForAutofill="no"
-                android:maxLength="1"
                 android:textStyle="bold"
-                android:imeOptions="actionNext"/>
+                tools:ignore="LabelFor" />
+
             <EditText
                 android:id="@+id/inputCode3"
-                android:background="@drawable/backgroundbox"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/backgroundbox"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
                 android:inputType="number"
+                android:maxLength="1"
                 android:textColor="@color/RGB_black"
                 android:textSize="24sp"
-                android:gravity="center"
-                tools:ignore="LabelFor"
-                android:importantForAutofill="no"
-                android:maxLength="1"
                 android:textStyle="bold"
-                android:imeOptions="actionNext"/>
+                tools:ignore="LabelFor" />
+
             <EditText
                 android:id="@+id/inputCode4"
-                android:background="@drawable/backgroundbox"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/backgroundbox"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
                 android:inputType="number"
+                android:maxLength="1"
                 android:textColor="@color/RGB_black"
                 android:textSize="24sp"
-                android:gravity="center"
-                tools:ignore="LabelFor"
-                android:importantForAutofill="no"
-                android:maxLength="1"
                 android:textStyle="bold"
-                android:imeOptions="actionNext"/>
+                tools:ignore="LabelFor" />
+
             <EditText
                 android:id="@+id/inputCode5"
-                android:background="@drawable/backgroundbox"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/backgroundbox"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
                 android:inputType="number"
+                android:maxLength="1"
                 android:textColor="@color/RGB_black"
                 android:textSize="24sp"
-                android:gravity="center"
-                tools:ignore="LabelFor"
-                android:importantForAutofill="no"
-                android:maxLength="1"
                 android:textStyle="bold"
-                android:imeOptions="actionNext"/>
+                tools:ignore="LabelFor" />
+
             <EditText
                 android:id="@+id/inputCode6"
-                android:background="@drawable/backgroundbox"
                 android:layout_width="40dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/backgroundbox"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
                 android:inputType="number"
+                android:maxLength="1"
                 android:textColor="@color/RGB_black"
                 android:textSize="24sp"
-                android:gravity="center"
-                tools:ignore="LabelFor"
-                android:importantForAutofill="no"
-                android:maxLength="1"
                 android:textStyle="bold"
-                android:imeOptions="actionDone"/>
+                tools:ignore="LabelFor" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/RGB_black"
-                android:textSize="16sp"
-                android:text="@string/didn_t_receive_the_otp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/didn_t_receive_the_otp"
+                android:textColor="@color/RGB_black"
+                android:textSize="16sp" />
+
+            <TextView
                 android:id="@+id/textResendOTP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="@string/resend_otp"
                 android:textColor="@color/RGB_yellow"
-                android:textStyle="bold"
                 android:textSize="16sp"
-                />
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -232,14 +249,15 @@
             android:id="@+id/btn_enterCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="210dp"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/bgn_enter"
-            android:textSize="20dp"
-            android:textStyle="bold"
             android:text="Next"
-            android:textColor="@color/RGB_white" />
+            android:textColor="@color/RGB_white"
+            android:textSize="16sp"
+            android:padding="20dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
