@@ -201,7 +201,7 @@ class PhoneNumberFragment : Fragment() {
         progressDialog.setMessage("Verifying Phone Number...")
         progressDialog.show()
         val options = PhoneAuthOptions.newBuilder(firebaseAuth)
-            .setPhoneNumber(phone)
+            .setPhoneNumber("+994" + phone)
             .setTimeout(60L, TimeUnit.SECONDS)
             .setActivity(requireActivity())
             .setCallbacks(mCallBacks!!)
