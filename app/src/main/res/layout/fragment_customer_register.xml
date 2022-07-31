@@ -24,11 +24,11 @@
             android:layout_marginLeft="10dp"
             android:hint="Name"
             android:inputType="textPersonName"
-            android:padding="10dp"
+            android:padding="20dp"
             android:textAlignment="textStart"
             android:textColor="@color/RGB_black"
             android:textColorHint="#c5c5c5"
-            android:textSize="20dp"
+            android:textSize="16sp"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
         <EditText
             android:layout_width="match_parent"
@@ -38,11 +38,11 @@
             android:layout_marginLeft="10dp"
             android:hint="Last Name"
             android:inputType="textPersonName"
-            android:padding="10dp"
+            android:padding="20dp"
             android:textAlignment="textStart"
             android:textColor="@color/RGB_black"
             android:textColorHint="#c5c5c5"
-            android:textSize="20dp"
+            android:textSize="16sp"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
         <EditText
             android:layout_width="match_parent"
@@ -50,13 +50,14 @@
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:padding="10dp"
+            android:padding="20dp"
             android:textAlignment="textStart"
             android:textColor="@color/RGB_black"
             android:textColorHint="#c5c5c5"
-            android:textSize="20dp"
+            android:textSize="16sp"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     </LinearLayout>
@@ -67,8 +68,9 @@
         android:layout_marginTop="150dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:padding="20dp"
         android:text="Next"
-        android:textSize="20dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@color/RGB_white"
         android:background="@drawable/bgn_enter"/>
