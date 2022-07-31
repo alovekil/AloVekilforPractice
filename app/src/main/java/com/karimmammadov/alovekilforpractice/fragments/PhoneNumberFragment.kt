@@ -1,44 +1,52 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.ProgressDialog
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.Editable
 import android.text.TextUtils
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.karimmammadov.alovekilforpractice.R
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
-import kotlinx.android.synthetic.main.fragment_o_t_p_code.view.*
-import kotlinx.android.synthetic.main.fragment_phone_number.*
-import kotlinx.android.synthetic.main.fragment_phone_number.view.*
+import kotlinx.android.synthetic.main.fragment_phone_number.inputCode1
+import kotlinx.android.synthetic.main.fragment_phone_number.inputCode2
+import kotlinx.android.synthetic.main.fragment_phone_number.inputCode3
+import kotlinx.android.synthetic.main.fragment_phone_number.inputCode4
+import kotlinx.android.synthetic.main.fragment_phone_number.inputCode5
+import kotlinx.android.synthetic.main.fragment_phone_number.inputCode6
+import kotlinx.android.synthetic.main.fragment_phone_number.phoneEdit
+import kotlinx.android.synthetic.main.fragment_phone_number.view.btn_enterCode
+import kotlinx.android.synthetic.main.fragment_phone_number.view.btn_enterNumber
+import kotlinx.android.synthetic.main.fragment_phone_number.view.codeLl
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode1
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode2
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode3
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode4
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode5
+import kotlinx.android.synthetic.main.fragment_phone_number.view.phoneNumberLl
 import java.util.concurrent.TimeUnit
 
 
 class PhoneNumberFragment : Fragment() {
 
-    private  var forceResendingToken: PhoneAuthProvider.ForceResendingToken?=null
-    private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? =null
-    private var mVerificationId:String?=null
-    private lateinit var progressDialog: ProgressDialog
+    private var forceResendingToken: PhoneAuthProvider.ForceResendingToken? = null
+    private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? = null
+    private var mVerificationId: String? = null
     private lateinit var firebaseAuth: FirebaseAuth
-    private  fun Tag() = "MAIN_TAG"
-    private lateinit var sharedPreferences: SharedPreferences
+    private val TAG = "MAIN_TAG"
+    private lateinit var progressDialog: ProgressDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // dropDownNumberMenu()
-
     }
 
     override fun onCreateView(
@@ -46,96 +54,184 @@ class PhoneNumberFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view=inflater.inflate(R.layout.fragment_phone_number, container, false)
-        sharedPreferences=this.requireActivity()!!.getSharedPreferences("com.karimmammadov.alovekilforpractice.fragments", MODE_PRIVATE)
-        firebaseAuth= FirebaseAuth.getInstance()
-        progressDialog= ProgressDialog(activity)
+        val view = inflater.inflate(R.layout.fragment_phone_number, container, false)
+
+        view.phoneNumberLl.visibility = View.VISIBLE
+        view.codeLl.visibility = View.GONE
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        progressDialog = ProgressDialog(activity)
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
-        mCallBacks=object :PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
-            override fun onVerificationCompleted(p0: PhoneAuthCredential) {
-                Log.d(Tag(),"onverficationcompleted: ")
+        mCallBacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
+                Log.d(TAG, "onVerificationCompleted: ")
+                signInWithPhoneAuthCredential(phoneAuthCredential)
+            }
 
-            }
-            override fun onVerificationFailed(p0: FirebaseException) {
+            override fun onVerificationFailed(e: FirebaseException) {
                 progressDialog.dismiss()
-                Log.d(Tag(),"onVerficationfailed ${p0}")
-                Toast.makeText(activity,"${p0.message}",Toast.LENGTH_SHORT).show()
+                Log.d(TAG, "onVerificationFailed:${e.message} ")
+                Toast.makeText(activity, "${e.message}", Toast.LENGTH_SHORT).show()
             }
-            override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
-                Log.d(Tag(),"onCodesent:${p0}")
-                mVerificationId=p0
-                forceResendingToken=p1
+
+            override fun onCodeSent(
+                verificationId: String,
+                token: PhoneAuthProvider.ForceResendingToken
+            ) {
+                Log.d(TAG, "onCodeSent:$verificationId")
+                mVerificationId = verificationId
+                forceResendingToken = token
                 progressDialog.dismiss()
-                Toast.makeText(activity,"Verification Code sent...",Toast.LENGTH_SHORT).show()
-                val fragmentManager = getFragmentManager()
-                val arguments = Bundle()
-                arguments.putString("VALUE1", p0)
-                val fragmentTransaction = fragmentManager?.beginTransaction()
-                val fragmentNumber = OTPCodeFragment()
-                fragmentNumber.setArguments(arguments)
-                fragmentTransaction?.replace(R.id.frameLayout, fragmentNumber)?.commit()
-                super.onCodeSent(p0, p1)
+                Log.d(TAG, "onCodeSent:$verificationId")
+                view.phoneNumberLl.visibility = View.GONE
+                view.codeLl.visibility = View.VISIBLE
+                Toast.makeText(activity, "Verification Code sent...", Toast.LENGTH_SHORT).show()
             }
         }
 
-        view.btn_enterNumber.setOnClickListener{
-            //input phone number
-            val phone=phoneEdit.text.toString().trim()
-            //validate phone number
-            if(TextUtils.isEmpty(phone)){
-                Toast.makeText(this.activity,"Please enter your phone number...",Toast.LENGTH_SHORT).show()
-            }
-            else{
+        view.btn_enterNumber.setOnClickListener {
+            val phone = phoneEdit.text.toString().trim()
+            if (TextUtils.isEmpty(phone)) {
+                Toast.makeText(this.activity, "Please enter phone number", Toast.LENGTH_SHORT)
+                    .show()
+            } else {
                 startPhoneNumberVerification(phone)
             }
         }
+
+        view.btn_enterCode.setOnClickListener {
+            if (!inputCode1.text.toString().trim().isEmpty() && !inputCode2.text.toString().trim()
+                    .isEmpty() && !inputCode3.text.toString().trim().isEmpty() &&
+                !inputCode4.text.toString().trim().isEmpty() && !inputCode5.text.toString().trim()
+                    .isEmpty() && !inputCode6.text.toString().trim().isEmpty()
+            ) {
+                var code = inputCode1.text.toString() +
+                        inputCode2.text.toString() +
+                        inputCode3.text.toString() +
+                        inputCode4.text.toString() +
+                        inputCode5.text.toString() +
+                        inputCode6.text.toString()
+                verifyingPhoneNumberWithCode(mVerificationId, code)
+            } else {
+                Toast.makeText(this.activity, "Please enter all numbers", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        view.inputCode1.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (!s.toString().trim().isEmpty()) {
+                    inputCode2.requestFocus()
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
+        view.inputCode2.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (!s.toString().trim().isEmpty()) {
+                    inputCode3.requestFocus()
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
+        view.inputCode3.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (!s.toString().trim().isEmpty()) {
+                    inputCode4.requestFocus()
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
+        view.inputCode4.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (!s.toString().trim().isEmpty()) {
+                    inputCode5.requestFocus()
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
+        view.inputCode5.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (!s.toString().trim().isEmpty()) {
+                    inputCode6.requestFocus()
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+
+            }
+        })
+
         return view
     }
 
-    private fun startPhoneNumberVerification(phone: String){
-        progressDialog.setMessage("Verifiying Phone Number...")
+    private fun startPhoneNumberVerification(phone: String) {
+        progressDialog.setMessage("Verifying Phone Number...")
         progressDialog.show()
-        val option= PhoneAuthOptions.newBuilder(firebaseAuth)
+        val options = PhoneAuthOptions.newBuilder(firebaseAuth)
             .setPhoneNumber(phone)
-            .setTimeout(60L,TimeUnit.SECONDS)
+            .setTimeout(60L, TimeUnit.SECONDS)
             .setActivity(requireActivity())
             .setCallbacks(mCallBacks!!)
             .build()
-        PhoneAuthProvider.verifyPhoneNumber(option)
+        PhoneAuthProvider.verifyPhoneNumber(options)
     }
-}
 
+    private fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
+        progressDialog.setMessage("Verifying Code...")
+        progressDialog.show()
+        var credential = PhoneAuthProvider.getCredential(verificationId!!, code)
+        signInWithPhoneAuthCredential(credential)
+    }
 
-/*
-    private fun dropDownNumberMenu(){
-        val popupMenu = PopupMenu(this.activity,btn_numberFilter)
-        popupMenu.inflate(R.menu.popup_numberfiltermenu)
-        popupMenu.setOnMenuItemClickListener {
-            when(it.itemId){
-                R.id.number1 ->{
-                    btn_numberFilter.setText("050")
-                    true
-                }
-                R.id.number2 ->{
-                    btn_numberFilter.setText("051")
-                    true
-                }
-                R.id.number3 ->{
-                    btn_numberFilter.setText("055")
-                    true
-                }
-                R.id.number4 ->{
-                    btn_numberFilter.setText("070")
-                    true
-                }
-                R.id.number5 ->{
-                    btn_numberFilter.setText("077")
-                    true
-                }
-                else -> true
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+        progressDialog.setMessage("Logging in")
+        firebaseAuth.signInWithCredential(credential)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                val phone = firebaseAuth.currentUser?.phoneNumber
+                val fragmentManager = getFragmentManager()
+                val fragmentTransaction = fragmentManager?.beginTransaction()
+                val fragmentNumber = CustomerRegisterFragment()
+                fragmentTransaction?.replace(R.id.frameLayout, fragmentNumber)?.commit()
             }
-        }
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Toast.makeText(activity,"${e.message}",Toast.LENGTH_SHORT).show()
+            }
     }
- */
+
+}

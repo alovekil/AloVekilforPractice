@@ -1,49 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/phoneNumberLl"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_height="wrap_content"
-        android:background="@drawable/backgroudnblackbox"
+        android:gravity="center_horizontal"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:gravity="center_horizontal"
         android:layout_marginTop="165dp">
+        <!--
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_numberFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_button"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:hint="055"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="#c5c5c5"
+                    android:textSize="20dp"/>
+        -->
         <EditText
             android:id="@+id/phoneEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/RGB_white"
+            android:textStyle="normal"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
             android:layout_marginBottom="5dp"
             android:hint="Phone number"
             android:inputType="phone"
             android:padding="10dp"
+            android:layout_marginRight="20dp"
             android:textColor="@color/RGB_black"
             android:textColorHint="#c5c5c5"
             android:textSize="20dp"
-            android:textStyle="normal"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_enterNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:background="@drawable/bgn_enter"
+            android:text="Next"
+            android:textColor="@color/RGB_white" />
+
     </LinearLayout>
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_enterNumber"
+
+    <LinearLayout
+        android:id="@+id/codeLl"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:background="@drawable/bgn_enter"
-        android:text="Next"
-        android:textColor="@color/RGB_white" />
-</LinearLayout>
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="60dp">
+
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="65dp"
+                android:layout_marginLeft="40dp"
+                android:gravity="center_vertical"
+                android:text="A six-digit code has been
+            sent to your number"
+                android:textColor="#000"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/inputCode1"
+                android:background="@drawable/backgroundbox"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:textColor="@color/RGB_black"
+                android:textSize="24sp"
+                android:gravity="center"
+                tools:ignore="LabelFor"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textStyle="bold"
+                android:imeOptions="actionNext"/>
+            <EditText
+                android:id="@+id/inputCode2"
+                android:background="@drawable/backgroundbox"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:textColor="@color/RGB_black"
+                android:textSize="24sp"
+                android:gravity="center"
+                tools:ignore="LabelFor"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textStyle="bold"
+                android:imeOptions="actionNext"/>
+            <EditText
+                android:id="@+id/inputCode3"
+                android:background="@drawable/backgroundbox"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:textColor="@color/RGB_black"
+                android:textSize="24sp"
+                android:gravity="center"
+                tools:ignore="LabelFor"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textStyle="bold"
+                android:imeOptions="actionNext"/>
+            <EditText
+                android:id="@+id/inputCode4"
+                android:background="@drawable/backgroundbox"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:textColor="@color/RGB_black"
+                android:textSize="24sp"
+                android:gravity="center"
+                tools:ignore="LabelFor"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textStyle="bold"
+                android:imeOptions="actionNext"/>
+            <EditText
+                android:id="@+id/inputCode5"
+                android:background="@drawable/backgroundbox"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:textColor="@color/RGB_black"
+                android:textSize="24sp"
+                android:gravity="center"
+                tools:ignore="LabelFor"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textStyle="bold"
+                android:imeOptions="actionNext"/>
+            <EditText
+                android:id="@+id/inputCode6"
+                android:background="@drawable/backgroundbox"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:inputType="number"
+                android:textColor="@color/RGB_black"
+                android:textSize="24sp"
+                android:gravity="center"
+                tools:ignore="LabelFor"
+                android:importantForAutofill="no"
+                android:maxLength="1"
+                android:textStyle="bold"
+                android:imeOptions="actionDone"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/RGB_black"
+                android:textSize="16sp"
+                android:text="@string/didn_t_receive_the_otp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textResendOTP"
+                android:layout_marginStart="8dp"
+                android:text="@string/resend_otp"
+                android:textColor="@color/RGB_yellow"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                />
+
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_enterCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="210dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bgn_enter"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Next"
+            android:textColor="@color/RGB_white" />
+
+    </LinearLayout>
+
+</RelativeLayout>
