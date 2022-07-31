@@ -9,7 +9,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.constraintlayout.helper.widget.Carousel
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -42,8 +45,14 @@ class PhoneNumberFragment : Fragment() {
     private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? = null
     private var mVerificationId: String? = null
     private lateinit var firebaseAuth: FirebaseAuth
+<<<<<<< Updated upstream
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
+=======
+    private  fun Tag() = "MAIN_TAG"
+    private lateinit var sharedPreferences: SharedPreferences
+    //private lateinit var fragmentViewModel:FragmentViewModel
+>>>>>>> Stashed changes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +63,7 @@ class PhoneNumberFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+<<<<<<< Updated upstream
         val view = inflater.inflate(R.layout.fragment_phone_number, container, false)
 
         view.phoneNumberLl.visibility = View.VISIBLE
@@ -61,6 +71,15 @@ class PhoneNumberFragment : Fragment() {
 
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(activity)
+=======
+        val view=inflater.inflate(R.layout.fragment_phone_number, container, false)
+         sharedPreferences=this.requireActivity()!!.getSharedPreferences("com.karimmammadov.alovekilforpractice.fragments", MODE_PRIVATE)
+        val dropDownList= arrayOf("050","055","070","077")
+
+
+        firebaseAuth= FirebaseAuth.getInstance()
+        progressDialog= ProgressDialog(activity)
+>>>>>>> Stashed changes
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
@@ -76,6 +95,7 @@ class PhoneNumberFragment : Fragment() {
                 Toast.makeText(activity, "${e.message}", Toast.LENGTH_SHORT).show()
             }
 
+<<<<<<< Updated upstream
             override fun onCodeSent(
                 verificationId: String,
                 token: PhoneAuthProvider.ForceResendingToken
@@ -83,6 +103,10 @@ class PhoneNumberFragment : Fragment() {
                 Log.d(TAG, "onCodeSent:$verificationId")
                 mVerificationId = verificationId
                 forceResendingToken = token
+=======
+                sharedPreferences.edit().putString("id",p0).apply()
+
+>>>>>>> Stashed changes
                 progressDialog.dismiss()
                 Log.d(TAG, "onCodeSent:$verificationId")
                 view.phoneNumberLl.visibility = View.GONE
