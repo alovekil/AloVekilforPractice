@@ -1,0 +1,600 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+MERGED from [androidx.databinding:viewbinding:7.0.4] E:\TestAloVekil\caches\transforms-3\698864cd3e3cbb8e5b29cc3dd0763e53\transformed\viewbinding-7.0.4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\98e44c5e9aaea4779f301d0e63370793\transformed\navigation-fragment-ktx-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-fragment:2.5.0] E:\TestAloVekil\caches\transforms-3\b9c79b04128f6049816cb8cc76a001ef\transformed\navigation-fragment-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.5.0] E:\TestAloVekil\caches\transforms-3\4ffe7f17fe4132cda7e68cdebaa56fe5\transformed\fragment-ktx-1.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\c3cdc8cab58c17e8597e6afd17ecafd1\transformed\navigation-ui-ktx-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\5695a006c9c722c85049f54d918510dd\transformed\navigation-runtime-ktx-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui:2.5.0] E:\TestAloVekil\caches\transforms-3\bb73cbae7d2f948f85c3070e2bbc9e70\transformed\navigation-ui-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.5.0] E:\TestAloVekil\caches\transforms-3\dbd30f707c180bf80613d9ca4d1def82\transformed\navigation-runtime-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.5.0] E:\TestAloVekil\caches\transforms-3\48cac23095743e1840a60092ada8a759\transformed\activity-ktx-1.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\6eb797d92d959ba147f115157fee0279\transformed\navigation-common-ktx-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.5.0] E:\TestAloVekil\caches\transforms-3\82c7e34e9dce189dfa5ef7b5c598d19c\transformed\navigation-common-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\9389e92a76af879c2f204f47e71eef4a\transformed\lifecycle-viewmodel-ktx-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\2a38dc65731a23b95d4215ae4539dd96\transformed\lifecycle-runtime-ktx-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] E:\TestAloVekil\caches\transforms-3\e16d013063807c1e3fc9c7c5af6bc891\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:17:1-33:12
+MERGED from [com.google.android.material:material:1.6.1] E:\TestAloVekil\caches\transforms-3\9031fd29766e7e158a508af521cfac65\transformed\material-1.6.1\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] E:\TestAloVekil\caches\transforms-3\909cf75deb45cb467b6bbedd0851da64\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.4.2] E:\TestAloVekil\caches\transforms-3\8d20917d58b1279e9b9d3e4fd67d4e02\transformed\appcompat-1.4.2\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:17:1-73:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] E:\TestAloVekil\caches\transforms-3\2b88834e0d222f707109aa4e781d34dc\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] E:\TestAloVekil\caches\transforms-3\9139a27dd0046e9155b0a157b4f4818f\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] E:\TestAloVekil\caches\transforms-3\9fe3864752db3fe66ebd233d585d790a\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] E:\TestAloVekil\caches\transforms-3\c0d49819fa0283893e5bb35144af536d\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-analytics:21.1.0] E:\TestAloVekil\caches\transforms-3\f6b31445e3f9104d0321b8c611b6c1e1\transformed\firebase-analytics-21.1.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:2:1-24:12
+MERGED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:15:1-40:12
+MERGED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] E:\TestAloVekil\caches\transforms-3\ae02106b85612835122df5454aea4bf7\transformed\firebase-installations-interop-17.0.1\AndroidManifest.xml:15:1-23:12
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] E:\TestAloVekil\caches\transforms-3\32430159acc2dc08f79fb58709b451d2\transformed\play-services-tasks-18.0.1\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:17:1-46:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.0] E:\TestAloVekil\caches\transforms-3\bb4c47a39b4fc17fd45e19ad4d9ad33f\transformed\play-services-measurement-sdk-21.1.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:17:1-32:12
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] E:\TestAloVekil\caches\transforms-3\eeab826aedcdf5b3f8a022482dcfda29\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.0] E:\TestAloVekil\caches\transforms-3\5068a1beaaeff95c367a003c02d9394e\transformed\play-services-measurement-base-21.1.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] E:\TestAloVekil\caches\transforms-3\e143c6a3b45858cd440aa96f93ad9f02\transformed\play-services-stats-17.0.2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] E:\TestAloVekil\caches\transforms-3\bc56c5ba1ededed87941dfb7874c6bfd\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] E:\TestAloVekil\caches\transforms-3\b471fac52abf8a7ad1a71ad3cf11c6a0\transformed\play-services-basement-18.0.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.fragment:fragment:1.5.0] E:\TestAloVekil\caches\transforms-3\f48b123a7996cbd21d143d19ecd070e9\transformed\fragment-1.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.5.0] E:\TestAloVekil\caches\transforms-3\23116d121889818a2c00457265cd5e96\transformed\activity-1.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] E:\TestAloVekil\caches\transforms-3\d59b1bcc3b5356c2789c9d3595607e28\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] E:\TestAloVekil\caches\transforms-3\1e7d284b0f6adca94bb8fba56d406747\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] E:\TestAloVekil\caches\transforms-3\365207e7f6f2b6e3f2735f9f5ed05413\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] E:\TestAloVekil\caches\transforms-3\cc483abb6042328ecacdf40226395d4c\transformed\lifecycle-viewmodel-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] E:\TestAloVekil\caches\transforms-3\cafaf5f6b8cc5761dbbc6d6e35c0208a\transformed\lifecycle-viewmodel-savedstate-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.7.0] E:\TestAloVekil\caches\transforms-3\63cd9f7ce43648816179b5399a66ef23\transformed\core-ktx-1.7.0\AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.browser:browser:1.4.0] E:\TestAloVekil\caches\transforms-3\64c83a6f4ce7ba3f7b328cb1b2564529\transformed\browser-1.4.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] E:\TestAloVekil\caches\transforms-3\45f6171753c557c1ba4c663ef64c3d2d\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.4.2] E:\TestAloVekil\caches\transforms-3\2649bc812af1be5b87fff0356b26fbb2\transformed\appcompat-resources-1.4.2\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] E:\TestAloVekil\caches\transforms-3\12e0b31126f929c9ec2acc9ca6de4670\transformed\emoji2-views-helper-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] E:\TestAloVekil\caches\transforms-3\1337c5af9fdfc3af32c65311e4dba172\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] E:\TestAloVekil\caches\transforms-3\a167e1798fbc9da2f7fdf8970201b13f\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] E:\TestAloVekil\caches\transforms-3\cf985c75d63487dcb610c56f0dd25341\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] E:\TestAloVekil\caches\transforms-3\12ade3778fadab15b9d06db6fa6cc60a\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] E:\TestAloVekil\caches\transforms-3\c79c0659bd9b17fafc758fbb200ffcd9\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] E:\TestAloVekil\caches\transforms-3\20ff302b14f15e1b94fd12fee72818f2\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-components:17.0.0] E:\TestAloVekil\caches\transforms-3\c0ad7621d62c3e24ccf022c009eebf7c\transformed\firebase-components-17.0.0\AndroidManifest.xml:15:1-23:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] E:\TestAloVekil\caches\transforms-3\203f5c906c6f44ffdb733778077a64bc\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] E:\TestAloVekil\caches\transforms-3\1604d27c3207074588c126815dd3b107\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] E:\TestAloVekil\caches\transforms-3\d898e7c9b401b19c746929d7f2f8355f\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.4.1] E:\TestAloVekil\caches\transforms-3\b77acd3fd615f6dee980934042fdd95e\transformed\transition-1.4.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.8.0] E:\TestAloVekil\caches\transforms-3\a870ba55e36955553389a03f7b0cdb6d\transformed\core-1.8.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] E:\TestAloVekil\caches\transforms-3\8b9481967e44d61441ed060ccdf2ba2a\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] E:\TestAloVekil\caches\transforms-3\2ed94ad7b4adc19e6f86dfda5efaf0a1\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.startup:startup-runtime:1.0.0] E:\TestAloVekil\caches\transforms-3\f8d3d0b1e299116b24d804041a563669\transformed\startup-runtime-1.0.0\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] E:\TestAloVekil\caches\transforms-3\9a3057dda2144dcfaa06b39bd3517059\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] E:\TestAloVekil\caches\transforms-3\a5b9c697773116080f0cb35a6aa81b37\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] E:\TestAloVekil\caches\transforms-3\ee6d7beb56c176050ff58cf8169a0db9\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] E:\TestAloVekil\caches\transforms-3\5e4516afc64253c2bd86b9517dfe1772\transformed\savedstate-ktx-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] E:\TestAloVekil\caches\transforms-3\3937b3b2174cb74b047209757e22ca8e\transformed\savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] E:\TestAloVekil\caches\transforms-3\e6f937de044308b72412a06f4cd82f17\transformed\lifecycle-runtime-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] E:\TestAloVekil\caches\transforms-3\cf039db53de7f4bfd73b7a559e0047de\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\674fee291f841215aa9dfdcb905bcd43\transformed\lifecycle-livedata-core-ktx-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] E:\TestAloVekil\caches\transforms-3\1f2169a022a21375f5ef401ed928eee3\transformed\lifecycle-livedata-core-2.5.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] E:\TestAloVekil\caches\transforms-3\e3190e149ab735e7ee54921626eeb398\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] E:\TestAloVekil\caches\transforms-3\91ecf9552fc81e6dce043c8e23084b8b\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+	package
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:4:5-52
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:1-33:12
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:6:5-67
+MERGED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:11:5-67
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:23:5-67
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:6:22-64
+application
+ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:8:5-31:19
+MERGED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
+MERGED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:24:5-31:19
+MERGED from [com.google.android.material:material:1.6.1] E:\TestAloVekil\caches\transforms-3\9031fd29766e7e158a508af521cfac65\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.6.1] E:\TestAloVekil\caches\transforms-3\9031fd29766e7e158a508af521cfac65\transformed\material-1.6.1\AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] E:\TestAloVekil\caches\transforms-3\909cf75deb45cb467b6bbedd0851da64\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] E:\TestAloVekil\caches\transforms-3\909cf75deb45cb467b6bbedd0851da64\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:26:5-71:19
+MERGED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:26:5-71:19
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] E:\TestAloVekil\caches\transforms-3\9fe3864752db3fe66ebd233d585d790a\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] E:\TestAloVekil\caches\transforms-3\9fe3864752db3fe66ebd233d585d790a\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] E:\TestAloVekil\caches\transforms-3\c0d49819fa0283893e5bb35144af536d\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] E:\TestAloVekil\caches\transforms-3\c0d49819fa0283893e5bb35144af536d\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-analytics:21.1.0] E:\TestAloVekil\caches\transforms-3\f6b31445e3f9104d0321b8c611b6c1e1\transformed\firebase-analytics-21.1.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-analytics:21.1.0] E:\TestAloVekil\caches\transforms-3\f6b31445e3f9104d0321b8c611b6c1e1\transformed\firebase-analytics-21.1.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:14:5-22:19
+MERGED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:25:5-38:19
+MERGED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:25:5-38:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] E:\TestAloVekil\caches\transforms-3\32430159acc2dc08f79fb58709b451d2\transformed\play-services-tasks-18.0.1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] E:\TestAloVekil\caches\transforms-3\32430159acc2dc08f79fb58709b451d2\transformed\play-services-tasks-18.0.1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:28:5-44:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.0] E:\TestAloVekil\caches\transforms-3\bb4c47a39b4fc17fd45e19ad4d9ad33f\transformed\play-services-measurement-sdk-21.1.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.0] E:\TestAloVekil\caches\transforms-3\bb4c47a39b4fc17fd45e19ad4d9ad33f\transformed\play-services-measurement-sdk-21.1.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:29:5-30:19
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] E:\TestAloVekil\caches\transforms-3\eeab826aedcdf5b3f8a022482dcfda29\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] E:\TestAloVekil\caches\transforms-3\eeab826aedcdf5b3f8a022482dcfda29\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.0] E:\TestAloVekil\caches\transforms-3\5068a1beaaeff95c367a003c02d9394e\transformed\play-services-measurement-base-21.1.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.0] E:\TestAloVekil\caches\transforms-3\5068a1beaaeff95c367a003c02d9394e\transformed\play-services-measurement-base-21.1.0\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] E:\TestAloVekil\caches\transforms-3\e143c6a3b45858cd440aa96f93ad9f02\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] E:\TestAloVekil\caches\transforms-3\e143c6a3b45858cd440aa96f93ad9f02\transformed\play-services-stats-17.0.2\AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] E:\TestAloVekil\caches\transforms-3\bc56c5ba1ededed87941dfb7874c6bfd\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] E:\TestAloVekil\caches\transforms-3\bc56c5ba1ededed87941dfb7874c6bfd\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] E:\TestAloVekil\caches\transforms-3\b471fac52abf8a7ad1a71ad3cf11c6a0\transformed\play-services-basement-18.0.0\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] E:\TestAloVekil\caches\transforms-3\b471fac52abf8a7ad1a71ad3cf11c6a0\transformed\play-services-basement-18.0.0\AndroidManifest.xml:20:5-24:19
+MERGED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.core:core:1.8.0] E:\TestAloVekil\caches\transforms-3\a870ba55e36955553389a03f7b0cdb6d\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.8.0] E:\TestAloVekil\caches\transforms-3\a870ba55e36955553389a03f7b0cdb6d\transformed\core-1.8.0\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] E:\TestAloVekil\caches\transforms-3\8b9481967e44d61441ed060ccdf2ba2a\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] E:\TestAloVekil\caches\transforms-3\8b9481967e44d61441ed060ccdf2ba2a\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] E:\TestAloVekil\caches\transforms-3\f8d3d0b1e299116b24d804041a563669\transformed\startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] E:\TestAloVekil\caches\transforms-3\f8d3d0b1e299116b24d804041a563669\transformed\startup-runtime-1.0.0\AndroidManifest.xml:25:5-31:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.8.0] E:\TestAloVekil\caches\transforms-3\a870ba55e36955553389a03f7b0cdb6d\transformed\core-1.8.0\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:13:9-41
+	android:fullBackupContent
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:11:9-54
+	android:roundIcon
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:14:9-54
+	tools:targetApi
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:18:9-29
+	android:icon
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:12:9-43
+	android:allowBackup
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:9:9-35
+	android:theme
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:16:9-57
+	android:dataExtractionRules
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:10:9-65
+	android:usesCleartextTraffic
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:17:9-44
+activity#com.karimmammadov.alovekilforpractice.PinCodeActivity
+ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:19:9-21:40
+	android:exported
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:20:13-44
+activity#com.karimmammadov.alovekilforpractice.MainActivity
+ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:22:9-30:20
+	android:exported
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:24:13-36
+	android:name
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:23:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:25:13-29:29
+action#android.intent.action.MAIN
+ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:26:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:28:17-77
+	android:name
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml:28:27-74
+uses-sdk
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:7.0.4] E:\TestAloVekil\caches\transforms-3\698864cd3e3cbb8e5b29cc3dd0763e53\transformed\viewbinding-7.0.4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:7.0.4] E:\TestAloVekil\caches\transforms-3\698864cd3e3cbb8e5b29cc3dd0763e53\transformed\viewbinding-7.0.4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\98e44c5e9aaea4779f301d0e63370793\transformed\navigation-fragment-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\98e44c5e9aaea4779f301d0e63370793\transformed\navigation-fragment-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.0] E:\TestAloVekil\caches\transforms-3\b9c79b04128f6049816cb8cc76a001ef\transformed\navigation-fragment-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.5.0] E:\TestAloVekil\caches\transforms-3\b9c79b04128f6049816cb8cc76a001ef\transformed\navigation-fragment-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.5.0] E:\TestAloVekil\caches\transforms-3\4ffe7f17fe4132cda7e68cdebaa56fe5\transformed\fragment-ktx-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.5.0] E:\TestAloVekil\caches\transforms-3\4ffe7f17fe4132cda7e68cdebaa56fe5\transformed\fragment-ktx-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\c3cdc8cab58c17e8597e6afd17ecafd1\transformed\navigation-ui-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\c3cdc8cab58c17e8597e6afd17ecafd1\transformed\navigation-ui-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\5695a006c9c722c85049f54d918510dd\transformed\navigation-runtime-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\5695a006c9c722c85049f54d918510dd\transformed\navigation-runtime-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.5.0] E:\TestAloVekil\caches\transforms-3\bb73cbae7d2f948f85c3070e2bbc9e70\transformed\navigation-ui-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.5.0] E:\TestAloVekil\caches\transforms-3\bb73cbae7d2f948f85c3070e2bbc9e70\transformed\navigation-ui-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.0] E:\TestAloVekil\caches\transforms-3\dbd30f707c180bf80613d9ca4d1def82\transformed\navigation-runtime-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.0] E:\TestAloVekil\caches\transforms-3\dbd30f707c180bf80613d9ca4d1def82\transformed\navigation-runtime-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.5.0] E:\TestAloVekil\caches\transforms-3\48cac23095743e1840a60092ada8a759\transformed\activity-ktx-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.5.0] E:\TestAloVekil\caches\transforms-3\48cac23095743e1840a60092ada8a759\transformed\activity-ktx-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\6eb797d92d959ba147f115157fee0279\transformed\navigation-common-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\6eb797d92d959ba147f115157fee0279\transformed\navigation-common-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.0] E:\TestAloVekil\caches\transforms-3\82c7e34e9dce189dfa5ef7b5c598d19c\transformed\navigation-common-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.0] E:\TestAloVekil\caches\transforms-3\82c7e34e9dce189dfa5ef7b5c598d19c\transformed\navigation-common-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\9389e92a76af879c2f204f47e71eef4a\transformed\lifecycle-viewmodel-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\9389e92a76af879c2f204f47e71eef4a\transformed\lifecycle-viewmodel-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\2a38dc65731a23b95d4215ae4539dd96\transformed\lifecycle-runtime-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\2a38dc65731a23b95d4215ae4539dd96\transformed\lifecycle-runtime-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] E:\TestAloVekil\caches\transforms-3\e16d013063807c1e3fc9c7c5af6bc891\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.2.0] E:\TestAloVekil\caches\transforms-3\e16d013063807c1e3fc9c7c5af6bc891\transformed\slidingpanelayout-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.6.1] E:\TestAloVekil\caches\transforms-3\9031fd29766e7e158a508af521cfac65\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.6.1] E:\TestAloVekil\caches\transforms-3\9031fd29766e7e158a508af521cfac65\transformed\material-1.6.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] E:\TestAloVekil\caches\transforms-3\909cf75deb45cb467b6bbedd0851da64\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] E:\TestAloVekil\caches\transforms-3\909cf75deb45cb467b6bbedd0851da64\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.4.2] E:\TestAloVekil\caches\transforms-3\8d20917d58b1279e9b9d3e4fd67d4e02\transformed\appcompat-1.4.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.4.2] E:\TestAloVekil\caches\transforms-3\8d20917d58b1279e9b9d3e4fd67d4e02\transformed\appcompat-1.4.2\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:21:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] E:\TestAloVekil\caches\transforms-3\2b88834e0d222f707109aa4e781d34dc\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] E:\TestAloVekil\caches\transforms-3\2b88834e0d222f707109aa4e781d34dc\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] E:\TestAloVekil\caches\transforms-3\9139a27dd0046e9155b0a157b4f4818f\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.4.0] E:\TestAloVekil\caches\transforms-3\9139a27dd0046e9155b0a157b4f4818f\transformed\play-services-auth-api-phone-17.4.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] E:\TestAloVekil\caches\transforms-3\9fe3864752db3fe66ebd233d585d790a\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] E:\TestAloVekil\caches\transforms-3\9fe3864752db3fe66ebd233d585d790a\transformed\play-services-safetynet-17.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] E:\TestAloVekil\caches\transforms-3\c0d49819fa0283893e5bb35144af536d\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-auth-interop:20.0.0] E:\TestAloVekil\caches\transforms-3\c0d49819fa0283893e5bb35144af536d\transformed\firebase-auth-interop-20.0.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:21.1.0] E:\TestAloVekil\caches\transforms-3\f6b31445e3f9104d0321b8c611b6c1e1\transformed\firebase-analytics-21.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-analytics:21.1.0] E:\TestAloVekil\caches\transforms-3\f6b31445e3f9104d0321b8c611b6c1e1\transformed\firebase-analytics-21.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] E:\TestAloVekil\caches\transforms-3\ae02106b85612835122df5454aea4bf7\transformed\firebase-installations-interop-17.0.1\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-installations-interop:17.0.1] E:\TestAloVekil\caches\transforms-3\ae02106b85612835122df5454aea4bf7\transformed\firebase-installations-interop-17.0.1\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] E:\TestAloVekil\caches\transforms-3\32430159acc2dc08f79fb58709b451d2\transformed\play-services-tasks-18.0.1\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:18.0.1] E:\TestAloVekil\caches\transforms-3\32430159acc2dc08f79fb58709b451d2\transformed\play-services-tasks-18.0.1\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.0] E:\TestAloVekil\caches\transforms-3\bb4c47a39b4fc17fd45e19ad4d9ad33f\transformed\play-services-measurement-sdk-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk:21.1.0] E:\TestAloVekil\caches\transforms-3\bb4c47a39b4fc17fd45e19ad4d9ad33f\transformed\play-services-measurement-sdk-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] E:\TestAloVekil\caches\transforms-3\eeab826aedcdf5b3f8a022482dcfda29\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] E:\TestAloVekil\caches\transforms-3\eeab826aedcdf5b3f8a022482dcfda29\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.0] E:\TestAloVekil\caches\transforms-3\5068a1beaaeff95c367a003c02d9394e\transformed\play-services-measurement-base-21.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-measurement-base:21.1.0] E:\TestAloVekil\caches\transforms-3\5068a1beaaeff95c367a003c02d9394e\transformed\play-services-measurement-base-21.1.0\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] E:\TestAloVekil\caches\transforms-3\e143c6a3b45858cd440aa96f93ad9f02\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:17.0.2] E:\TestAloVekil\caches\transforms-3\e143c6a3b45858cd440aa96f93ad9f02\transformed\play-services-stats-17.0.2\AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] E:\TestAloVekil\caches\transforms-3\bc56c5ba1ededed87941dfb7874c6bfd\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:19.0.0] E:\TestAloVekil\caches\transforms-3\bc56c5ba1ededed87941dfb7874c6bfd\transformed\firebase-measurement-connector-19.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] E:\TestAloVekil\caches\transforms-3\b471fac52abf8a7ad1a71ad3cf11c6a0\transformed\play-services-basement-18.0.0\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-basement:18.0.0] E:\TestAloVekil\caches\transforms-3\b471fac52abf8a7ad1a71ad3cf11c6a0\transformed\play-services-basement-18.0.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.fragment:fragment:1.5.0] E:\TestAloVekil\caches\transforms-3\f48b123a7996cbd21d143d19ecd070e9\transformed\fragment-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.0] E:\TestAloVekil\caches\transforms-3\f48b123a7996cbd21d143d19ecd070e9\transformed\fragment-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.0] E:\TestAloVekil\caches\transforms-3\23116d121889818a2c00457265cd5e96\transformed\activity-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.5.0] E:\TestAloVekil\caches\transforms-3\23116d121889818a2c00457265cd5e96\transformed\activity-1.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] E:\TestAloVekil\caches\transforms-3\d59b1bcc3b5356c2789c9d3595607e28\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] E:\TestAloVekil\caches\transforms-3\d59b1bcc3b5356c2789c9d3595607e28\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] E:\TestAloVekil\caches\transforms-3\1e7d284b0f6adca94bb8fba56d406747\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] E:\TestAloVekil\caches\transforms-3\1e7d284b0f6adca94bb8fba56d406747\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] E:\TestAloVekil\caches\transforms-3\365207e7f6f2b6e3f2735f9f5ed05413\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] E:\TestAloVekil\caches\transforms-3\365207e7f6f2b6e3f2735f9f5ed05413\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] E:\TestAloVekil\caches\transforms-3\cc483abb6042328ecacdf40226395d4c\transformed\lifecycle-viewmodel-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.0] E:\TestAloVekil\caches\transforms-3\cc483abb6042328ecacdf40226395d4c\transformed\lifecycle-viewmodel-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] E:\TestAloVekil\caches\transforms-3\cafaf5f6b8cc5761dbbc6d6e35c0208a\transformed\lifecycle-viewmodel-savedstate-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.0] E:\TestAloVekil\caches\transforms-3\cafaf5f6b8cc5761dbbc6d6e35c0208a\transformed\lifecycle-viewmodel-savedstate-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.7.0] E:\TestAloVekil\caches\transforms-3\63cd9f7ce43648816179b5399a66ef23\transformed\core-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.7.0] E:\TestAloVekil\caches\transforms-3\63cd9f7ce43648816179b5399a66ef23\transformed\core-ktx-1.7.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.browser:browser:1.4.0] E:\TestAloVekil\caches\transforms-3\64c83a6f4ce7ba3f7b328cb1b2564529\transformed\browser-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.browser:browser:1.4.0] E:\TestAloVekil\caches\transforms-3\64c83a6f4ce7ba3f7b328cb1b2564529\transformed\browser-1.4.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] E:\TestAloVekil\caches\transforms-3\45f6171753c557c1ba4c663ef64c3d2d\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] E:\TestAloVekil\caches\transforms-3\45f6171753c557c1ba4c663ef64c3d2d\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.4.2] E:\TestAloVekil\caches\transforms-3\2649bc812af1be5b87fff0356b26fbb2\transformed\appcompat-resources-1.4.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.2] E:\TestAloVekil\caches\transforms-3\2649bc812af1be5b87fff0356b26fbb2\transformed\appcompat-resources-1.4.2\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] E:\TestAloVekil\caches\transforms-3\12e0b31126f929c9ec2acc9ca6de4670\transformed\emoji2-views-helper-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] E:\TestAloVekil\caches\transforms-3\12e0b31126f929c9ec2acc9ca6de4670\transformed\emoji2-views-helper-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] E:\TestAloVekil\caches\transforms-3\1337c5af9fdfc3af32c65311e4dba172\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] E:\TestAloVekil\caches\transforms-3\1337c5af9fdfc3af32c65311e4dba172\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] E:\TestAloVekil\caches\transforms-3\a167e1798fbc9da2f7fdf8970201b13f\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] E:\TestAloVekil\caches\transforms-3\a167e1798fbc9da2f7fdf8970201b13f\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] E:\TestAloVekil\caches\transforms-3\cf985c75d63487dcb610c56f0dd25341\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] E:\TestAloVekil\caches\transforms-3\cf985c75d63487dcb610c56f0dd25341\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] E:\TestAloVekil\caches\transforms-3\12ade3778fadab15b9d06db6fa6cc60a\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] E:\TestAloVekil\caches\transforms-3\12ade3778fadab15b9d06db6fa6cc60a\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] E:\TestAloVekil\caches\transforms-3\c79c0659bd9b17fafc758fbb200ffcd9\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] E:\TestAloVekil\caches\transforms-3\c79c0659bd9b17fafc758fbb200ffcd9\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] E:\TestAloVekil\caches\transforms-3\20ff302b14f15e1b94fd12fee72818f2\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] E:\TestAloVekil\caches\transforms-3\20ff302b14f15e1b94fd12fee72818f2\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-components:17.0.0] E:\TestAloVekil\caches\transforms-3\c0ad7621d62c3e24ccf022c009eebf7c\transformed\firebase-components-17.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-components:17.0.0] E:\TestAloVekil\caches\transforms-3\c0ad7621d62c3e24ccf022c009eebf7c\transformed\firebase-components-17.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] E:\TestAloVekil\caches\transforms-3\203f5c906c6f44ffdb733778077a64bc\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] E:\TestAloVekil\caches\transforms-3\203f5c906c6f44ffdb733778077a64bc\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] E:\TestAloVekil\caches\transforms-3\1604d27c3207074588c126815dd3b107\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] E:\TestAloVekil\caches\transforms-3\1604d27c3207074588c126815dd3b107\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] E:\TestAloVekil\caches\transforms-3\d898e7c9b401b19c746929d7f2f8355f\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] E:\TestAloVekil\caches\transforms-3\d898e7c9b401b19c746929d7f2f8355f\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] E:\TestAloVekil\caches\transforms-3\b77acd3fd615f6dee980934042fdd95e\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.4.1] E:\TestAloVekil\caches\transforms-3\b77acd3fd615f6dee980934042fdd95e\transformed\transition-1.4.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] E:\TestAloVekil\caches\transforms-3\a870ba55e36955553389a03f7b0cdb6d\transformed\core-1.8.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.8.0] E:\TestAloVekil\caches\transforms-3\a870ba55e36955553389a03f7b0cdb6d\transformed\core-1.8.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] E:\TestAloVekil\caches\transforms-3\8b9481967e44d61441ed060ccdf2ba2a\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] E:\TestAloVekil\caches\transforms-3\8b9481967e44d61441ed060ccdf2ba2a\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] E:\TestAloVekil\caches\transforms-3\2ed94ad7b4adc19e6f86dfda5efaf0a1\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] E:\TestAloVekil\caches\transforms-3\2ed94ad7b4adc19e6f86dfda5efaf0a1\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] E:\TestAloVekil\caches\transforms-3\f8d3d0b1e299116b24d804041a563669\transformed\startup-runtime-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] E:\TestAloVekil\caches\transforms-3\f8d3d0b1e299116b24d804041a563669\transformed\startup-runtime-1.0.0\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] E:\TestAloVekil\caches\transforms-3\9a3057dda2144dcfaa06b39bd3517059\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] E:\TestAloVekil\caches\transforms-3\9a3057dda2144dcfaa06b39bd3517059\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] E:\TestAloVekil\caches\transforms-3\a5b9c697773116080f0cb35a6aa81b37\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] E:\TestAloVekil\caches\transforms-3\a5b9c697773116080f0cb35a6aa81b37\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] E:\TestAloVekil\caches\transforms-3\ee6d7beb56c176050ff58cf8169a0db9\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] E:\TestAloVekil\caches\transforms-3\ee6d7beb56c176050ff58cf8169a0db9\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] E:\TestAloVekil\caches\transforms-3\5e4516afc64253c2bd86b9517dfe1772\transformed\savedstate-ktx-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.0] E:\TestAloVekil\caches\transforms-3\5e4516afc64253c2bd86b9517dfe1772\transformed\savedstate-ktx-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] E:\TestAloVekil\caches\transforms-3\3937b3b2174cb74b047209757e22ca8e\transformed\savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] E:\TestAloVekil\caches\transforms-3\3937b3b2174cb74b047209757e22ca8e\transformed\savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] E:\TestAloVekil\caches\transforms-3\e6f937de044308b72412a06f4cd82f17\transformed\lifecycle-runtime-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.0] E:\TestAloVekil\caches\transforms-3\e6f937de044308b72412a06f4cd82f17\transformed\lifecycle-runtime-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] E:\TestAloVekil\caches\transforms-3\cf039db53de7f4bfd73b7a559e0047de\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] E:\TestAloVekil\caches\transforms-3\cf039db53de7f4bfd73b7a559e0047de\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\674fee291f841215aa9dfdcb905bcd43\transformed\lifecycle-livedata-core-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.5.0] E:\TestAloVekil\caches\transforms-3\674fee291f841215aa9dfdcb905bcd43\transformed\lifecycle-livedata-core-ktx-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] E:\TestAloVekil\caches\transforms-3\1f2169a022a21375f5ef401ed928eee3\transformed\lifecycle-livedata-core-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.0] E:\TestAloVekil\caches\transforms-3\1f2169a022a21375f5ef401ed928eee3\transformed\lifecycle-livedata-core-2.5.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] E:\TestAloVekil\caches\transforms-3\e3190e149ab735e7ee54921626eeb398\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] E:\TestAloVekil\caches\transforms-3\e3190e149ab735e7ee54921626eeb398\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] E:\TestAloVekil\caches\transforms-3\91ecf9552fc81e6dce043c8e23084b8b\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] E:\TestAloVekil\caches\transforms-3\91ecf9552fc81e6dce043c8e23084b8b\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+		ADDED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+		INJECTED from E:\AloVekilJustPractice\AloVekilforPractice\app\src\main\AndroidManifest.xml
+uses-library#androidx.window.extensions
+ADDED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:25:9-27:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:26:13-54
+uses-library#androidx.window.sidecar
+ADDED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:28:9-30:40
+	android:required
+		ADDED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [androidx.window:window:1.0.0] E:\TestAloVekil\caches\transforms-3\c41e3a3ca52a8ad0e5cd60e853f320fd\transformed\window-1.0.0\AndroidManifest.xml:29:13-51
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:10:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:24:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:24:22-76
+activity#com.google.firebase.auth.internal.GenericIdpActivity
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:27:9-44:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:29:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:31:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:30:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:32:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:28:13-80
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:genericidp
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:33:13-43:29
+action#android.intent.action.VIEW
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:34:17-69
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:34:25-66
+category#android.intent.category.DEFAULT
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:36:17-76
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:36:27-73
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:37:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:37:27-75
+data
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:39:17-42:51
+	android:path
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:41:21-37
+	android:host
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:40:21-49
+	android:scheme
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:42:21-48
+activity#com.google.firebase.auth.internal.RecaptchaActivity
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:45:9-62:20
+	android:excludeFromRecents
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:47:13-46
+	android:launchMode
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:49:13-44
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:48:13-36
+	android:theme
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:50:13-72
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:46:13-79
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:firebase.auth+data:path:/+data:scheme:recaptcha
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:51:13-61:29
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:64:9-70:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:15:9-21:19
+MERGED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:33:9-37:35
+MERGED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:33:9-37:35
+	android:exported
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:66:13-37
+	tools:targetApi
+		ADDED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:37:13-32
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:35:13-43
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:65:13-84
+meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
+ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:67:13-69:85
+	android:value
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:69:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-auth:21.0.6] E:\TestAloVekil\caches\transforms-3\bcd249ff13b8f532a90056fde7e4c3a2\transformed\firebase-auth-21.0.6\AndroidManifest.xml:68:17-109
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:24:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:25:5-68
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.gms.permission.AD_ID
+ADDED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:27:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] E:\TestAloVekil\caches\transforms-3\eeab826aedcdf5b3f8a022482dcfda29\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-ads-identifier:18.0.0] E:\TestAloVekil\caches\transforms-3\eeab826aedcdf5b3f8a022482dcfda29\transformed\play-services-ads-identifier-18.0.0\AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:26:5-79
+MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.1.0] E:\TestAloVekil\caches\transforms-3\a12e32571d818453c9973a0a6257e939\transformed\play-services-measurement-sdk-api-21.1.0\AndroidManifest.xml:26:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:25:22-76
+meta-data#com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar
+ADDED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:31:13-33:85
+	android:value
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:33:17-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement-api:21.1.0] E:\TestAloVekil\caches\transforms-3\35a64226cd8dae922f34c8479e31bc8c\transformed\play-services-measurement-api-21.1.0\AndroidManifest.xml:32:17-139
+meta-data#com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar
+ADDED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:18:13-20:85
+	android:value
+		ADDED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:20:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-installations:17.0.1] E:\TestAloVekil\caches\transforms-3\f59ffc26e04f4cefa13be23e3026387f\transformed\firebase-installations-17.0.1\AndroidManifest.xml:19:17-127
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:26:9-31:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:28:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:30:13-37
+	android:directBootAware
+		ADDED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:29:13-43
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:20.1.0] E:\TestAloVekil\caches\transforms-3\9e86259aeaa5112c4ce2b651ef0d436c\transformed\firebase-common-20.1.0\AndroidManifest.xml:27:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.1.0] E:\TestAloVekil\caches\transforms-3\721074571770fa1a4e9615301ceea8d0\transformed\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE
+ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:26:5-110
+MERGED from [com.google.android.gms:play-services-measurement-impl:21.1.0] E:\TestAloVekil\caches\transforms-3\636ba5303a02928a362f9172049f6077\transformed\play-services-measurement-impl-21.1.0\AndroidManifest.xml:26:5-110
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:26:22-107
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:29:9-33:20
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:31:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:32:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:30:13-85
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:35:9-38:40
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:38:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:36:13-84
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:39:9-43:72
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:41:13-35
+	android:exported
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:42:13-37
+	android:permission
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:43:13-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-measurement:21.1.0] E:\TestAloVekil\caches\transforms-3\36a11ac31c16df7b2f07eb7c97d6e023\transformed\play-services-measurement-21.1.0\AndroidManifest.xml:40:13-87
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:18.0.0] E:\TestAloVekil\caches\transforms-3\b471fac52abf8a7ad1a71ad3cf11c6a0\transformed\play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:18.0.0] E:\TestAloVekil\caches\transforms-3\b471fac52abf8a7ad1a71ad3cf11c6a0\transformed\play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:18.0.0] E:\TestAloVekil\caches\transforms-3\b471fac52abf8a7ad1a71ad3cf11c6a0\transformed\play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.0.0] E:\TestAloVekil\caches\transforms-3\f8d3d0b1e299116b24d804041a563669\transformed\startup-runtime-1.0.0\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.0.0] E:\TestAloVekil\caches\transforms-3\f8d3d0b1e299116b24d804041a563669\transformed\startup-runtime-1.0.0\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:30:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0] E:\TestAloVekil\caches\transforms-3\7bc925e8155d89fe8ac2d1b554f3b8df\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] E:\TestAloVekil\caches\transforms-3\05f8fe31d3685021c8c42cd24ad6da74\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78

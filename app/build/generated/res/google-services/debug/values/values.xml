@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">213873470235-7uuo4ist0mlpjklgr9hd69gk06n6h7pg.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">213873470235</string>
+    <string name="google_api_key" translatable="false">AIzaSyBmn8B2FjzFzMXQiRCL6QcfNdOnb9245F0</string>
+    <string name="google_app_id" translatable="false">1:213873470235:android:6d80c9a9b084ff50f881be</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBmn8B2FjzFzMXQiRCL6QcfNdOnb9245F0</string>
+    <string name="google_storage_bucket" translatable="false">alovekilpractice.appspot.com</string>
+    <string name="project_id" translatable="false">alovekilpractice</string>
+</resources>

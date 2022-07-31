@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="RGB_black">#3D3D3D</color>
+    <color name="RGB_blue">#274E96</color>
+    <color name="RGB_lowgreen">#00B8A8</color>
+    <color name="RGB_pink">#BD0094</color>
+    <color name="RGB_red">#ED1A4F</color>
+    <color name="RGB_white">#FFFFFF</color>
+    <color name="RGB_yellow">#FC8217</color>
+    <item name="inputCode1" type="id"/>
+    <item name="inputCode6" type="id"/>
+    <string name="app_name">AloVekilForPractice</string>
+    <string name="cancel">Cancel</string>
+    <string name="default_web_client_id" translatable="false">213873470235-7uuo4ist0mlpjklgr9hd69gk06n6h7pg.apps.googleusercontent.com</string>
+    <string name="didn_t_receive_the_otp">Didn\'t receive the OTP?</string>
+    <string name="gcm_defaultSenderId" translatable="false">213873470235</string>
+    <string name="google_api_key" translatable="false">AIzaSyBmn8B2FjzFzMXQiRCL6QcfNdOnb9245F0</string>
+    <string name="google_app_id" translatable="false">1:213873470235:android:6d80c9a9b084ff50f881be</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBmn8B2FjzFzMXQiRCL6QcfNdOnb9245F0</string>
+    <string name="google_storage_bucket" translatable="false">alovekilpractice.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="project_id" translatable="false">alovekilpractice</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <style name="Theme.AloVekilForPractice" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>

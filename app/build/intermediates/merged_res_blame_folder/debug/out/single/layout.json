@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_customer_register.xml",
+        "source": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\src\\main\\res\\layout\\fragment_customer_register.xml"
+    },
+    {
+        "merged": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_o_t_p_code.xml",
+        "source": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\src\\main\\res\\layout\\fragment_o_t_p_code.xml"
+    },
+    {
+        "merged": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_phone_number.xml",
+        "source": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\src\\main\\res\\layout\\fragment_phone_number.xml"
+    },
+    {
+        "merged": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_lawyer_register.xml",
+        "source": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\src\\main\\res\\layout\\fragment_lawyer_register.xml"
+    },
+    {
+        "merged": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_pin_code.xml",
+        "source": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\src\\main\\res\\layout\\activity_pin_code.xml"
+    },
+    {
+        "merged": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_phone_number_lawyer.xml",
+        "source": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\src\\main\\res\\layout\\fragment_phone_number_lawyer.xml"
+    },
+    {
+        "merged": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_o_t_p_code_lawyer.xml",
+        "source": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\src\\main\\res\\layout\\fragment_o_t_p_code_lawyer.xml"
+    },
+    {
+        "merged": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "E:\\AloVekilJustPractice\\AloVekilforPractice\\app\\src\\main\\res\\layout\\activity_main.xml"
+    }
+]

@@ -1,0 +1,68 @@
+Index: .idea/.name
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.name b/.idea/.name
+new file mode 100644
+--- /dev/null	(date 1659029636385)
++++ b/.idea/.name	(date 1659029636385)
+@@ -0,0 +1,1 @@
++AloVekilForPractice
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/drawable/circle.xml\" value=\"0.167\" />\r\n        <entry key=\"..\\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/drawable/circle2.xml\" value=\"0.167\" />\r\n        <entry key=\"..\\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/drawable/circlelayout.xml\" value=\"0.167\" />\r\n        <entry key=\"..\\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/font-v26/fonts.xml\" value=\"0.234375\" />\r\n        <entry key=\"..\\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/font/fonts.xml\" value=\"0.234375\" />\r\n        <entry key=\"..\\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/font/lobster_regular.xml\" value=\"0.234375\" />\r\n        <entry key=\"..\\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml\" value=\"0.1621376811594203\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/drawable/bg_button.xml\" value=\"0.171\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/drawable/bgn_enter.xml\" value=\"0.171\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/drawable/bgn_pinkbutton.xml\" value=\"0.171\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_main.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_customer_register.xml\" value=\"0.17028985507246377\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_lawyer_register.xml\" value=\"0.21\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_o_t_p_code.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_o_t_p_code_lawyer.xml\" value=\"0.17028985507246377\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_phone_number.xml\" value=\"0.17028985507246377\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_phone_number_lawyer.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/menu/popup_numberfiltermenu.xml\" value=\"0.20416666666666666\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/drawable/circle.xml\" value=\"0.167\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/activity_main.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml\" value=\"0.1621376811594203\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_customer_register.xml\" value=\"0.1621376811594203\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_lawyer_register.xml\" value=\"0.1621376811594203\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_o_t_p_code.xml\" value=\"0.1621376811594203\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_o_t_p_code_lawyer.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/fragment_phone_number.xml\" value=\"0.1621376811594203\" />\r\n        <entry key=\"..\\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/menu/popup_numberfiltermenu.xml\" value=\"0.20416666666666666\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bg_button.xml\" value=\"0.1125\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bgn_enter.xml\" value=\"0.1125\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bgn_pinkbutton.xml\" value=\"0.1125\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/circle.xml\" value=\"0.1145\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/circle2.xml\" value=\"0.1145\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/circlelayout.xml\" value=\"0.1145\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_main.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_pin_code.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/dropdown_item.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_customer_register.xml\" value=\"0.22447916666666667\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_lawyer_register.xml\" value=\"0.21041666666666667\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_o_t_p_code.xml\" value=\"0.221025641025641\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_o_t_p_code_lawyer.xml\" value=\"0.221025641025641\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_phone_number.xml\" value=\"0.221025641025641\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_phone_number_lawyer.xml\" value=\"0.21041666666666667\" />\r\n        <entry key=\"..\\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/menu/popup_numberfiltermenu.xml\" value=\"0.221025641025641\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 75c33863ffcb297403229062a0608d7cedf19692)
++++ b/.idea/misc.xml	(date 1659094075153)
+@@ -10,18 +10,6 @@
+         <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/font/fonts.xml" value="0.234375" />
+         <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/font/lobster_regular.xml" value="0.234375" />
+         <entry key="..\:/AloVekilForPractice/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.1621376811594203" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/drawable/bg_button.xml" value="0.171" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/drawable/bgn_enter.xml" value="0.171" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/drawable/bgn_pinkbutton.xml" value="0.171" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_main.xml" value="0.33" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.22" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_customer_register.xml" value="0.17028985507246377" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_lawyer_register.xml" value="0.21" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_o_t_p_code.xml" value="0.25" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_o_t_p_code_lawyer.xml" value="0.17028985507246377" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_phone_number.xml" value="0.17028985507246377" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_phone_number_lawyer.xml" value="0.33" />
+-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/menu/popup_numberfiltermenu.xml" value="0.20416666666666666" />
+         <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/drawable/circle.xml" value="0.167" />
+         <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/activity_main.xml" value="0.33" />
+         <entry key="..\:/Users/Muhammed-Emin/Desktop/New folder (2)/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.1621376811594203" />
+@@ -38,7 +26,7 @@
+         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/circle2.xml" value="0.1145" />
+         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/circlelayout.xml" value="0.1145" />
+         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_main.xml" value="0.25" />
+-        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.25" />
++        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.3718723037100949" />
+         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/dropdown_item.xml" value="0.22" />
+         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_customer_register.xml" value="0.22447916666666667" />
+         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_lawyer_register.xml" value="0.21041666666666667" />
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"RGB_blue\">#274E96</color>\r\n    <color name=\"RGB_pink\">#BD0094</color>\r\n    <color name=\"RGB_lowgreen\">#00B8A8</color>\r\n    <color name=\"RGB_red\">#ED1A4F</color>\r\n    <color name=\"RGB_yellow\">#FC8217</color>\r\n    <color name=\"RGB_black\">#3D3D3D</color>\r\n    <color name=\"RGB_white\">#FFFFFF</color>\r\n    <color name=\"anothercolor1\">#E7E0E0</color>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/colors.xml b/app/src/main/res/values/colors.xml
+--- a/app/src/main/res/values/colors.xml	(revision 75c33863ffcb297403229062a0608d7cedf19692)
++++ b/app/src/main/res/values/colors.xml	(date 1659094067515)
+@@ -7,5 +7,5 @@
+     <color name="RGB_yellow">#FC8217</color>
+     <color name="RGB_black">#3D3D3D</color>
+     <color name="RGB_white">#FFFFFF</color>
+-    <color name="anothercolor1">#E7E0E0</color>
++
+ </resources>
+\ No newline at end of file
