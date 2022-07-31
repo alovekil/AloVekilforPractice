@@ -191,7 +191,7 @@ class PhoneNumberLawyerFragment : Fragment() {
     }
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-        progressDialog.setMessage("Logging in")
+        progressDialog.setMessage("Logging in your account")
         firebaseAuth.signInWithCredential(credential)
             .addOnSuccessListener {
                 progressDialog.dismiss()
