@@ -45,14 +45,9 @@ class PhoneNumberFragment : Fragment() {
     private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? = null
     private var mVerificationId: String? = null
     private lateinit var firebaseAuth: FirebaseAuth
-<<<<<<< Updated upstream
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
-=======
     private  fun Tag() = "MAIN_TAG"
-    private lateinit var sharedPreferences: SharedPreferences
-    //private lateinit var fragmentViewModel:FragmentViewModel
->>>>>>> Stashed changes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,23 +58,11 @@ class PhoneNumberFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-<<<<<<< Updated upstream
         val view = inflater.inflate(R.layout.fragment_phone_number, container, false)
-
         view.phoneNumberLl.visibility = View.VISIBLE
         view.codeLl.visibility = View.GONE
-
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(activity)
-=======
-        val view=inflater.inflate(R.layout.fragment_phone_number, container, false)
-         sharedPreferences=this.requireActivity()!!.getSharedPreferences("com.karimmammadov.alovekilforpractice.fragments", MODE_PRIVATE)
-        val dropDownList= arrayOf("050","055","070","077")
-
-
-        firebaseAuth= FirebaseAuth.getInstance()
-        progressDialog= ProgressDialog(activity)
->>>>>>> Stashed changes
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
@@ -88,14 +71,11 @@ class PhoneNumberFragment : Fragment() {
                 Log.d(TAG, "onVerificationCompleted: ")
                 signInWithPhoneAuthCredential(phoneAuthCredential)
             }
-
             override fun onVerificationFailed(e: FirebaseException) {
                 progressDialog.dismiss()
                 Log.d(TAG, "onVerificationFailed:${e.message} ")
                 Toast.makeText(activity, "${e.message}", Toast.LENGTH_SHORT).show()
             }
-
-<<<<<<< Updated upstream
             override fun onCodeSent(
                 verificationId: String,
                 token: PhoneAuthProvider.ForceResendingToken
@@ -103,10 +83,6 @@ class PhoneNumberFragment : Fragment() {
                 Log.d(TAG, "onCodeSent:$verificationId")
                 mVerificationId = verificationId
                 forceResendingToken = token
-=======
-                sharedPreferences.edit().putString("id",p0).apply()
-
->>>>>>> Stashed changes
                 progressDialog.dismiss()
                 Log.d(TAG, "onCodeSent:$verificationId")
                 view.phoneNumberLl.visibility = View.GONE
@@ -114,7 +90,6 @@ class PhoneNumberFragment : Fragment() {
                 Toast.makeText(activity, "Verification Code sent...", Toast.LENGTH_SHORT).show()
             }
         }
-
         view.btn_enterNumber.setOnClickListener {
             val phone = phoneEdit.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
