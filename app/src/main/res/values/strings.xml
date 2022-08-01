@@ -4,16 +4,4 @@
     <string name="didn_t_receive_the_otp">Didn\'t receive the OTP?</string>
     <string name="resend_otp">RESEND OTP</string>
     <string name="cancel">Cancel</string>
-
-
-
-        <string name="numberprefiks">dropDownMenuExample</string>
-        <string-array name="numbers">
-            <item>050</item>
-            <item>055</item>
-            <item>070</item>
-            <item>077</item>
-
-        </string-array>
-
 </resources>
