@@ -63,41 +63,6 @@
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 </LinearLayout>
 
-<<<<<<< HEAD
-        <EditText
-            android:id="@+id/phoneEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/backgroudnblackbox"
-            android:textStyle="normal"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:inputType="phone"
-            android:gravity="center_vertical"
-            android:padding="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/RGB_black"
-            android:textColorHint="#c5c5c5"
-            android:textSize="16sp"
-            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_enterCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="250dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/bgn_enter"
-            android:padding="20dp"
-            android:text="Next"
-            android:textColor="@color/RGB_white"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-=======
->>>>>>> de94edce4fc815e24a9f17a2c871f9bdf082d01a
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_enterNumber"
             android:layout_width="match_parent"
@@ -106,12 +71,12 @@
             android:layout_marginTop="195dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="50dp"
-            android:textSize="16sp"
-            android:padding="20dp"
-            android:textStyle="bold"
             android:background="@drawable/bgn_enter"
+            android:padding="20dp"
             android:text="Next"
-            android:textColor="@color/RGB_white" />
+            android:textColor="@color/RGB_white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -289,23 +254,7 @@
 
         </LinearLayout>
 
-<<<<<<< HEAD
-=======
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_enterCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="210dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/bgn_enter"
-            android:text="Next"
-            android:textColor="@color/RGB_white"
-            android:textSize="16sp"
-            android:padding="20dp"
-            android:textStyle="bold" />
 
->>>>>>> de94edce4fc815e24a9f17a2c871f9bdf082d01a
     </LinearLayout>
 
 </RelativeLayout>

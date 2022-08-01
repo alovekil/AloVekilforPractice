@@ -101,7 +101,7 @@ class PhoneNumberFragment : Fragment() {
             }
         }
 
-        view.btn_enterCode.setOnClickListener {
+        view.btn_enterNumber.setOnClickListener {
             if (!inputCode1.text.toString().trim().isEmpty() && !inputCode2.text.toString().trim()
                     .isEmpty() && !inputCode3.text.toString().trim().isEmpty() &&
                 !inputCode4.text.toString().trim().isEmpty() && !inputCode5.text.toString().trim()
