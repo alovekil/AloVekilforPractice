@@ -27,15 +27,7 @@ import kotlinx.android.synthetic.main.fragment_phone_number.inputCode4
 import kotlinx.android.synthetic.main.fragment_phone_number.inputCode5
 import kotlinx.android.synthetic.main.fragment_phone_number.inputCode6
 import kotlinx.android.synthetic.main.fragment_phone_number.phoneEdit
-import kotlinx.android.synthetic.main.fragment_phone_number.view.btn_enterCode
-import kotlinx.android.synthetic.main.fragment_phone_number.view.btn_enterNumber
-import kotlinx.android.synthetic.main.fragment_phone_number.view.codeLl
-import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode1
-import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode2
-import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode3
-import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode4
-import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode5
-import kotlinx.android.synthetic.main.fragment_phone_number.view.phoneNumberLl
+import kotlinx.android.synthetic.main.fragment_phone_number.view.*
 import java.util.concurrent.TimeUnit
 
 
@@ -97,6 +89,15 @@ class PhoneNumberFragment : Fragment() {
                     .show()
             } else {
                 startPhoneNumberVerification(phone)
+            }
+        }
+
+        view.textResendOTP.setOnClickListener {
+            val phone = phoneEdit.text.toString().trim()
+            if(TextUtils.isEmpty(phone)){
+                Toast.makeText(this.activity,"Please enter phone number",Toast.LENGTH_SHORT).show()
+            }else{
+                resendVerificationCode(phone,forceResendingToken)
             }
         }
 
@@ -233,4 +234,18 @@ class PhoneNumberFragment : Fragment() {
             }
     }
 
+    private fun resendVerificationCode(phone: String,token: PhoneAuthProvider.ForceResendingToken?){
+        progressDialog.setMessage("Resending Code...")
+        progressDialog.show()
+        Log.d(TAG,"resendVerificationCode: $phone")
+        val options = PhoneAuthOptions.newBuilder(firebaseAuth)
+            .setPhoneNumber("+994" + phone)
+            .setTimeout(60L, TimeUnit.SECONDS)
+            .setActivity(requireActivity())
+            .setCallbacks(mCallBacks!!)
+            .setForceResendingToken(token!!)
+            .build()
+
+        PhoneAuthProvider.verifyPhoneNumber(options)
+    }
 }
