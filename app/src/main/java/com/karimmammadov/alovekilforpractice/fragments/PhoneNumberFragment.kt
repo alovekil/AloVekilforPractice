@@ -28,6 +28,16 @@ import kotlinx.android.synthetic.main.fragment_phone_number.inputCode5
 import kotlinx.android.synthetic.main.fragment_phone_number.inputCode6
 import kotlinx.android.synthetic.main.fragment_phone_number.phoneEdit
 import kotlinx.android.synthetic.main.fragment_phone_number.view.*
+import kotlinx.android.synthetic.main.fragment_phone_number.view.btn_enterNumber
+import kotlinx.android.synthetic.main.fragment_phone_number.view.codeLl
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode1
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode2
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode3
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode4
+import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode5
+import kotlinx.android.synthetic.main.fragment_phone_number.view.phoneNumberLl
+import kotlinx.android.synthetic.main.fragment_phone_number.view.textResendOTP
+import kotlinx.android.synthetic.main.fragment_phone_number_lawyer.view.*
 import java.util.concurrent.TimeUnit
 
 
@@ -101,7 +111,7 @@ class PhoneNumberFragment : Fragment() {
             }
         }
 
-        view.btn_enterNumber.setOnClickListener {
+       view.btn_enterCode1.setOnClickListener {
             if (!inputCode1.text.toString().trim().isEmpty() && !inputCode2.text.toString().trim()
                     .isEmpty() && !inputCode3.text.toString().trim().isEmpty() &&
                 !inputCode4.text.toString().trim().isEmpty() && !inputCode5.text.toString().trim()
