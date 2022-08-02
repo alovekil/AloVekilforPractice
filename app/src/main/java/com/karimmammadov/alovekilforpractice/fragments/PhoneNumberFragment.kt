@@ -232,6 +232,7 @@ class PhoneNumberFragment : Fragment() {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
                 val intent = Intent(this@PhoneNumberFragment.requireContext(), CustomerRegisterActivity::class.java)
+                intent.putExtra("phone_number",phone)
                 startActivity(intent)
             }
             .addOnFailureListener { e ->
