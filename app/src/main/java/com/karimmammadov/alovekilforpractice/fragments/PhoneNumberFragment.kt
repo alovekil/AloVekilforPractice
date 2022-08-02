@@ -48,7 +48,7 @@ class PhoneNumberFragment : Fragment() {
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
     private  fun Tag() = "MAIN_TAG"
-
+    private val isUsersignedin=FirebaseAuth.getInstance().currentUser
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -90,14 +90,19 @@ class PhoneNumberFragment : Fragment() {
                 Toast.makeText(activity, "Verification Code sent...", Toast.LENGTH_SHORT).show()
             }
         }
-        view.btn_enterNumber.setOnClickListener {
+        view.btn_enterNumber.setOnClickListener{
             val phone = phoneEdit.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
                 Toast.makeText(this.activity, "Please enter phone number", Toast.LENGTH_SHORT)
                     .show()
             } else {
+                if(isUsersignedin!=null){
+                    Toast.makeText(this.activity, "Please enter another number . This number has already entered", Toast.LENGTH_SHORT)
+                        .show()
+                }
                 startPhoneNumberVerification(phone)
             }
+
         }
 
         view.textResendOTP.setOnClickListener {
