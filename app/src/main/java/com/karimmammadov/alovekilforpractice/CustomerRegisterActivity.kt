@@ -14,12 +14,13 @@ class CustomerRegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_register)
-
+        val intent = intent
+        val phoneNumber = intent.getStringExtra("phone_number").toString().trim()
+        tv_phone.text =phoneNumber
         btn_signUp.setOnClickListener {
             val email = editEmail.text.toString().trim()
             val name = editFirstName.text.toString().trim()
             val secondName = editSecondName.text.toString().trim()
-            val phoneNumber = intent.getStringExtra("phone_number").toString()
             val password = editPassword.text.toString().trim()
             val confirmPassword = editConfirmPassword.text.toString().trim()
 
@@ -48,7 +49,8 @@ class CustomerRegisterActivity : AppCompatActivity() {
                 editConfirmPassword.requestFocus()
                 return@setOnClickListener
             }
-            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber!!,password, confirmPassword)
+
+            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber,password, confirmPassword)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,
@@ -58,9 +60,10 @@ class CustomerRegisterActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                        Toast.makeText(applicationContext,t.message, Toast.LENGTH_SHORT).show()
+                        if (password != confirmPassword){
+                            Toast.makeText(applicationContext,"Passwords do not match",Toast.LENGTH_SHORT).show()
+                        }
                     }
-
                 })
         }
     }
