@@ -1,8 +1,11 @@
 package com.karimmammadov.alovekilforpractice
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.ktx.Firebase
 import com.karimmammadov.alovekilforpractice.api.RetrofitClient
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
 import kotlinx.android.synthetic.main.activity_customer_register.*
@@ -11,9 +14,11 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class CustomerRegisterActivity : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_register)
+
         val intent = intent
         val phoneNumber = intent.getStringExtra("phone_number").toString().trim()
         tv_phone.text =phoneNumber
@@ -57,6 +62,11 @@ class CustomerRegisterActivity : AppCompatActivity() {
                         response: Response<DefaultResponse>
                     ) {
                         Toast.makeText(applicationContext,response.body()?.response, Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@CustomerRegisterActivity, ProfileActivity::class.java)
+                            intent.putExtra("name",name)
+                            intent.putExtra("secondname",secondName)
+                            intent.putExtra("email",email)
+                            startActivity(intent)
                     }
 
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {

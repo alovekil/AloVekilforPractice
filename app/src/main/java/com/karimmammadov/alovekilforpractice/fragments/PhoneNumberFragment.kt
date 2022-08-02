@@ -59,12 +59,15 @@ class PhoneNumberFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_phone_number, container, false)
+
+
         view.phoneNumberLl.visibility = View.VISIBLE
         view.codeLl.visibility = View.GONE
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(activity)
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
+
 
         mCallBacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
