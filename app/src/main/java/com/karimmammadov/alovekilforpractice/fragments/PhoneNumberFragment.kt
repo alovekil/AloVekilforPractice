@@ -98,13 +98,15 @@ class PhoneNumberFragment : Fragment() {
             if (TextUtils.isEmpty(phone)) {
                 Toast.makeText(this.activity, "Please enter phone number", Toast.LENGTH_SHORT)
                     .show()
-            } else {
-                if(isUsersignedin!=null){
-                    Toast.makeText(this.activity, "Please enter another number . This number has already entered", Toast.LENGTH_SHORT)
-                        .show()
-                }
+            }
+            if(isUsersignedin!=null){
+                Toast.makeText(this.activity, "Please enter another number.This number has already entered", Toast.LENGTH_SHORT)
+                    .show()
+            }
+            else {
                 startPhoneNumberVerification(phone)
             }
+
 
         }
 
