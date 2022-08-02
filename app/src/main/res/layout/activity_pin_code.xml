@@ -43,25 +43,28 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="490dp"
+            android:layout_height="567dp"
             android:background="@drawable/circlelayout"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:paddingRight="100dp"
-            android:paddingBottom="190dp">
+
+            >
 
             <TextView
                 android:id="@+id/pincodetxt"
-                android:layout_width="183dp"
-                android:layout_height="46dp"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
                 android:layout_gravity="center"
-                android:layout_marginLeft="75dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="127dp"
+                android:layout_marginLeft="127dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="119dp"
                 android:layout_marginBottom="50dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:text="PIN-Code"
                 android:textColor="@color/RGB_white"
                 android:textSize="25sp"
@@ -69,162 +72,155 @@
                 app:fontFamily="@font/fonts" />
 
             <LinearLayout
-                android:layout_width="225dp"
-                android:layout_height="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="39dp"
+                android:layout_alignParentTop="true"
                 android:layout_gravity="center"
-                android:layout_marginLeft="113dp"
+                android:layout_marginLeft="98dp"
+                android:layout_marginTop="115dp"
+                android:layout_marginRight="90dp"
                 android:orientation="horizontal">
 
                 <View
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-
-                    android:background="@drawable/circle" />
-
-                <View
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/circle" />
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/circle"
+                    android:viewportWidth="16"
+                    android:viewportHeight="16" />
 
                 <View
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/circle" />
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="36dp"
+                    android:background="@drawable/circle"
+                    android:viewportWidth="16"
+                    android:viewportHeight="16" />
 
                 <View
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/circle" />
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="36dp"
+                    android:background="@drawable/circle"
+                    android:viewportWidth="16"
+                    android:viewportHeight="16" />
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="36dp"
+                    android:background="@drawable/circle"
+                    android:viewportWidth="16"
+                    android:viewportHeight="16" />
             </LinearLayout>
 
-            <RelativeLayout
-                android:id="@+id/numberLayout"
-                android:layout_width="312dp"
-                android:layout_height="275dp"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="5dp">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/RGB_blue"
-                    android:text="1"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="66dp"
+                android:layout_marginTop="199dp"
+                android:layout_marginBottom="324dp"
+                android:background="@color/RGB_blue"
+                android:text="1"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_toRightOf="@+id/button1"
-                    android:background="@color/RGB_blue"
-                    android:text="2"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button3"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_toRightOf="@+id/button2"
-                    android:background="@color/RGB_blue"
-                    android:text="3"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button3"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/RGB_blue"
-                    android:text="4"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button2"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_toRightOf="@+id/button4"
-                    android:background="@color/RGB_blue"
-                    android:text="5"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button6"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button3"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_toRightOf="@+id/button5"
-                    android:background="@color/RGB_blue"
-                    android:text="6"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button4"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/RGB_blue"
-                    android:text="7"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button5"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_toRightOf="@+id/button7"
-                    android:background="@color/RGB_blue"
-                    android:text="8"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button9"
-                    android:layout_width="109dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/button6"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_toRightOf="@+id/button8"
-                    android:background="@color/RGB_blue"
-                    android:text="9"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="30sp" />
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="67dp"
+                android:layout_marginTop="262dp"
+                android:layout_marginBottom="324dp"
+                android:text="4"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
 
 
-            </RelativeLayout>
-        </LinearLayout>
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="172dp"
+                android:layout_marginTop="199dp"
+                android:layout_marginBottom="324dp"
+                android:text="2"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="274dp"
+                android:layout_marginTop="199dp"
+                android:layout_marginBottom="324dp"
+                android:text="3"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
+
+
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="172dp"
+                android:layout_marginTop="262dp"
+                android:layout_marginBottom="324dp"
+                android:text="5"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="274dp"
+                android:layout_marginTop="262dp"
+                android:layout_marginBottom="324dp"
+                android:text="6"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="67dp"
+                android:layout_marginTop="325dp"
+                android:layout_marginBottom="324dp"
+                android:text="7"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="172dp"
+                android:layout_marginTop="325dp"
+                android:layout_marginBottom="324dp"
+                android:text="8"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="19dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="274dp"
+                android:layout_marginTop="325dp"
+                android:layout_marginBottom="324dp"
+                android:text="9"
+                android:textColor="@color/RGB_white"
+                android:textSize="32sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="393dp"
+                android:layout_marginBottom="324dp"
+                android:text="@string/Cancel"
+                android:textStyle="bold"
+
+                android:textAlignment="textEnd"
+                android:textSize="24sp" />
+
+
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>
 
