@@ -1,6 +1,7 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -9,16 +10,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
-import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.constraintlayout.helper.widget.Carousel
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import com.karimmammadov.alovekilforpractice.CustomerRegisterActivity
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.fragment_phone_number.inputCode1
 import kotlinx.android.synthetic.main.fragment_phone_number.inputCode2
@@ -37,7 +36,6 @@ import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode4
 import kotlinx.android.synthetic.main.fragment_phone_number.view.inputCode5
 import kotlinx.android.synthetic.main.fragment_phone_number.view.phoneNumberLl
 import kotlinx.android.synthetic.main.fragment_phone_number.view.textResendOTP
-import kotlinx.android.synthetic.main.fragment_phone_number_lawyer.view.*
 import java.util.concurrent.TimeUnit
 
 
@@ -233,10 +231,8 @@ class PhoneNumberFragment : Fragment() {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
-                val fragmentManager = getFragmentManager()
-                val fragmentTransaction = fragmentManager?.beginTransaction()
-                val fragmentNumber = CustomerRegisterFragment()
-                fragmentTransaction?.replace(R.id.frameLayout, fragmentNumber)?.commit()
+                val intent = Intent(this@PhoneNumberFragment.requireContext(), CustomerRegisterActivity::class.java)
+                startActivity(intent)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()
