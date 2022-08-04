@@ -29,7 +29,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="151dp"
+            android:layout_height="116dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             app:srcCompat="@drawable/alovekillogo" />
@@ -208,16 +208,16 @@
                 android:textSize="32sp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="114dp"
+                android:layout_height="54dp"
                 android:layout_marginStart="39dp"
                 android:layout_marginTop="393dp"
                 android:layout_marginBottom="324dp"
                 android:text="@string/Cancel"
-                android:textStyle="bold"
-
                 android:textAlignment="textEnd"
-                android:textSize="24sp" />
+
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
