@@ -99,7 +99,7 @@ class PhoneNumberFragment : Fragment() {
                 Toast.makeText(this.activity, "Please enter phone number", Toast.LENGTH_SHORT)
                     .show()
             }
-            if(isUsersignedin!=null){
+            if(isUsersignedin!=null){ //burda nomreni yoxlayir
                 Toast.makeText(this.activity, "Please enter another number.This number has already entered", Toast.LENGTH_SHORT)
                     .show()
             }
