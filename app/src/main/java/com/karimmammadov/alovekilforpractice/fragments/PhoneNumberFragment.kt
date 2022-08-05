@@ -97,6 +97,7 @@ class PhoneNumberFragment : Fragment() {
                 Toast.makeText(this.activity, "Please enter phone number", Toast.LENGTH_SHORT).show()
             }
             else {
+                //new changes
                 phoneNumber = phone
                 isPhoneNumberExist(phone)
                 Log.d(TAG, "onCreateView: ")
