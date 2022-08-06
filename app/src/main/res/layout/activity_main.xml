@@ -47,9 +47,7 @@
         android:layout_marginBottom="87dp"
         android:background="@drawable/backgroudnblackbox">
 
-        <TextView
-            android:layout_width=""
-            android:layout_height=""
+
     </RelativeLayout>
 
     
