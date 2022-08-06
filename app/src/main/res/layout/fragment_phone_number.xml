@@ -75,7 +75,7 @@
             android:textSize="16sp"
             android:padding="20dp"
             android:textStyle="bold"
-            android:background="@drawable/bgn_enter"
+            android:background="@drawable/bgn_bluebutton"
             android:text="Next"
             android:textColor="@color/RGB_white" />
 
@@ -261,7 +261,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="210dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/bgn_enter"
+            android:background="@drawable/bgn_bluebutton"
             android:text="Next"
             android:textColor="@color/RGB_white"
             android:textSize="16sp"

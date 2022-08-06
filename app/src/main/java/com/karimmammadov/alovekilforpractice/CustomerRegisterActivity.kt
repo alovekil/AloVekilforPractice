@@ -62,11 +62,6 @@ class CustomerRegisterActivity : AppCompatActivity() {
                         response: Response<DefaultResponse>
                     ) {
                         Toast.makeText(applicationContext,response.body()?.response, Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@CustomerRegisterActivity, ProfileActivity::class.java)
-                            intent.putExtra("name",name)
-                            intent.putExtra("secondname",secondName)
-                            intent.putExtra("email",email)
-                            startActivity(intent)
                     }
 
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
