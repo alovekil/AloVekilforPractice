@@ -18,5 +18,6 @@ class MainActivity : AppCompatActivity() {
     fun signUp(view:View){
         val intent = Intent(this@MainActivity,ChooseSignUpActivity::class.java)
         startActivity(intent)
+        //big
     }
 }
