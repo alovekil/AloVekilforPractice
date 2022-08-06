@@ -18,7 +18,7 @@ class CustomerRegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_register)
-
+//lastcode
         val intent = intent
         val phoneNumber = intent.getStringExtra("phone_number").toString().trim()
         tv_phone.text =phoneNumber
