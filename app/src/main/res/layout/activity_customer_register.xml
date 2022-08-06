@@ -133,7 +133,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="@color/RGB_white"
-            android:background="@drawable/bgn_enter"/>
+            android:background="@drawable/bgn_bluebutton"/>
 
     </LinearLayout>
 </ScrollView>

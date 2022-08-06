@@ -1,73 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/RGB_white"
-    android:gravity="center_horizontal"
     tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/RGB_white">
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="151dp"
-        android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/alovekillogo" />
+        android:layout_width="98.08dp"
+        android:layout_height="44dp"
+        android:background="@drawable/logo1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="42dp"/>
+
+    <ImageView
+        android:id="@+id/iv_flag"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:background="@drawable/az"
+        android:layout_marginTop="42dp"
+        android:layout_marginLeft="237.92dp"/>
+
+</LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center_horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical"
+        android:background="@color/RGB_white">
+
+        <ImageView
+            android:layout_width="342dp"
+            android:layout_height="342dp"
+            android:background="@drawable/lawpicture2"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="141dp"/>
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:background="@drawable/backgroundbox2blueslim"
+            android:gravity="center"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/already_have_account"
+                android:textColor="#274E96"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/sign_in"
+                android:textColor="@color/RGB_blue"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_customer"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="3dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/bgn_pinkbutton"
-            android:onClick="customerOnClick"
-            android:textSize="16sp"
-            android:text="Customer"
+            android:id="@+id/button_signUp"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="25dp"
+            android:textAlignment="center"
+            android:onClick="signUp"
+            android:background="@drawable/bgn_bluebutton"
+            android:text="@string/sign_up"
+            android:textStyle="bold"
             android:textColor="@color/RGB_white"
-            tools:layout_editor_absoluteX="74dp"
-            tools:layout_editor_absoluteY="98dp" />
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="39dp"
+            tools:ignore="OnClick" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_lawyer"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/bg_button"
-            android:textSize="16sp"
-            android:onClick="vekilOnClick"
-            android:text="Vekil"
-            android:textColor="@color/RGB_black"
-            tools:layout_editor_absoluteX="74dp"
-            tools:layout_editor_absoluteY="98dp" />
     </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-    </FrameLayout>
-
-
 
 </LinearLayout>
