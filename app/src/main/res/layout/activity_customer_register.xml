@@ -20,7 +20,7 @@
             android:layout_height="151dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:src="@drawable/alovekillogo"/>
+            android:src="@drawable/alovekillogo1"/>
         <EditText
             android:id="@+id/editFirstName"
             android:layout_width="match_parent"

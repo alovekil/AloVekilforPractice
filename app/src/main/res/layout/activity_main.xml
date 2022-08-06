@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,6 +14,48 @@
     android:background="@color/RGB_white">
 
     <ImageView
+        android:layout_width="98dp"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginRight="276dp"
+        android:src="@drawable/bgn_enter" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="54dp"
+        android:src="@drawable/mainpagephoto"/>
+
+    <RelativeLayout
+        android:id="@+id/signinrelativelayout"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="597dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="87dp"
+        android:background="@drawable/backgroudnblackbox">
+
+        <TextView
+            android:layout_width=""
+            android:layout_height=""
+    </RelativeLayout>
+
+    
+
+</RelativeLayout>
+
         android:layout_width="98.08dp"
         android:layout_height="44dp"
         android:background="@drawable/logo1"

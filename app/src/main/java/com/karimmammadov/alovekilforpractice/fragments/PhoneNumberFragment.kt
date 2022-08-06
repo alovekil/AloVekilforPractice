@@ -38,6 +38,8 @@ import kotlinx.android.synthetic.main.fragment_phone_number.view.textResendOTP
 import java.util.concurrent.TimeUnit
 
 
+
+
 class PhoneNumberFragment : Fragment() {
 
     private var forceResendingToken: PhoneAuthProvider.ForceResendingToken? = null
@@ -46,8 +48,19 @@ class PhoneNumberFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
+<<<<<<< HEAD
+
+    private  fun Tag() = "MAIN_TAG"
+    private val collection:Collection<String>?=null
+    private val isUsersignedin=FirebaseAuth.getInstance().currentUser
+
     private lateinit var phoneNumber : String
 
+
+=======
+    private lateinit var phoneNumber : String
+
+>>>>>>> de4239cd7d05f00eeb957da906de3407252056a5
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -93,15 +106,25 @@ class PhoneNumberFragment : Fragment() {
 
         view.btn_enterNumber.setOnClickListener{
             val phone = phoneEdit.text.toString().trim()
+<<<<<<< HEAD
+
+                 if (TextUtils.isEmpty(phone)) {
+                     Toast.makeText(this.activity, "Please enter phone number", Toast.LENGTH_SHORT)
+                         .show()
+                 }
+
+
             if (TextUtils.isEmpty(phone)) {
                 Toast.makeText(this.activity, "Please enter phone number", Toast.LENGTH_SHORT).show()
             }
+
             else {
                 //new changes
                 phoneNumber = phone
                 isPhoneNumberExist(phone)
                 Log.d(TAG, "onCreateView: ")
             }
+
         }
 
         view.textResendOTP.setOnClickListener {
@@ -224,8 +247,13 @@ class PhoneNumberFragment : Fragment() {
     }
 
     private fun   isPhoneNumberExist(phoneNumber:String): Boolean {
+
+        val fireStore1 = Firebase.firestore
+        fireStore1.collection("Numbers").whereEqualTo("phoneNumber",phoneNumber).get().addOnSuccessListener { task->
+
         val fireStore = Firebase.firestore
         fireStore.collection("Numbers").whereEqualTo("phoneNumber",phoneNumber).get().addOnSuccessListener { task->
+
             if(task.isEmpty){
                 Log.d(TAG, "doIfExists: Send data to FireStore")
                 startPhoneNumberVerification(phoneNumber)

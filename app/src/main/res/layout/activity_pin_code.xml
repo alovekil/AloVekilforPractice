@@ -32,7 +32,7 @@
             android:layout_height="116dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/alovekillogo" />
+            app:srcCompat="@drawable/alovekillogo1" />
 
         <LinearLayout
             android:layout_width="match_parent"
