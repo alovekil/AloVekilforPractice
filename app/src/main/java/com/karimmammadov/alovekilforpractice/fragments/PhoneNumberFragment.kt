@@ -13,10 +13,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.auth.*
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.karimmammadov.alovekilforpractice.CustomerRegisterActivity
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.fragment_phone_number.inputCode1
@@ -39,6 +38,8 @@ import kotlinx.android.synthetic.main.fragment_phone_number.view.textResendOTP
 import java.util.concurrent.TimeUnit
 
 
+
+
 class PhoneNumberFragment : Fragment() {
 
     private var forceResendingToken: PhoneAuthProvider.ForceResendingToken? = null
@@ -47,9 +48,14 @@ class PhoneNumberFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
+
     private  fun Tag() = "MAIN_TAG"
     private val collection:Collection<String>?=null
     private val isUsersignedin=FirebaseAuth.getInstance().currentUser
+
+    private lateinit var phoneNumber : String
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -61,14 +67,12 @@ class PhoneNumberFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_phone_number, container, false)
 
-
         view.phoneNumberLl.visibility = View.VISIBLE
         view.codeLl.visibility = View.GONE
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(activity)
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
-
 
         mCallBacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
@@ -94,6 +98,7 @@ class PhoneNumberFragment : Fragment() {
                 Toast.makeText(activity, "Verification Code sent...", Toast.LENGTH_SHORT).show()
             }
         }
+
         view.btn_enterNumber.setOnClickListener{
             val phone = phoneEdit.text.toString().trim()
 
@@ -101,13 +106,13 @@ class PhoneNumberFragment : Fragment() {
                      Toast.makeText(this.activity, "Please enter phone number", Toast.LENGTH_SHORT)
                          .show()
                  }
-                 else {
-                     if (isUsersignedin!=null){
-                         Toast.makeText(this.activity, "This number has already entered.Please enter another number", Toast.LENGTH_SHORT)
-                     }
-                     startPhoneNumberVerification(phone)
-                 }
 
+            else {
+                //new changes
+                phoneNumber = phone
+                isPhoneNumberExist(phone)
+                Log.d(TAG, "onCreateView: ")
+            }
 
         }
 
@@ -133,6 +138,7 @@ class PhoneNumberFragment : Fragment() {
                         inputCode5.text.toString() +
                         inputCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
+                addtoFirestore(phoneNumber)
             } else {
                 Toast.makeText(this.activity, "Please enter all numbers", Toast.LENGTH_SHORT).show()
             }
@@ -228,6 +234,34 @@ class PhoneNumberFragment : Fragment() {
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
+
+    private fun   isPhoneNumberExist(phoneNumber:String): Boolean {
+        val fireStore1 = Firebase.firestore
+        fireStore1.collection("Numbers").whereEqualTo("phoneNumber",phoneNumber).get().addOnSuccessListener { task->
+            if(task.isEmpty){
+                Log.d(TAG, "doIfExists: Send data to FireStore")
+                startPhoneNumberVerification(phoneNumber)
+            }else{
+                Toast.makeText(this.activity,"This number is exist",Toast.LENGTH_SHORT).show()
+            }
+        }.addOnFailureListener{
+            Log.d(TAG, "doIfExists: ${it.message}")
+        }
+        return true
+    }
+
+    private fun addtoFirestore(phone:String) {
+        val phoneNumbers = hashMapOf(
+            "phoneNumber" to phone
+        )
+        var firestore = Firebase.firestore
+        firestore.collection("Numbers").add(phoneNumbers).addOnSuccessListener {
+
+        }.addOnFailureListener {
+            Toast.makeText(this.activity,it.localizedMessage,Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     private fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
         progressDialog.setMessage("Verifying Code...")
