@@ -17,27 +17,26 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_enter_number.*
+import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import java.util.concurrent.TimeUnit
 
-class EnterNumberActivity : AppCompatActivity() {
-
+class LawyerOtpActivity : AppCompatActivity() {
     private var forceResendingToken: PhoneAuthProvider.ForceResendingToken? = null
     private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? = null
     private var mVerificationId: String? = null
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
-    private fun Tag() = "MAIN_TAG"
     private val collection: Collection<String>? = null
     private val isUsersignedin = FirebaseAuth.getInstance().currentUser
     private lateinit var phoneNumber: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_enter_number)
+        setContentView(R.layout.activity_lawyer_otp)
 
-        phoneCustomerLl.visibility = View.VISIBLE
-        otpCustomerLl.visibility = View.GONE
+        phoneLawyerLl.visibility = View.VISIBLE
+        otpLawyerLl.visibility = View.GONE
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please Wait")
@@ -52,7 +51,7 @@ class EnterNumberActivity : AppCompatActivity() {
             override fun onVerificationFailed(e: FirebaseException) {
                 progressDialog.dismiss()
                 Log.d(TAG, "onVerificationFailed:${e.message} ")
-                Toast.makeText(this@EnterNumberActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LawyerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
             }
 
             override fun onCodeSent(
@@ -64,33 +63,19 @@ class EnterNumberActivity : AppCompatActivity() {
                 forceResendingToken = token
                 progressDialog.dismiss()
                 Log.d(TAG, "onCodeSent:$verificationId")
-                phoneCustomerLl.visibility = View.GONE
-                otpCustomerLl.visibility = View.VISIBLE
-                Toast.makeText(
-                    this@EnterNumberActivity,
-                    "Verification Code sent...",
-                    Toast.LENGTH_SHORT
-                ).show()
+                phoneLawyerLl.visibility = View.GONE
+                otpLawyerLl.visibility = View.VISIBLE
+                Toast.makeText(this@LawyerOtpActivity, "Verification Code sent...", Toast.LENGTH_SHORT).show()
             }
         }
 
-        btn_sendCstmOtp.setOnClickListener {
-            val phone = phoneNumberCustomer.text.toString().trim()
+        btn_sendLwyOtp.setOnClickListener {
+            val phone = phoneNumberLawyer.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(
-                    this@EnterNumberActivity,
-                    "Please enter phone number",
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
+                Toast.makeText(this@LawyerOtpActivity, "Please enter phone number", Toast.LENGTH_SHORT).show()
             }
-
             if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(
-                    this@EnterNumberActivity,
-                    "Please enter phone number",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this@LawyerOtpActivity, "Please enter phone number", Toast.LENGTH_SHORT).show()
             } else {
                 //new changes
                 phoneNumber = phone
@@ -99,37 +84,33 @@ class EnterNumberActivity : AppCompatActivity() {
             }
         }
 
-        btn_nextCstmRegister.setOnClickListener {
-            if (!inputCstmCode1.text.toString().trim().isEmpty() && !inputCstmCode2.text.toString().trim()
-                    .isEmpty() && !inputCstmCode3.text.toString().trim().isEmpty() &&
-                !inputCstmCode4.text.toString().trim().isEmpty() && !inputCstmCode5.text.toString().trim()
-                    .isEmpty() && !inputCstmCode6.text.toString().trim().isEmpty()
+        btn_nextLwyRegister.setOnClickListener {
+            if (!inputLwyCode1.text.toString().trim().isEmpty() && !inputLwyCode2.text.toString().trim()
+                    .isEmpty() && !inputLwyCode3.text.toString().trim().isEmpty() &&
+                !inputLwyCode4.text.toString().trim().isEmpty() && !inputLwyCode5.text.toString().trim()
+                    .isEmpty() && !inputLwyCode6.text.toString().trim().isEmpty()
             ) {
-                var code = inputCstmCode1.text.toString() +
-                        inputCstmCode2.text.toString() +
-                        inputCstmCode3.text.toString() +
-                        inputCstmCode4.text.toString() +
-                        inputCstmCode5.text.toString() +
-                        inputCstmCode6.text.toString()
+                var code = inputLwyCode1.text.toString() +
+                        inputLwyCode2.text.toString() +
+                        inputLwyCode3.text.toString() +
+                        inputLwyCode4.text.toString() +
+                        inputLwyCode5.text.toString() +
+                        inputLwyCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
             } else {
-                Toast.makeText(
-                    this@EnterNumberActivity,
-                    "Please enter all numbers",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this@LawyerOtpActivity, "Please enter all numbers", Toast.LENGTH_SHORT).show()
             }
         }
 
-        inputCstmCode1.addTextChangedListener(object : TextWatcher {
+        inputLwyCode1.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.toString().trim().isEmpty()) {
-                    inputCstmCode2.requestFocus()
+                    inputLwyCode2.requestFocus()
                 }
             }
 
@@ -137,14 +118,14 @@ class EnterNumberActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode2.addTextChangedListener(object : TextWatcher {
+        inputLwyCode2.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.toString().trim().isEmpty()) {
-                    inputCstmCode3.requestFocus()
+                    inputLwyCode3.requestFocus()
                 }
             }
 
@@ -152,14 +133,14 @@ class EnterNumberActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode3.addTextChangedListener(object : TextWatcher {
+        inputLwyCode3.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.toString().trim().isEmpty()) {
-                    inputCstmCode4.requestFocus()
+                    inputLwyCode4.requestFocus()
                 }
             }
 
@@ -167,14 +148,14 @@ class EnterNumberActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode4.addTextChangedListener(object : TextWatcher {
+        inputLwyCode4.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.toString().trim().isEmpty()) {
-                    inputCstmCode5.requestFocus()
+                    inputLwyCode5.requestFocus()
                 }
             }
 
@@ -182,14 +163,14 @@ class EnterNumberActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode5.addTextChangedListener(object : TextWatcher {
+        inputLwyCode5.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.toString().trim().isEmpty()) {
-                    inputCstmCode6.requestFocus()
+                    inputLwyCode6.requestFocus()
                 }
             }
 
@@ -197,25 +178,7 @@ class EnterNumberActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode6.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (!s.toString().trim().isEmpty()) {
-                    inputCstmCode6.requestFocus()
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-
-            }
-        })
-
-
     }
-
 
     private fun startPhoneNumberVerification(phone: String) {
         progressDialog.setMessage("Verifying Phone Number...")
@@ -230,79 +193,54 @@ class EnterNumberActivity : AppCompatActivity() {
     }
 
     private fun isPhoneNumberExist(phoneNumber: String): Boolean {
-
         val fireStore1 = Firebase.firestore
-        fireStore1.collection("Numbers").whereEqualTo("phoneNumber", phoneNumber).get()
+        fireStore1.collection("LawyerNumbers").whereEqualTo("phoneNumber", phoneNumber).get()
             .addOnSuccessListener { task ->
-
                 val fireStore = Firebase.firestore
-                fireStore.collection("Numbers").whereEqualTo("phoneNumber", phoneNumber).get()
+                fireStore.collection("LawyerNumbers").whereEqualTo("phoneNumber", phoneNumber).get()
                     .addOnSuccessListener { task ->
-
                         if (task.isEmpty) {
                             Log.d(TAG, "doIfExists: Send data to FireStore")
                             startPhoneNumberVerification(phoneNumber)
                         } else {
-                            Toast.makeText(
-                                this@EnterNumberActivity,
-                                "This number is exist",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            Toast.makeText(this@LawyerOtpActivity, "This number is exist", Toast.LENGTH_SHORT).show()
                         }
                     }.addOnFailureListener {
                         Log.d(TAG, "doIfExists: ${it.message}")
                     }
-
             }
         return true
     }
 
-        fun addtoFirestore(phone: String) {
-            val phoneNumbers = hashMapOf(
-                "phoneNumber" to phone
-            )
-            var firestore = Firebase.firestore
-            firestore.collection("Numbers").add(phoneNumbers).addOnSuccessListener {
+    fun addtoFirestore(phone: String) {
+        val phoneNumbers = hashMapOf(
+            "phoneNumber" to phone
+        )
+        var firestore = Firebase.firestore
+        firestore.collection("LawyerNumbers").add(phoneNumbers).addOnSuccessListener {
 
-            }.addOnFailureListener {
-                Toast.makeText(this@EnterNumberActivity, it.localizedMessage, Toast.LENGTH_SHORT).show()
-            }
-        }
-
-
-      private  fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
-            progressDialog.setMessage("Verifying Code...")
-            progressDialog.show()
-            var credential = PhoneAuthProvider.getCredential(verificationId!!, code)
-            signInWithPhoneAuthCredential(credential)
-        }
-
-       private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-            progressDialog.setMessage("Logging in")
-            firebaseAuth.signInWithCredential(credential)
-                .addOnSuccessListener {
-                    progressDialog.dismiss()
-                    val phone = firebaseAuth.currentUser?.phoneNumber
-
-                }
-                .addOnFailureListener { e ->
-                    progressDialog.dismiss()
-                    Toast.makeText(this@EnterNumberActivity, "${e.message}", Toast.LENGTH_SHORT).show()
-                }
-        }
-
-       private fun resendVerificationCode(phone: String, token: PhoneAuthProvider.ForceResendingToken?) {
-            progressDialog.setMessage("Resending Code...")
-            progressDialog.show()
-            Log.d(TAG, "resendVerificationCode: $phone")
-            val options = PhoneAuthOptions.newBuilder(firebaseAuth)
-                .setPhoneNumber("+994" + phone)
-                .setTimeout(60L, TimeUnit.SECONDS)
-                .setActivity(this)
-                .setCallbacks(mCallBacks!!)
-                .setForceResendingToken(token!!)
-                .build()
-
-            PhoneAuthProvider.verifyPhoneNumber(options)
+        }.addOnFailureListener {
+            Toast.makeText(this@LawyerOtpActivity, it.localizedMessage, Toast.LENGTH_SHORT).show()
         }
     }
+
+    private  fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
+        progressDialog.setMessage("Verifying Code...")
+        progressDialog.show()
+        var credential = PhoneAuthProvider.getCredential(verificationId!!, code)
+        signInWithPhoneAuthCredential(credential)
+    }
+
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+        progressDialog.setMessage("Logging in")
+        firebaseAuth.signInWithCredential(credential)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                val phone = firebaseAuth.currentUser?.phoneNumber
+            }
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Toast.makeText(this@LawyerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+}

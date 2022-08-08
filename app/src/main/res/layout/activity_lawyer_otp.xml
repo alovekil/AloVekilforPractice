@@ -7,117 +7,116 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@color/RGB_white"
-    tools:context=".EnterNumberActivity">
+    tools:context=".LawyerOtpActivity">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/phoneLawyerLl"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/phoneCustomerLl"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="@color/RGB_white"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/RGB_white"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="51dp"
-                android:background="@drawable/vector" />
-
-            <TextView
-                android:layout_width="86dp"
-                android:layout_height="22dp"
-                android:layout_marginLeft="140dp"
-                android:layout_marginTop="51dp"
-                android:text="Customer"
-                android:textColor="@color/RGB_blue"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="51dp"
+            android:background="@drawable/vector" />
 
         <TextView
-            android:layout_width="202dp"
-            android:layout_height="68dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="178dp"
-            android:gravity="center_vertical"
-            android:text="Enter your
-                phone number"
-            android:textColor="@color/RGB_black"
-            android:textSize="28sp"
-            android:textStyle="bold" />
-
-
-        <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="56dp"
-            android:layout_marginLeft="20dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="51dp">
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="56dp"
-                android:background="@color/RGB_Gray1"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/az"
-                    android:layout_marginLeft="19dp"
-                    android:layout_marginTop="18dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/RGB_black"
-                    android:text="+994"
-                    android:layout_marginTop="20dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="5dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="240dp"
-                android:layout_height="56dp"
-                android:background="@color/RGB_Gray1"
-                android:layout_marginLeft="10dp">
-                <EditText
-                    android:id="@+id/phoneNumberCustomer"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="24dp"
-                    android:background="@color/RGB_Gray1"
-                    android:textColor="@color/RGB_black"
-                    android:textColorHint="@color/RGB_black"
-                    android:textSize="16sp"
-                    android:inputType="number"
-                    android:hint="Your Number"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_sendCstmOtp"
-            android:layout_width="350dp"
-            android:layout_height="52dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="303dp"
-            android:background="@drawable/bgn_bluebutton"
-            android:text="Send otp code"
-            android:textAlignment="center"
-            android:textColor="@color/RGB_white"
+            android:layout_width="66dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="51dp"
+            android:text="Lawyer"
+            android:textColor="@color/RGB_blue"
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
 
+    <TextView
+        android:layout_width="202dp"
+        android:layout_height="68dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="178dp"
+        android:gravity="center_vertical"
+        android:text="Enter your
+                phone number"
+        android:textColor="@color/RGB_black"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
     <LinearLayout
-        android:id="@+id/otpCustomerLl"
+        android:layout_width="350dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="51dp">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="56dp"
+            android:background="@color/RGB_Gray1"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/az"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="18dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/RGB_black"
+                android:text="+994"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:layout_marginLeft="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="56dp"
+            android:background="@color/RGB_Gray1"
+            android:layout_marginLeft="10dp">
+            <EditText
+                android:id="@+id/phoneNumberLawyer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="24dp"
+                android:background="@color/RGB_Gray1"
+                android:textColor="@color/RGB_black"
+                android:textColorHint="@color/RGB_black"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:hint="Your Number"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sendLwyOtp"
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="303dp"
+        android:background="@drawable/bgn_bluebutton"
+        android:text="Send otp code"
+        android:textAlignment="center"
+        android:textColor="@color/RGB_white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/otpLawyerLl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -136,11 +135,11 @@
                 android:background="@drawable/vector" />
 
             <TextView
-                android:layout_width="86dp"
+                android:layout_width="66dp"
                 android:layout_height="22dp"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="145dp"
                 android:layout_marginTop="51dp"
-                android:text="Customer"
+                android:text="Lawyer"
                 android:textColor="@color/RGB_blue"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -175,7 +174,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/inputCstmCode1"
+                android:id="@+id/inputLwyCode1"
                 android:layout_width="60dp"
                 android:layout_height="56dp"
                 android:layout_marginLeft="4dp"
@@ -191,7 +190,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/inputCstmCode2"
+                android:id="@+id/inputLwyCode2"
                 android:layout_width="60dp"
                 android:layout_height="56dp"
                 android:layout_marginRight="4dp"
@@ -206,7 +205,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/inputCstmCode3"
+                android:id="@+id/inputLwyCode3"
                 android:layout_width="60dp"
                 android:layout_height="56dp"
                 android:layout_marginRight="4dp"
@@ -221,7 +220,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/inputCstmCode4"
+                android:id="@+id/inputLwyCode4"
                 android:layout_width="60dp"
                 android:layout_height="56dp"
                 android:layout_marginRight="4dp"
@@ -236,7 +235,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/inputCstmCode5"
+                android:id="@+id/inputLwyCode5"
                 android:layout_width="60dp"
                 android:layout_height="56dp"
                 android:layout_marginRight="4dp"
@@ -251,7 +250,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/inputCstmCode6"
+                android:id="@+id/inputLwyCode6"
                 android:layout_width="60dp"
                 android:layout_height="56dp"
                 android:layout_marginRight="4dp"
@@ -267,7 +266,7 @@
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_nextCstmRegister"
+            android:id="@+id/btn_nextLwyRegister"
             android:layout_width="350dp"
             android:layout_height="52dp"
             android:layout_marginLeft="25dp"
