@@ -17,25 +17,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".CustomerRegstrActivity"
-            android:exported="false" />
-        <activity
-            android:name=".regstr_page"
-            android:exported="false" />
-        <activity
-            android:name=".OTPActivity"
+            android:name=".CustomerRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".EnterNumberActivity"
             android:exported="false" />
         <activity
             android:name=".ChooseSignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CustomerRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".PinCodeActivity"
