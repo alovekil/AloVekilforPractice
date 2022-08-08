@@ -55,6 +55,7 @@
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/backgroundbox.xml" value="0.1145" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/backgroundbox2blueslim.xml" value="0.157" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/backgroundgray.xml" value="0.1" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/backgroundgrayboxwords.xml" value="0.1945" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bg_button.xml" value="0.1125" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bgn_bluebutton.xml" value="0.1445" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/bgn_enter.xml" value="0.1125" />
@@ -72,6 +73,7 @@
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_customer_regstr.xml" value="0.33" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_enter_number.xml" value="0.2" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_lawyer_otp.xml" value="0.22" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_lawyer_register.xml" value="0.18426678067550234" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_otpactivity.xml" value="0.18426678067550234" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.33" />
