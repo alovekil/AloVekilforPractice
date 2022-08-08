@@ -30,7 +30,7 @@
             android:textStyle="bold" />
     </LinearLayout>
     <EditText
-        android:id="@+id/editFirstName"
+        android:id="@+id/firstname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="231dp"
@@ -72,7 +72,9 @@
         android:textColor="@color/RGB_black"
         android:background="@drawable/backgroundgray"
         android:textSize="16sp"/>
+
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/savebtn"
         android:layout_width="350dp"
         android:layout_height="52dp"
         android:layout_marginLeft="30dp"

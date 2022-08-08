@@ -16,7 +16,6 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.karimmammadov.alovekilforpractice.CustomerRegisterActivity
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.fragment_phone_number.inputCode1
 import kotlinx.android.synthetic.main.fragment_phone_number.inputCode2
@@ -48,7 +47,6 @@ class PhoneNumberFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
-<<<<<<< HEAD
 
     private  fun Tag() = "MAIN_TAG"
     private val collection:Collection<String>?=null
@@ -292,7 +290,7 @@ class PhoneNumberFragment : Fragment() {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
-                val intent = Intent(this@PhoneNumberFragment.requireContext(), CustomerRegisterActivity::class.java)
+                val intent = Intent(this@PhoneNumberFragment.requireContext(), CustomerRegsterActivity::class.java)
                 intent.putExtra("phone_number",phone)
                 startActivity(intent)
             }
