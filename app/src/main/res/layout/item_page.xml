@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lawRgstrPage1"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/RGB_white"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="51dp"
+            android:background="@drawable/vector" />
+
+        <TextView
+            android:layout_width="86dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="51dp"
+            android:text="Lawyer"
+            android:textColor="@color/RGB_blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backgroundgrayboxwords"
+            android:layout_marginTop="24.93dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="Name"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backgroundgrayboxwords"
+            android:layout_marginTop="16dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="Surname"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backgroundgrayboxwords"
+            android:layout_marginTop="16dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="Father name"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backgroundgrayboxwords"
+            android:layout_marginTop="16dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="Gender"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backgroundgrayboxwords"
+            android:layout_marginTop="16dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="Date of birth"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backgroundgrayboxwords"
+            android:layout_marginTop="16dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="University"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backgroundgrayboxwords"
+            android:layout_marginTop="16dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="Diploma"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/backgroundgrayboxwords"
+            android:layout_marginTop="16dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+<!-- page 2 -->
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lawRgstrPage2"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/RGB_white"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="51dp"
+            android:background="@drawable/vector" />
+
+        <TextView
+            android:layout_width="86dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="51dp"
+            android:text="Lawyer"
+            android:textColor="@color/RGB_blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="24.93dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Certificate"
+            android:textColorHint="@color/RGB_black"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Services Languages"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_black"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Serive areas"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_black"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Tax id"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_black"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Credit card information"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_black"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:background="@color/RGB_white"
+        android:layout_marginLeft="30dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+       <LinearLayout
+           android:layout_width="194dp"
+           android:layout_height="52dp"
+           android:background="@drawable/backgroundgrayboxwords">
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="22dp"
+               android:textSize="18sp"
+               android:background="@color/RGB_Gray1"
+               android:hint="Date"
+               android:inputType="textPersonName"
+               android:textColorHint="@color/RGB_black"
+               android:textColor="@color/RGB_black"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="16dp"/>
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="136dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/backgroundgrayboxwords">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:textSize="18sp"
+                android:background="@color/RGB_Gray1"
+                android:hint="CVV"
+                android:inputType="textPersonName"
+                android:textColorHint="@color/RGB_black"
+                android:textColor="@color/RGB_black"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Legal experience"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_black"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Lawyer Experience"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_black"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_nextCstmRegister"
+            android:layout_width="350dp"
+            android:layout_height="52dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/bgn_bluebutton"
+            android:text="Save"
+            android:textAlignment="center"
+            android:textColor="@color/RGB_white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

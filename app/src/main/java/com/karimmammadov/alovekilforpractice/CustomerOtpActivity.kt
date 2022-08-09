@@ -16,10 +16,10 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_enter_number.*
+import kotlinx.android.synthetic.main.activity_customer_otp.*
 import java.util.concurrent.TimeUnit
 
-class EnterNumberActivity : AppCompatActivity() {
+class CustomerOtpActivity : AppCompatActivity() {
 
     private var forceResendingToken: PhoneAuthProvider.ForceResendingToken? = null
     private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? = null
@@ -27,14 +27,13 @@ class EnterNumberActivity : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
-    private fun Tag() = "MAIN_TAG"
     private val collection: Collection<String>? = null
     private val isUsersignedin = FirebaseAuth.getInstance().currentUser
     private lateinit var phoneNumber: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_enter_number)
+        setContentView(R.layout.activity_customer_otp)
 
         phoneCustomerLl.visibility = View.VISIBLE
         otpCustomerLl.visibility = View.GONE
@@ -52,7 +51,7 @@ class EnterNumberActivity : AppCompatActivity() {
             override fun onVerificationFailed(e: FirebaseException) {
                 progressDialog.dismiss()
                 Log.d(TAG, "onVerificationFailed:${e.message} ")
-                Toast.makeText(this@EnterNumberActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@CustomerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
             }
 
             override fun onCodeSent(
@@ -67,7 +66,7 @@ class EnterNumberActivity : AppCompatActivity() {
                 phoneCustomerLl.visibility = View.GONE
                 otpCustomerLl.visibility = View.VISIBLE
                 Toast.makeText(
-                    this@EnterNumberActivity,
+                    this@CustomerOtpActivity,
                     "Verification Code sent...",
                     Toast.LENGTH_SHORT
                 ).show()
@@ -78,7 +77,7 @@ class EnterNumberActivity : AppCompatActivity() {
             val phone = phoneNumberCustomer.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
                 Toast.makeText(
-                    this@EnterNumberActivity,
+                    this@CustomerOtpActivity,
                     "Please enter phone number",
                     Toast.LENGTH_SHORT
                 )
@@ -87,7 +86,7 @@ class EnterNumberActivity : AppCompatActivity() {
 
             if (TextUtils.isEmpty(phone)) {
                 Toast.makeText(
-                    this@EnterNumberActivity,
+                    this@CustomerOtpActivity,
                     "Please enter phone number",
                     Toast.LENGTH_SHORT
                 ).show()
@@ -115,7 +114,7 @@ class EnterNumberActivity : AppCompatActivity() {
                 addtoFirestore(phoneNumber)
             } else {
                 Toast.makeText(
-                    this@EnterNumberActivity,
+                    this@CustomerOtpActivity,
                     "Please enter all numbers",
                     Toast.LENGTH_SHORT
                 ).show()
@@ -213,7 +212,6 @@ class EnterNumberActivity : AppCompatActivity() {
             }
         })
 
-
     }
 
 
@@ -244,7 +242,7 @@ class EnterNumberActivity : AppCompatActivity() {
                             startPhoneNumberVerification(phoneNumber)
                         } else {
                             Toast.makeText(
-                                this@EnterNumberActivity,
+                                this@CustomerOtpActivity,
                                 "This number is exist",
                                 Toast.LENGTH_SHORT
                             ).show()
@@ -265,7 +263,7 @@ class EnterNumberActivity : AppCompatActivity() {
             firestore.collection("Numbers").add(phoneNumbers).addOnSuccessListener {
 
             }.addOnFailureListener {
-                Toast.makeText(this@EnterNumberActivity, it.localizedMessage, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@CustomerOtpActivity, it.localizedMessage, Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -287,7 +285,7 @@ class EnterNumberActivity : AppCompatActivity() {
                 }
                 .addOnFailureListener { e ->
                     progressDialog.dismiss()
-                    Toast.makeText(this@EnterNumberActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@CustomerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
                 }
         }
 

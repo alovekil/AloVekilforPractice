@@ -18,7 +18,7 @@ class ChooseSignUpActivity : AppCompatActivity() {
     }
 
     fun customerSignUp(view: View){
-        val intent = Intent(this@ChooseSignUpActivity,EnterNumberActivity::class.java)
+        val intent = Intent(this@ChooseSignUpActivity,CustomerOtpActivity::class.java)
         startActivity(intent)
         finish()
     }

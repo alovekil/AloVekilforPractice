@@ -1,6 +1,7 @@
 package com.karimmammadov.alovekilforpractice
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -16,7 +17,6 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_enter_number.*
 import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import java.util.concurrent.TimeUnit
 
@@ -237,6 +237,8 @@ class LawyerOtpActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
+                val intent = Intent(this@LawyerOtpActivity,LawyerRegisterActivity::class.java)
+                startActivity(intent)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

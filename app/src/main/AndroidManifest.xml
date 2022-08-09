@@ -26,7 +26,7 @@
             android:name=".CustomerRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".EnterNumberActivity"
+            android:name=".CustomerOtpActivity"
             android:exported="false" />
         <activity
             android:name=".ChooseSignUpActivity"
