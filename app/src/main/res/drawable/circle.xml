@@ -5,7 +5,7 @@
 
     <solid
         android:width="2dp"
-        android:color="#FFFFFFFF"/>
+        android:color="@color/RGB_Gray1"/>
     <size
         android:width="25dp"
         android:height="25dp" />
