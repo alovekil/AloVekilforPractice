@@ -17,10 +17,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".LawyerRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LawyerOtpActivity"
+            android:exported="false" />
+        <activity
             android:name=".CustomerRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".EnterNumberActivity"
+            android:name=".CustomerOtpActivity"
             android:exported="false" />
         <activity
             android:name=".ChooseSignUpActivity"
