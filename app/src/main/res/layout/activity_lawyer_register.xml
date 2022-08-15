@@ -183,7 +183,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_nextCstmRegister"
+        android:id="@+id/btn_nextPincodeLawyer"
         android:layout_width="350dp"
         android:layout_height="52dp"
         android:layout_marginLeft="25dp"
