@@ -1,6 +1,7 @@
 package com.karimmammadov.alovekilforpractice
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -281,6 +282,9 @@ class CustomerOtpActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     progressDialog.dismiss()
                     val phone = firebaseAuth.currentUser?.phoneNumber
+                    val intent = Intent(this@CustomerOtpActivity,CustomerRegstrActivity::class.java)
+                    startActivity(intent)
+                    finish()
 
                 }
                 .addOnFailureListener { e ->
