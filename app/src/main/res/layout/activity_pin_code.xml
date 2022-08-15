@@ -50,7 +50,7 @@
     <LinearLayout
         android:id="@+id/pincdelayout"
         android:layout_width="match_parent"
-        android:layout_height="555dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="180sp"
         android:background="@drawable/bgn_bluebutton"
         android:orientation="vertical">
