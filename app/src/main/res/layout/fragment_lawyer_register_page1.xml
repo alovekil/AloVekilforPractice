@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/RGB_white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/RGB_white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="86dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="51dp"
+            android:text="Lawyer"
+            android:textColor="@color/RGB_blue"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="24.93dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Name"
+            android:textColorHint="@color/RGB_Gray2"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Surname"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_Gray2"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Father name"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_Gray2"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        app:boxStrokeColor="@color/RGB_blue"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/dropdown_gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/RGB_black"
+            android:paddingTop="10dp"
+            android:text="Gender"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+        <TextView
+            android:id="@+id/tvDateofBirth"
+            android:layout_width="270dp"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Date of birth"
+            android:textColorHint="@color/RGB_Gray2"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/calendar"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="11dp" />
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        app:boxStrokeColor="@color/RGB_blue"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+            android:id="@+id/dropdown_universtiy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/RGB_black"
+            android:paddingTop="10dp"
+            android:text="University"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/backgroundgrayboxwords"
+        android:layout_marginTop="16dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:textSize="18sp"
+            android:background="@color/RGB_Gray1"
+            android:hint="Email"
+            android:inputType="textPersonName"
+            android:textColorHint="@color/RGB_Gray2"
+            android:textColor="@color/RGB_black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="39.03dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="127.56dp"
+        android:background="@color/RGB_white"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="10.51dp"
+            android:layout_height="10.51dp"
+            android:background="@drawable/boxblue" />
+
+        <ImageView
+            android:layout_width="10.51dp"
+            android:layout_height="10.51dp"
+            android:layout_marginLeft="18.02dp"
+            android:background="@drawable/boxwhite" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButton"
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="33dp"
+        android:background="@drawable/bgn_bluebutton"
+        android:text="Next"
+        android:textAlignment="center"
+        android:textColor="@color/RGB_white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
