@@ -1,5 +1,7 @@
 package com.karimmammadov.alovekilforpractice
 
+import android.app.ActivityOptions
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.karimmammadov.alovekilforpractice.api.RetrofitClient
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
 import kotlinx.android.synthetic.main.activity_customer_regstr.*
+import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,6 +19,12 @@ class CustomerRegstrActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_regstr)
+
+        bck_signActivity.setOnClickListener {
+            val intent = Intent(this@CustomerRegstrActivity,ChooseSignUpActivity::class.java)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            finish()
+        }
 
         val intent = intent
         val phoneNumber = intent.getStringExtra("phone_number").toString().trim()

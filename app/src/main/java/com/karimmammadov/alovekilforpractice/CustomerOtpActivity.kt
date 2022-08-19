@@ -38,6 +38,12 @@ class CustomerOtpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_otp)
 
+        back_signupcustomer.setOnClickListener {
+            val intent = Intent(this@CustomerOtpActivity,ChooseSignUpActivity::class.java)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            finish()
+        }
+
         phoneCustomerLl.visibility = View.VISIBLE
         otpCustomerLl.visibility = View.GONE
         firebaseAuth = FirebaseAuth.getInstance()
