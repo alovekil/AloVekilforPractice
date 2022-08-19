@@ -31,9 +31,9 @@
         <activity
             android:name=".CustomerOtpActivity"
             android:exported="false" />
-      <!--  <activity
+  <activity
             android:name=".ChooseSignUpActivity"
-            android:exported="false" />-->
+            android:exported="false" />
         <activity
             android:name=".PinCodeActivity"
             android:exported="false" />
@@ -46,7 +46,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ChooseSignUpActivity" />
+        <activity android:name=".MainActivity" android:exported="true" />
     </application>
 
 </manifest>
