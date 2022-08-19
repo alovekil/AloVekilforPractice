@@ -2,11 +2,10 @@ package com.karimmammadov.alovekilforpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import kotlinx.android.synthetic.main.activity_lawyer_register.*
-import me.relex.circleindicator.CircleIndicator3
+import com.karimmammadov.alovekilforpractice.fragments.LawyerRegisterPage1
+import com.karimmammadov.alovekilforpractice.fragments.LawyerRegisterPage2
 
 class LawyerRegisterActivity : AppCompatActivity() {
     lateinit var viewPager : ViewPager2

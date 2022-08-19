@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice
+package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
+import com.karimmammadov.alovekilforpractice.R
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
