@@ -40,7 +40,7 @@
             android:layout_height="22dp"
             android:textSize="18sp"
             android:background="@color/RGB_Gray1"
-            android:hint="Certificate"
+            android:hint="Lawyer Certificate"
             android:textColorHint="@color/RGB_Gray2"
             android:textColor="@color/RGB_black"
             android:layout_marginLeft="20dp"
@@ -126,7 +126,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="16dp">
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="22dp"
             android:textSize="18sp"
             android:background="@color/RGB_Gray1"
