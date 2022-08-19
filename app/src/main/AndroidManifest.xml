@@ -16,9 +16,9 @@
         android:theme="@style/Theme.AloVekilForPractice"
         android:usesCleartextTraffic="true"
         tools:targetApi="31" >
-        <activity
+       <!-- <activity
             android:name=".SplashScreen"
-            android:exported="false" />
+            android:exported="true" />-->
         <activity
             android:name=".LawyerRegisterActivity"
             android:exported="false" />
@@ -31,21 +31,22 @@
         <activity
             android:name=".CustomerOtpActivity"
             android:exported="false" />
-        <activity
+      <!--  <activity
             android:name=".ChooseSignUpActivity"
-            android:exported="false" />
+            android:exported="false" />-->
         <activity
             android:name=".PinCodeActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true" >
+            android:name=".SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ChooseSignUpActivity" />
     </application>
 
 </manifest>

@@ -21,13 +21,13 @@ class CustomerRegstrActivity : AppCompatActivity() {
         savebtn.setOnClickListener {
             val email = mail.text.toString().trim()
             val name = firstname.text.toString().trim()
-            val secondName = surname.text.toString().trim()
+           // val secondName = surname.text.toString().trim()
             val password = Password.text.toString().trim()
             val confirmPassword = confirmPassword.text.toString().trim()
-            val phoneNumber = phone.text.toString().trim()
+            //val phoneNumber = phone.text.toString().trim()
 
 
-            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber,password, confirmPassword)
+            RetrofitClient.instance.createUser(email,name,password,confirmPassword)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,
