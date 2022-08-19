@@ -1,6 +1,5 @@
 package com.karimmammadov.alovekilforpractice
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -18,16 +17,44 @@ class CustomerRegstrActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_regstr)
 
+        val intent = intent
+        val phoneNumber = intent.getStringExtra("phone_number").toString().trim()
+        tv_phone.text =phoneNumber
+
         savebtn.setOnClickListener {
-            val email = mail.text.toString().trim()
-            val name = firstname.text.toString().trim()
-           // val secondName = surname.text.toString().trim()
-            val password = Password.text.toString().trim()
-            val confirmPassword = confirmPassword.text.toString().trim()
-            //val phoneNumber = phone.text.toString().trim()
+            val email = editEmail.text.toString().trim()
+            val name = editFirstName.text.toString().trim()
+            val secondName = editSecondName.text.toString().trim()
+            val password = editPassword.text.toString().trim()
+            val confirmPassword = editConfirmPassword.text.toString().trim()
 
+            if (email.isEmpty()){
+                editEmail.error = "Email required"
+                editEmail.requestFocus()
+                return@setOnClickListener
+            }
+            if (name.isEmpty()){
+                editFirstName.error = "First name required"
+                editFirstName.requestFocus()
+                return@setOnClickListener
+            }
+            if (secondName.isEmpty()){
+                editSecondName.error = "Second name required"
+                editSecondName.requestFocus()
+                return@setOnClickListener
+            }
+            if (password.isEmpty()){
+                editPassword.error = "Password required"
+                editPassword.requestFocus()
+                return@setOnClickListener
+            }
+            if (confirmPassword.isEmpty()){
+                editConfirmPassword.error = "Confirm Password required"
+                editConfirmPassword.requestFocus()
+                return@setOnClickListener
+            }
 
-            RetrofitClient.instance.createUser(email,name,password,confirmPassword)
+            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber!!,password, confirmPassword)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,
@@ -37,10 +64,9 @@ class CustomerRegstrActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                        if (password != confirmPassword){
-                            Toast.makeText(applicationContext,"Passwords do not match",Toast.LENGTH_SHORT).show()
-                        }
+                        Toast.makeText(applicationContext,t.message, Toast.LENGTH_SHORT).show()
                     }
+
                 })
         }
     }

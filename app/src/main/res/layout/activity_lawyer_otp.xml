@@ -159,6 +159,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/numberDescription"
             android:layout_width="349dp"
             android:layout_height="19dp"
             android:layout_marginLeft="20dp"

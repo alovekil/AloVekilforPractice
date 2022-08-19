@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <EditText
-        android:id="@+id/firstname"
+        android:id="@+id/editFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -42,13 +42,14 @@
         android:background="@drawable/backgroundgray"
         android:hint="Name"
         android:inputType="textPersonName"
+        android:textColorHint="#929292"
         android:padding="20dp"
         android:textAlignment="textStart"
         android:textColor="@color/RGB_black"
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/surname"
+        android:id="@+id/editSecondName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -59,17 +60,33 @@
         android:padding="20dp"
         android:textAlignment="textStart"
         android:textColor="@color/RGB_black"
+        android:textColorHint="#929292"
         android:background="@drawable/backgroundgray"
         android:textSize="16sp"/>
     <EditText
-        android:id="@+id/mail"
+        android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:hint="Mail"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#929292"
+        android:padding="20dp"
+        android:textAlignment="textStart"
+        android:textColor="@color/RGB_black"
+        android:background="@drawable/backgroundgray"
+        android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/tv_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColorHint="#929292"
+        android:hint="Phone Number"
         android:padding="20dp"
         android:textAlignment="textStart"
         android:textColor="@color/RGB_black"
@@ -77,13 +94,14 @@
         android:textSize="16sp"/>
 
     <EditText
-        android:id="@+id/Password"
+        android:id="@+id/editPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/backgroundgray"
+        android:textColorHint="#929292"
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="20dp"
@@ -92,13 +110,14 @@
         android:textSize="16sp" />
 
     <EditText
-        android:id="@+id/confirmPassword"
+        android:id="@+id/editConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/backgroundgray"
+        android:textColorHint="#929292"
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:padding="20dp"

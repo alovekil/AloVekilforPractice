@@ -18,6 +18,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_customer_otp.*
+import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import java.util.concurrent.TimeUnit
 
 class CustomerOtpActivity : AppCompatActivity() {
@@ -66,6 +67,8 @@ class CustomerOtpActivity : AppCompatActivity() {
                 Log.d(TAG, "onCodeSent:$verificationId")
                 phoneCustomerLl.visibility = View.GONE
                 otpCustomerLl.visibility = View.VISIBLE
+                numberCustomerDescription.text = "Code sent to number +994${phoneNumberCustomer.text.toString().trim()}"
+
                 Toast.makeText(
                     this@CustomerOtpActivity,
                     "Verification Code sent...",
@@ -270,6 +273,7 @@ class CustomerOtpActivity : AppCompatActivity() {
 
 
       private  fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
+
             progressDialog.setMessage("Verifying Code...")
             progressDialog.show()
             var credential = PhoneAuthProvider.getCredential(verificationId!!, code)
@@ -282,9 +286,9 @@ class CustomerOtpActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     progressDialog.dismiss()
                     val phone = firebaseAuth.currentUser?.phoneNumber
-                    val intent = Intent(this@CustomerOtpActivity,CustomerRegstrActivity::class.java)
+                    val intent = Intent(this@CustomerOtpActivity, CustomerRegstrActivity::class.java)
+                    intent.putExtra("phone_number",phone)
                     startActivity(intent)
-                    finish()
 
                 }
                 .addOnFailureListener { e ->
