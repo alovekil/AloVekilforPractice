@@ -21,6 +21,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/back_chooseFieldActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
@@ -127,18 +128,10 @@
             android:background="@color/RGB_white"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/backButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="51dp"
-                android:background="@drawable/vector" />
-
             <TextView
                 android:layout_width="66dp"
                 android:layout_height="22dp"
-                android:layout_marginLeft="145dp"
+                android:layout_marginLeft="170dp"
                 android:layout_marginTop="51dp"
                 android:text="Lawyer"
                 android:textColor="@color/RGB_blue"

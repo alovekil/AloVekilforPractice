@@ -1,5 +1,6 @@
 package com.karimmammadov.alovekilforpractice
 
+import android.app.ActivityOptions
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -36,6 +37,11 @@ class LawyerOtpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lawyer_otp)
 
+back_chooseFieldActivity.setOnClickListener {
+    val intent = Intent(this@LawyerOtpActivity,ChooseSignUpActivity::class.java)
+    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+    finish()
+}
         phoneLawyerLl.visibility = View.VISIBLE
         otpLawyerLl.visibility = View.GONE
         firebaseAuth = FirebaseAuth.getInstance()
@@ -113,6 +119,7 @@ class LawyerOtpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.toString().trim().isEmpty()) {
                     inputLwyCode2.requestFocus()
+
                 }
             }
 
