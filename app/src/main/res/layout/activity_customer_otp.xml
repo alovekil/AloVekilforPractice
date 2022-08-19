@@ -109,7 +109,7 @@
             android:layout_marginLeft="25dp"
             android:layout_marginTop="303dp"
             android:background="@drawable/bgn_bluebutton"
-            android:text="Send otp code"
+            android:text="Send code"
             android:textAlignment="center"
             android:textColor="@color/RGB_white"
             android:textSize="18sp"
