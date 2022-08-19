@@ -1,6 +1,8 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
+import android.app.ActivityOptions
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +12,9 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
+import com.karimmammadov.alovekilforpractice.ChooseSignUpActivity
 import com.karimmammadov.alovekilforpractice.R
+import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -31,6 +35,12 @@ class LawyerRegisterPage1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_lawyer_register_page1, container, false)
+
+        view.back_signup.setOnClickListener {
+            val intent  = Intent(requireContext(),ChooseSignUpActivity::class.java)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(requireActivity()).toBundle())
+        }
+
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
         genders.add("Male")
