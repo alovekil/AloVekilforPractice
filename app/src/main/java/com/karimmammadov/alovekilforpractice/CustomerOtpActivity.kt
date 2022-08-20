@@ -280,7 +280,6 @@ class CustomerOtpActivity : AppCompatActivity() {
 
 
       private  fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
-
             progressDialog.setMessage("Verifying Code...")
             progressDialog.show()
             var credential = PhoneAuthProvider.getCredential(verificationId!!, code)
