@@ -31,7 +31,7 @@ class PinCodeActivity : AppCompatActivity() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                     super.onAuthenticationSucceeded(result)
-                    startActivity(Intent(this@PinCodeActivity,Dashboarding::class.java))
+                    startActivity(Intent(this@PinCodeActivity,ProfileActivity::class.java))
                 }
             }
 
