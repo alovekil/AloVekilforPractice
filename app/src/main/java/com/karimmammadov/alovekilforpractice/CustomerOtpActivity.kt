@@ -296,7 +296,7 @@ class CustomerOtpActivity : AppCompatActivity() {
                     val intent = Intent(this@CustomerOtpActivity, CustomerRegstrActivity::class.java)
                     intent.putExtra("phone_number",phone)
                     startActivity(intent)
-
+                    finish()
                 }
                 .addOnFailureListener { e ->
                     progressDialog.dismiss()
