@@ -13,8 +13,8 @@ interface Api {
     fun createUser(
         @Field("email") email:String,
         @Field("first_name") name:String,
-       // @Field("last_name") last_name:String,
-        //@Field("phone") phone:String,
+        @Field("last_name") last_name:String,
+        @Field("phone") phone:String,
         @Field("password") password:String,
         @Field("password2") password2:String,
     ) : Call<DefaultResponse>

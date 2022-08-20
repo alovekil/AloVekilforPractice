@@ -1,5 +1,6 @@
 package com.karimmammadov.alovekilforpractice
 
+import android.app.ActivityOptions
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,7 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_customer_otp.*
 import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import java.util.concurrent.TimeUnit
 
@@ -35,6 +37,11 @@ class LawyerOtpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lawyer_otp)
 
+back_chooseFieldActivity.setOnClickListener {
+    val intent = Intent(this@LawyerOtpActivity,ChooseSignUpActivity::class.java)
+    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+    finish()
+}
         phoneLawyerLl.visibility = View.VISIBLE
         otpLawyerLl.visibility = View.GONE
         firebaseAuth = FirebaseAuth.getInstance()
@@ -65,6 +72,7 @@ class LawyerOtpActivity : AppCompatActivity() {
                 Log.d(TAG, "onCodeSent:$verificationId")
                 phoneLawyerLl.visibility = View.GONE
                 otpLawyerLl.visibility = View.VISIBLE
+                numberDescription.text = "Code sent to number +994${phoneNumberLawyer.text.toString().trim()}"
                 Toast.makeText(this@LawyerOtpActivity, "Verification Code sent...", Toast.LENGTH_SHORT).show()
             }
         }
@@ -111,6 +119,7 @@ class LawyerOtpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.toString().trim().isEmpty()) {
                     inputLwyCode2.requestFocus()
+
                 }
             }
 

@@ -1,5 +1,6 @@
 package com.karimmammadov.alovekilforpractice
 
+import android.app.ActivityOptions
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_customer_otp.*
+import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import java.util.concurrent.TimeUnit
 
 class CustomerOtpActivity : AppCompatActivity() {
@@ -35,6 +37,12 @@ class CustomerOtpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_otp)
+
+        back_signupcustomer.setOnClickListener {
+            val intent = Intent(this@CustomerOtpActivity,ChooseSignUpActivity::class.java)
+            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
+            finish()
+        }
 
         phoneCustomerLl.visibility = View.VISIBLE
         otpCustomerLl.visibility = View.GONE
@@ -66,6 +74,8 @@ class CustomerOtpActivity : AppCompatActivity() {
                 Log.d(TAG, "onCodeSent:$verificationId")
                 phoneCustomerLl.visibility = View.GONE
                 otpCustomerLl.visibility = View.VISIBLE
+                numberCustomerDescription.text = "Code sent to number +994${phoneNumberCustomer.text.toString().trim()}"
+
                 Toast.makeText(
                     this@CustomerOtpActivity,
                     "Verification Code sent...",
@@ -282,10 +292,10 @@ class CustomerOtpActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     progressDialog.dismiss()
                     val phone = firebaseAuth.currentUser?.phoneNumber
-                    val intent = Intent(this@CustomerOtpActivity,CustomerRegstrActivity::class.java)
+                    val intent = Intent(this@CustomerOtpActivity, CustomerRegstrActivity::class.java)
+                    intent.putExtra("phone_number",phone)
                     startActivity(intent)
                     finish()
-
                 }
                 .addOnFailureListener { e ->
                     progressDialog.dismiss()
