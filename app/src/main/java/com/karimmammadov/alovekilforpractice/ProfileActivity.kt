@@ -28,6 +28,7 @@ class ProfileActivity : AppCompatActivity() {
         fun intent(context: Context): Intent {
             val intent = Intent(context,ProfileActivity::class.java)
             return intent
+
         }
     }
 }
