@@ -2,11 +2,13 @@ package com.karimmammadov.alovekilforpractice
 
 import android.app.ActivityOptions
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.karimmammadov.alovekilforpractice.api.RetrofitClient
+import com.karimmammadov.alovekilforpractice.constant.MyConstants
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
 import kotlinx.android.synthetic.main.activity_customer_regstr.*
 import kotlinx.android.synthetic.main.activity_lawyer_otp.*
@@ -25,6 +27,9 @@ class CustomerRegstrActivity : AppCompatActivity() {
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
             finish()
         }
+
+        val loginSharedPreferences = getSharedPreferences("Myprefs",0)
+        val editor = loginSharedPreferences.edit()
 
         val intent = intent
         val phoneNumber = intent.getStringExtra("phone_number").toString().trim()
@@ -69,6 +74,12 @@ class CustomerRegstrActivity : AppCompatActivity() {
                         call: Call<DefaultResponse>,
                         response: Response<DefaultResponse>
                     ) {
+                        editor.putString(MyConstants.userName,name)
+                        editor.putString(MyConstants.userSecondName,secondName)
+                        editor.putString(MyConstants.userEmail,email)
+                        editor.putBoolean(MyConstants.args,true)
+                        editor.commit()
+                        startActivity(ProfileActivity.intent(this@CustomerRegstrActivity))
                         Toast.makeText(applicationContext,response.body()?.response, Toast.LENGTH_SHORT).show()
                     }
 
