@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@color/RGB_white"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".PinCodeActivity">
 
     <LinearLayout
@@ -85,7 +85,7 @@
         android:id="@+id/pincdelayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="90dp"
         android:gravity="center"
         android:background="@drawable/bgn_bluebutton"
         android:orientation="vertical">
@@ -268,7 +268,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="84.5dp"
+        android:layout_height="wrap_content"
         android:background="@color/RGB_white"
         android:orientation="horizontal">
 
@@ -289,7 +289,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="21dp"
                 android:text="Forget the access code?"
