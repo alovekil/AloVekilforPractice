@@ -4,120 +4,98 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/RGB_white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="testpincode.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="55dp"
         android:background="@color/RGB_white"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="98.08dp"
-            android:layout_height="44dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="42dp"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="117dp"
+            android:layout_marginTop="0dp"
             android:background="@drawable/logo1" />
 
-        <ImageView
-            android:id="@+id/iv_flag"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginLeft="237.92dp"
-            android:layout_marginTop="42dp"
-            android:background="@drawable/az" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
         android:background="@color/RGB_white">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="20dp"
-    android:text="Welcome to AV!"
-    android:textSize="22sp"
-    android:textStyle="bold"
-    android:textColor="@color/RGB_blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="141dp"
+            android:layout_marginRight="141dp"
+            android:text="PIN-CODE"
+            android:textColor="@color/RGB_black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="19dp"
+            android:id="@+id/circle1"
+            android:layout_height="19dp"
+            android:color="@color/RGB_white"
+            android:layout_marginStart="136dp"
+            android:background="@drawable/circle2" />
+
+        <View
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:id="@+id/circle2"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/circle2" />
+
+        <View
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:id="@+id/circle3"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/circle2" />
+
+        <View
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:id="@+id/circle4"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/circle2" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/pincdelayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="180sp"
+        android:layout_height="515dp"
+        android:layout_marginTop="40sp"
         android:background="@drawable/bgn_bluebutton"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="55dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="130dp"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginLeft="141dp"
-                android:layout_marginRight="141dp"
-                android:text="PIN-CODE"
-                android:textColor="@color/RGB_white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:orientation="horizontal">
-
-            <View
-                android:layout_width="11dp"
-                android:id="@+id/circle1"
-                android:layout_height="11dp"
-                android:layout_marginStart="136dp"
-                android:background="@drawable/circle" />
-
-            <View
-                android:layout_width="11dp"
-                android:layout_height="11dp"
-                android:id="@+id/circle2"
-                android:layout_marginStart="24dp"
-                android:background="@drawable/circle" />
-
-            <View
-                android:layout_width="11dp"
-                android:layout_height="11dp"
-                android:id="@+id/circle3"
-                android:layout_marginStart="24dp"
-                android:background="@drawable/circle" />
-
-            <View
-                android:layout_width="11dp"
-                android:layout_height="11dp"
-                android:id="@+id/circle4"
-                android:layout_marginStart="24dp"
-                android:background="@drawable/circle" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="67.27dp"
-            android:layout_marginLeft="20dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="32dp"
                 android:id="@+id/number1"
+                android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
                 android:layout_marginTop="0dp"
@@ -128,25 +106,25 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/number2"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
                 android:layout_marginTop="0dp"
                 android:gravity="center"
-                android:id="@+id/number2"
                 android:text="2"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/number3"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="66dp"
                 android:gravity="center"
-                android:id="@+id/number3"
                 android:text="3"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
@@ -154,37 +132,38 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="19dp"
-            android:layout_marginLeft="20dp"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/number4"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
                 android:layout_marginTop="0dp"
                 android:gravity="center"
                 android:text="4"
-                android:id="@+id/number4"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/number5"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
                 android:layout_marginTop="0dp"
                 android:gravity="center"
-                android:id="@+id/number5"
                 android:text="5"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/number6"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
@@ -192,44 +171,44 @@
                 android:layout_marginRight="66dp"
                 android:gravity="center"
                 android:text="6"
-                android:id="@+id/number6"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="19dp"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/number7"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
                 android:layout_marginTop="0dp"
                 android:gravity="center"
                 android:text="7"
-                android:id="@+id/number7"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/number8"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
                 android:layout_marginTop="0dp"
                 android:gravity="center"
                 android:text="8"
-                android:id="@+id/number8"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/number9"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="66dp"
@@ -237,92 +216,93 @@
                 android:layout_marginRight="66dp"
                 android:gravity="center"
                 android:text="9"
-                android:id="@+id/number9"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="87dp"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/cancelTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="66dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center"
                 android:text="Cancel"
-                android:id="@+id/cancelTextView"
                 android:textColor="@color/RGB_white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textSize="30sp"
+                android:textStyle="normal" />
 
             <TextView
+                android:id="@+id/number0"
                 android:layout_width="32dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="0dp"
                 android:gravity="center"
                 android:text="0"
-                android:id="@+id/number0"
                 android:textColor="@color/RGB_white"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/deletenumbers"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginStart="60dp"
                 android:layout_marginTop="0dp"
                 android:gravity="center"
-                android:id="@+id/deletenumbers"
                 android:src="@drawable/vector2" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_marginTop="21dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp"
             android:background="@color/RGB_white"
             android:orientation="horizontal">
+
             <LinearLayout
-                android:layout_width="200dp"
-                android:layout_marginTop="15dp"
-                android:layout_height="45dp"
                 android:id="@+id/accesCode"
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/RGB_white"
                 android:orientation="horizontal">
+
                 <ImageView
                     android:layout_width="16dp"
                     android:layout_height="21dp"
                     android:layout_marginLeft="34dp"
-                    android:src="@drawable/forgettheaccescode"
-                    android:layout_marginTop="21dp"/>
+                    android:layout_marginTop="21dp"
+                    android:src="@drawable/forgettheaccescode" />
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="21dp"
-                    android:text="@string/forget_the_acces_code"
+                    android:text="Forget the access code?"
                     android:textColor="@color/RGB_black"
                     android:textSize="13sp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="14dp"
                 android:id="@+id/useTouchid"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="5dp"
                 android:background="@color/RGB_white"
                 android:orientation="horizontal">
 
