@@ -10,6 +10,9 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.widget.Button
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
@@ -19,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_pin_code.*
 
 class PinCodeActivity : AppCompatActivity() {
 
+    private lateinit var useTouchid : LinearLayout
     private var cancellationSignal: CancellationSignal?=null
     private val authenticationCallback: BiometricPrompt.AuthenticationCallback
         get()=
@@ -32,14 +36,17 @@ class PinCodeActivity : AppCompatActivity() {
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                     super.onAuthenticationSucceeded(result)
                     startActivity(Intent(this@PinCodeActivity,ProfileActivity::class.java))
+                    finish()
                 }
             }
 
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_pin_code)
         checkBiometricSupport()
+
+        useTouchid = findViewById(R.id.useTouchid)
         useTouchid.setOnClickListener {
             val biometricPrompt= BiometricPrompt.Builder(this)
                 .setTitle("Title of Prompt")

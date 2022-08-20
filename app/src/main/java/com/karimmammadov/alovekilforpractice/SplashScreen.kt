@@ -24,11 +24,13 @@ class SplashScreen : AppCompatActivity() {
                val mySharedPreferences = getSharedPreferences("Myprefs",0)
                val logedin = mySharedPreferences.getBoolean(MyConstants.args,false)
                if(logedin){
-                   val intent =Intent (this@SplashScreen,ProfileActivity::class.java)
+                   val intent =Intent (this@SplashScreen,PinCodeActivity::class.java)
                    startActivity(intent)
+                   finish()
                }else{
                    val intent=Intent(this@SplashScreen,MainActivity::class.java)
                    startActivity(intent)
+                   finish()
                }
            }
 

@@ -4,21 +4,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="@color/RGB_white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="testpincode.MainActivity">
+    tools:context=".PinCodeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
+        android:gravity="center"
         android:background="@color/RGB_white"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="117dp"
+            android:layout_width="164.46dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
             android:layout_marginTop="0dp"
             android:background="@drawable/logo1" />
 
@@ -27,7 +29,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="134dp"
+        android:gravity="center"
         android:background="@color/RGB_white">
 
         <TextView
@@ -45,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <View
@@ -52,7 +56,6 @@
             android:id="@+id/circle1"
             android:layout_height="19dp"
             android:color="@color/RGB_white"
-            android:layout_marginStart="136dp"
             android:background="@drawable/circle2" />
 
         <View
@@ -81,16 +84,16 @@
     <LinearLayout
         android:id="@+id/pincdelayout"
         android:layout_width="match_parent"
-        android:layout_height="515dp"
-        android:layout_marginTop="40sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="145dp"
+        android:gravity="center"
         android:background="@drawable/bgn_bluebutton"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="36.83dp"
             android:orientation="horizontal">
 
             <TextView
@@ -134,7 +137,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
             android:layout_marginTop="19dp"
             android:orientation="horizontal">
 
@@ -179,7 +181,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
             android:layout_marginTop="19dp"
             android:orientation="horizontal">
 
@@ -224,9 +225,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="87dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="33.25dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <TextView
@@ -263,70 +264,69 @@
                 android:gravity="center"
                 android:src="@drawable/vector2" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="84.5dp"
+        android:background="@color/RGB_white"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="70dp"
+            android:id="@+id/accesCode"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
             android:background="@color/RGB_white"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:id="@+id/accesCode"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/RGB_white"
-                android:orientation="horizontal">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="21dp"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="21dp"
+                android:src="@drawable/forgettheaccescode" />
 
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="21dp"
-                    android:layout_marginLeft="34dp"
-                    android:layout_marginTop="21dp"
-                    android:src="@drawable/forgettheaccescode" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="21dp"
-                    android:text="Forget the access code?"
-                    android:textColor="@color/RGB_black"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/useTouchid"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:layout_marginLeft="14dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/RGB_white"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginTop="21dp"
-                    android:src="@drawable/iconoirfingerid" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="21dp"
-                    android:text="Use touch ID to login"
-                    android:textColor="@color/RGB_black"
-                    android:textSize="13sp" />
-            </LinearLayout>
-
+                android:layout_height="30dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="21dp"
+                android:text="Forget the access code?"
+                android:textColor="@color/RGB_black"
+                android:textSize="13sp" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/useTouchid"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/RGB_white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="21dp"
+                android:src="@drawable/iconoirfingerid" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="21dp"
+                android:text="Use touch ID to login"
+                android:textColor="@color/RGB_black"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+
     </LinearLayout>
+
 
 </LinearLayout>
 
