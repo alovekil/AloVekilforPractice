@@ -1,6 +1,7 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -9,13 +10,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.view.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 class LawyerRegisterPage2 : Fragment() {
     private var selectImage:Uri?=null
+
+    lateinit var selectLanguage: BooleanArray
+    var languageList: ArrayList<Int> = ArrayList()
+    var languageArray = arrayOf("Azərbaycan","English","Русский")
+
+    lateinit var selectArea : BooleanArray
+    var areaList : ArrayList<Int> = ArrayList()
+    var areaArray = arrayOf("Maliyyə hüququ","Miqrasiya Hüququ","Nəqliyyat Hüququ","Seçki Hüququ","Sığorta Hüququ","Təhsil Hüququ"
+        ,"Vergi Hüququ","Əmək Hüququ","Tibb Hüququ","Vərəsəllik Hüququ")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,21 +43,94 @@ class LawyerRegisterPage2 : Fragment() {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_lawyer_register_page2, container, false)
 
-        val completeTextLanguage = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_language)
-        val languages = ArrayList<String>()
-        languages.add("Azərbaycan")
-        languages.add("English")
-        languages.add("Русский")
-        val adapterlanguage = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,languages)
-        completeTextLanguage.setAdapter(adapterlanguage)
+        selectLanguage = BooleanArray(languageArray.size)
+        val languageTextView = view.findViewById<TextView>(R.id.tv_languages)
 
-        val completeTextArea = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_area)
-        val areas = ArrayList<String>()
-        areas.add("Məhkəmə")
-        areas.add("Ədliyyə")
-        areas.add("Prokurorluq")
-        val adapterArea = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,areas)
-        completeTextArea.setAdapter(adapterArea)
+        languageTextView.setOnClickListener {
+            val builder: AlertDialog.Builder = AlertDialog.Builder(
+                requireContext()
+            )
+            builder.setTitle("Select Language")
+            builder.setCancelable(false)
+            builder.setMultiChoiceItems(languageArray, selectLanguage, {dialog,which,isChecked->
+                if(isChecked){
+                    languageList.add(which)
+                    Collections.sort(languageList)
+                }else{
+                    languageList.remove(which)
+                }
+            })
+
+            builder.setPositiveButton("OK"){dialogInterface, which ->
+                val stringBuilder = StringBuilder()
+                for (j in languageList.indices) {
+                    stringBuilder.append(languageArray[languageList.get(j)])
+                    if(j!= languageList.size-1){
+                        stringBuilder.append(", ")
+                    }
+                }
+                tv_languages.setText(stringBuilder.toString())
+            }
+
+            builder.setNegativeButton("Cancel"){dialogInterface, which ->
+                dialogInterface.dismiss()
+            }
+
+            builder.setNeutralButton("Clear all"){dialogInterface, which ->
+                for (j in 0 until selectLanguage.size) {
+                    selectLanguage[j] = false
+                    languageList.clear()
+                    tv_languages.setText("")
+                }
+            }
+            builder.show()
+        }
+
+        selectArea = BooleanArray(areaArray.size)
+        val areTextView = view.findViewById<TextView>(R.id.tv_areas)
+        areTextView.setOnClickListener {
+            val builder: AlertDialog.Builder = AlertDialog.Builder(
+                requireContext()
+            )
+            builder.setTitle("Select Area")
+            builder.setCancelable(false)
+            builder.setMultiChoiceItems(areaArray, selectArea, {dialog,which,isChecked->
+                if(isChecked){
+                    if (which>=5) {
+                        isChecked == false
+                        Toast.makeText(activity, "You must choose maximum 5 areas", Toast.LENGTH_SHORT)
+                        areaList.add(which)
+                        Collections.sort(areaList)
+                    }
+                }else{
+                    areaList.remove(which)
+                }
+            })
+
+            builder.setPositiveButton("OK"){dialogInterface, which ->
+                val stringBuilder = StringBuilder()
+                for (j in areaList.indices) {
+                    stringBuilder.append(areaArray[areaList.get(j)])
+                    if(j!= areaList.size-1){
+                        stringBuilder.append(", ")
+                    }
+                }
+                tv_areas.setText(stringBuilder.toString())
+            }
+
+            builder.setNegativeButton("Cancel"){dialogInterface, which ->
+                dialogInterface.dismiss()
+            }
+
+            builder.setNeutralButton("Clear all"){dialogInterface, which ->
+                for (j in 0 until selectArea.size) {
+                    selectArea[j] = false
+                    areaList.clear()
+                    tv_areas.setText("")
+                }
+            }
+            builder.show()
+        }
 
 
         view.uploadCertificate.setOnClickListener {

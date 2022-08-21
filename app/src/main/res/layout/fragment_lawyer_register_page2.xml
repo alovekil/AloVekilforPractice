@@ -54,51 +54,46 @@
             android:layout_marginLeft="20dp" />
     </LinearLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <RelativeLayout
         android:layout_width="350dp"
         android:layout_height="52dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:boxStrokeColor="@color/RGB_blue"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        android:background="@drawable/backgroundgrayboxwords">
 
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/dropdown_language"
+        <TextView
+            android:id="@+id/tv_languages"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="17dp"
+            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+            android:hint="Service Languages"
             android:textColor="@color/RGB_black"
-            android:paddingTop="10dp"
-            android:text="Service Languages"
-            android:paddingBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:inputType="none"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textColorHint="@color/RGB_Gray2"
+            android:textSize="18sp" />
+    </RelativeLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
+    <RelativeLayout
         android:layout_width="350dp"
         android:layout_height="52dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:boxStrokeColor="@color/RGB_blue"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        android:background="@drawable/backgroundgrayboxwords">
 
-        <com.google.android.material.textfield.MaterialAutoCompleteTextView
-            android:id="@+id/dropdown_area"
+        <TextView
+            android:id="@+id/tv_areas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/RGB_black"
-            android:paddingTop="10dp"
-            android:text="Service areas"
-            android:paddingBottom="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:inputType="none"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="14dp"
+            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+            android:hint="Service Areas"
+            android:textColorHint="@color/RGB_Gray2"
+            android:textSize="18sp"
+            android:layout_marginRight="17dp"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="350dp"
