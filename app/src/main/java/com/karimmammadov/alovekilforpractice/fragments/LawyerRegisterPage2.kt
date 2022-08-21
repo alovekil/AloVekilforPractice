@@ -96,12 +96,8 @@ class LawyerRegisterPage2 : Fragment() {
             builder.setCancelable(false)
             builder.setMultiChoiceItems(areaArray, selectArea, {dialog,which,isChecked->
                 if(isChecked){
-                    if (which>=5) {
-                        isChecked == false
-                        Toast.makeText(activity, "You must choose maximum 5 areas", Toast.LENGTH_SHORT)
                         areaList.add(which)
                         Collections.sort(areaList)
-                    }
                 }else{
                     areaList.remove(which)
                 }
