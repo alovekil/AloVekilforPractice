@@ -58,6 +58,10 @@ class PinCodeActivity : AppCompatActivity() {
                     }).build()
             biometricPrompt.authenticate(getCancellationSignal(),mainExecutor,authenticationCallback)
         }
+        cancelTextView.setOnClickListener {
+            startActivity(Intent(this@PinCodeActivity,MainActivity::class.java))
+            finish()
+        }
 
     }
 

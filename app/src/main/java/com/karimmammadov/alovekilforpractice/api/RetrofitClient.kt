@@ -22,12 +22,12 @@ object RetrofitClient {
             chain.proceed(request)
         }.build()
 
-    val instance: Api by lazy {
+    val instance: ApiForCustomer by lazy {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-        retrofit.create(Api::class.java)
+        retrofit.create(ApiForCustomer::class.java)
     }
 }

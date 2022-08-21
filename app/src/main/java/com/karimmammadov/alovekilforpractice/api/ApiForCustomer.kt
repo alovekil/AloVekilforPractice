@@ -6,10 +6,9 @@ import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
-interface Api {
+interface ApiForCustomer {
 
-    @FormUrlEncoded
-    @POST("register")
+
     fun createUser(
         @Field("email") email:String,
         @Field("first_name") name:String,

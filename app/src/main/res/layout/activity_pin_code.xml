@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:gravity="center"
-        android:background="@drawable/bgn_bluebutton"
+        android:background="@drawable/bgn_blue_screen"
         android:orientation="vertical">
 
         <LinearLayout
@@ -268,7 +268,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="139dp"
         android:background="@color/RGB_white"
         android:orientation="horizontal">
 

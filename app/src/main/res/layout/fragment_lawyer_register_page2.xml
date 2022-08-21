@@ -46,6 +46,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="16dp"/>
         <ImageView
+            android:id="@+id/uploadCertificate"
             android:layout_width="18.82dp"
             android:layout_height="20dp"
             android:background="@drawable/upload"
@@ -156,6 +157,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="16dp"/>
         <ImageView
+            android:id="@+id/uploaddiploma"
             android:layout_width="18.82dp"
             android:layout_height="20dp"
             android:background="@drawable/upload"
