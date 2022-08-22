@@ -8,7 +8,8 @@ import retrofit2.http.POST
 
 interface ApiForCustomer {
 
-
+        @FormUrlEncoded
+        @POST("createuser")
     fun createUser(
         @Field("email") email:String,
         @Field("first_name") name:String,

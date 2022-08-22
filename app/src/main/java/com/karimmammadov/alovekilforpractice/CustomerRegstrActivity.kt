@@ -68,7 +68,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber!!,password, confirmPassword)
+            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber,password, confirmPassword)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,
@@ -79,7 +79,8 @@ class CustomerRegstrActivity : AppCompatActivity() {
                         editor.putString(MyConstants.userEmail,email)
                         editor.putBoolean(MyConstants.args,true)
                         editor.commit()
-                        startActivity(ProfileActivity.intent(this@CustomerRegstrActivity))
+                       val intent = Intent(this@CustomerRegstrActivity,ProfileActivity::class.java)
+                        startActivity(intent)
                         Toast.makeText(applicationContext,response.body()?.response, Toast.LENGTH_SHORT).show()
                     }
 

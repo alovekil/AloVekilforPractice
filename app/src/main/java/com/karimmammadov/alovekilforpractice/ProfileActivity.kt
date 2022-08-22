@@ -23,12 +23,4 @@ class ProfileActivity : AppCompatActivity() {
         profileUserName.text = profileName + " " + profileSecondName
         profileEmailxml.text = profileEmail
     }
-
-    companion object{
-        fun intent(context: Context): Intent {
-            val intent = Intent(context,ProfileActivity::class.java)
-            return intent
-
-        }
-    }
 }

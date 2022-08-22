@@ -11,7 +11,7 @@ import retrofit2.http.POST
 import retrofit2.http.Part
 
 interface ApiForLawyer{
-
+/*
     @FormUrlEncoded
     @POST("register")
     fun createLawyer(
@@ -39,4 +39,6 @@ interface ApiForLawyer{
          .build()
          .create(ApiForLawyer::class.java)
     }
+
+ */
 }

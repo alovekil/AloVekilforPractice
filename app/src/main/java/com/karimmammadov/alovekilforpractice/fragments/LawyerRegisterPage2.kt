@@ -128,14 +128,16 @@ class LawyerRegisterPage2 : Fragment() {
             builder.show()
         }
 
-
+/*
         view.uploadCertificate.setOnClickListener {
             openimagechooser()
         }
 
+
+ */
         return view
     }
-
+/*
     private fun openimagechooser() {
         Intent(Intent.ACTION_PICK).also {
             it.type="image/*"
@@ -161,4 +163,9 @@ class LawyerRegisterPage2 : Fragment() {
     companion object{
         private const val REQUEST_CODE_IMAGE_PICKER=100
     }
+
+ */
+
+ */
 }
+

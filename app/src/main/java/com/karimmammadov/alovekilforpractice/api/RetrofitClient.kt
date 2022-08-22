@@ -9,11 +9,10 @@ object RetrofitClient {
 
     private val AUTH = "Basic " + Base64.encodeToString("Kerim:kerim123".toByteArray(), Base64.NO_WRAP)
     private  val BASE_URL = "http://38.242.221.247/api/users/"
-    private val  okHttpClient = OkHttpClient.Builder()
 
+    private val  okHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain->
             val original = chain.request()
-
             val requestBuilder = original.newBuilder()
                 .addHeader("Authorization", AUTH)
                 .method(original.method(),original.body())
