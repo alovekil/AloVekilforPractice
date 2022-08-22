@@ -74,6 +74,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
                         call: Call<DefaultResponse>,
                         response: Response<DefaultResponse>
                     ) {
+                        Toast.makeText(applicationContext,response.body()?.response, Toast.LENGTH_SHORT).show()
                         editor.putString(MyConstants.userName,name)
                         editor.putString(MyConstants.userSecondName,secondName)
                         editor.putString(MyConstants.userEmail,email)
@@ -81,7 +82,6 @@ class CustomerRegstrActivity : AppCompatActivity() {
                         editor.commit()
                        val intent = Intent(this@CustomerRegstrActivity,ProfileActivity::class.java)
                         startActivity(intent)
-                        Toast.makeText(applicationContext,response.body()?.response, Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
