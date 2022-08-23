@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
+import com.karimmammadov.alovekilforpractice.adapters.ViewPagerAdapter
 import com.karimmammadov.alovekilforpractice.fragments.LawyerRegisterPage1
 import com.karimmammadov.alovekilforpractice.fragments.LawyerRegisterPage2
 

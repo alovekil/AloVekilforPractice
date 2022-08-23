@@ -248,6 +248,7 @@ back_chooseFieldActivity.setOnClickListener {
                 val phone = firebaseAuth.currentUser?.phoneNumber
                 val intent = Intent(this@LawyerOtpActivity,LawyerRegisterActivity::class.java)
                 startActivity(intent)
+                finish()
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

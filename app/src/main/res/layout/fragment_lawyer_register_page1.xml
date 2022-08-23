@@ -47,6 +47,7 @@
             android:textSize="18sp"
             android:background="@color/RGB_Gray1"
             android:hint="Name"
+            android:inputType="textPassword"
             android:textColorHint="@color/RGB_Gray2"
             android:textColor="@color/RGB_black"
             android:layout_marginLeft="20dp"

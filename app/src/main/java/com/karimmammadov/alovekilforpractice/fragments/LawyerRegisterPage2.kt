@@ -12,30 +12,33 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.R
+import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
+import com.karimmammadov.alovekilforpractice.api.ApiForCustomer
+import com.karimmammadov.alovekilforpractice.api.RetrofitClient
+import com.karimmammadov.alovekilforpractice.models.GetManageInstance
+import com.karimmammadov.alovekilforpractice.models.LawyerLanguageItems
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 import kotlin.collections.ArrayList
 
 class LawyerRegisterPage2 : Fragment() {
-    private var selectImage:Uri?=null
-
-    lateinit var selectLanguage: BooleanArray
-    var languageList: ArrayList<Int> = ArrayList()
-    var languageArray = arrayOf("Azərbaycan","English","Русский")
-
-    lateinit var selectArea : BooleanArray
-    var areaList : ArrayList<Int> = ArrayList()
-    var areaArray = arrayOf("Maliyyə hüququ","Miqrasiya Hüququ","Nəqliyyat Hüququ","Seçki Hüququ","Sığorta Hüququ","Təhsil Hüququ"
-        ,"Vergi Hüququ","Əmək Hüququ","Tibb Hüququ","Vərəsəllik Hüququ")
+    val BASE_URL = "http://38.242.221.247/api/"
+    lateinit var myCheckBoxItemsAdapter: MyCheckBoxItemsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,129 +46,76 @@ class LawyerRegisterPage2 : Fragment() {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_lawyer_register_page2, container, false)
 
-        selectLanguage = BooleanArray(languageArray.size)
         val languageTextView = view.findViewById<TextView>(R.id.tv_languages)
-
         languageTextView.setOnClickListener {
+            GetManageInstance.removeAllItems()
             val builder: AlertDialog.Builder = AlertDialog.Builder(
                 requireContext()
             )
-            builder.setTitle("Select Language")
-            builder.setCancelable(false)
-            builder.setMultiChoiceItems(languageArray, selectLanguage, {dialog,which,isChecked->
-                if(isChecked){
-                    languageList.add(which)
-                    Collections.sort(languageList)
-                }else{
-                    languageList.remove(which)
-                }
-            })
-
-            builder.setPositiveButton("OK"){dialogInterface, which ->
-                val stringBuilder = StringBuilder()
-                for (j in languageList.indices) {
-                    stringBuilder.append(languageArray[languageList.get(j)])
-                    if(j!= languageList.size-1){
-                        stringBuilder.append(", ")
-                    }
-                }
-                tv_languages.setText(stringBuilder.toString())
-            }
-
-            builder.setNegativeButton("Cancel"){dialogInterface, which ->
-                dialogInterface.dismiss()
-            }
-
-            builder.setNeutralButton("Clear all"){dialogInterface, which ->
-                for (j in 0 until selectLanguage.size) {
-                    selectLanguage[j] = false
-                    languageList.clear()
-                    tv_languages.setText("")
-                }
-            }
-            builder.show()
-        }
-
-        selectArea = BooleanArray(areaArray.size)
-        val areTextView = view.findViewById<TextView>(R.id.tv_areas)
-        areTextView.setOnClickListener {
-            val builder: AlertDialog.Builder = AlertDialog.Builder(
-                requireContext()
+            val view = LayoutInflater.from(requireContext()).inflate(R.layout.layout_spinner, null, false)
+            builder.setView(view)
+            val builderCreate = builder.create()
+            builderCreate.show()
+            val recyclerView = view.findViewById<RecyclerView>(R.id.language_rcyvw)
+            var languageList = listOf(
+                LawyerLanguageItems(1, "AZE"),
+                LawyerLanguageItems(2, "ENG"),
+                LawyerLanguageItems(3, "RUS"),
+                LawyerLanguageItems(4, "Portuguese")
             )
-            builder.setTitle("Select Area")
-            builder.setCancelable(false)
-            builder.setMultiChoiceItems(areaArray, selectArea, {dialog,which,isChecked->
-                if(isChecked){
-                        areaList.add(which)
-                        Collections.sort(areaList)
-                }else{
-                    areaList.remove(which)
-                }
-            })
+            myCheckBoxItemsAdapter = MyCheckBoxItemsAdapter(requireContext(), languageList)
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.adapter = myCheckBoxItemsAdapter
+            view.findViewById<TextView>(R.id.tv_clearAll).setOnClickListener {
+                myCheckBoxItemsAdapter.notifyItemRangeChanged(0, languageList.size )
+                GetManageInstance.removeAllItems()
+            }
+            view.findViewById<TextView>(R.id.tv_cancel).setOnClickListener {
+                builderCreate.dismiss()
+                GetManageInstance.removeAllItems()
+            }
 
-            builder.setPositiveButton("OK"){dialogInterface, which ->
+            view.findViewById<TextView>(R.id.tv_Ok).setOnClickListener {
                 val stringBuilder = StringBuilder()
-                for (j in areaList.indices) {
-                    stringBuilder.append(areaArray[areaList.get(j)])
-                    if(j!= areaList.size-1){
-                        stringBuilder.append(", ")
-                    }
+                builderCreate.dismiss()
+                val selectedLanguage = GetManageInstance.getLanguage()
+                stringBuilder.append(selectedLanguage.get(0).language)
+                for(l in 1..selectedLanguage.size-1){
+                    stringBuilder.append(", ${selectedLanguage.get(l).language}")
                 }
-                tv_areas.setText(stringBuilder.toString())
+                languageTextView.setText(stringBuilder)
             }
-
-            builder.setNegativeButton("Cancel"){dialogInterface, which ->
-                dialogInterface.dismiss()
-            }
-
-            builder.setNeutralButton("Clear all"){dialogInterface, which ->
-                for (j in 0 until selectArea.size) {
-                    selectArea[j] = false
-                    areaList.clear()
-                    tv_areas.setText("")
-                }
-            }
-            builder.show()
         }
 
-/*
-        view.uploadCertificate.setOnClickListener {
-            openimagechooser()
-        }
+        getMyData()
 
-
- */
         return view
     }
-/*
-    private fun openimagechooser() {
-        Intent(Intent.ACTION_PICK).also {
-            it.type="image/*"
-            val mimiTypes= arrayOf("image/jpeg","image/png")
-            it.putExtra(Intent.EXTRA_MIME_TYPES,mimiTypes)
-            startActivityForResult(it,REQUEST_CODE_IMAGE_PICKER)//it our intent
-        }
-    }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode==Activity.RESULT_OK){
-            //if user select image
-            when(requestCode){
-                REQUEST_CODE_IMAGE_PICKER->{
-                    selectImage=data?.data //this is give to URI
-                    uploadCertificate.setImageURI(selectImage)
+    private fun getMyData(){
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+            .create(ApiForCustomer::class.java)
+        val retrofitData = retrofitBuilder.getLanguageData()
+
+        retrofitData.enqueue(object : Callback<List<LawyerLanguageItems>?>{
+            override fun onResponse(
+                call: Call<List<LawyerLanguageItems>?>,
+                response: Response<List<LawyerLanguageItems>?>
+            ) {
+                val responseBody = response.body()!!
+                val myStringBuilder = StringBuilder()
+                for (myData in responseBody) {
+                    myStringBuilder.append(myData.id)
+                    myStringBuilder.append(myData.language)
                 }
             }
+            override fun onFailure(call: Call<List<LawyerLanguageItems>?>, t: Throwable) {
 
-        }
+            }
+        })
     }
-    companion object{
-        private const val REQUEST_CODE_IMAGE_PICKER=100
-    }
-
- */
-
- */
 }
 
