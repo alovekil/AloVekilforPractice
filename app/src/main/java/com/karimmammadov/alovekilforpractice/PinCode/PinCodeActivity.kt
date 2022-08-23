@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice
+package com.karimmammadov.alovekilforpractice.PinCode
 
 import android.app.KeyguardManager
 import android.content.Context
@@ -10,14 +10,13 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CancellationSignal
-import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
+import com.karimmammadov.alovekilforpractice.MainActivity
+import com.karimmammadov.alovekilforpractice.ProfileActivity
+import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.activity_pin_code.*
 
 class PinCodeActivity : AppCompatActivity() {
@@ -35,7 +34,7 @@ class PinCodeActivity : AppCompatActivity() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                     super.onAuthenticationSucceeded(result)
-                    startActivity(Intent(this@PinCodeActivity,ProfileActivity::class.java))
+                    startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
                     finish()
                 }
             }
@@ -59,7 +58,7 @@ class PinCodeActivity : AppCompatActivity() {
             biometricPrompt.authenticate(getCancellationSignal(),mainExecutor,authenticationCallback)
         }
         cancelTextView.setOnClickListener {
-            startActivity(Intent(this@PinCodeActivity,MainActivity::class.java))
+            startActivity(Intent(this@PinCodeActivity, MainActivity::class.java))
             finish()
         }
 

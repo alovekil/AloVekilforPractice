@@ -43,7 +43,7 @@
             android:name=".ChooseSignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".PinCodeActivity"
+            android:name=".PinCode.PinCodeActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
