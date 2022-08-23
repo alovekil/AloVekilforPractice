@@ -1,35 +1,24 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
 import com.karimmammadov.alovekilforpractice.api.ApiForCustomer
-import com.karimmammadov.alovekilforpractice.api.RetrofitClient
 import com.karimmammadov.alovekilforpractice.models.GetManageInstance
 import com.karimmammadov.alovekilforpractice.models.LawyerLanguageItems
-import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
-import kotlin.collections.ArrayList
 
 class LawyerRegisterPage2 : Fragment() {
     val BASE_URL = "http://38.242.221.247/api/"
@@ -86,7 +75,6 @@ class LawyerRegisterPage2 : Fragment() {
                 languageTextView.setText(stringBuilder)
             }
         }
-
         getMyData()
 
         return view
