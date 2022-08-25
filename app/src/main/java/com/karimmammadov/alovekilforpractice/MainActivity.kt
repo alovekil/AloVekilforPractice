@@ -18,8 +18,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signUp(view:View){
-        val intent = Intent(this@MainActivity,PinCodeActivity::class.java)
+        val intent = Intent(this@MainActivity,Create_Password::class.java)
         startActivity(intent)
+        finish()
         //big
     }
 }

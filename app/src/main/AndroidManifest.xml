@@ -18,11 +18,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Create_Password"
-            android:exported="false" />
+            android:name=".PinCode.Create_Password"
+            android:exported="true"/>
         <activity
-            android:name=".Login_activity"
-            android:exported="false" />
+            android:name=".PinCode.Login_activity"
+            android:exported="true" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />

@@ -1,6 +1,7 @@
 package com.karimmammadov.alovekilforpractice.PinCode
 
 import android.app.KeyguardManager
+import android.app.PendingIntent
 import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.DialogInterface
@@ -47,7 +48,7 @@ class PinCodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pin_code)
         checkBiometricSupport()
-        sharedPreferenceManager = SharedPreferenceManager(getActivity(this,0,intent, MODE_PRIVATE))
+        sharedPreferenceManager = SharedPreferenceManager(getActivity(this,0,intent, PendingIntent.FLAG_MUTABLE))
         useTouchid = findViewById(R.id.useTouchid)
         useTouchid.setOnClickListener {
             val biometricPrompt= BiometricPrompt.Builder(this)

@@ -1,6 +1,7 @@
 package com.karimmammadov.alovekilforpractice.PinCode
 
 import android.app.ActivityOptions
+import android.app.PendingIntent
 import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.Intent
@@ -45,7 +46,7 @@ class Create_Password : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_password)
-        sharedPreferenceManager = SharedPreferenceManager(getActivity(this,password1.hashCode(),intent,Context.MODE_PRIVATE))
+        sharedPreferenceManager = SharedPreferenceManager(getActivity(this,0,intent, PendingIntent.FLAG_MUTABLE))
         radioList1.add(circle1)
         radioList1.add(circle2)
         radioList1.add(circle3)
