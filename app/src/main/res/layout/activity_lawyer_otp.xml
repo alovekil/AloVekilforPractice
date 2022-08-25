@@ -39,7 +39,7 @@
             android:layout_height="22dp"
             android:layout_marginLeft="145dp"
             android:layout_marginTop="51dp"
-            android:text="Lawyer"
+            android:text="@string/lawyer"
             android:textColor="@color/RGB_blue"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -51,8 +51,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="178dp"
         android:gravity="center_vertical"
-        android:text="Enter your
-                phone number"
+        android:text="@string/enter_your_phone_number"
         android:textColor="@color/RGB_black"
         android:textSize="28sp"
         android:textStyle="bold" />

@@ -1,26 +1,29 @@
 package com.karimmammadov.alovekilforpractice.PinCode
 
 import android.app.KeyguardManager
+import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CancellationSignal
+import android.os.Handler
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.karimmammadov.alovekilforpractice.MainActivity
 import com.karimmammadov.alovekilforpractice.ProfileActivity
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.activity_pin_code.*
 
-class PinCodeActivity : AppCompatActivity() {
 
+class PinCodeActivity : AppCompatActivity() {
+    var sharedPreferenceManager: SharedPreferenceManager? = null
     private lateinit var useTouchid : LinearLayout
     private var cancellationSignal: CancellationSignal?=null
     private val authenticationCallback: BiometricPrompt.AuthenticationCallback
@@ -44,7 +47,7 @@ class PinCodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pin_code)
         checkBiometricSupport()
-
+        sharedPreferenceManager = SharedPreferenceManager(getActivity(this,0,intent, MODE_PRIVATE))
         useTouchid = findViewById(R.id.useTouchid)
         useTouchid.setOnClickListener {
             val biometricPrompt= BiometricPrompt.Builder(this)
@@ -60,6 +63,17 @@ class PinCodeActivity : AppCompatActivity() {
         cancelTextView.setOnClickListener {
             startActivity(Intent(this@PinCodeActivity, MainActivity::class.java))
             finish()
+        }
+
+        val handler = Handler()
+        val runnable: Runnable = Runnable {
+            if (sharedPreferenceManager!!.getBoolean("create_pasword", false)!!) {
+                startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
+                finish()
+            } else {
+                startActivity(Intent(this@PinCodeActivity, Create_Password::class.java))
+                finish()
+            }
         }
 
     }
@@ -90,4 +104,6 @@ class PinCodeActivity : AppCompatActivity() {
         }
         return cancellationSignal as CancellationSignal
     }
+
+
 }

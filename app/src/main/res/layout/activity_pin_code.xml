@@ -51,40 +51,47 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/EnterFirstPinCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
         android:gravity="center"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="19dp"
+        <RadioButton
+            android:layout_width="30dp"
             android:id="@+id/circle1"
+            android:buttonTint="@color/RGB_blue"
             android:layout_height="19dp"
-            android:color="@color/RGB_white"
-            android:background="@drawable/circle2" />
+            android:textColor="@color/RGB_blue"
+             />
 
-        <View
-            android:layout_width="19dp"
+        <RadioButton
+            android:buttonTint="@color/RGB_blue"
+            android:layout_width="30dp"
             android:layout_height="19dp"
             android:id="@+id/circle2"
             android:layout_marginStart="24dp"
-            android:background="@drawable/circle2" />
 
-        <View
-            android:layout_width="19dp"
+             />
+
+        <RadioButton
+            android:buttonTint="@color/RGB_blue"
+            android:layout_width="30dp"
             android:layout_height="19dp"
             android:id="@+id/circle3"
             android:layout_marginStart="24dp"
-            android:background="@drawable/circle2" />
+             />
 
-        <View
-            android:layout_width="19dp"
+        <RadioButton
+            android:buttonTint="@color/RGB_blue"
+            android:layout_width="30dp"
             android:layout_height="19dp"
             android:id="@+id/circle4"
             android:layout_marginStart="24dp"
-            android:background="@drawable/circle2" />
+             />
     </LinearLayout>
 
 
