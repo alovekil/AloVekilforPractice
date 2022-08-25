@@ -46,6 +46,8 @@ class Create_Password : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_password)
+        pin_code_first.visibility=VISIBLE
+        pin_code_second.visibility= GONE
         sharedPreferenceManager = SharedPreferenceManager(getActivity(this,0,intent, PendingIntent.FLAG_MUTABLE))
         radioList1.add(circle1)
         radioList1.add(circle2)
@@ -55,8 +57,7 @@ class Create_Password : AppCompatActivity() {
         radioList2.add(circle2)
         radioList2.add(circle3)
         radioList2.add(circle4)
-        pin_code_first.visibility=VISIBLE
-        pin_code_second.visibility= GONE
+
         number1.setOnClickListener{
             passwordcheck("1")
         }
