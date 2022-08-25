@@ -20,9 +20,7 @@
         <activity
             android:name=".PinCode.Create_Password"
             android:exported="true"/>
-        <activity
-            android:name=".PinCode.Login_activity"
-            android:exported="true" />
+
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
@@ -48,7 +46,7 @@
             android:exported="false" />
         <activity
             android:name=".PinCode.PinCodeActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">
