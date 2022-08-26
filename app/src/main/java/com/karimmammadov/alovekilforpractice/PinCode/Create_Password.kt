@@ -16,6 +16,7 @@ import androidx.core.view.isVisible
 import com.karimmammadov.alovekilforpractice.ChooseSignUpActivity
 import com.karimmammadov.alovekilforpractice.ProfileActivity
 import com.karimmammadov.alovekilforpractice.R
+import com.karimmammadov.alovekilforpractice.databinding.ActivityCreatePasswordBinding
 import kotlinx.android.synthetic.main.activity_create_password.*
 import kotlinx.android.synthetic.main.activity_pin_code.*
 import kotlinx.android.synthetic.main.activity_pin_code.circle1
@@ -35,7 +36,7 @@ import kotlinx.android.synthetic.main.activity_pin_code.deletenumbers as deleten
 
 
 class Create_Password : AppCompatActivity() {
-
+    val binding:ActivityCreatePasswordBinding?=null
     var sharedPreferenceManager: SharedPreferenceManager? = null
     val radioList1: ArrayList<RadioButton> = ArrayList()
     var radioList2: ArrayList<RadioButton> = ArrayList()
@@ -107,13 +108,13 @@ class Create_Password : AppCompatActivity() {
     private fun passwordcheck(number:String) {
        if(password1!!.length<=3){
            password1+=number
-           radioList1.get(password1!!.length)
+           radio1true(password1!!.length)
            pin_code_first.visibility= GONE
            pin_code_second.visibility= VISIBLE
        }
         else if(gpassword2!!.length<=3){
             gpassword2+=number
-           radioList2.get(gpassword2!!.length)
+           radio2true(gpassword2!!.length)
         }
         checkpaswordequal()
     }
