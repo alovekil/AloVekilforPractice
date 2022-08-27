@@ -8,6 +8,7 @@ import android.os.CountDownTimer
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.karimmammadov.alovekilforpractice.PinCode.PinCodeActivity
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
 
@@ -17,8 +18,8 @@ class SplashScreen : AppCompatActivity() {
     lateinit var  handler:Handler
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       val view= setContentView(R.layout.activity_splash_screen)
-        sharedPreferences = this.context!!.getSharedPreferences("password", Context.MODE_PRIVATE)
+        setContentView(R.layout.activity_splash_screen)
+        sharedPreferences = this@SplashScreen.getSharedPreferences("password", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
         val countDownTimer  = object : CountDownTimer(3000,1000) {
             override fun onTick(p0: Long) {
@@ -26,28 +27,23 @@ class SplashScreen : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                if (sharedPreferences.getBoolean("create_pasword",false)) {
-                    view!!.let { Navigation.findNavController(it).navigate(R.layout.fragment_create__password_)}
-                } else {
-                    Navigation.findNavController(view).navigate(R.id.navhost_splash_tocreate)
+                if (sharedPreferences.getBoolean("create_pasword",false))  {
+                    val mySharedPreferences = getSharedPreferences("Myprefs",0)
+                    val logedin = mySharedPreferences.getBoolean(MyConstants.args,false)
+                    if(logedin){
+                        val intent=Intent(this@SplashScreen,PinCodeActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }else{
+                        val intent=Intent(this@SplashScreen,MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
                 }
             }
 
         }.start()
 
-           override fun onFinish() {
-               val mySharedPreferences = getSharedPreferences("Myprefs",0)
-               val logedin = mySharedPreferences.getBoolean(MyConstants.args,false)
-               if(logedin){
-                   val intent =Intent (this@SplashScreen, PinCodeActivity::class.java)
-                   startActivity(intent)
-                   finish()
-               }else{
-                   val intent=Intent(this@SplashScreen,MainActivity::class.java)
-                   startActivity(intent)
-                   finish()
-               }
-           }.start()
 
        }
 

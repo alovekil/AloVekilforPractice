@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signUp(view:View){
-        val intent = Intent(this@MainActivity,Create_Password_Fragment::class.java)
+        val intent = Intent(this@MainActivity,ChooseSignUpActivity::class.java)
         startActivity(intent)
         finish()
         //big

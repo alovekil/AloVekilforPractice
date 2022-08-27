@@ -42,10 +42,10 @@ class Create_Password_Fragment : Fragment() {
         radioList2.add(binding!!.circle2);
         radioList2.add(binding!!.circle3);
         radioList2.add(binding!!.circle4);
-        radioList1.add(binding!!.circle1);
-        radioList1.add(binding!!.circle2);
-        radioList1.add(binding!!.circle3);
-        radioList1.add(binding!!.circle4);
+        radioList1.add(binding!!.circle5);
+        radioList1.add(binding!!.circle6);
+        radioList1.add(binding!!.circle7);
+        radioList1.add(binding!!.circle8);
         binding!!.number0.setOnClickListener { view -> passwordCheck("0") }
         binding!!.number1.setOnClickListener { view -> passwordCheck("1") }
         binding!!.number2.setOnClickListener { view -> passwordCheck("2") }
