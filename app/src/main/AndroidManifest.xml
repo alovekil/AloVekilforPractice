@@ -41,12 +41,11 @@
         <activity
             android:name=".CustomerOtpActivity"
             android:exported="false" />
+
         <activity
             android:name=".ChooseSignUpActivity"
             android:exported="false" />
-        <activity
-            android:name=".PinCode.PinCodeActivity"
-            android:exported="true" />
+
         <activity
             android:name=".SplashScreen"
             android:exported="true">

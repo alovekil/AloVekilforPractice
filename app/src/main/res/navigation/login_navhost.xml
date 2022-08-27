@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/login_navhost">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navhost"
+    app:startDestination="@id/splashScreen">
+    <activity
+        android:id="@+id/splashScreen"
+        android:name="com.karimmammadov.alovekilforpractice.SplashScreen"
+        android:label="activity_splash_screen"
+        tools:layout="@layout/activity_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_pinCodeActivity"
+            app:destination="@id/pinCodeActivity" />
+        <action
+            android:id="@+id/action_splashScreen_to_create_Password_Fragment2"
+            app:destination="@id/create_Password_Fragment2" />
+    </activity>
+    <fragment
+        android:id="@+id/create_Password_Fragment2"
+        android:name="com.karimmammadov.alovekilforpractice.PinCode.Create_Password_Fragment"
+        android:label="Create_Password_Fragment" >
+        <action
+            android:id="@+id/action_create_Password_Fragment2_to_splashScreen"
+            app:destination="@id/splashScreen" />
+        <action
+            android:id="@+id/action_create_Password_Fragment2_to_profileActivity"
+            app:destination="@id/profileActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/pinCodeActivity"
+        android:name="com.karimmammadov.alovekilforpractice.PinCode.PinCodeActivity"
+        android:label="activity_pin_code"
+        tools:layout="@layout/activity_pin_code" >
 
+        <action
+            android:id="@+id/pinCodeActivity_to_profileActivity"
+            app:destination="@id/profileActivity" />
+    </activity>
+    <activity
+        android:id="@+id/profileActivity"
+        android:name="com.karimmammadov.alovekilforpractice.ProfileActivity"
+        android:label="activity_profile"
+        tools:layout="@layout/activity_profile" />
 </navigation>

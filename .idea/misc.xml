@@ -28,7 +28,7 @@
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/font/fontforheading.xml" value="0.1923899102180419" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/font/fonts.xml" value="0.1923899102180419" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_choose_sign_up.xml" value="0.18" />
-        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_create_password.xml" value="0.18" />
+        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_create_password.xml" value="0.2" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_customer_register.xml" value="0.21" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_customer_regstr.xml" value="0.22" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_enter_number.xml" value="0.25" />
@@ -41,6 +41,7 @@
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_regstr_page.xml" value="0.1675929884566054" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/activity_splash_screen.xml" value="0.15476699444206926" />
+        <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_create__password_.xml" value="0.11201368106028217" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_create_pin_code.xml" value="0.1675929884566054" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_customer_register.xml" value="0.21" />
         <entry key="..\:/AloVekilJustPractice/AloVekilforPractice/app/src/main/res/layout/fragment_lawyer_register.xml" value="0.21" />

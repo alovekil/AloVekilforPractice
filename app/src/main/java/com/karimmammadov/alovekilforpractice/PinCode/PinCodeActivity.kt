@@ -1,33 +1,43 @@
 package com.karimmammadov.alovekilforpractice.PinCode
 
 import android.app.KeyguardManager
-import android.app.PendingIntent
-import android.app.PendingIntent.getActivity
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
 import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
 import android.os.Handler
+import android.view.View
 import android.widget.LinearLayout
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.databinding.DataBindingUtil
 import com.karimmammadov.alovekilforpractice.MainActivity
 import com.karimmammadov.alovekilforpractice.ProfileActivity
 import com.karimmammadov.alovekilforpractice.R
-import kotlinx.android.synthetic.main.activity_pin_code.*
+import com.karimmammadov.alovekilforpractice.databinding.ActivityPinCodeBinding
+import kotlinx.android.synthetic.main.activity_pin_code.cancelTextView
+import kotlinx.android.synthetic.main.fragment_create__password_.*
 
 
 class PinCodeActivity : AppCompatActivity() {
-    var sharedPreferenceManager: SharedPreferenceManager? = null
+    var gpassword2:String? = ""
+    lateinit var editor: SharedPreferences.Editor
+    var binding:ActivityPinCodeBinding?=null
+    var password1 = ""
+    var radioList1: ArrayList<RadioButton> = ArrayList()
+    var radioList2: ArrayList<RadioButton> = ArrayList()
+   lateinit var sharedPreferences: SharedPreferences
     private lateinit var useTouchid : LinearLayout
-    private var cancellationSignal: CancellationSignal?=null
-    private val authenticationCallback: BiometricPrompt.AuthenticationCallback
+    private var cancellationSignal : CancellationSignal?=null
+    private val authenticationCallback : BiometricPrompt.AuthenticationCallback
         get()=
             @RequiresApi(Build.VERSION_CODES.P)
             object: BiometricPrompt.AuthenticationCallback(){
@@ -48,7 +58,33 @@ class PinCodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pin_code)
         checkBiometricSupport()
-        sharedPreferenceManager = SharedPreferenceManager(getActivity(this,0,intent, PendingIntent.FLAG_MUTABLE))
+        binding=DataBindingUtil.inflate(layoutInflater,R.layout.activity_pin_code,null,false)
+        sharedPreferences=this!!.getSharedPreferences("password", Context.MODE_PRIVATE)
+        editor=sharedPreferences.edit()
+        radioList1.add(binding!!.circle1);
+        radioList1.add(binding!!.circle2);
+        radioList1.add(binding!!.circle3);
+        radioList1.add(binding!!.circle4);
+        binding!!.number0.setOnClickListener { view -> passwordCheck("0") }
+        binding!!.number1.setOnClickListener { view -> passwordCheck("1") }
+        binding!!.number2.setOnClickListener { view -> passwordCheck("2") }
+        binding!!.number3.setOnClickListener { view -> passwordCheck("3") }
+        binding!!.number4.setOnClickListener { view -> passwordCheck("4") }
+        binding!!.number5.setOnClickListener { view -> passwordCheck("5") }
+        binding!!.number6.setOnClickListener { view -> passwordCheck("6") }
+        binding!!.number7.setOnClickListener { view -> passwordCheck("7") }
+        binding!!.number8.setOnClickListener { view -> passwordCheck("8") }
+        binding!!.number9.setOnClickListener { view -> passwordCheck("9") }
+        binding!!.deletenumbers.setOnClickListener{
+            if (password1!!.length > 0) {
+                password1 = password1!!.substring(0, password1!!.length - 1)
+                radio1True(password1!!.length)
+                System.out.println(password1)
+            }
+  
+        }
+
+
         useTouchid = findViewById(R.id.useTouchid)
         useTouchid.setOnClickListener {
             val biometricPrompt= BiometricPrompt.Builder(this)
@@ -68,15 +104,47 @@ class PinCodeActivity : AppCompatActivity() {
 
         val handler = Handler()
         val runnable: Runnable = Runnable {
-            if (sharedPreferenceManager!!.getBoolean("create_pasword", false)!!) {
+            if (sharedPreferences!!.getBoolean("create_pasword", false)!!) {
                 startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
                 finish()
             } else {
-                startActivity(Intent(this@PinCodeActivity, Create_Password::class.java))
+                startActivity(Intent(this@PinCodeActivity, Create_Password_Fragment::class.java))
                 finish()
             }
         }
 
+    }
+
+    private fun radio1True(length: Int) {
+        for(i in 0..3 ){
+            if (i < length) {
+                radioList1[i].isChecked = true
+            } else {
+                radioList1[i].isChecked = false
+            }
+        }
+    }
+
+    private fun passwordCheck(s: String) {
+        if(password1!!.length<4){
+            password1+=s
+            radio1True(password1.length)
+        }
+
+        checkpaswordequal()
+    }
+    private fun checkpaswordequal() {
+        if (password1!!.length==4 ){
+            if(password1.equals(sharedPreferences.getString("password","862186214632"))){
+                Pin_CodeText.setVisibility(View.VISIBLE)
+                Toast.makeText(this,"succes login" ,Toast.LENGTH_SHORT).show()
+
+            }
+            else{
+                password1=""
+                radio1True(password1.length)
+            }
+        }
     }
 
     private fun checkBiometricSupport():Boolean {

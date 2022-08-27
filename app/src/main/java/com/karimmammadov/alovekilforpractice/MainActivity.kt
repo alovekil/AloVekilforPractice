@@ -1,14 +1,10 @@
 package com.karimmammadov.alovekilforpractice
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import com.karimmammadov.alovekilforpractice.PinCode.Create_Password
-import com.karimmammadov.alovekilforpractice.PinCode.PinCodeActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.karimmammadov.alovekilforpractice.PinCode.Create_Password_Fragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signUp(view:View){
-        val intent = Intent(this@MainActivity,Create_Password::class.java)
+        val intent = Intent(this@MainActivity,Create_Password_Fragment::class.java)
         startActivity(intent)
         finish()
         //big
