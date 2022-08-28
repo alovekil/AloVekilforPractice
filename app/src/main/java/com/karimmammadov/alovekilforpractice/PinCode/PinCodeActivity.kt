@@ -18,19 +18,36 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.databinding.DataBindingUtil
+
 import com.karimmammadov.alovekilforpractice.MainActivity
 import com.karimmammadov.alovekilforpractice.ProfileActivity
 import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.databinding.ActivityPinCodeBinding
+import kotlinx.android.synthetic.main.activity_create_password.*
+import kotlinx.android.synthetic.main.activity_pin_code.*
 import kotlinx.android.synthetic.main.activity_pin_code.cancelTextView
-import kotlinx.android.synthetic.main.fragment_create__password_.*
+import kotlinx.android.synthetic.main.activity_pin_code.circle1
+import kotlinx.android.synthetic.main.activity_pin_code.circle2
+import kotlinx.android.synthetic.main.activity_pin_code.circle3
+import kotlinx.android.synthetic.main.activity_pin_code.circle4
+import kotlinx.android.synthetic.main.activity_pin_code.deletenumbers
+import kotlinx.android.synthetic.main.activity_pin_code.number0
+import kotlinx.android.synthetic.main.activity_pin_code.number1
+import kotlinx.android.synthetic.main.activity_pin_code.number2
+import kotlinx.android.synthetic.main.activity_pin_code.number3
+import kotlinx.android.synthetic.main.activity_pin_code.number4
+import kotlinx.android.synthetic.main.activity_pin_code.number5
+import kotlinx.android.synthetic.main.activity_pin_code.number6
+import kotlinx.android.synthetic.main.activity_pin_code.number7
+import kotlinx.android.synthetic.main.activity_pin_code.number8
+import kotlinx.android.synthetic.main.activity_pin_code.number9
+
 
 
 class PinCodeActivity : AppCompatActivity() {
     var gpassword2:String? = ""
     lateinit var editor: SharedPreferences.Editor
-    var binding:ActivityPinCodeBinding?=null
+   // var binding:ActivityPinCodeBinding?=null
     var password1 = ""
     var radioList1: ArrayList<RadioButton> = ArrayList()
     var radioList2: ArrayList<RadioButton> = ArrayList()
@@ -58,24 +75,25 @@ class PinCodeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pin_code)
         checkBiometricSupport()
-        binding=DataBindingUtil.inflate(layoutInflater,R.layout.activity_pin_code,null,false)
+     //   binding=DataBindingUtil.inflate(layoutInflater,R.layout.activity_pin_code,null,false)
         sharedPreferences=this!!.getSharedPreferences("password", Context.MODE_PRIVATE)
         editor=sharedPreferences.edit()
-        radioList1.add(binding!!.circle1);
-        radioList1.add(binding!!.circle2);
-        radioList1.add(binding!!.circle3);
-        radioList1.add(binding!!.circle4);
-        binding!!.number0.setOnClickListener { view -> passwordCheck("0") }
-        binding!!.number1.setOnClickListener { view -> passwordCheck("1") }
-        binding!!.number2.setOnClickListener { view -> passwordCheck("2") }
-        binding!!.number3.setOnClickListener { view -> passwordCheck("3") }
-        binding!!.number4.setOnClickListener { view -> passwordCheck("4") }
-        binding!!.number5.setOnClickListener { view -> passwordCheck("5") }
-        binding!!.number6.setOnClickListener { view -> passwordCheck("6") }
-        binding!!.number7.setOnClickListener { view -> passwordCheck("7") }
-        binding!!.number8.setOnClickListener { view -> passwordCheck("8") }
-        binding!!.number9.setOnClickListener { view -> passwordCheck("9") }
-        binding!!.deletenumbers.setOnClickListener{
+        radioList1.add(circle1);
+        radioList1.add(circle2);
+        radioList1.add(circle3);
+        radioList1.add(circle4);
+        number0.setOnClickListener { view -> passwordCheck("0") }
+        number1.setOnClickListener { view -> passwordCheck("1") }
+      number2.setOnClickListener { view -> passwordCheck("2") }
+        number3.setOnClickListener { view -> passwordCheck("3") }
+       number4.setOnClickListener { view -> passwordCheck("4") }
+        number5.setOnClickListener { view -> passwordCheck("5") }
+      number6.setOnClickListener { view -> passwordCheck("6") }
+        number7.setOnClickListener { view -> passwordCheck("7") }
+       number8.setOnClickListener { view -> passwordCheck("8") }
+        number9.setOnClickListener { view -> passwordCheck("9") }
+
+        deletenumbers.setOnClickListener{
             if (password1!!.length > 0) {
                 password1 = password1!!.substring(0, password1!!.length - 1)
                 radio1True(password1!!.length)
@@ -108,7 +126,7 @@ class PinCodeActivity : AppCompatActivity() {
                 startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
                 finish()
             } else {
-                startActivity(Intent(this@PinCodeActivity, Create_Password_Fragment::class.java))
+                startActivity(Intent(this@PinCodeActivity, CreatePasswordActivity::class.java))
                 finish()
             }
         }

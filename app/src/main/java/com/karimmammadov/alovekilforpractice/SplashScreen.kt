@@ -19,23 +19,25 @@ class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
+
         sharedPreferences = this@SplashScreen.getSharedPreferences("password", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
+
         val countDownTimer  = object : CountDownTimer(3000,1000) {
             override fun onTick(p0: Long) {
 
             }
 
             override fun onFinish() {
-                if (sharedPreferences.getBoolean("create_pasword",false))  {
-                    val mySharedPreferences = getSharedPreferences("Myprefs",0)
-                    val logedin = mySharedPreferences.getBoolean(MyConstants.args,false)
-                    if(logedin){
-                        val intent=Intent(this@SplashScreen,PinCodeActivity::class.java)
+                if (sharedPreferences.getBoolean("create_pasword", false)) {
+                    val mySharedPreferences = getSharedPreferences("Myprefs", 0)
+                    val logedin = mySharedPreferences.getBoolean(MyConstants.args, false)
+                    if (logedin) {
+                        val intent = Intent(this@SplashScreen, PinCodeActivity::class.java)
                         startActivity(intent)
                         finish()
-                    }else{
-                        val intent=Intent(this@SplashScreen,MainActivity::class.java)
+                    } else {
+                        val intent = Intent(this@SplashScreen, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     }
