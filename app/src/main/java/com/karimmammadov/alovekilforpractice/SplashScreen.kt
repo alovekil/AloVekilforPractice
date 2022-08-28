@@ -15,38 +15,39 @@ import com.karimmammadov.alovekilforpractice.constant.MyConstants
 class SplashScreen : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
     lateinit var editor: SharedPreferences.Editor
-    lateinit var  handler:Handler
+    lateinit var handler: Handler
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
         sharedPreferences = this@SplashScreen.getSharedPreferences("password", Context.MODE_PRIVATE)
-        editor  =  sharedPreferences.edit()
+        editor = sharedPreferences.edit()
 
-        val countDownTimer  = object : CountDownTimer(3000,1000) {
+        val countDownTimer = object : CountDownTimer(3000, 1000) {
             override fun onTick(p0: Long) {
 
             }
 
             override fun onFinish() {
                 if (sharedPreferences.getBoolean("create_pasword", false)) {
-                    val mySharedPreferences = getSharedPreferences("Myprefs", 0)
-                    val logedin = mySharedPreferences.getBoolean(MyConstants.args, false)
-                    if (logedin) {
-                        val intent = Intent(this@SplashScreen, PinCodeActivity::class.java)
-                        startActivity(intent)
-                        finish()
+                  val intent = Intent(this@SplashScreen,MainActivity::class.java)
+                    startActivity(intent)
                     } else {
-                        val intent = Intent(this@SplashScreen, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
+                        val mySharedPreferences = getSharedPreferences("Myprefs", 0)
+                        val logedin = mySharedPreferences.getBoolean(MyConstants.args, false)
+                        if (logedin) {
+                            val intent = Intent(this@SplashScreen, PinCodeActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            val intent = Intent(this@SplashScreen, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
                     }
                 }
-            }
 
+            }
         }.start()
 
-
-       }
-
     }
+}
