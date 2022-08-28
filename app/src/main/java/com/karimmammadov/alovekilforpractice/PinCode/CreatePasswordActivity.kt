@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
 
@@ -87,6 +88,9 @@ class CreatePasswordActivity : AppCompatActivity() {
     }
 
     private fun passwordCheck(s: String) {
+
+
+
         if(password1!!.length<4){
             password1+=s
             radio1True(password1!!.length)
