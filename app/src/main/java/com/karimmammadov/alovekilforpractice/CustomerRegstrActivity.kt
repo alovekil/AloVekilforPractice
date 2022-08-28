@@ -2,16 +2,15 @@ package com.karimmammadov.alovekilforpractice
 
 import android.app.ActivityOptions
 import android.content.Intent
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.karimmammadov.alovekilforpractice.PinCode.CreatePasswordActivity
 import com.karimmammadov.alovekilforpractice.api.RetrofitClient
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
 import kotlinx.android.synthetic.main.activity_customer_regstr.*
-import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -80,7 +79,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
                         editor.putString(MyConstants.userEmail,email)
                         editor.putBoolean(MyConstants.args,true)
                         editor.commit()
-                       val intent = Intent(this@CustomerRegstrActivity,ProfileActivity::class.java)
+                       val intent = Intent(this@CustomerRegstrActivity,CreatePasswordActivity::class.java)
                         startActivity(intent)
                     }
 
