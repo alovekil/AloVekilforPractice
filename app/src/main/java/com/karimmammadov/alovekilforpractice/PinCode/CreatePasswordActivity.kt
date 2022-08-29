@@ -29,7 +29,6 @@ class CreatePasswordActivity : AppCompatActivity() {
         setContentView(R.layout.activity_create_password)
 
      //   binding= DataBindingUtil.inflate(layoutInflater,R.layout.activity_create_password,null,false)
-
         sharedPreferences = this!!.getSharedPreferences("password", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
         radioList2.add(circle1)
