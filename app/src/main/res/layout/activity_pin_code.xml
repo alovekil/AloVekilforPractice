@@ -108,7 +108,7 @@
         <LinearLayout
             android:id="@+id/pincdelayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="130dp"
             android:gravity="center"
             android:background="@drawable/bgn_blue_screen"

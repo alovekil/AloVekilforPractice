@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signUp(view:View){
-            val intent = Intent(this@MainActivity, CustomerOtpActivity::class.java)
+            val intent = Intent(this@MainActivity, CreatePasswordActivity::class.java)
         startActivity(intent)
         finish()
         //big
