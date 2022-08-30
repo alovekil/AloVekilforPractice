@@ -113,11 +113,12 @@ class CreatePasswordActivity : AppCompatActivity() {
                 finish()
                 Toast.makeText(this@CreatePasswordActivity, "Succesfully", Toast.LENGTH_LONG)
             }
-        }   else{
-            password1=""
-            radio1True(password1!!.length)
-            gpassword2=""
-            radio2True(gpassword2!!.length)
+            else{
+                password1=""
+                radio1True(password1!!.length)
+                gpassword2=""
+                radio2True(gpassword2!!.length)
+            }
         }
 
     }
