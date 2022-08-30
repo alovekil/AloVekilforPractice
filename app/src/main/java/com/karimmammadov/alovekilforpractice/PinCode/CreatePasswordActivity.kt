@@ -27,18 +27,18 @@ class CreatePasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_password)
-
+EnterConfirmPassword.visibility = View.GONE
      //   binding= DataBindingUtil.inflate(layoutInflater,R.layout.activity_create_password,null,false)
         sharedPreferences = this!!.getSharedPreferences("password", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
-        radioList2.add(circle1)
-        radioList2.add(circle2)
-        radioList2.add(circle3)
-        radioList2.add(circle4)
-        radioList1.add(circle5)
-        radioList1.add(circle6)
-        radioList1.add(circle7)
-        radioList1.add(circle8)
+        radioList1.add(circle1)
+        radioList1.add(circle2)
+        radioList1.add(circle3)
+        radioList1.add(circle4)
+        radioList2.add(circle5)
+        radioList2.add(circle6)
+        radioList2.add(circle7)
+        radioList2.add(circle8)
        number0.setOnClickListener { view -> passwordCheck("0") }
         number1.setOnClickListener { view -> passwordCheck("1") }
        number2.setOnClickListener { view -> passwordCheck("2") }
@@ -89,7 +89,6 @@ class CreatePasswordActivity : AppCompatActivity() {
     private fun passwordCheck(s: String) {
 
 
-
         if(password1!!.length<4){
             password1+=s
             radio1True(password1!!.length)
@@ -97,6 +96,10 @@ class CreatePasswordActivity : AppCompatActivity() {
         else if(gpassword2!!.length<4){
             gpassword2+=s
             radio2True(gpassword2!!.length)
+        }
+
+        if(password1!!.length == 4){
+            EnterConfirmPassword.visibility = View.VISIBLE
         }
         checkpaswordequal()
     }

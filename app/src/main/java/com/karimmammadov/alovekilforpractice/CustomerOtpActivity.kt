@@ -44,8 +44,19 @@ class CustomerOtpActivity : AppCompatActivity() {
             finish()
         }
 
-        phoneCustomerLl.visibility = View.VISIBLE
-        otpCustomerLl.visibility = View.GONE
+        back_signupcustomer.visibility = View.VISIBLE
+        tv_numberCustomerHighlight.visibility = View.VISIBLE
+        tv_enteryourphonenumber.visibility = View.VISIBLE
+        ll_NumberArea.visibility = View.VISIBLE
+        btn_sendCstmOtp.visibility = View.VISIBLE
+
+        tv_otpcustomerHighlight.visibility = View.GONE
+        tv_enterverificationcode.visibility = View.GONE
+        numberCustomerDescription.visibility = View.GONE
+        ll_otpArea.visibility = View.GONE
+        btn_nextCstmRegister.visibility = View.GONE
+
+
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please Wait")
@@ -72,8 +83,18 @@ class CustomerOtpActivity : AppCompatActivity() {
                 forceResendingToken = token
                 progressDialog.dismiss()
                 Log.d(TAG, "onCodeSent:$verificationId")
-                phoneCustomerLl.visibility = View.GONE
-                otpCustomerLl.visibility = View.VISIBLE
+                back_signupcustomer.visibility = View.GONE
+                tv_numberCustomerHighlight.visibility = View.GONE
+                tv_enteryourphonenumber.visibility = View.GONE
+                ll_NumberArea.visibility = View.GONE
+                btn_sendCstmOtp.visibility = View.GONE
+
+                tv_otpcustomerHighlight.visibility = View.VISIBLE
+                tv_enterverificationcode.visibility = View.VISIBLE
+                numberCustomerDescription.visibility = View.VISIBLE
+                ll_otpArea.visibility = View.VISIBLE
+                btn_nextCstmRegister.visibility = View.VISIBLE
+
                 numberCustomerDescription.text = "Code sent to number +994${phoneNumberCustomer.text.toString().trim()}"
 
                 Toast.makeText(
