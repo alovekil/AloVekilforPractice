@@ -37,13 +37,23 @@ class LawyerOtpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lawyer_otp)
 
-back_chooseFieldActivity.setOnClickListener {
+back_signuplawyer.setOnClickListener {
     val intent = Intent(this@LawyerOtpActivity,ChooseSignUpActivity::class.java)
     startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
     finish()
 }
-        phoneLawyerLl.visibility = View.VISIBLE
-        otpLawyerLl.visibility = View.GONE
+       back_signuplawyer.visibility = View.VISIBLE
+        tv_numberLawyerHighlight.visibility = View.VISIBLE
+        tv_enteryourphonenumberLawyer.visibility = View.VISIBLE
+        ll_NumberLawyerArea.visibility = View.VISIBLE
+        btn_sendLwyOtp.visibility = View.VISIBLE
+
+        tv_otpLawyerHighlight.visibility = View.GONE
+        tv_enterverificationcodeLawyer.visibility = View.GONE
+        numberLawyerDescription.visibility = View.GONE
+        ll_otpLawyerArea.visibility = View.GONE
+        btn_nextLawyerRegister.visibility = View.GONE
+
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(this)
         progressDialog.setTitle("Please Wait")
@@ -70,9 +80,19 @@ back_chooseFieldActivity.setOnClickListener {
                 forceResendingToken = token
                 progressDialog.dismiss()
                 Log.d(TAG, "onCodeSent:$verificationId")
-                phoneLawyerLl.visibility = View.GONE
-                otpLawyerLl.visibility = View.VISIBLE
-                numberDescription.text = "Code sent to number +994${phoneNumberLawyer.text.toString().trim()}"
+                back_signuplawyer.visibility = View.GONE
+                tv_numberLawyerHighlight.visibility = View.GONE
+                tv_enteryourphonenumberLawyer.visibility = View.GONE
+                ll_NumberLawyerArea.visibility = View.GONE
+                btn_sendLwyOtp.visibility = View.GONE
+
+                tv_otpLawyerHighlight.visibility = View.VISIBLE
+                tv_enterverificationcodeLawyer.visibility = View.VISIBLE
+                numberLawyerDescription.visibility = View.VISIBLE
+                ll_otpLawyerArea.visibility = View.VISIBLE
+                btn_nextLawyerRegister.visibility = View.VISIBLE
+
+                numberLawyerDescription.text = "Code sent to number +994${phoneNumberLawyer.text.toString().trim()}"
                 Toast.makeText(this@LawyerOtpActivity, "Verification Code sent...", Toast.LENGTH_SHORT).show()
             }
         }
@@ -92,7 +112,7 @@ back_chooseFieldActivity.setOnClickListener {
             }
         }
 
-        btn_nextLwyRegister.setOnClickListener {
+        btn_nextLawyerRegister.setOnClickListener {
             if (!inputLwyCode1.text.toString().trim().isEmpty() && !inputLwyCode2.text.toString().trim()
                     .isEmpty() && !inputLwyCode3.text.toString().trim().isEmpty() &&
                 !inputLwyCode4.text.toString().trim().isEmpty() && !inputLwyCode5.text.toString().trim()

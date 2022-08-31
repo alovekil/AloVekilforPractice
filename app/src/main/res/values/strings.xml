@@ -13,4 +13,6 @@
     <string name="forget_the_access_code">Forget the access code?</string>
     <string name="enter_your_phone_number">Enter your phone number</string>
     <string name="lawyer">Lawyer</string>
+    <string name="enterphonenumber">Enter your\nphone number</string>
+    <string name="entercode">Enter verification\ncode</string>
 </resources>

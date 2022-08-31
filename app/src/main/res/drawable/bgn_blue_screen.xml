@@ -6,10 +6,10 @@
         android:color="@color/RGB_blue">
     </solid>
     <stroke
-        android:width="2dp"
+        android:width="5dp"
         android:color="@color/RGB_blue">
     </stroke>
     <corners
-        android:radius="4dp">
+        android:radius="10dp">
     </corners>
 </shape>

@@ -36,7 +36,7 @@ class LawyerRegisterPage1 : Fragment() {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_lawyer_register_page1, container, false)
 
-        view.back_signup.setOnClickListener {
+        view.bck_signLawyerActivity.setOnClickListener {
             val intent  = Intent(requireContext(),ChooseSignUpActivity::class.java)
             startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(requireActivity()).toBundle())
         }
