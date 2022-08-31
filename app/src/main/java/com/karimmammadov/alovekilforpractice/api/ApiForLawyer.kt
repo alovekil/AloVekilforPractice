@@ -10,7 +10,7 @@ import retrofit2.http.POST
 
 interface ApiForLawyer {
 
-    @FormUrlEncoded
+
     @POST("lawyer/register/")
 
     fun createUserLawyer(

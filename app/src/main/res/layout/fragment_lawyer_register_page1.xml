@@ -55,7 +55,7 @@
             android:layout_marginTop="16dp"
             android:background="@color/RGB_Gray1"
             android:hint="Name"
-            android:inputType="textPassword"
+            android:inputType="textPersonName"
             android:textColor="@color/RGB_black"
             android:textColorHint="@color/RGB_Gray2"
             android:textSize="18sp" />
