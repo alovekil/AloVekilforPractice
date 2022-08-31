@@ -27,6 +27,7 @@ class MyCheckBoxItemsAdapter(val context: Context, val languageList: List<Lawyer
             checkBox.setOnClickListener {
                 if(checkBox.isChecked){
                     GetManageInstance.setLanguage(languageList.get(position))
+
                 }else{
                     GetManageInstance.removeItem(languageList.get(position))
                 }
