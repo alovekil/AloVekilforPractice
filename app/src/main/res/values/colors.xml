@@ -9,4 +9,5 @@
     <color name="RGB_white">#FFFFFF</color>
     <color name="RGB_Gray1">#F2F2F2</color>
     <color name="RGB_Gray2"> #929292</color>
+    <color name ="RGB_Gray3">#F2F2F2</color>
 </resources>
