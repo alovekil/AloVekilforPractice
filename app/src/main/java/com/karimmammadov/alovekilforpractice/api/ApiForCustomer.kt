@@ -19,6 +19,7 @@ interface ApiForCustomer {
         @Field("phone") phone:String,
         @Field("password") password:String,
         @Field("password2") password2:String,
+        @Field ("is_lawyer") is_lawyer:Boolean
     ) : Call<DefaultResponse>
 
     @GET("service-languages")
