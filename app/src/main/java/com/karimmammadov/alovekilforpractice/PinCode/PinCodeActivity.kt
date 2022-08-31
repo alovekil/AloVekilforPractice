@@ -18,13 +18,10 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-
 import com.karimmammadov.alovekilforpractice.MainActivity
 import com.karimmammadov.alovekilforpractice.ProfileActivity
 import com.karimmammadov.alovekilforpractice.R
-import com.karimmammadov.alovekilforpractice.databinding.ActivityPinCodeBinding
 import kotlinx.android.synthetic.main.activity_create_password.*
-import kotlinx.android.synthetic.main.activity_pin_code.*
 import kotlinx.android.synthetic.main.activity_pin_code.cancelTextView
 import kotlinx.android.synthetic.main.activity_pin_code.circle1
 import kotlinx.android.synthetic.main.activity_pin_code.circle2
