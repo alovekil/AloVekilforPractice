@@ -9,44 +9,47 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.models.GetManageInstance
-import com.karimmammadov.alovekilforpractice.models.LawyerLanguageItems
+import com.karimmammadov.alovekilforpractice.models.GetManageInstanceAreas
+import com.karimmammadov.alovekilforpractice.models.LawyerAreaTypes
 import kotlinx.android.synthetic.main.checkbox_items.view.*
+import kotlinx.android.synthetic.main.checkboxareas_items.view.*
 
-class MyCheckBoxItemsAdapter(val context: Context, val languageList: List<LawyerLanguageItems>):
-    RecyclerView.Adapter<MyCheckBoxItemsAdapter.ViewHolder>() {
 
-    inner class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
-        var languageType: TextView
+class MyCheckBoxAreasAdapter (val context: Context, val areasList: List<LawyerAreaTypes>):
+    RecyclerView.Adapter<MyCheckBoxAreasAdapter.ViewHolder>() {
+    inner class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var areaType: TextView
         val checkBox: CheckBox
-        init {
-            languageType = itemView.language_sort
-            checkBox = itemView.checkbox
-        }
 
+        init {
+            areaType = itemView.areas_sort
+            checkBox = itemView.checkboxAreas
+        }
         fun onClickListener(position: Int){
             checkBox.setOnClickListener {
                 if(checkBox.isChecked){
-                    GetManageInstance.setLanguage(languageList.get(position))
-
+                    GetManageInstanceAreas.setArea(areasList.get(position))
                 }else{
-                    GetManageInstance.removeItem(languageList.get(position))
+                    GetManageInstanceAreas.removeItem(areasList.get(position))
                 }
             }
         }
     }
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var itemView = LayoutInflater.from(context).inflate(R.layout.checkbox_items,parent,false)
+        var itemView = LayoutInflater.from(context).inflate(R.layout.checkboxareas_items,parent,false)
         return ViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.checkBox.isChecked = false
-        holder.languageType.text = languageList[position].language.toString()
+        holder.areaType.text = areasList[position].service_name
         holder.onClickListener(position)
     }
 
     override fun getItemCount(): Int {
-        return languageList.size
+       return areasList.size
     }
 }
