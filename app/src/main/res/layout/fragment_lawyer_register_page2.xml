@@ -138,17 +138,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/serviceAreasLl">
+
         <EditText
+            android:id="@+id/lawyerVoen"
             android:layout_width="match_parent"
             android:layout_height="22dp"
-            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
             android:background="@color/RGB_Gray1"
             android:hint="Tax id"
             android:inputType="textPersonName"
-            android:textColorHint="@color/RGB_Gray2"
             android:textColor="@color/RGB_black"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"/>
+            android:textColorHint="@color/RGB_Gray2"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -163,17 +165,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taxId">
+
         <EditText
+            android:id="@+id/editLegalExperience"
             android:layout_width="match_parent"
             android:layout_height="22dp"
-            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
             android:background="@color/RGB_Gray1"
             android:hint="Legal experience year"
             android:inputType="number"
-            android:textColorHint="@color/RGB_Gray2"
             android:textColor="@color/RGB_black"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"/>
+            android:textColorHint="@color/RGB_Gray2"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -194,10 +198,11 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/editDiplomaLawyer"
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
-                android:background="@color/RGB_Gray1"
                 android:layout_marginLeft="20dp"
+                android:background="@color/RGB_Gray1"
                 android:hint="Diploma"
                 android:inputType="none"
                 android:textColor="@color/RGB_black"
@@ -226,23 +231,23 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="190dp"
         android:background="@drawable/backgroundgrayboxwords"
-        app:layout_constraintBottom_toTopOf="@+id/boxbluwhitell"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diplomaLl">
+
         <EditText
+            android:id="@+id/editLawyerExperience"
             android:layout_width="match_parent"
             android:layout_height="22dp"
-            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
             android:background="@color/RGB_Gray1"
             android:hint="Lawyer experience year"
             android:inputType="number"
-            android:textColorHint="@color/RGB_Gray2"
             android:textColor="@color/RGB_black"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"/>
+            android:textColorHint="@color/RGB_Gray2"
+            android:textSize="18sp" />
     </LinearLayout>
 
 
