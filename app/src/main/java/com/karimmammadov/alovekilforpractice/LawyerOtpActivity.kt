@@ -2,7 +2,9 @@ package com.karimmammadov.alovekilforpractice
 
 import android.app.ActivityOptions
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -32,10 +34,14 @@ class LawyerOtpActivity : AppCompatActivity() {
     private val collection: Collection<String>? = null
     private val isUsersignedin = FirebaseAuth.getInstance().currentUser
     private lateinit var phoneNumber: String
-
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lawyer_otp)
+
+        sharedPreferences = this!!.getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        editor  =  sharedPreferences.edit()
 
 back_signuplawyer.setOnClickListener {
     val intent = Intent(this@LawyerOtpActivity,ChooseSignUpActivity::class.java)
@@ -266,6 +272,8 @@ back_signuplawyer.setOnClickListener {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
+                editor.putString("lawyerPhoneNumber",phone)
+                editor.commit()
                 val intent = Intent(this@LawyerOtpActivity,LawyerRegisterActivity::class.java)
                 startActivity(intent)
                 finish()

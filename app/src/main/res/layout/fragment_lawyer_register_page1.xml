@@ -48,6 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewLawyer">
 
         <EditText
+            android:id="@+id/editlawyerName"
             android:layout_width="match_parent"
             android:layout_height="22dp"
             android:layout_marginLeft="20dp"
@@ -73,6 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
         <EditText
+            android:id="@+id/editlawyerSurname"
             android:layout_width="match_parent"
             android:layout_height="22dp"
             android:layout_marginLeft="20dp"
@@ -98,6 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
 
         <EditText
+            android:id="@+id/editFatherName"
             android:layout_width="match_parent"
             android:layout_height="22dp"
             android:layout_marginLeft="20dp"
@@ -221,6 +224,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
         <EditText
+            android:id="@+id/editLawyerEmail"
             android:layout_width="match_parent"
             android:layout_height="22dp"
             android:layout_marginLeft="20dp"

@@ -2,7 +2,9 @@ package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.ActivityOptions
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +16,7 @@ import android.widget.TextView
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.ChooseSignUpActivity
 import com.karimmammadov.alovekilforpractice.R
+import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.view.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -23,7 +26,8 @@ class LawyerRegisterPage1 : Fragment() {
 
     private lateinit var tvDatePicker : TextView
     private lateinit var nextBtn : Button
-
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,6 +39,9 @@ class LawyerRegisterPage1 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_lawyer_register_page1, container, false)
+
+        sharedPreferences = requireContext().getSharedPreferences("lawyer",Context.MODE_PRIVATE)
+        editor  =  sharedPreferences.edit()
 
         view.bck_signLawyerActivity.setOnClickListener {
             val intent  = Intent(requireContext(),ChooseSignUpActivity::class.java)
@@ -73,6 +80,22 @@ class LawyerRegisterPage1 : Fragment() {
 
         nextBtn = view.findViewById(R.id.nextButton)
 
+        val userlawyerName = editlawyerName.text.toString().trim()
+        val userlawyerSurname = editlawyerSurname.text.toString().trim()
+        val userlawyerFatherName = editlawyerName.text.toString().trim()
+        val lawyergender = dropdown_gender.text.toString().trim()
+        val lawyerdatebirth = tvDateofBirth.text.toString().trim()
+        val lawyerUniversity = dropdown_universtiy.text.toString().trim()
+        val lawyerEmail = editLawyerEmail.text.toString().trim()
+
+            editor.putString("userLawyerName",userlawyerName)
+        editor.putString("userLawyerSurname",userlawyerSurname)
+        editor.putString("userLawyerFatherName",userlawyerFatherName)
+        editor.putString("userLawyerGender",lawyergender)
+        editor.putString("lawyerDateBirth",lawyerdatebirth)
+        editor.putString("lawyerUniversity",lawyerUniversity)
+        editor.putString("lawyeremail",lawyerEmail)
+        editor.commit()
         return view
     }
 
