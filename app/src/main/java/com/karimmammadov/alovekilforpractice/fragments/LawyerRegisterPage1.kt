@@ -80,22 +80,27 @@ class LawyerRegisterPage1 : Fragment() {
 
         nextBtn = view.findViewById(R.id.nextButton)
 
-        val userlawyerName = editlawyerName.text.toString().trim()
-        val userlawyerSurname = editlawyerSurname.text.toString().trim()
-        val userlawyerFatherName = editlawyerName.text.toString().trim()
-        val lawyergender = dropdown_gender.text.toString().trim()
-        val lawyerdatebirth = tvDateofBirth.text.toString().trim()
-        val lawyerUniversity = dropdown_universtiy.text.toString().trim()
-        val lawyerEmail = editLawyerEmail.text.toString().trim()
+        nextBtn.setOnClickListener {
+            val userlawyerName = view.editlawyerName.text.toString().trim()
+            val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
+            val userlawyerFatherName = view.editlawyerName.text.toString().trim()
+            val lawyergender = view.dropdown_gender.text.toString().trim()
+            val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
+            val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
+            val lawyerEmail = view.editLawyerEmail.text.toString().trim()
 
             editor.putString("userLawyerName",userlawyerName)
-        editor.putString("userLawyerSurname",userlawyerSurname)
-        editor.putString("userLawyerFatherName",userlawyerFatherName)
-        editor.putString("userLawyerGender",lawyergender)
-        editor.putString("lawyerDateBirth",lawyerdatebirth)
-        editor.putString("lawyerUniversity",lawyerUniversity)
-        editor.putString("lawyeremail",lawyerEmail)
-        editor.commit()
+            editor.putString("userLawyerSurname",userlawyerSurname)
+            editor.putString("userLawyerFatherName",userlawyerFatherName)
+            editor.putString("userLawyerGender",lawyergender)
+            editor.putString("lawyerDateBirth",lawyerdatebirth)
+            editor.putString("lawyerUniversity",lawyerUniversity)
+            editor.putString("lawyeremail",lawyerEmail)
+            editor.commit()
+        }
+
+
+
         return view
     }
 

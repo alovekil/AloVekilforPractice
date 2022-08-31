@@ -18,6 +18,7 @@ import com.karimmammadov.alovekilforpractice.api.ApiForCustomer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.models.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,6 +42,7 @@ class LawyerRegisterPage2 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_lawyer_register_page2, container, false)
+
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         val languageTextView = view.findViewById<TextView>(R.id.tv_languages)
@@ -90,48 +92,67 @@ class LawyerRegisterPage2 : Fragment() {
 
         val listCertificate = ArrayList<String>()
         listCertificate.add("Lawyer Certificate")
-        val lglexperience = editLegalExperience.text.toString().trim()
-        val diploma = editDiplomaLawyer.text.toString().trim()
-        val lawyerExperience = editLawyerExperience.text.toString().trim()
+        val lglexperience = view.editLegalExperience.text.toString().trim()
+        //val diploma = editDiplomaLawyer.text.toString().trim()
+        val lawyerExperience = view.editLawyerExperience.text.toString().trim()
        val serviceTypesLawyers = ArrayList<Int>()
         serviceTypesLawyers.add(4)
         serviceTypesLawyers.add(7)
-        val lawyerTaxVoen = lawyerVoen.text.toString().trim()
+        val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
+       val serviceLanguagesLawyer = ArrayList<Int>()
+        serviceLanguagesLawyer.add(1)
 
-        lawyer.birth_date = sharedPreferences.getString("lawyerDateBirth",null).toString()
+        lawyer = Lawyer("19.05.2002",listCertificate,"Babek","Male","2","3",
+            "Lawyer Card",serviceLanguagesLawyer,serviceTypesLawyers,"BMU","AZ1069")
+        /*
+        lawyer.birth_date = "19.05.2002"
         lawyer.certificate = listCertificate
-        lawyer.father_name = sharedPreferences.getString("userLawyerFatherName",null).toString()
-        lawyer.gender = sharedPreferences.getString("userLawyerGender","male").toString()
-        lawyer.law_practice = lglexperience
-        lawyer.lawyer_practice = lawyerExperience
+        lawyer.father_name = "Babek"
+        lawyer.gender = "Male"
+        lawyer.law_practice = "2"
+        lawyer.lawyer_practice = "3"
         lawyer.lawyer_card = "Lawyer Card"
-        lawyer.service_languages = lawyerLanguages
+        lawyer.service_languages = serviceLanguagesLawyer
         lawyer.service_types = serviceTypesLawyers
-        lawyer.university = sharedPreferences.getString("lawyerUniversity","BMU").toString()
-        lawyer.voen = lawyerTaxVoen
+        lawyer.university = "BMU"
+        lawyer.voen = "AZ1069"
 
-        lawyerModels.lawyer = lawyer
 
-        lawyerModels.email = sharedPreferences.getString("lawyeremail",null).toString()
-        lawyerModels.first_name = sharedPreferences.getString("userLawyerName",null).toString()
-        lawyerModels.last_name = sharedPreferences.getString("userLawyerSurname",null).toString()
-        lawyerModels.phone = sharedPreferences.getString("lawyerPhoneNumber",null).toString()
+         */
+        lawyerModels = LawyerModels("uu811717@gmail.com","Kerim","Mammadov",
+            lawyer,"lawyer123","lawyer123","+994554046560")
+
+       // lawyerModels.lawyer = lawyer
+
+        /*
+        lawyerModels.email = "uu811717@gmail.com"
+        lawyerModels.first_name = "Kerim"
+        lawyerModels.last_name = "Mammadov"
+        lawyerModels.phone = "+994554046560"
         lawyerModels.password = "lawyer123"
         lawyerModels.password2 = "lawyer123"
 
-        RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object : Callback<DefaultResponse> {
-            override fun onResponse(
-                call: Call<DefaultResponse>,
-                response: Response<DefaultResponse>
-            ) {
-                Toast.makeText(requireContext(),response.body()?.response, Toast.LENGTH_SHORT).show()
-            }
 
-            override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                Toast.makeText(requireContext(),t.message, Toast.LENGTH_SHORT).show()
-            }
+         */
+        try {
+            RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object : Callback<DefaultResponse> {
+                override fun onResponse(
+                    call: Call<DefaultResponse>,
+                    response: Response<DefaultResponse>
+                ) {
+                   println(response.message() + "Success")
+                }
 
-        })
+                override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                    println(t)
+                    println("Error")
+                }
+
+            })
+        }catch (e : Exception){
+            e.localizedMessage
+        }
+
 
         return view
     }
