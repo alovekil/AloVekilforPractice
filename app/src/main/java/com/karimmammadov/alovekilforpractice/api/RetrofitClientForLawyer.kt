@@ -14,7 +14,7 @@ object RetrofitClientForLawyer {
         .addInterceptor { chain->
             val original = chain.request()
             val requestBuilder = original.newBuilder()
-                .addHeader("Authorization", RetrofitClientForLawyer.AUTH)
+                .addHeader("Authorization", AUTH)
                 .method(original.method(),original.body())
 
             val request = requestBuilder.build()
@@ -23,7 +23,7 @@ object RetrofitClientForLawyer {
 
     val instance: ApiForLawyer by lazy {
         val retrofit = Retrofit.Builder()
-            .baseUrl(RetrofitClientForLawyer.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
