@@ -226,23 +226,22 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="16dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="190dp"
         android:background="@drawable/backgroundgrayboxwords"
-        app:layout_constraintBottom_toTopOf="@+id/boxbluwhitell"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/diplomaLl">
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="22dp"
-            android:textSize="18sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
             android:background="@color/RGB_Gray1"
             android:hint="Lawyer experience year"
             android:inputType="number"
-            android:textColorHint="@color/RGB_Gray2"
             android:textColor="@color/RGB_black"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"/>
+            android:textColorHint="@color/RGB_Gray2"
+            android:textSize="18sp" />
     </LinearLayout>
 
 
