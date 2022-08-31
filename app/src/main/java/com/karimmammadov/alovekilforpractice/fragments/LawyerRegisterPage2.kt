@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.karimmammadov.alovekilforpractice.R
+import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
 import com.karimmammadov.alovekilforpractice.api.ApiForCustomer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
@@ -28,9 +29,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 class LawyerRegisterPage2 : Fragment() {
     val BASE_URL = "http://38.242.221.247/api/"
     lateinit var myCheckBoxItemsAdapter: MyCheckBoxItemsAdapter
+    lateinit var myCheckBoxAreasAdapter: MyCheckBoxAreasAdapter
     private lateinit var sharedPreferences: SharedPreferences
     lateinit var lawyer : Lawyer
     val lawyerLanguages = ArrayList<Int>()
+    val lawyerAreas = ArrayList<Int>()
     lateinit var lawyerModels: LawyerModels
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +48,7 @@ class LawyerRegisterPage2 : Fragment() {
 
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+
         val languageTextView = view.findViewById<TextView>(R.id.tv_languages)
         languageTextView.setOnClickListener {
             GetManageInstance.removeAllItems()
@@ -74,8 +78,6 @@ class LawyerRegisterPage2 : Fragment() {
                 GetManageInstance.removeAllItems()
             }
 
-
-
             view.findViewById<TextView>(R.id.tv_Ok).setOnClickListener {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
@@ -88,6 +90,67 @@ class LawyerRegisterPage2 : Fragment() {
                 languageTextView.setText(stringBuilder)
             }
         }
+
+
+
+        val areasTextView = view.findViewById<TextView>(R.id.tv_areas)
+        areasTextView.setOnClickListener {
+            GetManageInstanceAreas.removeAllItems()
+            val builder: AlertDialog.Builder = AlertDialog.Builder(
+                requireContext()
+            )
+            val view = LayoutInflater.from(requireContext()).inflate(R.layout.layout_spinnerareas, null, false)
+            builder.setView(view)
+            val builderCreate = builder.create()
+            builderCreate.show()
+            val recyclerViewAreas = view.findViewById<RecyclerView>(R.id.area_rcyvw)
+            var areaList = listOf(
+                LawyerAreaTypes(4, "Müqavilə hüququ"),
+                LawyerAreaTypes(5, "Sahibkarlıq hüququ"),
+                LawyerAreaTypes(6, "Mənzil və daşınmaz əmlak hüququ"),
+                LawyerAreaTypes(7, "Əmək və sosial təminat (pensiya) hüququ"),
+                LawyerAreaTypes(8, "Ailə hüququ"),
+                LawyerAreaTypes(9, "Cinayət hüququ"),
+                LawyerAreaTypes(10, "Gömrük hüququ"),
+                LawyerAreaTypes(11, "Vergi hüququ"),
+                LawyerAreaTypes(12, "Maliyyə (bank, sığorta və s.) hüququ"),
+                LawyerAreaTypes(13, "Əqli mülkiyyət hüququ"),
+                LawyerAreaTypes(14, "Miqrasiya hüququ"),
+                LawyerAreaTypes(15, "İstehlakçı hüququ"),
+                LawyerAreaTypes(16, "Mülki hüquq"),
+                LawyerAreaTypes(17, "İnzibati hüquq (Dövlət qurumları ilə iş)"),
+                LawyerAreaTypes(18, "Yol-hərəkəti"),
+                LawyerAreaTypes(19, "Məhkəmə qərarlarının icrası"),
+                LawyerAreaTypes(20, "Mülki-prosessual hüquq"),
+                LawyerAreaTypes(21, "Satınalma (tender) hüququ")
+            )
+            myCheckBoxAreasAdapter = MyCheckBoxAreasAdapter(requireContext(), areaList)
+            recyclerViewAreas.layoutManager = LinearLayoutManager(requireContext())
+            recyclerViewAreas.adapter = myCheckBoxAreasAdapter
+            view.findViewById<TextView>(R.id.tv_clearAllAreas).setOnClickListener {
+                myCheckBoxAreasAdapter.notifyItemRangeChanged(0, areaList.size )
+                GetManageInstanceAreas.removeAllItems()
+            }
+            view.findViewById<TextView>(R.id.tv_cancelAreas).setOnClickListener {
+                builderCreate.dismiss()
+                GetManageInstanceAreas.removeAllItems()
+            }
+
+            view.findViewById<TextView>(R.id.tv_OkAreas).setOnClickListener {
+                val stringBuilder = StringBuilder()
+                builderCreate.dismiss()
+                val selectedArea = GetManageInstanceAreas.getArea()
+                stringBuilder.append(selectedArea.get(0).service_name)
+                for(l in 1..selectedArea.size-1){
+                    lawyerAreas.add(selectedArea.get(l).id)
+                    stringBuilder.append(", ${selectedArea.get(l).service_name}")
+                }
+                areasTextView.setText(stringBuilder)
+            }
+        }
+
+
+
         getMyData()
 
         val listCertificate = ArrayList<String>()
