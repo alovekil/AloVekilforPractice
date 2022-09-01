@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.ChooseSignUpActivity
 import com.karimmammadov.alovekilforpractice.R
+import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.view.*
 import java.text.SimpleDateFormat
@@ -27,6 +28,7 @@ class LawyerRegisterPage1 : Fragment() {
     private lateinit var nextBtn : Button
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
+   // private var phoneNumberForLawyer:String?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -41,6 +43,9 @@ class LawyerRegisterPage1 : Fragment() {
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer",Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
+
+        //phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....").toString().trim()
+       //tvPhoneNumberLawyer.setText(phoneNumberForLawyer)
 
         view.bck_signLawyerActivity.setOnClickListener {
             val intent  = Intent(requireContext(),ChooseSignUpActivity::class.java)
@@ -82,27 +87,47 @@ class LawyerRegisterPage1 : Fragment() {
         nextBtn.setOnClickListener {
             val userlawyerName = view.editlawyerName.text.toString().trim()
             val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
-            val userlawyerFatherName = view.editlawyerName.text.toString().trim()
+            val userlawyerFatherName = view.editlawyerFatherName.text.toString().trim()
             val lawyergender = view.dropdown_gender.text.toString().trim()
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
 
-            editor.putString("userLawyerName",userlawyerName)
-            editor.putString("userLawyerSurname",userlawyerSurname)
-            editor.putString("userLawyerFatherName",userlawyerFatherName)
-            editor.putString("userLawyerGender",lawyergender)
-            editor.putString("lawyerDateBirth",lawyerdatebirth)
-            editor.putString("lawyerUniversity",lawyerUniversity)
-            editor.putString("lawyeremail",lawyerEmail)
+            editor.putString("userLawyerName",userlawyerName).apply()
+            editor.putString("userLawyerSurname",userlawyerSurname).apply()
+            editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
+            editor.putString("userLawyerGender",lawyergender).apply()
+            editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
+            editor.putString("lawyerUniversity",lawyerUniversity).apply()
+            editor.putString("lawyeremail",lawyerEmail).apply()
             editor.commit()
         }
-
 
 
         return view
     }
 
+    override fun onPause() {
+
+        val userlawyerName = view!!.editlawyerName.text.toString().trim()
+        val userlawyerSurname = view!!.editlawyerSurname.text.toString().trim()
+        val userlawyerFatherName = view!!.editlawyerFatherName.text.toString().trim()
+        val lawyergender = view!!.dropdown_gender.text.toString().trim()
+        val lawyerdatebirth = view!!.tvDateofBirth.text.toString().trim()
+        val lawyerUniversity = view!!.dropdown_universtiy.text.toString().trim()
+        val lawyerEmail = view!!.editLawyerEmail.text.toString().trim()
+
+        editor.putString("userLawyerName",userlawyerName).apply()
+        editor.putString("userLawyerSurname",userlawyerSurname).apply()
+        editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
+        editor.putString("userLawyerGender",lawyergender).apply()
+        editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
+        editor.putString("lawyerUniversity",lawyerUniversity).apply()
+        editor.putString("lawyeremail",lawyerEmail).apply()
+        editor.commit()
+
+        super.onPause()
+    }
     private fun updateLable(myCalendar : Calendar){
         val myFormat = "dd.MM.yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.UK)

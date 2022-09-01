@@ -1,7 +1,9 @@
 package com.karimmammadov.alovekilforpractice
 
 import android.app.ActivityOptions
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -17,9 +19,12 @@ import retrofit2.Response
 
 class CustomerRegstrActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_regstr)
+
+        sharedPreferences = this!!.getSharedPreferences("lawyer", Context.MODE_PRIVATE)
 
         bck_signActivity.setOnClickListener {
             val intent = Intent(this@CustomerRegstrActivity,ChooseSignUpActivity::class.java)
@@ -30,9 +35,8 @@ class CustomerRegstrActivity : AppCompatActivity() {
         val loginSharedPreferences = getSharedPreferences("Myprefs",0)
         val editor = loginSharedPreferences.edit()
 
-        val intent = intent
-        val phoneNumber = intent.getStringExtra("phone_number").toString().trim()
-        tv_phone.text =phoneNumber
+        val phonenumberCustomer = sharedPreferences.getString("phone_number","+944.......")
+        tv_phone.setText(phonenumberCustomer)
 
         savebtn.setOnClickListener {
             val email = editEmail.text.toString().trim()
@@ -40,8 +44,6 @@ class CustomerRegstrActivity : AppCompatActivity() {
             val secondName = editSecondName.text.toString().trim()
             val password = editPassword.text.toString().trim()
             val confirmPassword = editConfirmPassword.text.toString().trim()
-            val islawyer:Boolean
-            islawyer=false
 
             if (email.isEmpty()){
                 editEmail.error = "Email required"
@@ -69,7 +71,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber,password, confirmPassword, islawyer)
+            RetrofitClient.instance.createUser(email,name,secondName,phonenumberCustomer!!,password, confirmPassword)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,
