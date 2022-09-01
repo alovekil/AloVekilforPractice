@@ -114,8 +114,8 @@ class LawyerRegisterPage2 : Fragment() {
                 val selectedLanguage = GetManageInstance.getLanguage()
                 stringBuilder.append(selectedLanguage.get(0).language)
                 for(l in 0..selectedLanguage.size-1){
-                    lawyerLanguages.add(selectedLanguage.get(l+1).id)
-                    stringBuilder.append(", ${selectedLanguage.get(l+1).language}")
+                    lawyerLanguages.add(selectedLanguage.get(l).id)
+                    stringBuilder.append(", ${selectedLanguage.get(l).language}")
                 }
                 languageTextView.setText(stringBuilder)
             }
