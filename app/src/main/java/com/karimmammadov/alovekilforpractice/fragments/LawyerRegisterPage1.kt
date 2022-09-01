@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.ChooseSignUpActivity
 import com.karimmammadov.alovekilforpractice.R
+import kotlinx.android.synthetic.main.activity_customer_regstr.*
 import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.view.*
@@ -46,11 +47,6 @@ class LawyerRegisterPage1 : Fragment() {
 
         //phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....").toString().trim()
        //tvPhoneNumberLawyer.setText(phoneNumberForLawyer)
-
-        view.bck_signLawyerActivity.setOnClickListener {
-            val intent  = Intent(requireContext(),ChooseSignUpActivity::class.java)
-            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(requireActivity()).toBundle())
-        }
 
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
@@ -92,6 +88,8 @@ class LawyerRegisterPage1 : Fragment() {
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
+            val lawyerPhoneNumber = view.editPhoneNumberLawyer.text.toString().trim()
+
 
             editor.putString("userLawyerName",userlawyerName).apply()
             editor.putString("userLawyerSurname",userlawyerSurname).apply()
@@ -100,6 +98,7 @@ class LawyerRegisterPage1 : Fragment() {
             editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
             editor.putString("lawyerUniversity",lawyerUniversity).apply()
             editor.putString("lawyeremail",lawyerEmail).apply()
+            editor.putString("lawyerPhoneNumber",lawyerPhoneNumber).apply()
             editor.commit()
         }
 
@@ -116,6 +115,7 @@ class LawyerRegisterPage1 : Fragment() {
         val lawyerdatebirth = view!!.tvDateofBirth.text.toString().trim()
         val lawyerUniversity = view!!.dropdown_universtiy.text.toString().trim()
         val lawyerEmail = view!!.editLawyerEmail.text.toString().trim()
+        val lawyerPhoneNumber = view!!.editPhoneNumberLawyer.text.toString().trim()
 
         editor.putString("userLawyerName",userlawyerName).apply()
         editor.putString("userLawyerSurname",userlawyerSurname).apply()
@@ -124,6 +124,7 @@ class LawyerRegisterPage1 : Fragment() {
         editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
         editor.putString("lawyerUniversity",lawyerUniversity).apply()
         editor.putString("lawyeremail",lawyerEmail).apply()
+        editor.putString("lawyerPhoneNumber",lawyerPhoneNumber).apply()
         editor.commit()
 
         super.onPause()

@@ -117,7 +117,6 @@ EnterConfirmPassword.visibility = View.GONE
                 startActivity(intent)
                 finish()
                 Toast.makeText(this@CreatePasswordActivity, "Succesfully", Toast.LENGTH_LONG)
-                DialogArter(applicationContext)
             }
             else{
                 password1=""
@@ -127,12 +126,5 @@ EnterConfirmPassword.visibility = View.GONE
             }
         }
 
-    }
-    private fun DialogArter(context:Context){
-        val dialogwifi = Dialog(context)
-        dialogwifi.setContentView(com.karimmammadov.alovekilforpractice.R.layout.arter_dialog)
-        dialogwifi.getWindow()!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialogwifi.show()
-        dialogwifi.setCancelable(false)
     }
 }

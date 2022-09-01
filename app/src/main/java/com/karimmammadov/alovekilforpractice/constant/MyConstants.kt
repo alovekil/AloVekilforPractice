@@ -8,5 +8,9 @@ class MyConstants {
         val userName = "username"
         val userSecondName = "usersecondname"
         val userEmail = "useremail"
+
+        val userNameLawyer = "userNameLawyer"
+        val userSecondNameLawyer = "userSecondNameLawyer"
+        val userEmailLawyer = "userEmailLawyer"
     }
 }

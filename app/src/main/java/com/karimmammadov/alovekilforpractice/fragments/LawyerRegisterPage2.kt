@@ -32,7 +32,10 @@ import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
 import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
+import com.karimmammadov.alovekilforpractice.constant.MyConstants
 import com.karimmammadov.alovekilforpractice.models.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.view.*
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
@@ -49,6 +52,8 @@ class LawyerRegisterPage2 : Fragment() {
     val lawyerLanguages = ArrayList<Int>()
     val lawyerAreas = ArrayList<Int>()
     lateinit var lawyerModels: LawyerModels
+    private lateinit var profileSharedPreferences: SharedPreferences
+
 
     //Image
     var selectedPictureCertificate : Uri? = null
@@ -74,6 +79,8 @@ class LawyerRegisterPage2 : Fragment() {
         val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register_page2, container, false)
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        val loginSharedPreferences = requireContext().getSharedPreferences("Myprefs",0)
+        val editor = loginSharedPreferences.edit()
 
         val languageTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_languages)
         languageTextView.setOnClickListener {
@@ -210,6 +217,7 @@ class LawyerRegisterPage2 : Fragment() {
             val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
             val lawyerfirstPassword = view.editPasswordLawyer.text.toString().trim()
             val lawyerconfrimPassword = view.editConfirmPasswordLawyer.text.toString().trim()
+
             /*
             val serviceTypesLawyers = ArrayList<Int>()
             serviceTypesLawyers.add(4)
@@ -231,19 +239,31 @@ class LawyerRegisterPage2 : Fragment() {
             val service_types = lawyerAreas
             val university = sharedPreferences.getString("lawyerUniversity",null)!!
             val voen = lawyerTaxVoen
+
             lawyer = Lawyer(birth_date, certificate, father_name, gender, law_practice, lawyer_card,
                               lawyer_practice, service_languages, service_types, university, voen)
 
             val  lawyerModels_lawyer = lawyer
 
-            val email = sharedPreferences.getString("lawyeremail",null)!!
+            val emailLawyer = sharedPreferences.getString("lawyeremail",null)!!
             val first_name = sharedPreferences.getString("userLawyerName",null)!!
             val last_name = sharedPreferences.getString("userLawyerSurname",null)!!
             val phone ="+994554046560"
             val password = lawyerfirstPassword
             val password2 = lawyerconfrimPassword
 
-            lawyerModels = LawyerModels(email, first_name, last_name, lawyerModels_lawyer, password, password2, phone)
+
+
+
+            editor.putString(MyConstants.userNameLawyer,first_name).apply()
+            editor.putString(MyConstants.userSecondNameLawyer,last_name).apply()
+            editor.putString(MyConstants.userEmailLawyer,emailLawyer).apply()
+            editor.putBoolean(MyConstants.args,true)
+            editor.commit()
+
+            lawyerModels = LawyerModels(emailLawyer, first_name, last_name, lawyerModels_lawyer, password, password2, phone)
+
+
 
             RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object : Callback<DefaultResponse> {
                 override fun onResponse(
@@ -251,10 +271,9 @@ class LawyerRegisterPage2 : Fragment() {
                     response: Response<DefaultResponse>
                 ) {
                     println(response.message() + "Success")
-                    Toast.makeText(requireContext(),response.message(),Toast.LENGTH_SHORT)
-                    val intent=Intent(context!!.applicationContext,CreatePasswordActivity::class.java)
+                    Toast.makeText(requireContext(),"Servere melumat gonderildi",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(context!!.applicationContext,CreatePasswordActivity::class.java)
                     startActivity(intent)
-
                 }
 
                 override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {

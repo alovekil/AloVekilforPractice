@@ -22,5 +22,12 @@ class ProfileActivity : AppCompatActivity() {
 
         profileUserName.text = profileName + " " + profileSecondName
         profileEmailxml.text = profileEmail
+
+        val profileLawyerName = profileSharedPreferences.getString(MyConstants.userNameLawyer,null)
+        val profileSecondLawyerName = profileSharedPreferences.getString(MyConstants.userSecondNameLawyer,null)
+        val profileLawyerEmail = profileSharedPreferences.getString(MyConstants.userEmailLawyer,null)
+        profileUserName.text = profileLawyerName + " " + profileSecondLawyerName
+        profileEmailxml.text = profileLawyerEmail
+
     }
 }

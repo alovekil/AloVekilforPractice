@@ -11,16 +11,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/bck_signLawyerActivity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="18dp"
-            android:layout_centerVertical="true"
-            android:background="@drawable/vector"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/textViewLawyer"
@@ -35,7 +25,6 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.54"
-            app:layout_constraintStart_toEndOf="@+id/bck_signLawyerActivity"
             app:layout_constraintTop_toTopOf="parent" />
     </RelativeLayout>
 
@@ -238,13 +227,11 @@
             app:boxStrokeWidth="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tvPhoneNumberLawyer"
+                android:id="@+id/editPhoneNumberLawyer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
-                android:clickable="false"
-                android:editable="false"
-                android:inputType="none"
+                android:inputType="number"
                 android:textColor="@color/RGB_black"
                 android:textColorHint="@color/RGB_Gray2" />
         </com.google.android.material.textfield.TextInputLayout>
