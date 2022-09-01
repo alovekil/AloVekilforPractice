@@ -2,18 +2,20 @@ package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.graphics.ImageDecoder
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,25 +26,21 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
-import com.karimmammadov.alovekilforpractice.api.ApiForCustomer
 import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.models.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.view.*
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.ByteArrayOutputStream
 import java.io.IOException
-import java.security.spec.PSSParameterSpec.DEFAULT
-import java.util.jar.Manifest
-import kotlin.collections.ArrayList
+
 
 class LawyerRegisterPage2 : Fragment() {
     val BASE_URL = "http://38.242.221.247/api/"
@@ -75,21 +73,21 @@ class LawyerRegisterPage2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view  = inflater.inflate(R.layout.fragment_lawyer_register_page2, container, false)
+        val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register_page2, container, false)
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
-
-        val languageTextView = view.findViewById<TextView>(R.id.tv_languages)
+        DialogArter(context!!.applicationContext)
+        val languageTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_languages)
         languageTextView.setOnClickListener {
             GetManageInstance.removeAllItems()
             val builder: AlertDialog.Builder = AlertDialog.Builder(
                 requireContext()
             )
-            val view = LayoutInflater.from(requireContext()).inflate(R.layout.layout_spinner, null, false)
+            val view = LayoutInflater.from(requireContext()).inflate(com.karimmammadov.alovekilforpractice.R.layout.layout_spinner, null, false)
             builder.setView(view)
             val builderCreate = builder.create()
             builderCreate.show()
-            val recyclerView = view.findViewById<RecyclerView>(R.id.language_rcyvw)
+            val recyclerView = view.findViewById<RecyclerView>(com.karimmammadov.alovekilforpractice.R.id.language_rcyvw)
             var languageList = listOf(
                 LawyerLanguageItems(1, "AZE"),
                 LawyerLanguageItems(2, "ENG"),
@@ -99,16 +97,16 @@ class LawyerRegisterPage2 : Fragment() {
             myCheckBoxItemsAdapter = MyCheckBoxItemsAdapter(requireContext(), languageList)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = myCheckBoxItemsAdapter
-            view.findViewById<TextView>(R.id.tv_clearAll).setOnClickListener {
+            view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_clearAll).setOnClickListener {
                 myCheckBoxItemsAdapter.notifyItemRangeChanged(0, languageList.size )
                 GetManageInstance.removeAllItems()
             }
-            view.findViewById<TextView>(R.id.tv_cancel).setOnClickListener {
+            view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_cancel).setOnClickListener {
                 builderCreate.dismiss()
                 GetManageInstance.removeAllItems()
             }
 
-            view.findViewById<TextView>(R.id.tv_Ok).setOnClickListener {
+            view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_Ok).setOnClickListener {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
                 val selectedLanguage = GetManageInstance.getLanguage()
@@ -121,17 +119,17 @@ class LawyerRegisterPage2 : Fragment() {
             }
         }
 
-        val areasTextView = view.findViewById<TextView>(R.id.tv_areas)
+        val areasTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_areas)
         areasTextView.setOnClickListener {
             GetManageInstanceAreas.removeAllItems()
             val builder: AlertDialog.Builder = AlertDialog.Builder(
                 requireContext()
             )
-            val view = LayoutInflater.from(requireContext()).inflate(R.layout.layout_spinnerareas, null, false)
+            val view = LayoutInflater.from(requireContext()).inflate(com.karimmammadov.alovekilforpractice.R.layout.layout_spinnerareas, null, false)
             builder.setView(view)
             val builderCreate = builder.create()
             builderCreate.show()
-            val recyclerViewAreas = view.findViewById<RecyclerView>(R.id.area_rcyvw)
+            val recyclerViewAreas = view.findViewById<RecyclerView>(com.karimmammadov.alovekilforpractice.R.id.area_rcyvw)
             var areaList = listOf(
                 LawyerAreaTypes(4,"Müqavilə Hüququ"),
                 LawyerAreaTypes(5, "Sahibkarlıq hüququ"),
@@ -155,16 +153,16 @@ class LawyerRegisterPage2 : Fragment() {
             myCheckBoxAreasAdapter = MyCheckBoxAreasAdapter(requireContext(), areaList)
             recyclerViewAreas.layoutManager = LinearLayoutManager(requireContext())
             recyclerViewAreas.adapter = myCheckBoxAreasAdapter
-            view.findViewById<TextView>(R.id.tv_clearAllAreas).setOnClickListener {
+            view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_clearAllAreas).setOnClickListener {
                 myCheckBoxAreasAdapter.notifyItemRangeChanged(0, areaList.size )
                 GetManageInstanceAreas.removeAllItems()
             }
-            view.findViewById<TextView>(R.id.tv_cancelAreas).setOnClickListener {
+            view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_cancelAreas).setOnClickListener {
                 builderCreate.dismiss()
                 GetManageInstanceAreas.removeAllItems()
             }
 
-            view.findViewById<TextView>(R.id.tv_OkAreas).setOnClickListener {
+            view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_OkAreas).setOnClickListener {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
                 val selectedArea = GetManageInstanceAreas.getArea()
@@ -419,7 +417,13 @@ class LawyerRegisterPage2 : Fragment() {
             }
         }
     }
-
+private fun DialogArter(context:Context){
+    val dialogwifi = Dialog(context)
+    dialogwifi.setContentView(com.karimmammadov.alovekilforpractice.R.layout.arter_dialog)
+    dialogwifi.getWindow()!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+    dialogwifi.show()
+    dialogwifi.setCancelable(false)
+}
 
 }
 
