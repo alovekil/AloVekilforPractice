@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun signUp(view:View){
-            val intent = Intent(this@MainActivity, MainActivity::class.java)
+            val intent = Intent(this@MainActivity, CustomerRegstrActivity::class.java)
         startActivity(intent)
         finish()
         //big

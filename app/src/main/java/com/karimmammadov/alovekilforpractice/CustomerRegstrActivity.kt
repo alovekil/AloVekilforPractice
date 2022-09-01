@@ -32,7 +32,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
 
         val intent = intent
         val phoneNumber = intent.getStringExtra("phone_number").toString().trim()
-        tv_phone.text =phoneNumber
+
 
         savebtn.setOnClickListener {
             val email = editEmail.text.toString().trim()
@@ -40,8 +40,6 @@ class CustomerRegstrActivity : AppCompatActivity() {
             val secondName = editSecondName.text.toString().trim()
             val password = editPassword.text.toString().trim()
             val confirmPassword = editConfirmPassword.text.toString().trim()
-            val islawyer:Boolean
-            islawyer=false
 
             if (email.isEmpty()){
                 editEmail.error = "Email required"
@@ -69,7 +67,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber,password, confirmPassword, islawyer)
+            RetrofitClient.instance.createUser(email,name,secondName,phoneNumber,password, confirmPassword)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,

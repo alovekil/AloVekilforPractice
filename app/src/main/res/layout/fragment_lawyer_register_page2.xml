@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:background="@color/RGB_white"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/moveBackBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="38.34dp"
             android:layout_marginLeft="18dp"
+            android:layout_centerVertical="true"
             android:background="@drawable/vector"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="33.34dp"
             android:layout_marginEnd="40dp"
+            android:layout_centerInParent="true"
             android:text="Lawyer"
             android:textColor="@color/RGB_blue"
             android:textSize="18sp"
@@ -32,316 +38,279 @@
             app:layout_constraintStart_toEndOf="@+id/moveBackBtn"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/certificateLl"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLawyer2">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/lawyerCertificate"
-                android:layout_width="match_parent"
-                android:layout_height="22dp"
-                android:layout_marginLeft="20dp"
-                android:background="@color/RGB_Gray1"
-                android:hint="Lawyer Certificate"
-                android:inputType="none"
-                android:textColor="@color/RGB_black"
-                android:textColorHint="@color/RGB_Gray2"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/uploadCertificate"
-                android:layout_width="18.82dp"
-                android:layout_height="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/upload"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/serviceLanguagesLl"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/certificateLl">
-
-        <TextView
-            android:id="@+id/tv_languages"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginRight="17dp"
-            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
-            android:hint="Service Languages"
-            android:textColor="@color/RGB_black"
-            android:textColorHint="@color/RGB_Gray2"
-            android:textSize="18sp" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/serviceAreasLl"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serviceLanguagesLl">
-
-        <TextView
-            android:id="@+id/tv_areas"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:id="@+id/linearLayout7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginRight="17dp"
-            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
-            android:hint="Service Areas"
-            android:textColor="@color/RGB_black"
-            android:textColorHint="@color/RGB_Gray2"
-            android:textSize="18sp" />
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:divider="@drawable/vertical_emptyspace"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:showDividers="middle">
 
-    <LinearLayout
-        android:id="@+id/taxId"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:boxStrokeColor="@color/RGB_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/serviceAreasLl">
-
-        <EditText
-            android:id="@+id/lawyerVoen"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/RGB_Gray1"
-            android:hint="Tax id"
-            android:inputType="textPersonName"
-            android:textColor="@color/RGB_black"
-            android:textColorHint="@color/RGB_Gray2"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/legalLl"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taxId">
-
-        <EditText
-            android:id="@+id/editLegalExperience"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/RGB_Gray1"
-            android:hint="Legal experience year"
-            android:inputType="number"
-            android:textColor="@color/RGB_black"
-            android:textColorHint="@color/RGB_Gray2"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/diplomaLl"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:boxStrokeColor="@color/RGB_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/legalLl">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/editDiplomaLawyer"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="22dp"
-                android:layout_marginLeft="20dp"
-                android:background="@color/RGB_Gray1"
-                android:hint="Diploma"
-                android:inputType="none"
-                android:textColor="@color/RGB_black"
-                android:textColorHint="@color/RGB_Gray2"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:backgroundTint="@color/RGB_white"
+                app:boxStrokeWidth="0dp"
+                app:endIconDrawable="@drawable/upload"
+                app:endIconMode="custom"
+                app:endIconTintMode="src_atop">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lawyerCertificate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lawyer Certificate"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
+                android:backgroundTint="@color/RGB_white"
+                app:boxStrokeWidth="0dp"
+                app:endIconMode="custom"
+                app:endIconTintMode="src_atop">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tv_languages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:inputType="none"
+                    android:hint="Service Languages"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
+                android:backgroundTint="@color/RGB_white"
+                app:boxStrokeWidth="0dp"
+                app:endIconMode="custom"
+                app:endIconTintMode="src_atop">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tv_areas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Service Areas"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lawyerVoen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Voen"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editLegalExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Legal Experience Year"
+                    android:inputType="number"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                android:backgroundTint="@color/RGB_white"
+                app:boxStrokeWidth="0dp"
+                app:endIconDrawable="@drawable/upload"
+                app:endIconMode="custom"
+                app:endIconTintMode="src_atop">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editDiplomaLawyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Diploma"
+                    android:inputType="none"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editLawyerExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lawyer Experience Year"
+                    android:inputType="number"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPasswordLawyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                app:boxBackgroundColor="@color/RGB_Gray1"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editConfirmPasswordLawyer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/RGB_black"
+                    android:textColorHint="@color/RGB_Gray2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/boxbluwhitell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="38dp"
+                android:background="@color/RGB_white"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="10.51dp"
+                    android:layout_height="10.51dp"
+                    android:background="@drawable/boxwhite"/>
+                <ImageView
+                    android:layout_width="10.51dp"
+                    android:layout_height="10.51dp"
+                    android:background="@drawable/boxblue"
+                    android:layout_marginLeft="18.02dp"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bgn_bluebutton"
+                android:text="Save"
+                android:textAlignment="center"
+                android:textColor="@color/RGB_white"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textStyle="bold"
+                android:layout_marginBottom="30dp"/>
+        </LinearLayout>
+    </ScrollView>
 
-            <ImageView
-                android:id="@+id/uploaddiploma"
-                android:layout_width="18.82dp"
-                android:layout_height="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/upload"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout13"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diplomaLl">
-
-        <EditText
-            android:id="@+id/editLawyerExperience"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/RGB_Gray1"
-            android:hint="Lawyer experience year"
-            android:inputType="number"
-            android:textColor="@color/RGB_black"
-            android:textColorHint="@color/RGB_Gray2"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayout14"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
-
-        <EditText
-            android:id="@+id/editPasswordLawyer"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/RGB_Gray1"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textColor="@color/RGB_black"
-            android:textColorHint="@color/RGB_Gray2"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="25dp"
-        android:background="@drawable/backgroundgrayboxwords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout14" >
-        <EditText
-            android:id="@+id/editConfirmPasswordLawyer"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/RGB_Gray1"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:textColor="@color/RGB_black"
-            android:textColorHint="@color/RGB_Gray2"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/boxbluwhitell"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="38dp"
-        android:background="@color/RGB_white"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/saveButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-        <ImageView
-            android:layout_width="10.51dp"
-            android:layout_height="10.51dp"
-            android:background="@drawable/boxwhite"/>
-        <ImageView
-            android:layout_width="10.51dp"
-            android:layout_height="10.51dp"
-            android:background="@drawable/boxblue"
-            android:layout_marginLeft="18.02dp"/>
-    </LinearLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/saveButton"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginBottom="34dp"
-        android:background="@drawable/bgn_bluebutton"
-        android:text="Save"
-        android:textAlignment="center"
-        android:textColor="@color/RGB_white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"  />
 
     <ImageView
         android:id="@+id/certificateImage"
@@ -362,4 +331,4 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -133,7 +133,7 @@ class LawyerRegisterPage2 : Fragment() {
             builderCreate.show()
             val recyclerViewAreas = view.findViewById<RecyclerView>(R.id.area_rcyvw)
             var areaList = listOf(
-                LawyerAreaTypes(4, "Müqavilə hüququ"),
+                LawyerAreaTypes(4,"Müqavilə Hüququ"),
                 LawyerAreaTypes(5, "Sahibkarlıq hüququ"),
                 LawyerAreaTypes(6, "Mənzil və daşınmaz əmlak hüququ"),
                 LawyerAreaTypes(7, "Əmək və sosial təminat (pensiya) hüququ"),

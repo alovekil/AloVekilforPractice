@@ -77,6 +77,7 @@
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/circle2.xml" value="0.1145" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/circlelayout.xml" value="0.1145" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.127" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/vertical_emptyspace.xml" value="0.1365" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_choose_sign_up.xml" value="0.2" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_create_password.xml" value="0.2" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/activity_customer_otp.xml" value="0.22" />
@@ -100,14 +101,14 @@
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_customer_register.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_lawyer_register.xml" value="0.21041666666666667" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_lawyer_register2.xml" value="0.17272338606241983" />
-        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_lawyer_register_page1.xml" value="0.25" />
-        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_lawyer_register_page2.xml" value="0.25" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_lawyer_register_page1.xml" value="0.22" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_lawyer_register_page2.xml" value="0.22" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_o_t_p_code.xml" value="0.25" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_o_t_p_code_lawyer.xml" value="0.221025641025641" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_phone_number.xml" value="0.25" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/fragment_phone_number_lawyer.xml" value="0.33" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/layout_spinner.xml" value="0.25" />
-        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/layout_spinnerareas.xml" value="0.2899957788096243" />
+        <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/layout/layout_spinnerareas.xml" value="0.25" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/menu/popup_numberfiltermenu.xml" value="0.221025641025641" />
         <entry key="..\:/Users/Public/android/sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.2899957788096243" />
       </map>

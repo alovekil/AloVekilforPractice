@@ -81,7 +81,7 @@ class LawyerRegisterPage1 : Fragment() {
 
             val userlawyerName = view.editlawyerName.text.toString().trim()
             val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
-            val userlawyerFatherName = view.editlawyerName.text.toString().trim()
+            val userlawyerFatherName = view.editlawyerFatherName.text.toString().trim()
             val lawyergender = view.dropdown_gender.text.toString().trim()
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
