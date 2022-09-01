@@ -22,6 +22,5 @@ interface ApiForCustomer {
         @Field ("is_lawyer") is_lawyer:Boolean
     ) : Call<DefaultResponse>
 
-    @GET("service-languages")
-    fun getLanguageData() : Call<List<LawyerLanguageItems>>
+
 }

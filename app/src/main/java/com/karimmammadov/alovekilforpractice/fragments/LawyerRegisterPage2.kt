@@ -31,6 +31,7 @@ import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
 import com.karimmammadov.alovekilforpractice.api.ApiForCustomer
+import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.models.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
@@ -59,6 +60,12 @@ class LawyerRegisterPage2 : Fragment() {
     private lateinit var activityResultLauncherCertificate: ActivityResultLauncher<Intent>
     private lateinit var permissionLauncherCertificate: ActivityResultLauncher<String>
 
+    //Diploma
+    var selectedPictureDiploma : Uri? = null
+    var selectedBitmapDiploma : Bitmap? = null
+    private lateinit var activityResultLauncherDiploma: ActivityResultLauncher<Intent>
+    private lateinit var permissionLauncherDiploma: ActivityResultLauncher<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -69,7 +76,6 @@ class LawyerRegisterPage2 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_lawyer_register_page2, container, false)
-
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
 
@@ -114,8 +120,6 @@ class LawyerRegisterPage2 : Fragment() {
                 languageTextView.setText(stringBuilder)
             }
         }
-
-
 
         val areasTextView = view.findViewById<TextView>(R.id.tv_areas)
         areasTextView.setOnClickListener {
@@ -173,14 +177,16 @@ class LawyerRegisterPage2 : Fragment() {
             }
         }
 
-
-
-        getMyData()
-
         registerCertificate()
         view.lawyerCertificate.setOnClickListener {
             selectCertificate(it)
         }
+
+        registerDiploma()
+        view.editDiplomaLawyer.setOnClickListener {
+            selectedDiploma(it)
+        }
+
         view.saveButton.setOnClickListener {
             view.certificateImage.invalidate()
             var bitmapC = view.certificateImage.getDrawable().toBitmap()
@@ -188,25 +194,34 @@ class LawyerRegisterPage2 : Fragment() {
             bitmapC.compress(Bitmap.CompressFormat.JPEG, 100, streamC)
             val byteArrayC = streamC.toByteArray()
             val encodedStringC = Base64.encodeToString(byteArrayC, Base64.DEFAULT)
+            println(encodedStringC)
 
-            //println(encodedStringC)
+            view.diplomaImage.invalidate()
+            var bitmapD = view.diplomaImage.getDrawable().toBitmap()
+            val streamD = ByteArrayOutputStream()
+            bitmapD.compress(Bitmap.CompressFormat.JPEG, 100, streamD)
+            val byteArrayD = streamD.toByteArray()
+            val encodedStringD = Base64.encodeToString(byteArrayD, Base64.DEFAULT)
+            println(encodedStringD)
 
             val listCertificate = ArrayList<String>()
             listCertificate.add(encodedStringC)
+
+            var diploma = editDiplomaLawyer.text.toString().trim()
+            diploma = encodedStringD
+
             val lglexperience = view.editLegalExperience.text.toString().trim()
-            //val diploma = editDiplomaLawyer.text.toString().trim()
             val lawyerExperience = view.editLawyerExperience.text.toString().trim()
+            val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
+            val lawyerfirstPassword = view.editPasswordLawyer.text.toString().trim()
+            val lawyerconfrimPassword = view.editConfirmPasswordLawyer.text.toString().trim()
+            /*
             val serviceTypesLawyers = ArrayList<Int>()
             serviceTypesLawyers.add(4)
             serviceTypesLawyers.add(7)
-            val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
+
             val serviceLanguagesLawyer = ArrayList<Int>()
             serviceLanguagesLawyer.add(1)
-
-            /*
-            lawyer = Lawyer("19.05.2002",listCertificate,"Babek","Male","2","3",
-                "Lawyer Card",serviceLanguagesLawyer,serviceTypesLawyers,"BMU","AZ1069")
-
              */
 
 
@@ -216,28 +231,22 @@ class LawyerRegisterPage2 : Fragment() {
             val gender = sharedPreferences.getString("userLawyerGender",null)!!
             val law_practice = lglexperience
             val lawyer_practice = lawyerExperience
-            val lawyer_card = "Lawyer Card"
+            val lawyer_card = diploma
             val service_languages = lawyerLanguages
             val service_types = lawyerAreas
             val university = sharedPreferences.getString("lawyerUniversity",null)!!
             val voen = lawyerTaxVoen
-            lawyer = Lawyer(birth_date, certificate, father_name, gender, law_practice, lawyer_card, lawyer_practice, service_languages, service_types, university, voen)
+            lawyer = Lawyer(birth_date, certificate, father_name, gender, law_practice, lawyer_card,
+                              lawyer_practice, service_languages, service_types, university, voen)
 
-            /*
-           lawyerModels = LawyerModels("uu811717@gmail.com","Kerim","Mammadov",
-               lawyer,"lawyer123","lawyer123","+994554046560")
-
-
-
-             */
             val  lawyerModels_lawyer = lawyer
 
             val email = sharedPreferences.getString("lawyeremail",null)!!
             val first_name = sharedPreferences.getString("userLawyerName",null)!!
             val last_name = sharedPreferences.getString("userLawyerSurname",null)!!
             val phone = "+994554046560"
-            val password = "lawyer123"
-            val password2 = "lawyer123"
+            val password = lawyerfirstPassword
+            val password2 = lawyerconfrimPassword
 
             lawyerModels = LawyerModels(email, first_name, last_name, lawyerModels_lawyer, password, password2, phone)
 
@@ -261,8 +270,9 @@ class LawyerRegisterPage2 : Fragment() {
 
             })
 
-
         }
+
+        getMyData()
 
         return view
     }
@@ -272,7 +282,7 @@ class LawyerRegisterPage2 : Fragment() {
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
             .build()
-            .create(ApiForCustomer::class.java)
+            .create(ApiForLawyer::class.java)
         val retrofitData = retrofitBuilder.getLanguageData()
 
         retrofitData.enqueue(object : Callback<List<LawyerLanguageItems>?>{
@@ -345,6 +355,65 @@ class LawyerRegisterPage2 : Fragment() {
                 //permission granted
                 val intentToGallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
                 activityResultLauncherCertificate.launch(intentToGallery)
+            } else {
+                //permission denied
+                Toast.makeText(requireContext(), "Permisson needed!", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+    private fun selectedDiploma(view:View){
+        if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Snackbar.make(view, "Permission needed for gallery", Snackbar.LENGTH_INDEFINITE).setAction("Give Permission",
+                    View.OnClickListener {
+                        permissionLauncherDiploma.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                    }).show()
+            } else {
+                permissionLauncherDiploma.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
+        } else {
+            val intentToGallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            activityResultLauncherDiploma.launch(intentToGallery)
+        }
+    }
+
+    private fun registerDiploma(){
+        activityResultLauncherDiploma = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val intentFromResult = result.data
+                if (intentFromResult != null) {
+                    selectedPictureDiploma = intentFromResult.data
+                    try {
+                        if (Build.VERSION.SDK_INT >= 28) {
+                            val source = ImageDecoder.createSource(
+                                requireContext().contentResolver,
+                                selectedPictureDiploma!!
+                            )
+                            selectedBitmapDiploma = ImageDecoder.decodeBitmap(source)
+                            view!!.diplomaImage.setImageBitmap(selectedBitmapDiploma)
+                        } else {
+                            selectedBitmapDiploma = MediaStore.Images.Media.getBitmap(
+                                requireContext().contentResolver,
+                                selectedPictureDiploma
+                            )
+                            view!!.diplomaImage.setImageBitmap(selectedBitmapDiploma)
+                        }
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+                }
+            }
+        }
+        permissionLauncherDiploma= registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { result ->
+            if (result) {
+                //permission granted
+                val intentToGallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                activityResultLauncherDiploma.launch(intentToGallery)
             } else {
                 //permission denied
                 Toast.makeText(requireContext(), "Permisson needed!", Toast.LENGTH_LONG).show()

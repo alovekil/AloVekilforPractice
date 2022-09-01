@@ -79,7 +79,6 @@ class LawyerRegisterPage1 : Fragment() {
 
         nextBtn = view.findViewById(R.id.nextButton)
 
-
             val userlawyerName = view.editlawyerName.text.toString().trim()
             val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
             val userlawyerFatherName = view.editlawyerName.text.toString().trim()
@@ -87,6 +86,7 @@ class LawyerRegisterPage1 : Fragment() {
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
+
 
             editor.putString("userLawyerName",userlawyerName).apply()
             editor.putString("userLawyerSurname",userlawyerSurname).apply()
