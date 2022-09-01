@@ -207,8 +207,7 @@ class LawyerRegisterPage2 : Fragment() {
             val listCertificate = ArrayList<String>()
             listCertificate.add(encodedStringC)
 
-            var diploma = editDiplomaLawyer.text.toString().trim()
-            diploma = encodedStringD
+           var diploma = encodedStringD
 
             val lglexperience = view.editLegalExperience.text.toString().trim()
             val lawyerExperience = view.editLawyerExperience.text.toString().trim()
@@ -420,5 +419,7 @@ class LawyerRegisterPage2 : Fragment() {
             }
         }
     }
+
+
 }
 
