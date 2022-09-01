@@ -2,15 +2,12 @@ package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.graphics.ImageDecoder
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -30,6 +27,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.karimmammadov.alovekilforpractice.PinCode.CreatePasswordActivity
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
 import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
@@ -76,7 +74,7 @@ class LawyerRegisterPage2 : Fragment() {
         val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register_page2, container, false)
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
-        DialogArter(context!!.applicationContext)
+
         val languageTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_languages)
         languageTextView.setOnClickListener {
             GetManageInstance.removeAllItems()
@@ -253,6 +251,10 @@ class LawyerRegisterPage2 : Fragment() {
                     response: Response<DefaultResponse>
                 ) {
                     println(response.message() + "Success")
+                    Toast.makeText(requireContext(),response.message(),Toast.LENGTH_SHORT)
+                    val intent=Intent(context!!.applicationContext,CreatePasswordActivity::class.java)
+                    startActivity(intent)
+
                 }
 
                 override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
@@ -417,13 +419,7 @@ class LawyerRegisterPage2 : Fragment() {
             }
         }
     }
-private fun DialogArter(context:Context){
-    val dialogwifi = Dialog(context)
-    dialogwifi.setContentView(com.karimmammadov.alovekilforpractice.R.layout.arter_dialog)
-    dialogwifi.getWindow()!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-    dialogwifi.show()
-    dialogwifi.setCancelable(false)
-}
+
 
 }
 

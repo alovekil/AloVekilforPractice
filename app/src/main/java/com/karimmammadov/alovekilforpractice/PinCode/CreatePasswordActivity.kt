@@ -1,15 +1,16 @@
 package com.karimmammadov.alovekilforpractice.PinCode
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
-
-import androidx.navigation.Navigation
+import androidx.appcompat.app.AppCompatActivity
 import com.karimmammadov.alovekilforpractice.ProfileActivity
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.activity_create_password.*
@@ -28,6 +29,7 @@ class CreatePasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_password)
 EnterConfirmPassword.visibility = View.GONE
+
      //   binding= DataBindingUtil.inflate(layoutInflater,R.layout.activity_create_password,null,false)
         sharedPreferences = this!!.getSharedPreferences("password", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
@@ -115,6 +117,7 @@ EnterConfirmPassword.visibility = View.GONE
                 startActivity(intent)
                 finish()
                 Toast.makeText(this@CreatePasswordActivity, "Succesfully", Toast.LENGTH_LONG)
+                DialogArter(applicationContext)
             }
             else{
                 password1=""
@@ -124,5 +127,12 @@ EnterConfirmPassword.visibility = View.GONE
             }
         }
 
+    }
+    private fun DialogArter(context:Context){
+        val dialogwifi = Dialog(context)
+        dialogwifi.setContentView(com.karimmammadov.alovekilforpractice.R.layout.arter_dialog)
+        dialogwifi.getWindow()!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialogwifi.show()
+        dialogwifi.setCancelable(false)
     }
 }
