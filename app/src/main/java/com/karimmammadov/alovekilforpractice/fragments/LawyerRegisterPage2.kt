@@ -113,9 +113,9 @@ class LawyerRegisterPage2 : Fragment() {
                 builderCreate.dismiss()
                 val selectedLanguage = GetManageInstance.getLanguage()
                 stringBuilder.append(selectedLanguage.get(0).language)
-                for(l in 1..selectedLanguage.size-1){
-                    lawyerLanguages.add(selectedLanguage.get(l).id)
-                    stringBuilder.append(", ${selectedLanguage.get(l).language}")
+                for(l in 0..selectedLanguage.size-1){
+                    lawyerLanguages.add(selectedLanguage.get(l+1).id)
+                    stringBuilder.append(", ${selectedLanguage.get(l+1).language}")
                 }
                 languageTextView.setText(stringBuilder)
             }
@@ -169,7 +169,7 @@ class LawyerRegisterPage2 : Fragment() {
                 builderCreate.dismiss()
                 val selectedArea = GetManageInstanceAreas.getArea()
                 stringBuilder.append(selectedArea.get(0).service_name)
-                for(l in 1..selectedArea.size-1){
+                for(l in 0..selectedArea.size-1){
                     lawyerAreas.add(selectedArea.get(l).id)
                     stringBuilder.append(", ${selectedArea.get(l).service_name}")
                 }
@@ -243,7 +243,7 @@ class LawyerRegisterPage2 : Fragment() {
             val email = sharedPreferences.getString("lawyeremail",null)!!
             val first_name = sharedPreferences.getString("userLawyerName",null)!!
             val last_name = sharedPreferences.getString("userLawyerSurname",null)!!
-            val phone = "+994554046560"
+            val phone ="+994554046560"
             val password = lawyerfirstPassword
             val password2 = lawyerconfrimPassword
 

@@ -36,6 +36,7 @@ class LawyerOtpActivity : AppCompatActivity() {
     private lateinit var phoneNumber: String
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lawyer_otp)
@@ -271,7 +272,7 @@ back_signuplawyer.setOnClickListener {
         firebaseAuth.signInWithCredential(credential)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                val phone = firebaseAuth.currentUser?.phoneNumber
+                val phone = firebaseAuth.currentUser?.phoneNumber.toString()
                editor.putString("lawyerPhoneNumber",phone).apply()
                editor.commit()
                 val intent = Intent(this@LawyerOtpActivity,LawyerRegisterActivity::class.java)
