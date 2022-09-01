@@ -12,8 +12,8 @@ import android.os.Bundle
 import android.os.CancellationSignal
 import android.os.Handler
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.RadioButton
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -49,7 +49,7 @@ class PinCodeActivity : AppCompatActivity() {
     var radioList1: ArrayList<RadioButton> = ArrayList()
     var radioList2: ArrayList<RadioButton> = ArrayList()
    lateinit var sharedPreferences: SharedPreferences
-    private lateinit var useTouchid : LinearLayout
+    private lateinit var useTouchid : TextView
     private var cancellationSignal : CancellationSignal?=null
     private val authenticationCallback : BiometricPrompt.AuthenticationCallback
         get()=
@@ -153,6 +153,8 @@ class PinCodeActivity : AppCompatActivity() {
             if(password1.equals(sharedPreferences.getString("password","862186214632"))){
                 Pin_CodeText.setVisibility(View.VISIBLE)
                 Toast.makeText(this,"succes login" ,Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
+                finish()
 
             }
             else{
