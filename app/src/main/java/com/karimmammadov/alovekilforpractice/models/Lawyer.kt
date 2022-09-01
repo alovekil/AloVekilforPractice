@@ -1,7 +1,7 @@
 package com.karimmammadov.alovekilforpractice.models
 
 data class Lawyer(
-  var birth_date: String,
+    var birth_date: String,
     var certificate: ArrayList<String>,
     var father_name: String,
     var gender: String,

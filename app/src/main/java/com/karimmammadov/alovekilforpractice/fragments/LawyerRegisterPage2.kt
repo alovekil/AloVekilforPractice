@@ -1,17 +1,32 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
+import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.graphics.ImageDecoder
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Base64
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
@@ -20,11 +35,13 @@ import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.models.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
+import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
+import java.io.ByteArrayOutputStream
+import java.io.IOException
+import java.security.spec.PSSParameterSpec.DEFAULT
+import java.util.jar.Manifest
+import kotlin.collections.ArrayList
 
 class LawyerRegisterPage2 : Fragment() {
     val BASE_URL = "http://38.242.221.247/api/"
@@ -35,6 +52,13 @@ class LawyerRegisterPage2 : Fragment() {
     val lawyerLanguages = ArrayList<Int>()
     val lawyerAreas = ArrayList<Int>()
     lateinit var lawyerModels: LawyerModels
+
+    //Image
+    var selectedPictureCertificate : Uri? = null
+    var selectedBitmapCertificate : Bitmap? = null
+    private lateinit var activityResultLauncherCertificate: ActivityResultLauncher<Intent>
+    private lateinit var permissionLauncherCertificate: ActivityResultLauncher<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -153,69 +177,92 @@ class LawyerRegisterPage2 : Fragment() {
 
         getMyData()
 
-        val listCertificate = ArrayList<String>()
-        listCertificate.add("Lawyer Certificate")
-        val lglexperience = view.editLegalExperience.text.toString().trim()
-        //val diploma = editDiplomaLawyer.text.toString().trim()
-        val lawyerExperience = view.editLawyerExperience.text.toString().trim()
-       val serviceTypesLawyers = ArrayList<Int>()
-        serviceTypesLawyers.add(4)
-        serviceTypesLawyers.add(7)
-        val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
-       val serviceLanguagesLawyer = ArrayList<Int>()
-        serviceLanguagesLawyer.add(1)
+        registerCertificate()
+        view.lawyerCertificate.setOnClickListener {
+            selectCertificate(it)
+        }
+        view.saveButton.setOnClickListener {
+            view.certificateImage.invalidate()
+            var bitmapC = view.certificateImage.getDrawable().toBitmap()
+            val streamC = ByteArrayOutputStream()
+            bitmapC.compress(Bitmap.CompressFormat.JPEG, 100, streamC)
+            val byteArrayC = streamC.toByteArray()
+            val encodedStringC = Base64.encodeToString(byteArrayC, Base64.DEFAULT)
 
-        lawyer = Lawyer("19.05.2002",listCertificate,"Babek","Male","2","3",
-            "Lawyer Card",serviceLanguagesLawyer,serviceTypesLawyers,"BMU","AZ1069")
-        /*
-        lawyer.birth_date = "19.05.2002"
-        lawyer.certificate = listCertificate
-        lawyer.father_name = "Babek"
-        lawyer.gender = "Male"
-        lawyer.law_practice = "2"
-        lawyer.lawyer_practice = "3"
-        lawyer.lawyer_card = "Lawyer Card"
-        lawyer.service_languages = serviceLanguagesLawyer
-        lawyer.service_types = serviceTypesLawyers
-        lawyer.university = "BMU"
-        lawyer.voen = "AZ1069"
+            //println(encodedStringC)
 
+            val listCertificate = ArrayList<String>()
+            listCertificate.add(encodedStringC)
+            val lglexperience = view.editLegalExperience.text.toString().trim()
+            //val diploma = editDiplomaLawyer.text.toString().trim()
+            val lawyerExperience = view.editLawyerExperience.text.toString().trim()
+            val serviceTypesLawyers = ArrayList<Int>()
+            serviceTypesLawyers.add(4)
+            serviceTypesLawyers.add(7)
+            val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
+            val serviceLanguagesLawyer = ArrayList<Int>()
+            serviceLanguagesLawyer.add(1)
 
-         */
-        lawyerModels = LawyerModels("uu811717@gmail.com","Kerim","Mammadov",
-            lawyer,"lawyer123","lawyer123","+994554046560")
+            /*
+            lawyer = Lawyer("19.05.2002",listCertificate,"Babek","Male","2","3",
+                "Lawyer Card",serviceLanguagesLawyer,serviceTypesLawyers,"BMU","AZ1069")
 
-       // lawyerModels.lawyer = lawyer
-
-        /*
-        lawyerModels.email = "uu811717@gmail.com"
-        lawyerModels.first_name = "Kerim"
-        lawyerModels.last_name = "Mammadov"
-        lawyerModels.phone = "+994554046560"
-        lawyerModels.password = "lawyer123"
-        lawyerModels.password2 = "lawyer123"
+             */
 
 
-         */
-        try {
+            val birth_date = sharedPreferences.getString("lawyerDateBirth",null)!!
+            val certificate = listCertificate
+            val father_name = sharedPreferences.getString("userLawyerFatherName",null)!!
+            val gender = sharedPreferences.getString("userLawyerGender",null)!!
+            val law_practice = lglexperience
+            val lawyer_practice = lawyerExperience
+            val lawyer_card = "Lawyer Card"
+            val service_languages = lawyerLanguages
+            val service_types = lawyerAreas
+            val university = sharedPreferences.getString("lawyerUniversity",null)!!
+            val voen = lawyerTaxVoen
+            lawyer = Lawyer(birth_date, certificate, father_name, gender, law_practice, lawyer_card, lawyer_practice, service_languages, service_types, university, voen)
+
+            /*
+           lawyerModels = LawyerModels("uu811717@gmail.com","Kerim","Mammadov",
+               lawyer,"lawyer123","lawyer123","+994554046560")
+
+
+
+             */
+            val  lawyerModels_lawyer = lawyer
+
+            val email = sharedPreferences.getString("lawyeremail",null)!!
+            val first_name = sharedPreferences.getString("userLawyerName",null)!!
+            val last_name = sharedPreferences.getString("userLawyerSurname",null)!!
+            val phone = "+994554046560"
+            val password = "lawyer123"
+            val password2 = "lawyer123"
+
+            lawyerModels = LawyerModels(email, first_name, last_name, lawyerModels_lawyer, password, password2, phone)
+
             RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object : Callback<DefaultResponse> {
                 override fun onResponse(
                     call: Call<DefaultResponse>,
                     response: Response<DefaultResponse>
                 ) {
-                   println(response.message() + "Success")
+                    println(response.message() + "Success")
                 }
 
                 override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                     println(t)
                     println("Error")
+                    if (t is HttpException){
+                        println("HttpException")
+                        println("Code: "+t.code())
+                        println("Response: "+t.response())
+                    }
                 }
 
             })
-        }catch (e : Exception){
-            e.localizedMessage
-        }
 
+
+        }
 
         return view
     }
@@ -244,6 +291,65 @@ class LawyerRegisterPage2 : Fragment() {
 
             }
         })
+    }
+
+    private fun selectCertificate(view:View){
+        if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Snackbar.make(view, "Permission needed for gallery", Snackbar.LENGTH_INDEFINITE).setAction("Give Permission",
+                    View.OnClickListener {
+                        permissionLauncherCertificate.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                    }).show()
+            } else {
+                permissionLauncherCertificate.launch(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+            }
+        } else {
+            val intentToGallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+            activityResultLauncherCertificate.launch(intentToGallery)
+        }
+    }
+
+    private fun registerCertificate(){
+        activityResultLauncherCertificate = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val intentFromResult = result.data
+                if (intentFromResult != null) {
+                    selectedPictureCertificate = intentFromResult.data
+                    try {
+                        if (Build.VERSION.SDK_INT >= 28) {
+                            val source = ImageDecoder.createSource(
+                                requireContext().contentResolver,
+                                selectedPictureCertificate!!
+                            )
+                            selectedBitmapCertificate = ImageDecoder.decodeBitmap(source)
+                            view!!.certificateImage.setImageBitmap(selectedBitmapCertificate)
+                        } else {
+                            selectedBitmapCertificate = MediaStore.Images.Media.getBitmap(
+                                requireContext().contentResolver,
+                                selectedPictureCertificate
+                            )
+                            view!!.certificateImage.setImageBitmap(selectedBitmapCertificate)
+                        }
+                    } catch (e: IOException) {
+                        e.printStackTrace()
+                    }
+                }
+            }
+        }
+        permissionLauncherCertificate = registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { result ->
+            if (result) {
+                //permission granted
+                val intentToGallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+                activityResultLauncherCertificate.launch(intentToGallery)
+            } else {
+                //permission denied
+                Toast.makeText(requireContext(), "Permisson needed!", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 }
 

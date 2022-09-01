@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/RGB_white"
     android:layout_width="match_parent"
@@ -48,13 +49,14 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/lawyerCertificate"
                 android:layout_width="match_parent"
                 android:layout_height="22dp"
+                android:layout_marginLeft="20dp"
                 android:background="@color/RGB_Gray1"
                 android:hint="Lawyer Certificate"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/RGB_black"
                 android:inputType="none"
+                android:textColor="@color/RGB_black"
                 android:textColorHint="@color/RGB_Gray2"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -289,5 +291,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"  />
+
+    <ImageView
+        android:id="@+id/certificateImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/boxbluwhitell"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/diplomaImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginStart="216dp"
+        app:layout_constraintBottom_toTopOf="@+id/boxbluwhitell"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
