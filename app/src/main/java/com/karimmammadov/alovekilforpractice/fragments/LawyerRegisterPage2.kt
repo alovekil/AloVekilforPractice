@@ -285,6 +285,7 @@ class LawyerRegisterPage2 : Fragment() {
                 }
 
                 override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                    Toast.makeText(requireContext(),"Servere melumat gonderilmedi! Melumatlarin duzgunluyunu yoxlayin",Toast.LENGTH_SHORT).show()
                     println(t)
                     println("Error")
                     if (t is HttpException){
