@@ -35,8 +35,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
         val loginSharedPreferences = getSharedPreferences("Myprefs",0)
         val editor = loginSharedPreferences.edit()
 
-        val phonenumberCustomer = sharedPreferences.getString("phone_number","+944.......")
-        tv_phone.setText(phonenumberCustomer)
+
 
         savebtn.setOnClickListener {
             val email = editEmail.text.toString().trim()
@@ -44,7 +43,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
             val secondName = editSecondName.text.toString().trim()
             val password = editPassword.text.toString().trim()
             val confirmPassword = editConfirmPassword.text.toString().trim()
-
+            val phonenumberCustomer = editphoneNumberCustomer.text.toString().trim()
             if (email.isEmpty()){
                 editEmail.error = "Email required"
                 editEmail.requestFocus()
@@ -66,8 +65,12 @@ class CustomerRegstrActivity : AppCompatActivity() {
                 editConfirmPassword.error = "Confirm Password required"
                 editConfirmPassword.requestFocus()
             }
+            if (phonenumberCustomer.isEmpty()){
+                editphoneNumberCustomer.error = "Phone number required"
+                editphoneNumberCustomer.requestFocus()
+            }
 
-            RetrofitClient.instance.createUser(email,name,secondName,phonenumberCustomer!!,password, confirmPassword)
+            RetrofitClient.instance.createUser(email,name,secondName,phonenumberCustomer,password, confirmPassword)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,

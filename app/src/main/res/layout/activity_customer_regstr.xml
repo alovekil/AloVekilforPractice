@@ -128,13 +128,11 @@
                 app:boxCornerRadiusTopStart="10dp"
                 app:boxStrokeWidth="0dp">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tv_phone"
+                android:id="@+id/editphoneNumberCustomer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
-                android:editable="false"
-                android:focusable="false"
-                android:inputType="none"
+                android:inputType="phone"
                 android:textColor="@color/RGB_black"
                 android:textColorHint="@color/RGB_Gray2" />
             </com.google.android.material.textfield.TextInputLayout>

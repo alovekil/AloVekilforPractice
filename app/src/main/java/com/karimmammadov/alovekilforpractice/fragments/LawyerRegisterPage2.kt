@@ -285,7 +285,21 @@ class LawyerRegisterPage2 : Fragment() {
                 }
 
                 override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                    Toast.makeText(requireContext(),"Servere melumat gonderilmedi! Melumatlarin duzgunluyunu yoxlayin",Toast.LENGTH_SHORT).show()
+                   val myString : String = t.message.toString()
+                    Toast.makeText(requireContext(),myString,Toast.LENGTH_LONG).show()
+                }
+
+
+            })
+
+        }
+/*
+        println(response.message() + "Success")
+        Toast.makeText(requireContext(),"Servere melumat gonderildi",Toast.LENGTH_SHORT).show()
+        val intent = Intent(context!!.applicationContext,CreatePasswordActivity::class.java)
+        startActivity(intent)
+
+          Toast.makeText(requireContext(),"Servere melumat gonderilmedi! Melumatlarin duzgunluyunu yoxlayin",Toast.LENGTH_SHORT).show()
                     println(t)
                     println("Error")
                     if (t is HttpException){
@@ -293,12 +307,7 @@ class LawyerRegisterPage2 : Fragment() {
                         println("Code: "+t.code())
                         println("Response: "+t.response())
                     }
-                }
-
-            })
-
-        }
-
+*/
         getMyData()
 
         return view
