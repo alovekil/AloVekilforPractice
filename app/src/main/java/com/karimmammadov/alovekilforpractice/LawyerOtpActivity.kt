@@ -272,7 +272,7 @@ back_signuplawyer.setOnClickListener {
         firebaseAuth.signInWithCredential(credential)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                val phone = firebaseAuth.currentUser?.phoneNumber.toString()
+                val phone = firebaseAuth.currentUser?.phoneNumber
                editor.putString("lawyerPhoneNumber",phone).apply()
                editor.commit()
                 val intent = Intent(this@LawyerOtpActivity,LawyerRegisterActivity::class.java)

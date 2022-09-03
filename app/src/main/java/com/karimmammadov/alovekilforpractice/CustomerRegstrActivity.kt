@@ -24,7 +24,7 @@ class CustomerRegstrActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_regstr)
 
-        sharedPreferences = this!!.getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = this!!.getSharedPreferences("customer", Context.MODE_PRIVATE)
 
         bck_signActivity.setOnClickListener {
             val intent = Intent(this@CustomerRegstrActivity,ChooseSignUpActivity::class.java)
@@ -48,27 +48,23 @@ class CustomerRegstrActivity : AppCompatActivity() {
             if (email.isEmpty()){
                 editEmail.error = "Email required"
                 editEmail.requestFocus()
-                return@setOnClickListener
             }
             if (name.isEmpty()){
                 editFirstName.error = "First name required"
                 editFirstName.requestFocus()
-                return@setOnClickListener
             }
             if (secondName.isEmpty()){
                 editSecondName.error = "Second name required"
                 editSecondName.requestFocus()
-                return@setOnClickListener
             }
             if (password.isEmpty()){
                 editPassword.error = "Password required"
                 editPassword.requestFocus()
-                return@setOnClickListener
+
             }
             if (confirmPassword.isEmpty()){
                 editConfirmPassword.error = "Confirm Password required"
                 editConfirmPassword.requestFocus()
-                return@setOnClickListener
             }
 
             RetrofitClient.instance.createUser(email,name,secondName,phonenumberCustomer!!,password, confirmPassword)

@@ -15,4 +15,5 @@
     <string name="lawyer">Lawyer</string>
     <string name="enterphonenumber">Enter your\nphone number</string>
     <string name="entercode">Enter verification\ncode</string>
+    <string name="required">Required</string>
 </resources>

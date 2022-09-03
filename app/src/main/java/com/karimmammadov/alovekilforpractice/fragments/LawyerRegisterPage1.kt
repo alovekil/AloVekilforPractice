@@ -45,8 +45,8 @@ class LawyerRegisterPage1 : Fragment() {
         sharedPreferences = requireContext().getSharedPreferences("lawyer",Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
-        //phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....").toString().trim()
-       //tvPhoneNumberLawyer.setText(phoneNumberForLawyer)
+       val phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....")
+        editPhoneNumberLawyer.setText(phoneNumberForLawyer)
 
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
@@ -88,7 +88,23 @@ class LawyerRegisterPage1 : Fragment() {
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
-            val lawyerPhoneNumber = view.editPhoneNumberLawyer.text.toString().trim()
+
+            if (userlawyerName.isEmpty()){
+                editlawyerName.error = "Name required"
+                editlawyerName.requestFocus()
+            }
+            if (userlawyerSurname.isEmpty()){
+                editlawyerSurname.error = "Surname required"
+                editlawyerSurname.requestFocus()
+            }
+            if (userlawyerFatherName.isEmpty()){
+                editlawyerFatherName.error = "Father name required"
+                editlawyerFatherName.requestFocus()
+            }
+            if (lawyerEmail.isEmpty()){
+                editLawyerEmail.error = "Email required"
+                editLawyerEmail.requestFocus()
+            }
 
 
             editor.putString("userLawyerName",userlawyerName).apply()
@@ -98,7 +114,7 @@ class LawyerRegisterPage1 : Fragment() {
             editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
             editor.putString("lawyerUniversity",lawyerUniversity).apply()
             editor.putString("lawyeremail",lawyerEmail).apply()
-            editor.putString("lawyerPhoneNumber",lawyerPhoneNumber).apply()
+           editor.putString("lawyerPhoneNumber",phoneNumberForLawyer).apply()
             editor.commit()
         }
 
@@ -115,22 +131,50 @@ class LawyerRegisterPage1 : Fragment() {
         val lawyerdatebirth = view!!.tvDateofBirth.text.toString().trim()
         val lawyerUniversity = view!!.dropdown_universtiy.text.toString().trim()
         val lawyerEmail = view!!.editLawyerEmail.text.toString().trim()
-        val lawyerPhoneNumber = view!!.editPhoneNumberLawyer.text.toString().trim()
 
-        editor.putString("userLawyerName",userlawyerName).apply()
+        if (userlawyerName.isEmpty()){
+            editlawyerName.error = "Name required"
+            editlawyerName.requestFocus()
+        }
+        if (userlawyerSurname.isEmpty()){
+            editlawyerSurname.error = "Surname required"
+            editlawyerSurname.requestFocus()
+        }
+        if (userlawyerFatherName.isEmpty()){
+            editlawyerFatherName.error = "Father name required"
+            editlawyerFatherName.requestFocus()
+        }
+        if (lawyerEmail.isEmpty()){
+            editLawyerEmail.error = "Email required"
+            editLawyerEmail.requestFocus()
+        }
+        if (lawyergender.isEmpty()){
+            dropdown_gender.error = "Gender required"
+            dropdown_gender.requestFocus()
+        }
+        if (lawyerUniversity.isEmpty()){
+            dropdown_universtiy.error = "University required"
+            dropdown_universtiy.requestFocus()
+        }
+        if (lawyerdatebirth.isEmpty()){
+            tvDateofBirth.error = "Date of birth required"
+            tvDateofBirth.requestFocus()
+        }
+
+
+              editor.putString("userLawyerName",userlawyerName).apply()
         editor.putString("userLawyerSurname",userlawyerSurname).apply()
         editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
         editor.putString("userLawyerGender",lawyergender).apply()
         editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
         editor.putString("lawyerUniversity",lawyerUniversity).apply()
         editor.putString("lawyeremail",lawyerEmail).apply()
-        editor.putString("lawyerPhoneNumber",lawyerPhoneNumber).apply()
         editor.commit()
 
         super.onPause()
     }
     private fun updateLable(myCalendar : Calendar){
-        val myFormat = "dd.MM.yyyy"
+        val myFormat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myFormat, Locale.UK)
         tvDatePicker.setText(sdf.format(myCalendar.time))
     }

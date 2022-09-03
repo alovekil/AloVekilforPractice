@@ -79,8 +79,7 @@ class LawyerRegisterPage2 : Fragment() {
         val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register_page2, container, false)
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
-        val loginSharedPreferences = requireContext().getSharedPreferences("Myprefs",0)
-        val editor = loginSharedPreferences.edit()
+
 
         val languageTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_languages)
         languageTextView.setOnClickListener {
@@ -191,6 +190,36 @@ class LawyerRegisterPage2 : Fragment() {
         }
 
         view.saveButton.setOnClickListener {
+
+
+            val lglexperience = view.editLegalExperience.text.toString().trim()
+            val lawyerExperience = view.editLawyerExperience.text.toString().trim()
+            val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
+            val lawyerfirstPassword = view.editPasswordLawyer.text.toString().trim()
+            val lawyerconfrimPassword = view.editConfirmPasswordLawyer.text.toString().trim()
+
+
+            if (lglexperience.isEmpty()){
+                editLegalExperience.error = "Legal Experience required"
+                editLegalExperience.requestFocus()
+            }
+            if (lawyerExperience.isEmpty()){
+                editLawyerExperience.error = "Lawyer Experience required"
+                editLawyerExperience.requestFocus()
+            }
+            if (lawyerTaxVoen.isEmpty()){
+                lawyerVoen.error = "Voen required"
+                lawyerVoen.requestFocus()
+            }
+            if (lawyerfirstPassword.isEmpty()){
+                editPasswordLawyer.error = "Password required"
+                editPasswordLawyer.requestFocus()
+            }
+            if (lawyerconfrimPassword.isEmpty()){
+                editConfirmPasswordLawyer.error = "Confirm Password required"
+                editConfirmPasswordLawyer.requestFocus()
+            }
+
             view.certificateImage.invalidate()
             var bitmapC = view.certificateImage.getDrawable().toBitmap()
             val streamC = ByteArrayOutputStream()
@@ -210,23 +239,7 @@ class LawyerRegisterPage2 : Fragment() {
             val listCertificate = ArrayList<String>()
             listCertificate.add(encodedStringC)
 
-           var diploma = encodedStringD
-
-            val lglexperience = view.editLegalExperience.text.toString().trim()
-            val lawyerExperience = view.editLawyerExperience.text.toString().trim()
-            val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
-            val lawyerfirstPassword = view.editPasswordLawyer.text.toString().trim()
-            val lawyerconfrimPassword = view.editConfirmPasswordLawyer.text.toString().trim()
-
-            /*
-            val serviceTypesLawyers = ArrayList<Int>()
-            serviceTypesLawyers.add(4)
-            serviceTypesLawyers.add(7)
-
-            val serviceLanguagesLawyer = ArrayList<Int>()
-            serviceLanguagesLawyer.add(1)
-             */
-
+            var diploma = encodedStringD
 
             val birth_date = sharedPreferences.getString("lawyerDateBirth",null)!!
             val certificate = listCertificate
@@ -248,18 +261,9 @@ class LawyerRegisterPage2 : Fragment() {
             val emailLawyer = sharedPreferences.getString("lawyeremail",null)!!
             val first_name = sharedPreferences.getString("userLawyerName",null)!!
             val last_name = sharedPreferences.getString("userLawyerSurname",null)!!
-            val phone ="+994554046560"
+            val phone =sharedPreferences.getString("lawyerPhoneNumber",null)!!
             val password = lawyerfirstPassword
             val password2 = lawyerconfrimPassword
-
-
-
-
-            editor.putString(MyConstants.userNameLawyer,first_name).apply()
-            editor.putString(MyConstants.userSecondNameLawyer,last_name).apply()
-            editor.putString(MyConstants.userEmailLawyer,emailLawyer).apply()
-            editor.putBoolean(MyConstants.args,true)
-            editor.commit()
 
             lawyerModels = LawyerModels(emailLawyer, first_name, last_name, lawyerModels_lawyer, password, password2, phone)
 

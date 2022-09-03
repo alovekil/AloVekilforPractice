@@ -42,7 +42,7 @@ class CustomerOtpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_otp)
 
-        sharedPreferences = this!!.getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = this!!.getSharedPreferences("customer", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
         back_signupcustomer.setOnClickListener {
@@ -330,20 +330,5 @@ class CustomerOtpActivity : AppCompatActivity() {
                     progressDialog.dismiss()
                     Toast.makeText(this@CustomerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
                 }
-        }
-
-       private fun resendVerificationCode(phone: String, token: PhoneAuthProvider.ForceResendingToken?) {
-            progressDialog.setMessage("Resending Code...")
-            progressDialog.show()
-            Log.d(TAG, "resendVerificationCode: $phone")
-            val options = PhoneAuthOptions.newBuilder(firebaseAuth)
-                .setPhoneNumber("+994" + phone)
-                .setTimeout(60L, TimeUnit.SECONDS)
-                .setActivity(this)
-                .setCallbacks(mCallBacks!!)
-                .setForceResendingToken(token!!)
-                .build()
-
-            PhoneAuthProvider.verifyPhoneNumber(options)
         }
     }

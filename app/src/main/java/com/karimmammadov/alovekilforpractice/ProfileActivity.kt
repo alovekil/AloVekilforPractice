@@ -19,15 +19,9 @@ class ProfileActivity : AppCompatActivity() {
         val profileName = profileSharedPreferences.getString(MyConstants.userName,null)
         val profileSecondName = profileSharedPreferences.getString(MyConstants.userSecondName,null)
         val profileEmail = profileSharedPreferences.getString(MyConstants.userEmail,null)
-
         profileUserName.text = profileName + " " + profileSecondName
         profileEmailxml.text = profileEmail
 
-        val profileLawyerName = profileSharedPreferences.getString(MyConstants.userNameLawyer,null)
-        val profileSecondLawyerName = profileSharedPreferences.getString(MyConstants.userSecondNameLawyer,null)
-        val profileLawyerEmail = profileSharedPreferences.getString(MyConstants.userEmailLawyer,null)
-        profileUserName.text = profileLawyerName + " " + profileSecondLawyerName
-        profileEmailxml.text = profileLawyerEmail
 
     }
 }

@@ -231,7 +231,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
-                android:inputType="number"
+                android:editable="false"
+                android:focusable="false"
+                android:inputType="none"
                 android:textColor="@color/RGB_black"
                 android:textColorHint="@color/RGB_Gray2" />
         </com.google.android.material.textfield.TextInputLayout>
