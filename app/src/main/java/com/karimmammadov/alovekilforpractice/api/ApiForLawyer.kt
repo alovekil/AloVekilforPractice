@@ -8,7 +8,6 @@ import retrofit2.http.*
 
 interface ApiForLawyer {
 
-
     @POST("lawyer/register/")
 
     fun createUserLawyer(
