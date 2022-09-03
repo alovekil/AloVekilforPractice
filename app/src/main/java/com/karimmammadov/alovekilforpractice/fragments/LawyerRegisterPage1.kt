@@ -166,7 +166,7 @@ class LawyerRegisterPage1 : Fragment() {
             tvDateofBirth.requestFocus()
         }
         if (phoneNumberForLawyer.isEmpty()){
-            editPhoneNumberLawyer.error = "Email required"
+            editPhoneNumberLawyer.error = "Phone Number required"
             editPhoneNumberLawyer.requestFocus()
         }
 
