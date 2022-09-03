@@ -219,6 +219,10 @@ class LawyerRegisterPage2 : Fragment() {
                 editConfirmPasswordLawyer.error = "Confirm Password required"
                 editConfirmPasswordLawyer.requestFocus()
             }
+            if (lawyerconfrimPassword.isEmpty()){
+                editConfirmPasswordLawyer.error = "Confirm Password required"
+                editConfirmPasswordLawyer.requestFocus()
+            }
 
             view.certificateImage.invalidate()
             var bitmapC = view.certificateImage.getDrawable().toBitmap()

@@ -45,8 +45,8 @@ class LawyerRegisterPage1 : Fragment() {
         sharedPreferences = requireContext().getSharedPreferences("lawyer",Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
-       val phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....")
-        editPhoneNumberLawyer.setText(phoneNumberForLawyer)
+      // val phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....")
+      //  editPhoneNumberLawyer.setText(phoneNumberForLawyer)
 
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
@@ -88,6 +88,7 @@ class LawyerRegisterPage1 : Fragment() {
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
+            val phoneNumberForLawyer = view.editPhoneNumberLawyer.text.toString().trim()
 
             if (userlawyerName.isEmpty()){
                 editlawyerName.error = "Name required"
@@ -104,6 +105,10 @@ class LawyerRegisterPage1 : Fragment() {
             if (lawyerEmail.isEmpty()){
                 editLawyerEmail.error = "Email required"
                 editLawyerEmail.requestFocus()
+            }
+            if (phoneNumberForLawyer.isEmpty()){
+                editPhoneNumberLawyer.error = "Email required"
+                editPhoneNumberLawyer.requestFocus()
             }
 
 
@@ -131,7 +136,7 @@ class LawyerRegisterPage1 : Fragment() {
         val lawyerdatebirth = view!!.tvDateofBirth.text.toString().trim()
         val lawyerUniversity = view!!.dropdown_universtiy.text.toString().trim()
         val lawyerEmail = view!!.editLawyerEmail.text.toString().trim()
-
+        val phoneNumberForLawyer = view!!.editPhoneNumberLawyer.text.toString().trim()
         if (userlawyerName.isEmpty()){
             editlawyerName.error = "Name required"
             editlawyerName.requestFocus()
@@ -160,7 +165,10 @@ class LawyerRegisterPage1 : Fragment() {
             tvDateofBirth.error = "Date of birth required"
             tvDateofBirth.requestFocus()
         }
-
+        if (phoneNumberForLawyer.isEmpty()){
+            editPhoneNumberLawyer.error = "Email required"
+            editPhoneNumberLawyer.requestFocus()
+        }
 
               editor.putString("userLawyerName",userlawyerName).apply()
         editor.putString("userLawyerSurname",userlawyerSurname).apply()
@@ -169,6 +177,7 @@ class LawyerRegisterPage1 : Fragment() {
         editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
         editor.putString("lawyerUniversity",lawyerUniversity).apply()
         editor.putString("lawyeremail",lawyerEmail).apply()
+        editor.putString("lawyerPhoneNumber",phoneNumberForLawyer).apply()
         editor.commit()
 
         super.onPause()
