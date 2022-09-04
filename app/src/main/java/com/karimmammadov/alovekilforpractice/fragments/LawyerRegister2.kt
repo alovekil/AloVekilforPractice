@@ -115,7 +115,9 @@ class LawyerRegister2 : Fragment() {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
                 val selectedLanguage = GetManageInstance.getLanguage()
-                stringBuilder.append(selectedLanguage.get(0).language)
+                if (selectedLanguage.isNotEmpty()){
+                    stringBuilder.append(selectedLanguage.get(0).language)
+                }
                 for(l in 0..selectedLanguage.size-1){
                     lawyerLanguages.add(selectedLanguage.get(l).id)
                     stringBuilder.append(", ${selectedLanguage.get(l).language}")
@@ -171,7 +173,9 @@ class LawyerRegister2 : Fragment() {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
                 val selectedArea = GetManageInstanceAreas.getArea()
-                stringBuilder.append(selectedArea.get(0).service_name)
+                if(selectedArea.isNotEmpty()){
+                    stringBuilder.append(selectedArea.get(0).service_name)
+                }
                 for(l in 0..selectedArea.size-1){
                     lawyerAreas.add(selectedArea.get(l).id)
                     stringBuilder.append(", ${selectedArea.get(l).service_name}")
