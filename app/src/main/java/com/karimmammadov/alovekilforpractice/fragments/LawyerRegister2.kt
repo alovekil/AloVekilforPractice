@@ -1,5 +1,6 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
+import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
 import android.content.Context
@@ -34,16 +35,16 @@ import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
 import com.karimmammadov.alovekilforpractice.models.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register_page2.view.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register2.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 
 
-class LawyerRegisterPage2 : Fragment() {
+class LawyerRegister2 : Fragment() {
     val BASE_URL = "http://38.242.221.247/api/"
     lateinit var myCheckBoxItemsAdapter: MyCheckBoxItemsAdapter
     lateinit var myCheckBoxAreasAdapter: MyCheckBoxAreasAdapter
@@ -76,7 +77,7 @@ class LawyerRegisterPage2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register_page2, container, false)
+        val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register2, container, false)
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
 
@@ -224,6 +225,7 @@ class LawyerRegisterPage2 : Fragment() {
                 editConfirmPasswordLawyer.requestFocus()
             }
 
+
             view.certificateImage.invalidate()
             var bitmapC = view.certificateImage.getDrawable().toBitmap()
             val streamC = ByteArrayOutputStream()
@@ -245,6 +247,7 @@ class LawyerRegisterPage2 : Fragment() {
 
             var diploma = encodedStringD
 
+
             val birth_date = sharedPreferences.getString("lawyerDateBirth",null)!!
             val certificate = listCertificate
             val father_name = sharedPreferences.getString("userLawyerFatherName",null)!!
@@ -258,7 +261,7 @@ class LawyerRegisterPage2 : Fragment() {
             val voen = lawyerTaxVoen
 
             lawyer = Lawyer(birth_date, certificate, father_name, gender, law_practice, lawyer_card,
-                              lawyer_practice, service_languages, service_types, university, voen)
+                lawyer_practice, service_languages, service_types, university, voen)
 
             val  lawyerModels_lawyer = lawyer
 
@@ -273,20 +276,25 @@ class LawyerRegisterPage2 : Fragment() {
 
 
 
-            RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object : Callback<DefaultResponse> {
+            RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object :
+                Callback<DefaultResponse> {
                 override fun onResponse(
                     call: Call<DefaultResponse>,
                     response: Response<DefaultResponse>
                 ) {
                     println(response.message() + "Success")
-                    Toast.makeText(requireContext(),"Servere melumat gonderildi",Toast.LENGTH_SHORT).show()
-                    val intent = Intent(context!!.applicationContext,CreatePasswordActivity::class.java)
-                    startActivity(intent)
+                    if(response.body()?.response.equals("successfully regitered a new user.")){
+                        val myresponse : String = response.body()?.response.toString()
+                        Toast.makeText(requireContext(),myresponse, Toast.LENGTH_SHORT).show()
+                        val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
+                        startActivity(intent)
+                    }
+
                 }
 
                 override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                   val myString : String = t.message.toString()
-                    Toast.makeText(requireContext(),myString,Toast.LENGTH_LONG).show()
+                    val myString : String = t.message.toString()
+                    Toast.makeText(requireContext(),myString, Toast.LENGTH_LONG).show()
                 }
 
 
@@ -321,7 +329,7 @@ class LawyerRegisterPage2 : Fragment() {
             .create(ApiForLawyer::class.java)
         val retrofitData = retrofitBuilder.getLanguageData()
 
-        retrofitData.enqueue(object : Callback<List<LawyerLanguageItems>?>{
+        retrofitData.enqueue(object : Callback<List<LawyerLanguageItems>?> {
             override fun onResponse(
                 call: Call<List<LawyerLanguageItems>?>,
                 response: Response<List<LawyerLanguageItems>?>
@@ -359,7 +367,7 @@ class LawyerRegisterPage2 : Fragment() {
         activityResultLauncherCertificate = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
-            if (result.resultCode == RESULT_OK) {
+            if (result.resultCode == Activity.RESULT_OK) {
                 val intentFromResult = result.data
                 if (intentFromResult != null) {
                     selectedPictureCertificate = intentFromResult.data
@@ -418,7 +426,7 @@ class LawyerRegisterPage2 : Fragment() {
         activityResultLauncherDiploma = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
-            if (result.resultCode == RESULT_OK) {
+            if (result.resultCode == Activity.RESULT_OK) {
                 val intentFromResult = result.data
                 if (intentFromResult != null) {
                     selectedPictureDiploma = intentFromResult.data
@@ -459,4 +467,3 @@ class LawyerRegisterPage2 : Fragment() {
 
 
 }
-

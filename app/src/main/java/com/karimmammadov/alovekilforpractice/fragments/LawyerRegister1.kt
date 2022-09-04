@@ -13,23 +13,25 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.ChooseSignUpActivity
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.activity_customer_regstr.*
 import kotlinx.android.synthetic.main.activity_lawyer_otp.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register_page1.view.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register1.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class LawyerRegisterPage1 : Fragment() {
+
+class LawyerRegister1 : Fragment() {
 
     private lateinit var tvDatePicker : TextView
     private lateinit var nextBtn : Button
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
-   // private var phoneNumberForLawyer:String?= null
+    // private var phoneNumberForLawyer:String?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -40,13 +42,13 @@ class LawyerRegisterPage1 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view  = inflater.inflate(R.layout.fragment_lawyer_register_page1, container, false)
+        val view  = inflater.inflate(R.layout.fragment_lawyer_register1, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("lawyer",Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
-      // val phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....")
-      //  editPhoneNumberLawyer.setText(phoneNumberForLawyer)
+        // val phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....")
+        //  editPhoneNumberLawyer.setText(phoneNumberForLawyer)
 
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
@@ -111,7 +113,6 @@ class LawyerRegisterPage1 : Fragment() {
                 editPhoneNumberLawyer.requestFocus()
             }
 
-
             editor.putString("userLawyerName",userlawyerName).apply()
             editor.putString("userLawyerSurname",userlawyerSurname).apply()
             editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
@@ -119,8 +120,10 @@ class LawyerRegisterPage1 : Fragment() {
             editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
             editor.putString("lawyerUniversity",lawyerUniversity).apply()
             editor.putString("lawyeremail",lawyerEmail).apply()
-           editor.putString("lawyerPhoneNumber",phoneNumberForLawyer).apply()
+            editor.putString("lawyerPhoneNumber",phoneNumberForLawyer).apply()
             editor.commit()
+
+
         }
 
 
@@ -137,6 +140,7 @@ class LawyerRegisterPage1 : Fragment() {
         val lawyerUniversity = view!!.dropdown_universtiy.text.toString().trim()
         val lawyerEmail = view!!.editLawyerEmail.text.toString().trim()
         val phoneNumberForLawyer = view!!.editPhoneNumberLawyer.text.toString().trim()
+
         if (userlawyerName.isEmpty()){
             editlawyerName.error = "Name required"
             editlawyerName.requestFocus()
@@ -170,7 +174,7 @@ class LawyerRegisterPage1 : Fragment() {
             editPhoneNumberLawyer.requestFocus()
         }
 
-              editor.putString("userLawyerName",userlawyerName).apply()
+        editor.putString("userLawyerName",userlawyerName).apply()
         editor.putString("userLawyerSurname",userlawyerSurname).apply()
         editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
         editor.putString("userLawyerGender",lawyergender).apply()

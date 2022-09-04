@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.karimmammadov.alovekilforpractice.adapters.ViewPagerAdapter
-import com.karimmammadov.alovekilforpractice.fragments.LawyerRegisterPage1
-import com.karimmammadov.alovekilforpractice.fragments.LawyerRegisterPage2
+import com.karimmammadov.alovekilforpractice.fragments.LawyerRegister1
+import com.karimmammadov.alovekilforpractice.fragments.LawyerRegister2
 
 class LawyerRegisterActivity : AppCompatActivity() {
     lateinit var viewPager : ViewPager2
@@ -17,8 +17,8 @@ class LawyerRegisterActivity : AppCompatActivity() {
         viewPager  = findViewById(R.id.pager)
 
         val fragments : ArrayList<Fragment> = arrayListOf(
-            LawyerRegisterPage1(),
-            LawyerRegisterPage2()
+            LawyerRegister1(),
+            LawyerRegister2()
         )
         val adapter = ViewPagerAdapter(fragments,this)
         viewPager.adapter = adapter

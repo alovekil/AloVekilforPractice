@@ -21,5 +21,4 @@ interface ApiForCustomer {
         @Field("password2") password2:String,
     ) : Call<DefaultResponse>
 
-
 }
