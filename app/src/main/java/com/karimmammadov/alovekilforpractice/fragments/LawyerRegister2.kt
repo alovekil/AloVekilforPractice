@@ -68,6 +68,9 @@ class LawyerRegister2 : Fragment() {
     private lateinit var activityResultLauncherDiploma: ActivityResultLauncher<Intent>
     private lateinit var permissionLauncherDiploma: ActivityResultLauncher<String>
 
+    val lawyerlanguageitems = ArrayList<LawyerLanguageItems>()
+    val lawyerareastype = ArrayList<LawyerAreaTypes>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -80,8 +83,8 @@ class LawyerRegister2 : Fragment() {
         val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register2, container, false)
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
-
-
+        getMyData()
+        getMyAreasData()
         val languageTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_languages)
         languageTextView.setOnClickListener {
             GetManageInstance.removeAllItems()
@@ -93,17 +96,12 @@ class LawyerRegister2 : Fragment() {
             val builderCreate = builder.create()
             builderCreate.show()
             val recyclerView = view.findViewById<RecyclerView>(com.karimmammadov.alovekilforpractice.R.id.language_rcyvw)
-            var languageList = listOf(
-                LawyerLanguageItems(1, "AZE"),
-                LawyerLanguageItems(2, "ENG"),
-                LawyerLanguageItems(3, "RUS"),
-                LawyerLanguageItems(4, "Portuguese")
-            )
-            myCheckBoxItemsAdapter = MyCheckBoxItemsAdapter(requireContext(), languageList)
+
+            myCheckBoxItemsAdapter = MyCheckBoxItemsAdapter(requireContext(), lawyerlanguageitems)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = myCheckBoxItemsAdapter
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_clearAll).setOnClickListener {
-                myCheckBoxItemsAdapter.notifyItemRangeChanged(0, languageList.size )
+                myCheckBoxItemsAdapter.notifyItemRangeChanged(0, lawyerlanguageitems.size )
                 GetManageInstance.removeAllItems()
             }
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_cancel).setOnClickListener {
@@ -118,6 +116,7 @@ class LawyerRegister2 : Fragment() {
                 if (selectedLanguage.isNotEmpty()){
                     stringBuilder.append(selectedLanguage.get(0).language)
                 }
+                lawyerLanguages.clear()
                 for(l in 0..selectedLanguage.size-1){
                     lawyerLanguages.add(selectedLanguage.get(l).id)
                     stringBuilder.append(", ${selectedLanguage.get(l).language}")
@@ -137,31 +136,12 @@ class LawyerRegister2 : Fragment() {
             val builderCreate = builder.create()
             builderCreate.show()
             val recyclerViewAreas = view.findViewById<RecyclerView>(com.karimmammadov.alovekilforpractice.R.id.area_rcyvw)
-            var areaList = listOf(
-                LawyerAreaTypes(4,"Müqavilə Hüququ"),
-                LawyerAreaTypes(5, "Sahibkarlıq hüququ"),
-                LawyerAreaTypes(6, "Mənzil və daşınmaz əmlak hüququ"),
-                LawyerAreaTypes(7, "Əmək və sosial təminat (pensiya) hüququ"),
-                LawyerAreaTypes(8, "Ailə hüququ"),
-                LawyerAreaTypes(9, "Cinayət hüququ"),
-                LawyerAreaTypes(10, "Gömrük hüququ"),
-                LawyerAreaTypes(11, "Vergi hüququ"),
-                LawyerAreaTypes(12, "Maliyyə (bank, sığorta və s.) hüququ"),
-                LawyerAreaTypes(13, "Əqli mülkiyyət hüququ"),
-                LawyerAreaTypes(14, "Miqrasiya hüququ"),
-                LawyerAreaTypes(15, "İstehlakçı hüququ"),
-                LawyerAreaTypes(16, "Mülki hüquq"),
-                LawyerAreaTypes(17, "İnzibati hüquq (Dövlət qurumları ilə iş)"),
-                LawyerAreaTypes(18, "Yol-hərəkəti"),
-                LawyerAreaTypes(19, "Məhkəmə qərarlarının icrası"),
-                LawyerAreaTypes(20, "Mülki-prosessual hüquq"),
-                LawyerAreaTypes(21, "Satınalma (tender) hüququ")
-            )
-            myCheckBoxAreasAdapter = MyCheckBoxAreasAdapter(requireContext(), areaList)
+
+            myCheckBoxAreasAdapter = MyCheckBoxAreasAdapter(requireContext(), lawyerareastype)
             recyclerViewAreas.layoutManager = LinearLayoutManager(requireContext())
             recyclerViewAreas.adapter = myCheckBoxAreasAdapter
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_clearAllAreas).setOnClickListener {
-                myCheckBoxAreasAdapter.notifyItemRangeChanged(0, areaList.size )
+                myCheckBoxAreasAdapter.notifyItemRangeChanged(0, lawyerareastype.size )
                 GetManageInstanceAreas.removeAllItems()
             }
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_cancelAreas).setOnClickListener {
@@ -176,6 +156,7 @@ class LawyerRegister2 : Fragment() {
                 if(selectedArea.isNotEmpty()){
                     stringBuilder.append(selectedArea.get(0).service_name)
                 }
+                lawyerAreas.clear()
                 for(l in 0..selectedArea.size-1){
                     lawyerAreas.add(selectedArea.get(l).id)
                     stringBuilder.append(", ${selectedArea.get(l).service_name}")
@@ -280,7 +261,7 @@ class LawyerRegister2 : Fragment() {
 
 
 
-            RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object :
+            RetrofitClientForLawyer.instance.createUserLawyer(emailLawyer,first_name,last_name,phone,password,password2,lawyerModels_lawyer).enqueue(object :
                 Callback<DefaultResponse> {
                 override fun onResponse(
                     call: Call<DefaultResponse>,
@@ -320,7 +301,7 @@ class LawyerRegister2 : Fragment() {
                         println("Response: "+t.response())
                     }
 */
-        getMyData()
+
 
         return view
     }
@@ -339,15 +320,43 @@ class LawyerRegister2 : Fragment() {
                 response: Response<List<LawyerLanguageItems>?>
             ) {
                 val responseBody = response.body()!!
-                val myStringBuilder = StringBuilder()
+
                 for (myData in responseBody) {
-                    myStringBuilder.append(myData.id)
-                    myStringBuilder.append(myData.language)
+                    val lawyerLanguageItems = LawyerLanguageItems(myData.id,myData.language)
+                   lawyerlanguageitems.add(lawyerLanguageItems)
                 }
             }
             override fun onFailure(call: Call<List<LawyerLanguageItems>?>, t: Throwable) {
 
             }
+        })
+    }
+
+    private fun getMyAreasData() {
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+            .create(ApiForLawyer::class.java)
+        val retrofitData = retrofitBuilder.getAreasData()
+
+        retrofitData.enqueue(object : Callback<List<LawyerAreaTypes>?> {
+            override fun onResponse(
+                call: Call<List<LawyerAreaTypes>?>,
+                response: Response<List<LawyerAreaTypes>?>
+            ) {
+                val responseBody = response.body()!!
+
+                for (myData in responseBody){
+                    val lawyerAreaTypes = LawyerAreaTypes(myData.id,myData.service_name)
+                    lawyerareastype.add(lawyerAreaTypes)
+                }
+            }
+
+            override fun onFailure(call: Call<List<LawyerAreaTypes>?>, t: Throwable) {
+
+            }
+
         })
     }
 

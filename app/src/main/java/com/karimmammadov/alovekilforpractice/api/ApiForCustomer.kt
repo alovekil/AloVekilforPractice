@@ -18,7 +18,7 @@ interface ApiForCustomer {
         @Field("last_name") last_name:String,
         @Field("phone") phone:String,
         @Field("password") password:String,
-        @Field("password2") password2:String,
+        @Field("password2") password2:String
     ) : Call<DefaultResponse>
 
 }

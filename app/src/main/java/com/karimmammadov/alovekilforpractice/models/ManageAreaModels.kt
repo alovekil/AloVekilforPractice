@@ -23,7 +23,6 @@ private class ManageAreaModels : AreaInterface {
     override fun setArea(items: LawyerAreaTypes, context:Context) : Boolean {
         Log.d(TAG, "setArea: ")
        if(areaSortedList.size == 5){
-
            Log.d(TAG, "setArea: if ")
            return false
        }else{
