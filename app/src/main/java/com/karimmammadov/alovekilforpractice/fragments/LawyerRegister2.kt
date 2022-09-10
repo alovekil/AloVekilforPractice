@@ -252,16 +252,16 @@ class LawyerRegister2 : Fragment() {
             var diploma = encodedStringD
 
 
-            val birth_date = sharedPreferences.getString("lawyerDateBirth",null)!!
+            val birth_date = sharedPreferences.getString("lawyerDateBirth","null")!!
             val certificate = listCertificate
-            val father_name = sharedPreferences.getString("userLawyerFatherName",null)!!
-            val gender = sharedPreferences.getString("userLawyerGender",null)!!
+            val father_name = sharedPreferences.getString("userLawyerFatherName","null")!!
+            val gender = sharedPreferences.getString("userLawyerGender","null")!!
             val law_practice = lglexperience
             val lawyer_practice = lawyerExperience
             val lawyer_card = diploma
             val service_languages = lawyerLanguages
             val service_types = lawyerAreas
-            val university = sharedPreferences.getString("lawyerUniversity",null)!!
+            val university = sharedPreferences.getString("lawyerUniversity","null")!!
             val voen = lawyerTaxVoen
 
             lawyer = Lawyer(birth_date, certificate, father_name, gender, law_practice, lawyer_card,
@@ -269,10 +269,10 @@ class LawyerRegister2 : Fragment() {
 
             val  lawyerModels_lawyer = lawyer
 
-            val emailLawyer = sharedPreferences.getString("lawyeremail",null)!!
-            val first_name = sharedPreferences.getString("userLawyerName",null)!!
-            val last_name = sharedPreferences.getString("userLawyerSurname",null)!!
-            val phone =sharedPreferences.getString("lawyerPhoneNumber",null)!!
+            val emailLawyer = sharedPreferences.getString("lawyeremail","null")!!
+            val first_name = sharedPreferences.getString("userLawyerName","null")!!
+            val last_name = sharedPreferences.getString("userLawyerSurname","null")!!
+            val phone =sharedPreferences.getString("lawyerPhoneNumber","null")!!
             val password = lawyerfirstPassword
             val password2 = lawyerconfrimPassword
 
