@@ -261,7 +261,7 @@ class LawyerRegister2 : Fragment() {
 
 
 
-            RetrofitClientForLawyer.instance.createUserLawyer(emailLawyer,first_name,last_name,phone,password,password2,lawyerModels_lawyer).enqueue(object :
+            RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object :
                 Callback<DefaultResponse> {
                 override fun onResponse(
                     call: Call<DefaultResponse>,
@@ -285,6 +285,30 @@ class LawyerRegister2 : Fragment() {
 
             })
 
+
+            /*
+            val apiForLawyer : ApiForLawyer = RetrofitClientForLawyer.buildService(ApiForLawyer::class.java)
+            val requestCall : Call<DefaultResponse> = apiForLawyer.createUserLawyer(lawyerModels)
+
+            requestCall.enqueue(object: Callback<DefaultResponse>{
+                override fun onResponse(
+                    call: Call<DefaultResponse>,
+                    response: Response<DefaultResponse>
+                ) {
+                    if (response.isSuccessful){
+                        Toast.makeText(requireContext(),"Succesfully added",Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(requireContext(),"Failed to add item",Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                    Toast.makeText(requireContext(),"Failed to add item",Toast.LENGTH_SHORT).show()
+                }
+
+            })
+
+             */
         }
 /*
         println(response.message() + "Success")
@@ -301,6 +325,7 @@ class LawyerRegister2 : Fragment() {
                         println("Response: "+t.response())
                     }
 */
+
 
 
         return view

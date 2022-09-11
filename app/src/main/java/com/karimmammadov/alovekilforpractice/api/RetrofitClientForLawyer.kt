@@ -8,6 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitClientForLawyer {
 
     private val AUTH = "Basic " + Base64.encodeToString("KerimM:kerim12345".toByteArray(), Base64.NO_WRAP)
+
     private  val BASE_URL = "http://38.242.221.247/api/users/"
 
     private val  okHttpClient = OkHttpClient.Builder()
