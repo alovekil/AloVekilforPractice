@@ -257,9 +257,7 @@ class LawyerRegister2 : Fragment() {
             val password = lawyerfirstPassword
             val password2 = lawyerconfrimPassword
 
-            lawyerModels = LawyerModels(emailLawyer, first_name, last_name, lawyerModels_lawyer, password, password2, phone)
-
-
+            lawyerModels = LawyerModels(emailLawyer,first_name,last_name,lawyerModels_lawyer,password,password2,phone)
 
             RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object :
                 Callback<DefaultResponse> {
@@ -424,6 +422,7 @@ class LawyerRegister2 : Fragment() {
                             )
                             view!!.certificateImage.setImageBitmap(selectedBitmapCertificate)
                         }
+                        lawyerCertificate.setText(selectedPictureCertificate?.path)
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
@@ -483,6 +482,7 @@ class LawyerRegister2 : Fragment() {
                             )
                             view!!.diplomaImage.setImageBitmap(selectedBitmapDiploma)
                         }
+                        editDiplomaLawyer.setText(selectedPictureDiploma?.path)
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }

@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.karimmammadov.alovekilforpractice.PinCode.CreatePasswordActivity
 import com.karimmammadov.alovekilforpractice.api.RetrofitClient
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
+import com.karimmammadov.alovekilforpractice.models.CustomerModels
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
 import kotlinx.android.synthetic.main.activity_customer_regstr.*
 import retrofit2.Call
@@ -20,6 +21,7 @@ import retrofit2.Response
 class CustomerRegstrActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var sharedPreferences: SharedPreferences
+    lateinit var customerModels: CustomerModels
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_regstr)
@@ -70,7 +72,9 @@ class CustomerRegstrActivity : AppCompatActivity() {
                 editphoneNumberCustomer.requestFocus()
             }
 
-            RetrofitClient.instance.createUser(email,name,secondName,phonenumberCustomer,password, confirmPassword)
+            customerModels = CustomerModels(email,name,secondName,password,confirmPassword,phonenumberCustomer)
+
+            RetrofitClient.instance.createUser(customerModels)
                 .enqueue(object : Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,
