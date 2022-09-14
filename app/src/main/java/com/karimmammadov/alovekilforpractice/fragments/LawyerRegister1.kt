@@ -52,8 +52,8 @@ class LawyerRegister1 : Fragment() {
 
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
-        genders.add("Male")
-        genders.add("Female")
+        genders.add("male")
+        genders.add("female")
         val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,genders)
         completeText.setAdapter(adapter)
 
