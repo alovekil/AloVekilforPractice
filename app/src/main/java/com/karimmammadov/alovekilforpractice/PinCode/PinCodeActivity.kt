@@ -1,5 +1,6 @@
 package com.karimmammadov.alovekilforpractice.PinCode
 
+import android.app.AlertDialog
 import android.app.KeyguardManager
 import android.content.Context
 import android.content.DialogInterface
@@ -46,6 +47,7 @@ class PinCodeActivity : AppCompatActivity() {
     lateinit var editor: SharedPreferences.Editor
    // var binding:ActivityPinCodeBinding?=null
     var password1 = ""
+    var dialog:AlertDialog ?=null
     var radioList1: ArrayList<RadioButton> = ArrayList()
     var radioList2: ArrayList<RadioButton> = ArrayList()
    lateinit var sharedPreferences: SharedPreferences
@@ -89,7 +91,7 @@ class PinCodeActivity : AppCompatActivity() {
         number7.setOnClickListener { view -> passwordCheck("7") }
        number8.setOnClickListener { view -> passwordCheck("8") }
         number9.setOnClickListener { view -> passwordCheck("9") }
-
+        alertdialogshow()
         deletenumbers.setOnClickListener{
             if (password1!!.length > 0) {
                 password1 = password1!!.substring(0, password1!!.length - 1)
@@ -190,6 +192,14 @@ class PinCodeActivity : AppCompatActivity() {
         }
         return cancellationSignal as CancellationSignal
     }
-
+    private fun alertdialogshow(){
+    val dialogview= View.inflate(this@PinCodeActivity,R.layout.arter_dialog,null)
+        val alertDialogBuilder=AlertDialog.Builder(this@PinCodeActivity)
+        alertDialogBuilder.setView(dialogview)
+        dialog=alertDialogBuilder.create()
+        dialog!!.show()
+        dialog!!.window!!.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog!!.setCancelable(false)
+    }
 
 }

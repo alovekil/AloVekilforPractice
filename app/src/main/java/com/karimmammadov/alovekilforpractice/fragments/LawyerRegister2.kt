@@ -329,6 +329,8 @@ class LawyerRegister2 : Fragment() {
         return view
     }
 
+
+
     private fun getMyData(){
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
