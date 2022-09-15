@@ -19,7 +19,9 @@ class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-
+/*        val intent = Intent(this@SplashScreen, PinCodeActivity::class.java)
+        startActivity(intent)
+        finish()*/
         sharedPreferences = this@SplashScreen.getSharedPreferences("password", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
