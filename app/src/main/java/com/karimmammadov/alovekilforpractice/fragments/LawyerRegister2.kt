@@ -268,7 +268,7 @@ class LawyerRegister2 : Fragment() {
                     println(response.message() + "Success")
                     if(response.body()?.response.equals("successfully regitered a new user.")){
                         val myresponse : String = response.body()?.response.toString()
-                        Toast.makeText(requireContext(),myresponse, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(),"successfully regitered a new user.", Toast.LENGTH_SHORT).show()
                         val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
                         startActivity(intent)
                     }

@@ -52,8 +52,8 @@ class LawyerRegister1 : Fragment() {
 
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
-        genders.add("Male")
-        genders.add("Female")
+        genders.add("male")
+        genders.add("female")
         val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,genders)
         completeText.setAdapter(adapter)
 
@@ -80,8 +80,8 @@ class LawyerRegister1 : Fragment() {
                 myCalendar.get(Calendar.DAY_OF_MONTH)).show()
         }
 
-        nextBtn = view.findViewById(R.id.nextButton)
-
+        //nextBtn = view.findViewById(R.id.nextButton)
+/*
         nextBtn.setOnClickListener {
             val userlawyerName = view.editlawyerName.text.toString().trim()
             val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
@@ -126,6 +126,8 @@ class LawyerRegister1 : Fragment() {
 
         }
 
+
+ */
 
         return view
     }
