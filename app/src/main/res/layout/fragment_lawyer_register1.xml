@@ -265,20 +265,7 @@
                         android:background="@drawable/boxwhite" />
                 </LinearLayout>
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/nextButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="34dp"
-                    android:background="@drawable/bgn_bluebutton"
-                    android:text="Next"
-                    android:textAlignment="center"
-                    android:textColor="@color/RGB_white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+
             </LinearLayout>
 
 
