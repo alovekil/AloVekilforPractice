@@ -17,5 +17,14 @@
         android:id="@+id/lawyerRegister2"
         android:name="com.karimmammadov.alovekilforpractice.fragments.LawyerRegister2"
         android:label="fragment_lawyer_register2"
-        tools:layout="@layout/fragment_lawyer_register2" />
+        tools:layout="@layout/fragment_lawyer_register2" >
+        <action
+            android:id="@+id/action_lawyerRegister2_to_alertDialogPageLawyer"
+            app:destination="@id/alertDialogPageLawyer" />
+    </fragment>
+    <fragment
+        android:id="@+id/alertDialogPageLawyer"
+        android:name="com.karimmammadov.alovekilforpractice.fragments.AlertDialogPageLawyer"
+        android:label="fragment_alert_dialog_page_lawyer"
+        tools:layout="@layout/fragment_alert_dialog_page_lawyer" />
 </navigation>

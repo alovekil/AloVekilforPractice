@@ -91,7 +91,7 @@ class PinCodeActivity : AppCompatActivity() {
         number7.setOnClickListener { view -> passwordCheck("7") }
        number8.setOnClickListener { view -> passwordCheck("8") }
         number9.setOnClickListener { view -> passwordCheck("9") }
-        alertdialogshow()
+
         deletenumbers.setOnClickListener{
             if (password1!!.length > 0) {
                 password1 = password1!!.substring(0, password1!!.length - 1)
@@ -155,7 +155,8 @@ class PinCodeActivity : AppCompatActivity() {
             if(password1.equals(sharedPreferences.getString("password","862186214632"))){
                 Pin_CodeText.setVisibility(View.VISIBLE)
                 Toast.makeText(this,"succes login" ,Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
+
+               /* startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))*/
                 finish()
 
             }
@@ -191,15 +192,6 @@ class PinCodeActivity : AppCompatActivity() {
             notifyUser("Authentication was cancelled by the user")
         }
         return cancellationSignal as CancellationSignal
-    }
-    private fun alertdialogshow(){
-    val dialogview= View.inflate(this@PinCodeActivity,R.layout.arter_dialog,null)
-        val alertDialogBuilder=AlertDialog.Builder(this@PinCodeActivity)
-        alertDialogBuilder.setView(dialogview)
-        dialog=alertDialogBuilder.create()
-        dialog!!.show()
-        dialog!!.window!!.setBackgroundDrawableResource(android.R.color.transparent)
-        dialog!!.setCancelable(false)
     }
 
 }
