@@ -11,9 +11,10 @@ import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.karimmammadov.alovekilforpractice.AlertDialogActivityforLawyer
 import com.karimmammadov.alovekilforpractice.ProfileActivity
 import com.karimmammadov.alovekilforpractice.R
-import com.karimmammadov.alovekilforpractice.fragments.AlertDialogPageLawyer
+
 import kotlinx.android.synthetic.main.activity_create_password.*
 
 class CreatePasswordActivity : AppCompatActivity() {
@@ -114,7 +115,7 @@ EnterConfirmPassword.visibility = View.GONE
                 editor.putString("password", password1)
                 editor.putBoolean("create_password", true)
                 editor.commit()
-                val intent = Intent(this@CreatePasswordActivity,AlertDialogPageLawyer::class.java)
+                val intent = Intent(this@CreatePasswordActivity,AlertDialogActivityforLawyer::class.java)
                 startActivity(intent)
                 finish()
                 Toast.makeText(this@CreatePasswordActivity, "Succesfully", Toast.LENGTH_LONG)
