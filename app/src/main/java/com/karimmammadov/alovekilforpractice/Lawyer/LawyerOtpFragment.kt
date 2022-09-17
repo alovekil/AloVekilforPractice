@@ -23,6 +23,8 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.karimmammadov.alovekilforpractice.R
+import kotlinx.android.synthetic.main.fragment_customer_otp.*
+import kotlinx.android.synthetic.main.fragment_customer_otp.view.*
 import kotlinx.android.synthetic.main.fragment_lawyer_otp.*
 import kotlinx.android.synthetic.main.fragment_lawyer_otp.view.*
 import java.util.concurrent.TimeUnit
@@ -71,8 +73,9 @@ class LawyerOtpFragment : Fragment() {
         view.ll_otpLawyerArea.visibility = View.GONE
         view.btn_nextLawyerRegister.visibility = View.GONE
 
+
         firebaseAuth = FirebaseAuth.getInstance()
-        progressDialog = ProgressDialog(context)
+        progressDialog = ProgressDialog(requireContext())
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
@@ -85,7 +88,7 @@ class LawyerOtpFragment : Fragment() {
             override fun onVerificationFailed(e: FirebaseException) {
                 progressDialog.dismiss()
                 Log.d(TAG, "onVerificationFailed:${e.message} ")
-                Toast.makeText(context, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "${e.message}", Toast.LENGTH_SHORT).show()
             }
 
             override fun onCodeSent(
@@ -110,17 +113,32 @@ class LawyerOtpFragment : Fragment() {
                 view.btn_nextLawyerRegister.visibility = View.VISIBLE
 
                 view.numberLawyerDescription.text = "Code sent to number +994${phoneNumberLawyer.text.toString().trim()}"
-                Toast.makeText(context, "Verification Code sent...", Toast.LENGTH_SHORT).show()
+
+                Toast.makeText(
+                    requireContext(),
+                    "Verification Code sent...",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
         view.btn_sendLwyOtp.setOnClickListener {
             val phone = phoneNumberLawyer.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(context, "Please enter phone number", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter phone number",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
             }
+
             if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(context, "Please enter phone number", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter phone number",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 //new changes
                 phoneNumber = phone
@@ -145,9 +163,12 @@ class LawyerOtpFragment : Fragment() {
                 addtoFirestore(phoneNumber)
                 findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
             } else {
-                Toast.makeText(context, "Please enter all numbers", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter all numbers",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-
         }
 
         view.inputLwyCode1.addTextChangedListener(object : TextWatcher {
@@ -158,7 +179,6 @@ class LawyerOtpFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (!s.toString().trim().isEmpty()) {
                     inputLwyCode2.requestFocus()
-
                 }
             }
 
@@ -226,26 +246,25 @@ class LawyerOtpFragment : Fragment() {
 
             }
         })
-        view.inputLwyCode6.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        view.inputLwyCode6.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (!p0.toString().trim().isEmpty()) {
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (!s.toString().trim().isEmpty()) {
                     inputLwyCode6.requestFocus()
                 }
             }
 
-            override fun afterTextChanged(p0: Editable?) {
+            override fun afterTextChanged(s: Editable?) {
 
             }
-
         })
-
 
         return view
     }
+
 
     private fun startPhoneNumberVerification(phone: String) {
         progressDialog.setMessage("Verifying Phone Number...")
@@ -253,28 +272,36 @@ class LawyerOtpFragment : Fragment() {
         val options = PhoneAuthOptions.newBuilder(firebaseAuth)
             .setPhoneNumber("+994" + phone)
             .setTimeout(60L, TimeUnit.SECONDS)
-            .setActivity(this.requireActivity())
+            .setActivity(requireActivity())
             .setCallbacks(mCallBacks!!)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
     }
 
     private fun isPhoneNumberExist(phoneNumber: String): Boolean {
+
         val fireStore1 = Firebase.firestore
-        fireStore1.collection("LawyerNumbers").whereEqualTo("phoneNumber", phoneNumber).get()
+        fireStore1.collection("Numbers").whereEqualTo("phoneNumber", phoneNumber).get()
             .addOnSuccessListener { task ->
+
                 val fireStore = Firebase.firestore
-                fireStore.collection("LawyerNumbers").whereEqualTo("phoneNumber", phoneNumber).get()
+                fireStore.collection("Numbers").whereEqualTo("phoneNumber", phoneNumber).get()
                     .addOnSuccessListener { task ->
+
                         if (task.isEmpty) {
                             Log.d(TAG, "doIfExists: Send data to FireStore")
                             startPhoneNumberVerification(phoneNumber)
                         } else {
-                            Toast.makeText(context, "This number is exist", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                requireContext(),
+                                "This number is exist",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }.addOnFailureListener {
                         Log.d(TAG, "doIfExists: ${it.message}")
                     }
+
             }
         return true
     }
@@ -284,12 +311,13 @@ class LawyerOtpFragment : Fragment() {
             "phoneNumber" to phone
         )
         var firestore = Firebase.firestore
-        firestore.collection("LawyerNumbers").add(phoneNumbers).addOnSuccessListener {
+        firestore.collection("Numbers").add(phoneNumbers).addOnSuccessListener {
 
         }.addOnFailureListener {
-            Toast.makeText(context, it.localizedMessage, Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private  fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
         progressDialog.setMessage("Verifying Code...")
@@ -304,13 +332,14 @@ class LawyerOtpFragment : Fragment() {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
-                editor.putString("lawyerPhoneNumber",phone).apply()
+                editor.putString("phone_number",phone).apply()
                 editor.commit()
                 findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()
-                Toast.makeText(context, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
 }

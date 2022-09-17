@@ -34,7 +34,7 @@ class SplashScreenFragment : Fragment() {
             }
 
             override fun onFinish() {
-                if (sharedPreferences.getBoolean("create_pasword", false)) {
+                if (sharedPreferences.getBoolean("create_password", false)) {
                    findNavController().navigate(R.id.action_splashScreenFragment_to_pinCodeFragment)
                 } else {
                         findNavController().navigate(R.id.action_splashScreenFragment_to_signInUpFragment)

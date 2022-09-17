@@ -126,7 +126,7 @@ class PinCodeFragment : Fragment() {
 
         val handler = Handler()
         val runnable: Runnable = Runnable {
-            if (sharedPreferences!!.getBoolean("create_pasword", false)!!) {
+            if (sharedPreferences!!.getBoolean("create_password", false)!!) {
                 //   startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
                 //  finish()
             } else {

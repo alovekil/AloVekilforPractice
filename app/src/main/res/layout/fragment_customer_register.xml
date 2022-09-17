@@ -13,7 +13,7 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
-            android:id="@+id/relativeLayout3"
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,11 +26,12 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="18dp"
-                android:background="@drawable/vector" />
-
+                android:background="@drawable/vector"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/textViewCustomer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -42,24 +43,24 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.54"
-                app:layout_constraintStart_toEndOf="@+id/bck_signActivity"
                 app:layout_constraintTop_toTopOf="parent" />
         </RelativeLayout>
 
-
         <ScrollView
-            android:id="@+id/scrollView3"
+            android:id="@+id/scrollViewCustomer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            app:layout_constraintBottom_toTopOf="@+id/savebtn"
-            app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
             <LinearLayout
-                android:id="@+id/linearLayout7"
+                android:layout_marginTop="100dp"
+                android:id="@+id/linearLayoutCustomer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="130dp"
                 android:divider="@drawable/vertical_emptyspace"
                 android:orientation="vertical"
                 android:paddingHorizontal="20dp"
@@ -70,6 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
@@ -109,6 +111,7 @@
                         android:textColorHint="@color/RGB_Gray2" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -130,6 +133,8 @@
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -196,27 +201,24 @@
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2" />
                 </com.google.android.material.textfield.TextInputLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/savebtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/bgn_bluebutton"
+                    android:text="Save"
+                    android:textAlignment="center"
+                    android:textColor="@color/RGB_white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>
+
+
         </ScrollView>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/savebtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="50dp"
-            android:background="@drawable/bgn_bluebutton"
-            android:text="Save"
-            android:textAlignment="center"
-            android:textColor="@color/RGB_white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
 
 
