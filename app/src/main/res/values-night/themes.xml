@@ -6,6 +6,12 @@
         <item name="colorPrimaryVariant">@color/onlyBlack</item>
         <item name="colorOnPrimary">@color/onlyBlack</item>
         <!-- Status bar color. -->
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowFullscreen">true</item>
+
+        <item name="android:windowActionBar">false</item>
+
         <item name="android:statusBarColor" tools:targetApi="l">@color/RGB_blue</item>
         <!-- Customize your theme here. -->
     </style>
