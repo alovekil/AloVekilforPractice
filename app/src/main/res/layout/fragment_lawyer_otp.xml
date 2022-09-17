@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Lawyer.LawyerOtpFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
         android:background="@color/RGB_white"
+        android:gravity="center_horizontal"
         tools:context=".LawyerOtpActivity">
 
         <ImageView
@@ -21,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
-            android:layout_marginTop="38.34dp"
+            android:layout_marginTop="38dp"
             android:background="@drawable/vector"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +29,7 @@
             android:id="@+id/tv_numberLawyerHighlight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="33.34dp"
+            android:layout_marginTop="34dp"
             android:layout_marginEnd="40dp"
             android:text="Lawyer"
             android:textColor="@color/RGB_blue"
@@ -49,7 +46,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="178dp"
             android:layout_marginRight="25dp"
             android:gravity="center_vertical"
             android:text="@string/enterphonenumber"
@@ -57,10 +53,12 @@
             android:textSize="28sp"
             android:textStyle="bold"
             android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sendLwyOtp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.68"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_numberLawyerHighlight" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_numberLawyerHighlight"
+            app:layout_constraintVertical_bias="0.38" />
 
 
         <LinearLayout

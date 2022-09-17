@@ -9,9 +9,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:background="@color/RGB_white">
+        android:background="@color/RGB_white"
+        android:gravity="center_horizontal">
 
 
         <ImageView
@@ -160,7 +159,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
-            android:layout_marginTop="151dp"
             android:layout_marginRight="25dp"
             android:gravity="center_vertical"
             android:text="@string/entercode"
@@ -168,10 +166,12 @@
             android:textSize="28sp"
             android:textStyle="bold"
             android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_nextCstmRegister"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.404"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_otpcustomerHighlight" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_otpcustomerHighlight"
+            app:layout_constraintVertical_bias="0.35000002" />
 
         <TextView
             android:id="@+id/numberCustomerDescription"
@@ -309,8 +309,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
