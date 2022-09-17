@@ -6,6 +6,7 @@ class MyConstants {
         val userName : String= "username"
         val userSecondName : String= "usersecondname"
         val userEmail : String= "useremail"
+
     }
 }
 

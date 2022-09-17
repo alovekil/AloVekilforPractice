@@ -66,6 +66,7 @@ class PinCodeFragment : Fragment() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                     super.onAuthenticationSucceeded(result)
+                    findNavController().navigate(R.id.action_pinCodeFragment_to_alertDialogLawyer)
                     // startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
                     // finish()
                 }

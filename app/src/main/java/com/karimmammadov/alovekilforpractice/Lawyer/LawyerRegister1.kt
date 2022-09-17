@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.R
+import com.karimmammadov.alovekilforpractice.constant.UserNumbers
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.view.*
 import java.text.SimpleDateFormat
@@ -27,10 +28,14 @@ class LawyerRegister1 : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
     private  var block : Boolean  =true
+    private lateinit var lawyernumber: UserNumbers
     // private var phoneNumberForLawyer:String?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        arguments?.let {bundle ->
+        lawyernumber=bundle.getParcelable("user")!!
 
+        }
     }
 
     override fun onCreateView(
@@ -89,7 +94,7 @@ class LawyerRegister1 : Fragment() {
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
-            val phoneNumberForLawyer = view.editPhoneNumberLawyer.text.toString().trim()
+            val phoneNumberForLawyer = lawyernumber.number
 
             if (userlawyerName.isEmpty()){
                 editlawyerName.error = "Name required"

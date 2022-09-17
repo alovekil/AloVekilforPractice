@@ -14,15 +14,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
+import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.karimmammadov.alovekilforpractice.R
+import com.karimmammadov.alovekilforpractice.constant.UserNumbers
 import kotlinx.android.synthetic.main.fragment_customer_otp.*
 import kotlinx.android.synthetic.main.fragment_customer_otp.view.*
 import kotlinx.android.synthetic.main.fragment_lawyer_otp.*
@@ -37,6 +40,7 @@ class LawyerOtpFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
+    var bundle:Bundle?=null
     private val collection: Collection<String>? = null
     private val isUsersignedin = FirebaseAuth.getInstance().currentUser
     private lateinit var phoneNumber: String
@@ -144,6 +148,8 @@ class LawyerOtpFragment : Fragment() {
                 phoneNumber = phone
                 isPhoneNumberExist(phone)
                 Log.d(TAG, "onCreateView: ")
+                val user=UserNumbers(phone)
+                 bundle= bundleOf("user" to user)
             }
         }
 
@@ -161,7 +167,7 @@ class LawyerOtpFragment : Fragment() {
                         inputLwyCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
-                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
+                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1,bundle)
             } else {
                 Toast.makeText(
                     requireContext(),

@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +24,7 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.karimmammadov.alovekilforpractice.R
+import com.karimmammadov.alovekilforpractice.constant.UserNumbers
 import kotlinx.android.synthetic.main.fragment_customer_otp.*
 import kotlinx.android.synthetic.main.fragment_customer_otp.view.*
 import java.util.concurrent.TimeUnit
@@ -35,6 +37,7 @@ class CustomerOtpFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
+    lateinit var bundle:Bundle
     private val collection: Collection<String>? = null
     private val isUsersignedin = FirebaseAuth.getInstance().currentUser
     private lateinit var phoneNumber: String
@@ -137,6 +140,8 @@ class CustomerOtpFragment : Fragment() {
                 phoneNumber = phone
                 isPhoneNumberExist(phone)
                 Log.d(TAG, "onCreateView: ")
+                val user= UserNumbers(phone)
+                bundle= bundleOf("usercustomer" to user)
             }
         }
 
