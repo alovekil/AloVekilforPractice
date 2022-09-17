@@ -6,15 +6,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".customer.CustomerRegisterFragment">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@color/RGB_white"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/relativeLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/bck_signActivity"
@@ -29,11 +33,11 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:layout_marginTop="33.34dp"
                 android:layout_marginEnd="40dp"
                 android:text="Customer"
                 android:textColor="@color/RGB_blue"
-                android:layout_centerInParent="true"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,19 +48,23 @@
 
 
         <ScrollView
+            android:id="@+id/scrollView3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/savebtn"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout3">
 
             <LinearLayout
                 android:id="@+id/linearLayout7"
-                android:layout_marginTop="130dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="130dp"
                 android:divider="@drawable/vertical_emptyspace"
                 android:orientation="vertical"
                 android:paddingHorizontal="20dp"
                 android:showDividers="middle">
+
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -68,6 +76,7 @@
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
                     app:boxStrokeWidth="0dp">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editFirstName"
                         android:layout_width="match_parent"
@@ -133,6 +142,7 @@
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
                     app:boxStrokeWidth="0dp">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editphoneNumberCustomer"
                         android:layout_width="match_parent"
@@ -188,7 +198,6 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-
             </LinearLayout>
         </ScrollView>
 
@@ -211,6 +220,6 @@
 
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

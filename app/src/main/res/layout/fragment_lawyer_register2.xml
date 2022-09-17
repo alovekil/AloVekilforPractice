@@ -8,7 +8,7 @@
 
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@color/RGB_white"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -16,8 +16,12 @@
 
 
         <RelativeLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/moveBackBtn"
@@ -33,9 +37,9 @@
                 android:id="@+id/textViewLawyer2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:layout_marginTop="33.34dp"
                 android:layout_marginEnd="40dp"
-                android:layout_centerInParent="true"
                 android:text="Lawyer"
                 android:textColor="@color/RGB_blue"
                 android:textSize="18sp"
@@ -51,7 +55,12 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
             <LinearLayout
                 android:id="@+id/linearLayout7"
                 android:layout_width="match_parent"
@@ -66,12 +75,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/RGB_white"
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    android:backgroundTint="@color/RGB_white"
                     app:boxStrokeWidth="0dp"
                     app:endIconDrawable="@drawable/upload"
                     app:endIconMode="custom"
@@ -81,9 +90,9 @@
                         android:id="@+id/lawyerCertificate"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Lawyer Certificate"
                         android:editable="false"
                         android:focusable="false"
+                        android:hint="Lawyer Certificate"
                         android:inputType="none"
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2" />
@@ -95,14 +104,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/RGB_white"
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
-                    android:backgroundTint="@color/RGB_white"
                     app:boxStrokeWidth="0dp"
+                    app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
                     app:endIconMode="custom"
                     app:endIconTintMode="src_atop">
 
@@ -112,8 +121,8 @@
                         android:layout_height="wrap_content"
                         android:editable="false"
                         android:focusable="false"
-                        android:inputType="none"
                         android:hint="Service Languages"
+                        android:inputType="none"
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -123,24 +132,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/RGB_white"
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
-                    android:backgroundTint="@color/RGB_white"
                     app:boxStrokeWidth="0dp"
+                    app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
                     app:endIconMode="custom"
                     app:endIconTintMode="src_atop">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/tv_areas"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="none"
                         android:editable="false"
                         android:focusable="false"
                         android:hint="Service Areas"
+                        android:inputType="none"
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -195,12 +205,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:backgroundTint="@color/RGB_white"
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
-                    android:backgroundTint="@color/RGB_white"
                     app:boxStrokeWidth="0dp"
                     app:endIconDrawable="@drawable/upload"
                     app:endIconMode="custom"
@@ -210,10 +220,10 @@
                         android:id="@+id/editDiplomaLawyer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Diploma"
-                        android:inputType="none"
                         android:editable="false"
                         android:focusable="false"
+                        android:hint="Diploma"
+                        android:inputType="none"
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -289,32 +299,34 @@
                     android:id="@+id/boxbluwhitell"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="38dp"
+
                     android:background="@color/RGB_white"
                     android:gravity="center"
                     android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="10.51dp"
                         android:layout_height="10.51dp"
-                        android:background="@drawable/boxwhite"/>
+                        android:background="@drawable/boxwhite" />
+
                     <ImageView
                         android:layout_width="10.51dp"
                         android:layout_height="10.51dp"
-                        android:background="@drawable/boxblue"
-                        android:layout_marginLeft="18.02dp"/>
+                        android:layout_marginLeft="18.02dp"
+                        android:background="@drawable/boxblue" />
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/saveButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
                     android:background="@drawable/bgn_bluebutton"
                     android:text="Save"
                     android:textAlignment="center"
                     android:textColor="@color/RGB_white"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="30dp"/>
+                    android:textStyle="bold" />
             </LinearLayout>
         </ScrollView>
 
@@ -323,20 +335,24 @@
             android:id="@+id/certificateImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="411dp"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/boxbluwhitell"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
         <ImageView
             android:id="@+id/diplomaImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_marginStart="216dp"
-            app:layout_constraintBottom_toTopOf="@+id/boxbluwhitell"
+            android:layout_marginEnd="411dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
