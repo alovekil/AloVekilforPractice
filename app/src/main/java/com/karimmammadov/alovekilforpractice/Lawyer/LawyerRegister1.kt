@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.fragments
+package com.karimmammadov.alovekilforpractice.Lawyer
 
 import android.app.DatePickerDialog
 import android.content.Context
@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
@@ -122,7 +123,9 @@ class LawyerRegister1 : Fragment() {
 
 
  */
-
+view.nextBtn.setOnClickListener {
+    findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
+}
         return view
     }
 

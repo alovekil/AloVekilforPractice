@@ -117,7 +117,7 @@ private fun checkpaswordequal() {
             if(islawyer){
                     findNavController().navigate(R.id.action_createPasswordCustomer_to_profileFragmentCustomer)
             }else{
-
+                findNavController().navigate(R.id.action_createPasswordCustomer_to_alertDialogLawyer)
             }
             Toast.makeText(requireContext(), "Succesfully", Toast.LENGTH_LONG)
         }

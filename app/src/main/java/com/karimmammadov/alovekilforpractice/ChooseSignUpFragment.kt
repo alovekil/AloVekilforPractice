@@ -39,6 +39,11 @@ class ChooseSignUpFragment : Fragment() {
             editor.commit()
             findNavController().navigate(R.id.action_chooseSignUpFragment_to_customerOtpFragment)
         }
+        view.appCompatButtonLawyer.setOnClickListener {
+            editor.putBoolean("isLawyer",true).apply()
+            editor.commit()
+            findNavController().navigate(R.id.action_chooseSignUpFragment_to_lawyerOtpFragment)
+        }
         return view
     }
 }

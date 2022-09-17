@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_splashScreenFragment_to_signInUpFragment"
             app:destination="@id/signInUpFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_pinCodeFragment"
+            app:destination="@id/pinCodeFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInUpFragment"
@@ -33,6 +36,9 @@
         <action
             android:id="@+id/action_chooseSignUpFragment_to_customerOtpFragment"
             app:destination="@id/customerOtpFragment" />
+        <action
+            android:id="@+id/action_chooseSignUpFragment_to_lawyerOtpFragment"
+            app:destination="@id/lawyerOtpFragment" />
     </fragment>
     <fragment
         android:id="@+id/customerOtpFragment"
@@ -67,10 +73,81 @@
         <action
             android:id="@+id/action_createPasswordCustomer_to_profileFragmentCustomer"
             app:destination="@id/profileFragmentCustomer" />
+        <action
+            android:id="@+id/action_createPasswordCustomer_to_alertDialogLawyer"
+            app:destination="@id/alertDialogLawyer" />
     </fragment>
     <fragment
         android:id="@+id/profileFragmentCustomer"
         android:name="com.karimmammadov.alovekilforpractice.customer.ProfileFragmentCustomer"
         android:label="fragment_profile_customer"
         tools:layout="@layout/fragment_profile_customer" />
+    <fragment
+        android:id="@+id/lawyerOtpFragment"
+        android:name="com.karimmammadov.alovekilforpractice.Lawyer.LawyerOtpFragment"
+        android:label="fragment_lawyer_otp"
+        tools:layout="@layout/fragment_lawyer_otp" >
+        <action
+            android:id="@+id/action_lawyerOtpFragment_to_chooseSignUpFragment"
+            app:destination="@id/chooseSignUpFragment" />
+        <action
+            android:id="@+id/action_lawyerOtpFragment_to_lawyerRegister1"
+            app:destination="@id/lawyerRegister1" />
+    </fragment>
+    <fragment
+        android:id="@+id/lawyerRegister1"
+        android:name="com.karimmammadov.alovekilforpractice.Lawyer.LawyerRegister1"
+        android:label="fragment_lawyer_register1"
+        tools:layout="@layout/fragment_lawyer_register1" >
+        <action
+            android:id="@+id/action_lawyerRegister1_to_lawyerRegister2"
+            app:destination="@id/lawyerRegister2" />
+    </fragment>
+    <fragment
+        android:id="@+id/lawyerRegister2"
+        android:name="com.karimmammadov.alovekilforpractice.Lawyer.LawyerRegister2"
+        android:label="fragment_lawyer_register2"
+        tools:layout="@layout/fragment_lawyer_register2" >
+        <action
+            android:id="@+id/action_lawyerRegister2_to_lawyerRegister1"
+            app:destination="@id/lawyerRegister1" />
+        <action
+            android:id="@+id/action_lawyerRegister2_to_createPasswordCustomer"
+            app:destination="@id/createPasswordCustomer" />
+        <action
+            android:id="@+id/action_lawyerRegister2_to_profileFragmentLawyer"
+            app:destination="@id/profileFragmentLawyer" />
+        <action
+            android:id="@+id/action_lawyerRegister2_to_lawyerRegister12"
+            app:destination="@id/lawyerRegister1" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragmentLawyer"
+        android:name="com.karimmammadov.alovekilforpractice.Lawyer.ProfileFragmentLawyer"
+        android:label="fragment_profile_lawyer"
+        tools:layout="@layout/fragment_profile_lawyer" />
+    <fragment
+        android:id="@+id/pinCodeFragment"
+        android:name="com.karimmammadov.alovekilforpractice.PinCode.PinCodeFragment"
+        android:label="fragment_pin_code"
+        tools:layout="@layout/fragment_pin_code" >
+        <action
+            android:id="@+id/action_pinCodeFragment_to_profileFragmentCustomer"
+            app:destination="@id/profileFragmentCustomer" />
+        <action
+            android:id="@+id/action_pinCodeFragment_to_profileFragmentLawyer"
+            app:destination="@id/profileFragmentLawyer" />
+        <action
+            android:id="@+id/action_pinCodeFragment_to_alertDialogLawyer"
+            app:destination="@id/alertDialogLawyer" />
+    </fragment>
+    <fragment
+        android:id="@+id/alertDialogLawyer"
+        android:name="com.karimmammadov.alovekilforpractice.Lawyer.AlertDialogLawyer"
+        android:label="fragment_alert_dialog_lawyer"
+        tools:layout="@layout/fragment_alert_dialog_lawyer" >
+        <action
+            android:id="@+id/action_alertDialogLawyer_to_profileFragmentLawyer"
+            app:destination="@id/profileFragmentLawyer" />
+    </fragment>
 </navigation>

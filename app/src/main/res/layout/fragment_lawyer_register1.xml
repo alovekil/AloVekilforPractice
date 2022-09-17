@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.LawyerRegister1">
+    tools:context=".Lawyer.LawyerRegister1">
 
     <LinearLayout
         android:background="@color/RGB_white"
@@ -240,6 +240,7 @@
                         android:textColorHint="@color/RGB_Gray2" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+
                 <LinearLayout
                     android:id="@+id/linearLayout8"
                     android:layout_width="match_parent"
@@ -264,6 +265,18 @@
                         android:layout_marginLeft="18.02dp"
                         android:background="@drawable/boxwhite" />
                 </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/nextBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/bgn_bluebutton"
+                    android:text="Next"
+                    android:textAlignment="center"
+                    android:textColor="@color/RGB_white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>

@@ -1,18 +1,20 @@
-package com.karimmammadov.alovekilforpractice
+package com.karimmammadov.alovekilforpractice.Lawyer
 
-import android.app.ActivityOptions
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -20,11 +22,13 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-
-import kotlinx.android.synthetic.main.activity_lawyer_otp.*
+import com.karimmammadov.alovekilforpractice.R
+import kotlinx.android.synthetic.main.fragment_lawyer_otp.*
+import kotlinx.android.synthetic.main.fragment_lawyer_otp.view.*
 import java.util.concurrent.TimeUnit
 
-class LawyerOtpActivity : AppCompatActivity() {
+
+class LawyerOtpFragment : Fragment() {
     private var forceResendingToken: PhoneAuthProvider.ForceResendingToken? = null
     private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? = null
     private var mVerificationId: String? = null
@@ -39,28 +43,35 @@ class LawyerOtpActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lawyer_otp)
 
-        sharedPreferences = this!!.getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val view =inflater.inflate(R.layout.fragment_lawyer_otp, container, false)
+
+        sharedPreferences = context!!.getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
-back_signuplawyer.setOnClickListener {
+        view.back_signuplawyer.setOnClickListener {
 
-}
-       back_signuplawyer.visibility = View.VISIBLE
-        tv_numberLawyerHighlight.visibility = View.VISIBLE
-        tv_enteryourphonenumberLawyer.visibility = View.VISIBLE
-        ll_NumberLawyerArea.visibility = View.VISIBLE
-        btn_sendLwyOtp.visibility = View.VISIBLE
+        }
+        view.back_signuplawyer.visibility = View.VISIBLE
+        view.tv_numberLawyerHighlight.visibility = View.VISIBLE
+        view.tv_enteryourphonenumberLawyer.visibility = View.VISIBLE
+        view.ll_NumberLawyerArea.visibility = View.VISIBLE
+        view.btn_sendLwyOtp.visibility = View.VISIBLE
 
-        tv_otpLawyerHighlight.visibility = View.GONE
-        tv_enterverificationcodeLawyer.visibility = View.GONE
-        numberLawyerDescription.visibility = View.GONE
-        ll_otpLawyerArea.visibility = View.GONE
-        btn_nextLawyerRegister.visibility = View.GONE
+        view.tv_otpLawyerHighlight.visibility = View.GONE
+        view.tv_enterverificationcodeLawyer.visibility = View.GONE
+        view.numberLawyerDescription.visibility = View.GONE
+        view.ll_otpLawyerArea.visibility = View.GONE
+        view.btn_nextLawyerRegister.visibility = View.GONE
 
         firebaseAuth = FirebaseAuth.getInstance()
-        progressDialog = ProgressDialog(this)
+        progressDialog = ProgressDialog(context)
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
@@ -73,7 +84,7 @@ back_signuplawyer.setOnClickListener {
             override fun onVerificationFailed(e: FirebaseException) {
                 progressDialog.dismiss()
                 Log.d(TAG, "onVerificationFailed:${e.message} ")
-                Toast.makeText(this@LawyerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "${e.message}", Toast.LENGTH_SHORT).show()
             }
 
             override fun onCodeSent(
@@ -85,30 +96,30 @@ back_signuplawyer.setOnClickListener {
                 forceResendingToken = token
                 progressDialog.dismiss()
                 Log.d(TAG, "onCodeSent:$verificationId")
-                back_signuplawyer.visibility = View.GONE
-                tv_numberLawyerHighlight.visibility = View.GONE
-                tv_enteryourphonenumberLawyer.visibility = View.GONE
-                ll_NumberLawyerArea.visibility = View.GONE
-                btn_sendLwyOtp.visibility = View.GONE
+                view.back_signuplawyer.visibility = View.GONE
+                view.tv_numberLawyerHighlight.visibility = View.GONE
+                view.tv_enteryourphonenumberLawyer.visibility = View.GONE
+                view.ll_NumberLawyerArea.visibility = View.GONE
+                view.btn_sendLwyOtp.visibility = View.GONE
 
-                tv_otpLawyerHighlight.visibility = View.VISIBLE
-                tv_enterverificationcodeLawyer.visibility = View.VISIBLE
-                numberLawyerDescription.visibility = View.VISIBLE
-                ll_otpLawyerArea.visibility = View.VISIBLE
-                btn_nextLawyerRegister.visibility = View.VISIBLE
+                view.tv_otpLawyerHighlight.visibility = View.VISIBLE
+                view.tv_enterverificationcodeLawyer.visibility = View.VISIBLE
+                view.numberLawyerDescription.visibility = View.VISIBLE
+                view.ll_otpLawyerArea.visibility = View.VISIBLE
+                view.btn_nextLawyerRegister.visibility = View.VISIBLE
 
-                numberLawyerDescription.text = "Code sent to number +994${phoneNumberLawyer.text.toString().trim()}"
-                Toast.makeText(this@LawyerOtpActivity, "Verification Code sent...", Toast.LENGTH_SHORT).show()
+                view.numberLawyerDescription.text = "Code sent to number +994${phoneNumberLawyer.text.toString().trim()}"
+                Toast.makeText(context, "Verification Code sent...", Toast.LENGTH_SHORT).show()
             }
         }
 
-        btn_sendLwyOtp.setOnClickListener {
+        view.btn_sendLwyOtp.setOnClickListener {
             val phone = phoneNumberLawyer.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(this@LawyerOtpActivity, "Please enter phone number", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Please enter phone number", Toast.LENGTH_SHORT).show()
             }
             if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(this@LawyerOtpActivity, "Please enter phone number", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Please enter phone number", Toast.LENGTH_SHORT).show()
             } else {
                 //new changes
                 phoneNumber = phone
@@ -117,7 +128,7 @@ back_signuplawyer.setOnClickListener {
             }
         }
 
-        btn_nextLawyerRegister.setOnClickListener {
+        view.btn_nextLawyerRegister.setOnClickListener {
             if (!inputLwyCode1.text.toString().trim().isEmpty() && !inputLwyCode2.text.toString().trim()
                     .isEmpty() && !inputLwyCode3.text.toString().trim().isEmpty() &&
                 !inputLwyCode4.text.toString().trim().isEmpty() && !inputLwyCode5.text.toString().trim()
@@ -131,12 +142,14 @@ back_signuplawyer.setOnClickListener {
                         inputLwyCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
+
             } else {
-                Toast.makeText(this@LawyerOtpActivity, "Please enter all numbers", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Please enter all numbers", Toast.LENGTH_SHORT).show()
             }
+            findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
         }
 
-        inputLwyCode1.addTextChangedListener(object : TextWatcher {
+        view.inputLwyCode1.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -152,7 +165,7 @@ back_signuplawyer.setOnClickListener {
 
             }
         })
-        inputLwyCode2.addTextChangedListener(object : TextWatcher {
+        view.inputLwyCode2.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -167,7 +180,7 @@ back_signuplawyer.setOnClickListener {
 
             }
         })
-        inputLwyCode3.addTextChangedListener(object : TextWatcher {
+        view.inputLwyCode3.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -182,7 +195,7 @@ back_signuplawyer.setOnClickListener {
 
             }
         })
-        inputLwyCode4.addTextChangedListener(object : TextWatcher {
+        view.inputLwyCode4.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -197,7 +210,7 @@ back_signuplawyer.setOnClickListener {
 
             }
         })
-        inputLwyCode5.addTextChangedListener(object : TextWatcher {
+        view.inputLwyCode5.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -212,6 +225,10 @@ back_signuplawyer.setOnClickListener {
 
             }
         })
+
+
+
+        return view
     }
 
     private fun startPhoneNumberVerification(phone: String) {
@@ -220,7 +237,7 @@ back_signuplawyer.setOnClickListener {
         val options = PhoneAuthOptions.newBuilder(firebaseAuth)
             .setPhoneNumber("+994" + phone)
             .setTimeout(60L, TimeUnit.SECONDS)
-            .setActivity(this)
+            .setActivity(this.requireActivity())
             .setCallbacks(mCallBacks!!)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
@@ -237,7 +254,7 @@ back_signuplawyer.setOnClickListener {
                             Log.d(TAG, "doIfExists: Send data to FireStore")
                             startPhoneNumberVerification(phoneNumber)
                         } else {
-                            Toast.makeText(this@LawyerOtpActivity, "This number is exist", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "This number is exist", Toast.LENGTH_SHORT).show()
                         }
                     }.addOnFailureListener {
                         Log.d(TAG, "doIfExists: ${it.message}")
@@ -254,7 +271,7 @@ back_signuplawyer.setOnClickListener {
         firestore.collection("LawyerNumbers").add(phoneNumbers).addOnSuccessListener {
 
         }.addOnFailureListener {
-            Toast.makeText(this@LawyerOtpActivity, it.localizedMessage, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, it.localizedMessage, Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -271,15 +288,14 @@ back_signuplawyer.setOnClickListener {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
-               editor.putString("lawyerPhoneNumber",phone).apply()
-               editor.commit()
-                val intent = Intent(this@LawyerOtpActivity,LawyerRegisterActivity::class.java)
-                startActivity(intent)
-                finish()
+                editor.putString("lawyerPhoneNumber",phone).apply()
+                editor.commit()
+                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
+                activity!!.finish()
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()
-                Toast.makeText(this@LawyerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
 }

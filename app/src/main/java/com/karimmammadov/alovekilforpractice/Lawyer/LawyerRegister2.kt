@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.fragments
+package com.karimmammadov.alovekilforpractice.Lawyer
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -24,15 +24,17 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
 import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.models.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
+import kotlinx.android.synthetic.main.fragment_customer_register.view.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
 import retrofit2.*
@@ -171,6 +173,9 @@ class LawyerRegister2 : Fragment() {
         view.editDiplomaLawyer.setOnClickListener {
             selectedDiploma(it)
         }
+        view.moveBackBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_lawyerRegister2_to_lawyerRegister12)
+        }
 
         view.saveButton.setOnClickListener {
 
@@ -268,6 +273,8 @@ class LawyerRegister2 : Fragment() {
                         Toast.makeText(requireContext(),"successfully regitered a new user.", Toast.LENGTH_SHORT).show()
                        // val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
                        // startActivity(intent)
+                        findNavController().navigate(R.id.action_lawyerRegister2_to_createPasswordCustomer)
+
                     }
 
                 }

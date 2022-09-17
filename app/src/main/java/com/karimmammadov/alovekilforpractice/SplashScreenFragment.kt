@@ -2,7 +2,6 @@ package com.karimmammadov.alovekilforpractice
 
 import android.content.ContentValues.TAG
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -11,9 +10,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import com.karimmammadov.alovekilforpractice.PinCode.PinCodeActivity
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
 
 class SplashScreenFragment : Fragment() {
@@ -38,7 +35,7 @@ class SplashScreenFragment : Fragment() {
 
             override fun onFinish() {
                 if (sharedPreferences.getBoolean("create_pasword", false)) {
-                   findNavController().navigate(R.id.action_splashScreenFragment_to_signInUpFragment)
+                   findNavController().navigate(R.id.action_splashScreenFragment_to_pinCodeFragment)
                 } else {
                     val mySharedPreferences = requireContext().getSharedPreferences("Myprefs", 0)
                     val logedin = mySharedPreferences.getBoolean(MyConstants.args, false)
@@ -46,9 +43,9 @@ class SplashScreenFragment : Fragment() {
                     Log.d(TAG, "onFinish: $islawyer")
                     if (logedin) {
                         if(islawyer){
-
+                            findNavController().navigate(R.id.action_pinCodeFragment_to_profileFragmentCustomer)
                         }else{
-
+                            findNavController().navigate(R.id.action_pinCodeFragment_to_alertDialogLawyer)
                         }
                     } else {
                         findNavController().navigate(R.id.action_splashScreenFragment_to_signInUpFragment)
