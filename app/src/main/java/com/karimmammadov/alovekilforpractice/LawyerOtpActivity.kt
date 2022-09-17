@@ -20,7 +20,7 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_customer_otp.*
+
 import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import java.util.concurrent.TimeUnit
 
@@ -45,9 +45,7 @@ class LawyerOtpActivity : AppCompatActivity() {
         editor  =  sharedPreferences.edit()
 
 back_signuplawyer.setOnClickListener {
-    val intent = Intent(this@LawyerOtpActivity,ChooseSignUpActivity::class.java)
-    startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
-    finish()
+
 }
        back_signuplawyer.visibility = View.VISIBLE
         tv_numberLawyerHighlight.visibility = View.VISIBLE

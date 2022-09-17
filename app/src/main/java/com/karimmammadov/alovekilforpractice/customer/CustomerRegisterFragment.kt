@@ -1,45 +1,47 @@
-package com.karimmammadov.alovekilforpractice
+package com.karimmammadov.alovekilforpractice.customer
 
-import android.app.ActivityOptions
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.karimmammadov.alovekilforpractice.PinCode.CreatePasswordActivity
+import androidx.navigation.fragment.findNavController
+import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.api.RetrofitClient
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
 import com.karimmammadov.alovekilforpractice.models.CustomerModels
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
-import kotlinx.android.synthetic.main.activity_customer_regstr.*
+import kotlinx.android.synthetic.main.fragment_customer_register.*
+import kotlinx.android.synthetic.main.fragment_customer_register.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CustomerRegstrActivity : AppCompatActivity() {
-    private lateinit var auth: FirebaseAuth
+class CustomerRegisterFragment : Fragment() {
+
     private lateinit var sharedPreferences: SharedPreferences
     lateinit var customerModels: CustomerModels
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_customer_regstr)
 
-        sharedPreferences = this!!.getSharedPreferences("customer", Context.MODE_PRIVATE)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view =  inflater.inflate(R.layout.fragment_customer_register, container, false)
 
-        bck_signActivity.setOnClickListener {
-            val intent = Intent(this@CustomerRegstrActivity,ChooseSignUpActivity::class.java)
-            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
-            finish()
+        sharedPreferences = requireContext().getSharedPreferences("customer", Context.MODE_PRIVATE)
+
+        view.bck_signActivity.setOnClickListener {
+            findNavController().navigate(R.id.action_customerRegisterFragment_to_chooseSignUpFragment)
         }
 
-        val loginSharedPreferences = getSharedPreferences("Myprefs",0)
+        val loginSharedPreferences = requireContext().getSharedPreferences("Myprefs",0)
         val editor = loginSharedPreferences.edit()
 
-
-
-        savebtn.setOnClickListener {
+        view.savebtn.setOnClickListener {
             val email = editEmail.text.toString().trim()
             val name = editFirstName.text.toString().trim()
             val secondName = editSecondName.text.toString().trim()
@@ -80,21 +82,22 @@ class CustomerRegstrActivity : AppCompatActivity() {
                         call: Call<DefaultResponse>,
                         response: Response<DefaultResponse>
                     ) {
-                        Toast.makeText(applicationContext,response.body()?.response, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(),response.body()?.response, Toast.LENGTH_SHORT).show()
                         editor.putString(MyConstants.userName,name)
                         editor.putString(MyConstants.userSecondName,secondName)
                         editor.putString(MyConstants.userEmail,email)
                         editor.putBoolean(MyConstants.args,true)
                         editor.commit()
-                       val intent = Intent(this@CustomerRegstrActivity,CreatePasswordActivity::class.java)
-                        startActivity(intent)
+                     findNavController().navigate(R.id.action_customerRegisterFragment_to_createPasswordCustomer)
+
                     }
 
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                        Toast.makeText(applicationContext,t.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(),t.message, Toast.LENGTH_SHORT).show()
                     }
 
                 })
         }
+        return view
     }
 }

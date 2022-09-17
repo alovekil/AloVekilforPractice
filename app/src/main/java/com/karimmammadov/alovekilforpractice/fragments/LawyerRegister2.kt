@@ -1,7 +1,6 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
 import android.app.Activity
-import android.app.Activity.RESULT_OK
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -28,12 +27,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.karimmammadov.alovekilforpractice.PinCode.CreatePasswordActivity
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
 import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
-import com.karimmammadov.alovekilforpractice.constant.MyConstants
 import com.karimmammadov.alovekilforpractice.models.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.*
@@ -269,8 +266,8 @@ class LawyerRegister2 : Fragment() {
                     if(response.body()?.response.equals("successfully regitered a new user.")){
                         val myresponse : String = response.body()?.response.toString()
                         Toast.makeText(requireContext(),"successfully regitered a new user.", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
-                        startActivity(intent)
+                       // val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
+                       // startActivity(intent)
                     }
 
                 }

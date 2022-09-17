@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customer.ProfileFragmentCustomer">
+
+   <androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
+       android:layout_width="match_parent"
+       >
+
+       <TextView
+           android:id="@+id/profileUserName"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="268dp"
+           android:gravity="center"
+           android:text="User Name"
+           android:textColor="@color/RGB_black"
+           android:textSize="24sp"
+           android:textStyle="bold"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="1.0"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <TextView
+           android:id="@+id/profileEmailxml"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="52dp"
+           android:gravity="center"
+           android:text="Email"
+           android:textColor="@color/RGB_black"
+           android:textSize="24sp"
+           android:textStyle="bold"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="1.0"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/profileUserName" />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,18 +1,20 @@
-package com.karimmammadov.alovekilforpractice
+package com.karimmammadov.alovekilforpractice.customer
 
-import android.app.ActivityOptions
 import android.app.ProgressDialog
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -20,11 +22,12 @@ import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_customer_otp.*
-import kotlinx.android.synthetic.main.activity_lawyer_otp.*
+import com.karimmammadov.alovekilforpractice.R
+import kotlinx.android.synthetic.main.fragment_customer_otp.*
+import kotlinx.android.synthetic.main.fragment_customer_otp.view.*
 import java.util.concurrent.TimeUnit
 
-class CustomerOtpActivity : AppCompatActivity() {
+class CustomerOtpFragment : Fragment() {
 
     private var forceResendingToken: PhoneAuthProvider.ForceResendingToken? = null
     private var mCallBacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks? = null
@@ -38,34 +41,34 @@ class CustomerOtpActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_customer_otp)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view =  inflater.inflate(R.layout.fragment_customer_otp, container, false)
 
-        sharedPreferences = this!!.getSharedPreferences("customer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("customer", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
-        back_signupcustomer.setOnClickListener {
-            val intent = Intent(this@CustomerOtpActivity,ChooseSignUpActivity::class.java)
-            startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle())
-            finish()
+        view.back_signupcustomer.setOnClickListener {
+            findNavController().navigate(R.id.action_customerOtpFragment_to_chooseSignUpFragment)
         }
 
-        back_signupcustomer.visibility = View.VISIBLE
-        tv_numberCustomerHighlight.visibility = View.VISIBLE
-        tv_enteryourphonenumber.visibility = View.VISIBLE
-        ll_NumberArea.visibility = View.VISIBLE
-        btn_sendCstmOtp.visibility = View.VISIBLE
+        view.back_signupcustomer.visibility = View.VISIBLE
+        view.tv_numberCustomerHighlight.visibility = View.VISIBLE
+        view.tv_enteryourphonenumber.visibility = View.VISIBLE
+        view.ll_NumberArea.visibility = View.VISIBLE
+        view.btn_sendCstmOtp.visibility = View.VISIBLE
 
-        tv_otpcustomerHighlight.visibility = View.GONE
-        tv_enterverificationcode.visibility = View.GONE
-        numberCustomerDescription.visibility = View.GONE
-        ll_otpArea.visibility = View.GONE
-        btn_nextCstmRegister.visibility = View.GONE
-
+        view.tv_otpcustomerHighlight.visibility = View.GONE
+        view.tv_enterverificationcode.visibility = View.GONE
+        view.numberCustomerDescription.visibility = View.GONE
+        view.ll_otpArea.visibility = View.GONE
+        view.btn_nextCstmRegister.visibility = View.GONE
 
         firebaseAuth = FirebaseAuth.getInstance()
-        progressDialog = ProgressDialog(this)
+        progressDialog = ProgressDialog(requireContext())
         progressDialog.setTitle("Please Wait")
         progressDialog.setCanceledOnTouchOutside(false)
 
@@ -78,7 +81,7 @@ class CustomerOtpActivity : AppCompatActivity() {
             override fun onVerificationFailed(e: FirebaseException) {
                 progressDialog.dismiss()
                 Log.d(TAG, "onVerificationFailed:${e.message} ")
-                Toast.makeText(this@CustomerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "${e.message}", Toast.LENGTH_SHORT).show()
             }
 
             override fun onCodeSent(
@@ -90,33 +93,33 @@ class CustomerOtpActivity : AppCompatActivity() {
                 forceResendingToken = token
                 progressDialog.dismiss()
                 Log.d(TAG, "onCodeSent:$verificationId")
-                back_signupcustomer.visibility = View.GONE
-                tv_numberCustomerHighlight.visibility = View.GONE
-                tv_enteryourphonenumber.visibility = View.GONE
-                ll_NumberArea.visibility = View.GONE
-                btn_sendCstmOtp.visibility = View.GONE
+                view.back_signupcustomer.visibility = View.GONE
+                view.tv_numberCustomerHighlight.visibility = View.GONE
+                view.tv_enteryourphonenumber.visibility = View.GONE
+                view.ll_NumberArea.visibility = View.GONE
+                view.btn_sendCstmOtp.visibility = View.GONE
 
-                tv_otpcustomerHighlight.visibility = View.VISIBLE
-                tv_enterverificationcode.visibility = View.VISIBLE
-                numberCustomerDescription.visibility = View.VISIBLE
-                ll_otpArea.visibility = View.VISIBLE
-                btn_nextCstmRegister.visibility = View.VISIBLE
+                view.tv_otpcustomerHighlight.visibility = View.VISIBLE
+                view.tv_enterverificationcode.visibility = View.VISIBLE
+                view.numberCustomerDescription.visibility = View.VISIBLE
+                view.ll_otpArea.visibility = View.VISIBLE
+                view.btn_nextCstmRegister.visibility = View.VISIBLE
 
-                numberCustomerDescription.text = "Code sent to number +994${phoneNumberCustomer.text.toString().trim()}"
+                view.numberCustomerDescription.text = "Code sent to number +994${phoneNumberCustomer.text.toString().trim()}"
 
                 Toast.makeText(
-                    this@CustomerOtpActivity,
+                    requireContext(),
                     "Verification Code sent...",
                     Toast.LENGTH_SHORT
                 ).show()
             }
         }
 
-        btn_sendCstmOtp.setOnClickListener {
+        view.btn_sendCstmOtp.setOnClickListener {
             val phone = phoneNumberCustomer.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
                 Toast.makeText(
-                    this@CustomerOtpActivity,
+                    requireContext(),
                     "Please enter phone number",
                     Toast.LENGTH_SHORT
                 )
@@ -125,7 +128,7 @@ class CustomerOtpActivity : AppCompatActivity() {
 
             if (TextUtils.isEmpty(phone)) {
                 Toast.makeText(
-                    this@CustomerOtpActivity,
+                    requireContext(),
                     "Please enter phone number",
                     Toast.LENGTH_SHORT
                 ).show()
@@ -137,7 +140,7 @@ class CustomerOtpActivity : AppCompatActivity() {
             }
         }
 
-        btn_nextCstmRegister.setOnClickListener {
+        view.btn_nextCstmRegister.setOnClickListener {
             if (!inputCstmCode1.text.toString().trim().isEmpty() && !inputCstmCode2.text.toString().trim()
                     .isEmpty() && !inputCstmCode3.text.toString().trim().isEmpty() &&
                 !inputCstmCode4.text.toString().trim().isEmpty() && !inputCstmCode5.text.toString().trim()
@@ -153,14 +156,14 @@ class CustomerOtpActivity : AppCompatActivity() {
                 addtoFirestore(phoneNumber)
             } else {
                 Toast.makeText(
-                    this@CustomerOtpActivity,
+                    requireContext(),
                     "Please enter all numbers",
                     Toast.LENGTH_SHORT
                 ).show()
             }
         }
 
-        inputCstmCode1.addTextChangedListener(object : TextWatcher {
+        view.inputCstmCode1.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -175,7 +178,7 @@ class CustomerOtpActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode2.addTextChangedListener(object : TextWatcher {
+        view.inputCstmCode2.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -190,7 +193,7 @@ class CustomerOtpActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode3.addTextChangedListener(object : TextWatcher {
+        view.inputCstmCode3.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -205,7 +208,7 @@ class CustomerOtpActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode4.addTextChangedListener(object : TextWatcher {
+        view.inputCstmCode4.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -220,7 +223,7 @@ class CustomerOtpActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode5.addTextChangedListener(object : TextWatcher {
+        view.inputCstmCode5.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -235,7 +238,7 @@ class CustomerOtpActivity : AppCompatActivity() {
 
             }
         })
-        inputCstmCode6.addTextChangedListener(object : TextWatcher {
+        view.inputCstmCode6.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -251,6 +254,7 @@ class CustomerOtpActivity : AppCompatActivity() {
             }
         })
 
+        return view
     }
 
 
@@ -260,7 +264,7 @@ class CustomerOtpActivity : AppCompatActivity() {
         val options = PhoneAuthOptions.newBuilder(firebaseAuth)
             .setPhoneNumber("+994" + phone)
             .setTimeout(60L, TimeUnit.SECONDS)
-            .setActivity(this)
+            .setActivity(requireActivity())
             .setCallbacks(mCallBacks!!)
             .build()
         PhoneAuthProvider.verifyPhoneNumber(options)
@@ -281,7 +285,7 @@ class CustomerOtpActivity : AppCompatActivity() {
                             startPhoneNumberVerification(phoneNumber)
                         } else {
                             Toast.makeText(
-                                this@CustomerOtpActivity,
+                                requireContext(),
                                 "This number is exist",
                                 Toast.LENGTH_SHORT
                             ).show()
@@ -294,41 +298,40 @@ class CustomerOtpActivity : AppCompatActivity() {
         return true
     }
 
-        fun addtoFirestore(phone: String) {
-            val phoneNumbers = hashMapOf(
-                "phoneNumber" to phone
-            )
-            var firestore = Firebase.firestore
-            firestore.collection("Numbers").add(phoneNumbers).addOnSuccessListener {
+    fun addtoFirestore(phone: String) {
+        val phoneNumbers = hashMapOf(
+            "phoneNumber" to phone
+        )
+        var firestore = Firebase.firestore
+        firestore.collection("Numbers").add(phoneNumbers).addOnSuccessListener {
 
-            }.addOnFailureListener {
-                Toast.makeText(this@CustomerOtpActivity, it.localizedMessage, Toast.LENGTH_SHORT).show()
-            }
-        }
-
-
-      private  fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
-            progressDialog.setMessage("Verifying Code...")
-            progressDialog.show()
-            var credential = PhoneAuthProvider.getCredential(verificationId!!, code)
-            signInWithPhoneAuthCredential(credential)
-        }
-
-       private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-            progressDialog.setMessage("Logging in")
-            firebaseAuth.signInWithCredential(credential)
-                .addOnSuccessListener {
-                    progressDialog.dismiss()
-                    val phone = firebaseAuth.currentUser?.phoneNumber
-                    editor.putString("phone_number",phone).apply()
-                    editor.commit()
-                    val intent = Intent(this@CustomerOtpActivity, CustomerRegstrActivity::class.java)
-                    startActivity(intent)
-                    finish()
-                }
-                .addOnFailureListener { e ->
-                    progressDialog.dismiss()
-                    Toast.makeText(this@CustomerOtpActivity, "${e.message}", Toast.LENGTH_SHORT).show()
-                }
+        }.addOnFailureListener {
+            Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
         }
     }
+
+
+    private  fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
+        progressDialog.setMessage("Verifying Code...")
+        progressDialog.show()
+        var credential = PhoneAuthProvider.getCredential(verificationId!!, code)
+        signInWithPhoneAuthCredential(credential)
+    }
+
+    private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+        progressDialog.setMessage("Logging in")
+        firebaseAuth.signInWithCredential(credential)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                val phone = firebaseAuth.currentUser?.phoneNumber
+                editor.putString("phone_number",phone).apply()
+                editor.commit()
+              findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
+            }
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Toast.makeText(requireContext(), "${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+}

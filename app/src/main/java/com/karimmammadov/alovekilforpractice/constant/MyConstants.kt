@@ -1,11 +1,13 @@
 package com.karimmammadov.alovekilforpractice.constant
 
 class MyConstants {
-
     companion object{
-        val args = "loged-in"
-        val userName = "username"
-        val userSecondName = "usersecondname"
-        val userEmail = "useremail"
+        val args: String = "loged-in"
+        val userName : String= "username"
+        val userSecondName : String= "usersecondname"
+        val userEmail : String= "useremail"
     }
 }
+
+
+

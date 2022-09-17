@@ -11,10 +11,4 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
     }
-
-    fun signUp(view:View){
-                val intent = Intent(this@MainActivity, ChooseSignUpActivity::class.java)
-        startActivity(intent)
-        //big
-    }
 }

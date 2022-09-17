@@ -20,9 +20,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.karimmammadov.alovekilforpractice.MainActivity
-import com.karimmammadov.alovekilforpractice.ProfileActivity
 import com.karimmammadov.alovekilforpractice.R
-import kotlinx.android.synthetic.main.activity_create_password.*
 import kotlinx.android.synthetic.main.activity_pin_code.cancelTextView
 import kotlinx.android.synthetic.main.activity_pin_code.circle1
 import kotlinx.android.synthetic.main.activity_pin_code.circle2
@@ -64,8 +62,8 @@ class PinCodeActivity : AppCompatActivity() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                     super.onAuthenticationSucceeded(result)
-                    startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
-                    finish()
+                   // startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
+                   // finish()
                 }
             }
 
@@ -122,11 +120,11 @@ class PinCodeActivity : AppCompatActivity() {
         val handler = Handler()
         val runnable: Runnable = Runnable {
             if (sharedPreferences!!.getBoolean("create_pasword", false)!!) {
-                startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
-                finish()
+             //   startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
+              //  finish()
             } else {
-                startActivity(Intent(this@PinCodeActivity, CreatePasswordActivity::class.java))
-                finish()
+               // startActivity(Intent(this@PinCodeActivity, CreatePasswordActivity::class.java))
+              //  finish()
             }
         }
 
@@ -153,10 +151,10 @@ class PinCodeActivity : AppCompatActivity() {
     private fun checkpaswordequal() {
         if (password1!!.length==4 ){
             if(password1.equals(sharedPreferences.getString("password","862186214632"))){
-                Pin_CodeText.setVisibility(View.VISIBLE)
+              //  Pin_CodeText.setVisibility(View.VISIBLE)
                 Toast.makeText(this,"succes login" ,Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
-                finish()
+              //  startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
+              //  finish()
 
             }
             else{

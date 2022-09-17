@@ -1,9 +1,7 @@
 package com.karimmammadov.alovekilforpractice.fragments
 
-import android.app.ActivityOptions
 import android.app.DatePickerDialog
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,12 +11,8 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
-import com.karimmammadov.alovekilforpractice.ChooseSignUpActivity
 import com.karimmammadov.alovekilforpractice.R
-import kotlinx.android.synthetic.main.activity_customer_regstr.*
-import kotlinx.android.synthetic.main.activity_lawyer_otp.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.view.*
 import java.text.SimpleDateFormat
