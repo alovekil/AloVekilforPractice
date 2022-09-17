@@ -2,16 +2,14 @@ package com.karimmammadov.alovekilforpractice.PinCode
 
 import android.app.AlertDialog
 import android.app.KeyguardManager
-import android.content.Context
-import android.content.DialogInterface
-import android.content.Intent
-import android.content.SharedPreferences
+import android.content.*
 import android.content.pm.PackageManager
 import android.hardware.biometrics.BiometricPrompt
 import android.os.Build
 import android.os.Bundle
 import android.os.CancellationSignal
 import android.os.Handler
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -22,8 +20,10 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat.getSystemService
+import androidx.navigation.fragment.findNavController
 import com.karimmammadov.alovekilforpractice.MainActivity
 import com.karimmammadov.alovekilforpractice.R
+import com.karimmammadov.alovekilforpractice.constant.MyConstants
 import kotlinx.android.synthetic.main.fragment_create_password_customer.view.*
 import kotlinx.android.synthetic.main.fragment_create_password_customer.view.cancelTextView
 import kotlinx.android.synthetic.main.fragment_create_password_customer.view.circle1
@@ -80,7 +80,7 @@ class PinCodeFragment : Fragment() {
 
         checkBiometricSupport()
         //   binding=DataBindingUtil.inflate(layoutInflater,R.layout.activity_pin_code,null,false)
-        sharedPreferences=this.activity!!.getSharedPreferences("password", Context.MODE_PRIVATE)
+        sharedPreferences=requireContext().getSharedPreferences("password", Context.MODE_PRIVATE)
         editor=sharedPreferences.edit()
         radioList1.add(view.circle1)
         radioList1.add(view.circle2)
@@ -159,6 +159,14 @@ class PinCodeFragment : Fragment() {
         if (password1!!.length==4 ){
             if(password1.equals(sharedPreferences.getString("password","862186214632"))){
                 //  Pin_CodeText.setVisibility(View.VISIBLE)
+                val mySharedPreferences = requireContext().getSharedPreferences("Myprefs", 0)
+                val islawyer = mySharedPreferences.getBoolean("isLawyer",false)
+                Log.d(ContentValues.TAG, "onFinish: $islawyer")
+                    if (islawyer) {
+                        findNavController().navigate(R.id.action_pinCodeFragment_to_profileFragmentCustomer)
+                    } else {
+                        findNavController().navigate(R.id.action_pinCodeFragment_to_alertDialogLawyer)
+                }
                 Toast.makeText(context,"succes login" , Toast.LENGTH_SHORT).show()
                 //  startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
                 //  finish()

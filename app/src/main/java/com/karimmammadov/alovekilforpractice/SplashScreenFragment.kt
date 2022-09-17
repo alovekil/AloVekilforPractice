@@ -37,25 +37,10 @@ class SplashScreenFragment : Fragment() {
                 if (sharedPreferences.getBoolean("create_pasword", false)) {
                    findNavController().navigate(R.id.action_splashScreenFragment_to_pinCodeFragment)
                 } else {
-                    val mySharedPreferences = requireContext().getSharedPreferences("Myprefs", 0)
-                    val logedin = mySharedPreferences.getBoolean(MyConstants.args, false)
-                    val islawyer = mySharedPreferences.getBoolean("isLawyer",false)
-                    Log.d(TAG, "onFinish: $islawyer")
-                    if (logedin) {
-                        if(islawyer){
-                            findNavController().navigate(R.id.action_pinCodeFragment_to_profileFragmentCustomer)
-                        }else{
-                            findNavController().navigate(R.id.action_pinCodeFragment_to_alertDialogLawyer)
-                        }
-                    } else {
                         findNavController().navigate(R.id.action_splashScreenFragment_to_signInUpFragment)
                     }
                 }
-
-            }
-        }.start()
-
-
+            }.start()
         return view
     }
 }

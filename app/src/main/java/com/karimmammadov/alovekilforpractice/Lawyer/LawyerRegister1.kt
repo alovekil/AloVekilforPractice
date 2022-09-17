@@ -26,6 +26,7 @@ class LawyerRegister1 : Fragment() {
     private lateinit var nextBtn : Button
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
+    private  var block : Boolean  =true
     // private var phoneNumberForLawyer:String?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +45,9 @@ class LawyerRegister1 : Fragment() {
 
         // val phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....")
         //  editPhoneNumberLawyer.setText(phoneNumberForLawyer)
-
+        view.moveSignupFragment.setOnClickListener {
+            findNavController().navigate(R.id.action_lawyerRegister1_to_chooseSignUpFragment)
+        }
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
         genders.add("male")
@@ -75,9 +78,10 @@ class LawyerRegister1 : Fragment() {
                 myCalendar.get(Calendar.DAY_OF_MONTH)).show()
         }
 
-        //nextBtn = view.findViewById(R.id.nextButton)
-/*
-        nextBtn.setOnClickListener {
+
+
+        view.nextBtn.setOnClickListener {
+            block = true
             val userlawyerName = view.editlawyerName.text.toString().trim()
             val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
             val userlawyerFatherName = view.editlawyerFatherName.text.toString().trim()
@@ -90,23 +94,29 @@ class LawyerRegister1 : Fragment() {
             if (userlawyerName.isEmpty()){
                 editlawyerName.error = "Name required"
                 editlawyerName.requestFocus()
+                block = false
             }
             if (userlawyerSurname.isEmpty()){
                 editlawyerSurname.error = "Surname required"
                 editlawyerSurname.requestFocus()
+                block = false
             }
             if (userlawyerFatherName.isEmpty()){
                 editlawyerFatherName.error = "Father name required"
                 editlawyerFatherName.requestFocus()
+                block = false
             }
             if (lawyerEmail.isEmpty()){
                 editLawyerEmail.error = "Email required"
                 editLawyerEmail.requestFocus()
+                block = false
             }
             if (phoneNumberForLawyer.isEmpty()){
                 editPhoneNumberLawyer.error = "Email required"
                 editPhoneNumberLawyer.requestFocus()
+                block = false
             }
+
 
             editor.putString("userLawyerName",userlawyerName).apply()
             editor.putString("userLawyerSurname",userlawyerSurname).apply()
@@ -118,17 +128,14 @@ class LawyerRegister1 : Fragment() {
             editor.putString("lawyerPhoneNumber",phoneNumberForLawyer).apply()
             editor.commit()
 
-
+            if(block ){
+            findNavController().navigate(R.id.action_lawyerRegister1_to_lawyerRegister2)
+        }
         }
 
-
- */
-view.nextBtn.setOnClickListener {
-    findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
-}
         return view
     }
-
+/*
     override fun onPause() {
 
         val userlawyerName = view!!.editlawyerName.text.toString().trim()
@@ -185,6 +192,8 @@ view.nextBtn.setOnClickListener {
 
         super.onPause()
     }
+
+ */
     private fun updateLable(myCalendar : Calendar){
         val myFormat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myFormat, Locale.UK)

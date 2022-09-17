@@ -102,6 +102,9 @@
         <action
             android:id="@+id/action_lawyerRegister1_to_lawyerRegister2"
             app:destination="@id/lawyerRegister2" />
+        <action
+            android:id="@+id/action_lawyerRegister1_to_chooseSignUpFragment"
+            app:destination="@id/chooseSignUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/lawyerRegister2"

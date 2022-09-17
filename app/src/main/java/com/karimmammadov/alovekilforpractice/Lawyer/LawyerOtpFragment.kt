@@ -56,8 +56,9 @@ class LawyerOtpFragment : Fragment() {
         editor  =  sharedPreferences.edit()
 
         view.back_signuplawyer.setOnClickListener {
-
+            findNavController().navigate(R.id.action_lawyerOtpFragment_to_chooseSignUpFragment)
         }
+
         view.back_signuplawyer.visibility = View.VISIBLE
         view.tv_numberLawyerHighlight.visibility = View.VISIBLE
         view.tv_enteryourphonenumberLawyer.visibility = View.VISIBLE
@@ -142,11 +143,11 @@ class LawyerOtpFragment : Fragment() {
                         inputLwyCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
-
+                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
             } else {
                 Toast.makeText(context, "Please enter all numbers", Toast.LENGTH_SHORT).show()
             }
-            findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
+
         }
 
         view.inputLwyCode1.addTextChangedListener(object : TextWatcher {
@@ -225,7 +226,22 @@ class LawyerOtpFragment : Fragment() {
 
             }
         })
+        view.inputLwyCode6.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (!p0.toString().trim().isEmpty()) {
+                    inputLwyCode6.requestFocus()
+                }
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+
+        })
 
 
         return view
@@ -291,7 +307,6 @@ class LawyerOtpFragment : Fragment() {
                 editor.putString("lawyerPhoneNumber",phone).apply()
                 editor.commit()
                 findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
-                activity!!.finish()
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

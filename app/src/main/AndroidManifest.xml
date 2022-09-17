@@ -27,8 +27,6 @@
         -->
 
 
-
-
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation"

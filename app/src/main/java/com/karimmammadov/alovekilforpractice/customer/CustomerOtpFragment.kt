@@ -154,6 +154,7 @@ class CustomerOtpFragment : Fragment() {
                         inputCstmCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
+                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
             } else {
                 Toast.makeText(
                     requireContext(),
