@@ -96,7 +96,7 @@ class PinCodeFragment : Fragment() {
         view.number7.setOnClickListener { view -> passwordCheck("7") }
         view.number8.setOnClickListener { view -> passwordCheck("8") }
         view.number9.setOnClickListener { view -> passwordCheck("9") }
-        alertdialogshow()
+
         view.deletenumbers.setOnClickListener{
             if (password1!!.length > 0) {
                 password1 = password1!!.substring(0, password1!!.length - 1)
@@ -204,15 +204,6 @@ class PinCodeFragment : Fragment() {
         return cancellationSignal as CancellationSignal
     }
 
-    private fun alertdialogshow(){
-        val dialogview= View.inflate(context,R.layout.arter_dialog,null)
-        val alertDialogBuilder=AlertDialog.Builder(context)
-        alertDialogBuilder.setView(dialogview)
-        dialog=alertDialogBuilder.create()
-        dialog!!.show()
-        dialog!!.window!!.setBackgroundDrawableResource(android.R.color.transparent)
-        dialog!!.setCancelable(false)
-    }
 
 
     }
