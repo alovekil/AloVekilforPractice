@@ -17,6 +17,7 @@ import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.constant.UserNumbers
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.view.*
+import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -28,14 +29,10 @@ class LawyerRegister1 : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
     private  var block : Boolean  =true
-    private lateinit var lawyernumber: UserNumbers
     // private var phoneNumberForLawyer:String?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {bundle ->
-        lawyernumber=bundle.getParcelable("user")!!
 
-        }
     }
 
     override fun onCreateView(
@@ -94,7 +91,9 @@ class LawyerRegister1 : Fragment() {
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
-            val phoneNumberForLawyer = lawyernumber.number
+            val phoneNumberForLawyer = view.findViewById<TextView>(R.id.editPhoneNumberLawyer)
+            phoneNumberForLawyer.text = arguments?.getString("lwnumber")
+            val phonelawyer = phoneNumberForLawyer.toString().trim()
 
             if (userlawyerName.isEmpty()){
                 editlawyerName.error = "Name required"
@@ -116,8 +115,8 @@ class LawyerRegister1 : Fragment() {
                 editLawyerEmail.requestFocus()
                 block = false
             }
-            if (phoneNumberForLawyer.isEmpty()){
-                editPhoneNumberLawyer.error = "Email required"
+            if (phonelawyer.isEmpty()){
+                editPhoneNumberLawyer.error = "Phone required"
                 editPhoneNumberLawyer.requestFocus()
                 block = false
             }
@@ -130,7 +129,7 @@ class LawyerRegister1 : Fragment() {
             editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
             editor.putString("lawyerUniversity",lawyerUniversity).apply()
             editor.putString("lawyeremail",lawyerEmail).apply()
-            editor.putString("lawyerPhoneNumber",phoneNumberForLawyer).apply()
+            editor.putString("lawyerPhoneNumber",phonelawyer).apply()
             editor.commit()
 
             if(block ){

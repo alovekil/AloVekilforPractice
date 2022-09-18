@@ -37,7 +37,6 @@ class CustomerOtpFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
-    lateinit var bundle:Bundle
     private val collection: Collection<String>? = null
     private val isUsersignedin = FirebaseAuth.getInstance().currentUser
     private lateinit var phoneNumber: String
@@ -140,8 +139,6 @@ class CustomerOtpFragment : Fragment() {
                 phoneNumber = phone
                 isPhoneNumberExist(phone)
                 Log.d(TAG, "onCreateView: ")
-                val user= UserNumbers(phone)
-                bundle= bundleOf("usercustomer" to user)
             }
         }
 
@@ -159,7 +156,9 @@ class CustomerOtpFragment : Fragment() {
                         inputCstmCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
-                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
+                val amount = phoneNumber
+                val bundle = bundleOf("csnumber" to phoneNumber )
+                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment,bundle)
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -332,7 +331,8 @@ class CustomerOtpFragment : Fragment() {
                 val phone = firebaseAuth.currentUser?.phoneNumber
                 editor.putString("phone_number",phone).apply()
                 editor.commit()
-              findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
+                val bundle = bundleOf("csnumber" to phoneNumber )
+                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment,bundle)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

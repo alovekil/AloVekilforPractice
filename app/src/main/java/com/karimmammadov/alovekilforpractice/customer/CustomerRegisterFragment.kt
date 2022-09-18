@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.karimmammadov.alovekilforpractice.R
@@ -25,13 +26,10 @@ class CustomerRegisterFragment : Fragment() {
 
     private lateinit var sharedPreferences: SharedPreferences
     lateinit var customerModels: CustomerModels
-    private lateinit var customernumber: UserNumbers
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {bundle ->
-            customernumber=bundle.getParcelable("usercustomer")!!
 
-        }
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,12 +48,14 @@ class CustomerRegisterFragment : Fragment() {
         val editor = loginSharedPreferences.edit()
 
         view.savebtn.setOnClickListener {
-            val email = editEmail.text.toString().trim()
-            val name = editFirstName.text.toString().trim()
-            val secondName = editSecondName.text.toString().trim()
-            val password = editPassword.text.toString().trim()
-            val confirmPassword = editConfirmPassword.text.toString().trim()
-            val phonenumberCustomer = customernumber.number
+            val email = view.editEmail.text.toString().trim()
+            val name = view.editFirstName.text.toString().trim()
+            val secondName = view.editSecondName.text.toString().trim()
+            val password = view.editPassword.text.toString().trim()
+            val confirmPassword = view.editConfirmPassword.text.toString().trim()
+            val phonenumberCustomer =  view.findViewById<TextView>(R.id.editphoneNumberCustomer)
+            phonenumberCustomer.text = arguments?.getString("csnumber")
+            val phonecustomer = phonenumberCustomer.toString().trim()
             if (email.isEmpty()){
                 editEmail.error = "Email required"
                 editEmail.requestFocus()
@@ -77,12 +77,9 @@ class CustomerRegisterFragment : Fragment() {
                 editConfirmPassword.error = "Confirm Password required"
                 editConfirmPassword.requestFocus()
             }
-            if (phonenumberCustomer.isEmpty()){
-                editphoneNumberCustomer.error = "Phone number required"
-                editphoneNumberCustomer.requestFocus()
-            }
 
-            customerModels = CustomerModels(email,name,secondName,password,confirmPassword,phonenumberCustomer)
+
+            customerModels = CustomerModels(email,name,secondName,password,confirmPassword,phonecustomer)
 
             RetrofitClient.instance.createUser(customerModels)
                 .enqueue(object : Callback<DefaultResponse> {

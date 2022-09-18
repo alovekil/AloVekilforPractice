@@ -65,8 +65,9 @@
             android:id="@+id/action_customerRegisterFragment_to_createPasswordCustomer"
             app:destination="@id/createPasswordCustomer" />
         <argument
-            android:name="usercustomer"
-            app:argType="com.karimmammadov.alovekilforpractice.constant.UserNumbers" />
+            android:name="customernumber"
+            app:argType="integer"
+            android:defaultValue="2" />
     </fragment>
     <fragment
         android:id="@+id/createPasswordCustomer"
@@ -109,8 +110,9 @@
             android:id="@+id/action_lawyerRegister1_to_chooseSignUpFragment"
             app:destination="@id/chooseSignUpFragment" />
         <argument
-            android:name="user"
-            app:argType="com.karimmammadov.alovekilforpractice.constant.UserNumbers" />
+            android:name="lawyernumber"
+            app:argType="integer"
+            android:defaultValue="1" />
     </fragment>
     <fragment
         android:id="@+id/lawyerRegister2"

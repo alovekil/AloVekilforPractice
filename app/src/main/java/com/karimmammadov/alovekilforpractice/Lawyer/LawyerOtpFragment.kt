@@ -40,7 +40,6 @@ class LawyerOtpFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private val TAG = "MAIN_TAG"
     private lateinit var progressDialog: ProgressDialog
-    var bundle:Bundle?=null
     private val collection: Collection<String>? = null
     private val isUsersignedin = FirebaseAuth.getInstance().currentUser
     private lateinit var phoneNumber: String
@@ -148,8 +147,6 @@ class LawyerOtpFragment : Fragment() {
                 phoneNumber = phone
                 isPhoneNumberExist(phone)
                 Log.d(TAG, "onCreateView: ")
-                val user=UserNumbers(phone)
-                 bundle= bundleOf("user" to user)
             }
         }
 
@@ -167,6 +164,7 @@ class LawyerOtpFragment : Fragment() {
                         inputLwyCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
+                val bundle = bundleOf("lwnumber" to phoneNumber )
                 findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1,bundle)
             } else {
                 Toast.makeText(
