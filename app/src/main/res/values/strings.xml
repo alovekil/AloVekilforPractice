@@ -16,4 +16,5 @@
     <string name="enterphonenumber">Enter your\nphone number</string>
     <string name="entercode">Enter verification\ncode</string>
     <string name="required">Required</string>
+    <string name="university">University</string>
 </resources>

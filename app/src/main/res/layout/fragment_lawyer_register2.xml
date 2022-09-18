@@ -259,6 +259,7 @@
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
                     app:boxCornerRadiusBottomStart="10dp"
+                    app:passwordToggleEnabled="true"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
                     app:boxStrokeWidth="0dp">
@@ -280,6 +281,7 @@
                     android:layout_weight="1"
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
+                    app:passwordToggleEnabled="true"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"

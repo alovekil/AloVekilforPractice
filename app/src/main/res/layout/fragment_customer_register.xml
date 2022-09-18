@@ -63,6 +63,7 @@
                 android:layout_height="match_parent"
                 android:divider="@drawable/vertical_emptyspace"
                 android:orientation="vertical"
+
                 android:paddingHorizontal="20dp"
                 android:showDividers="middle">
 
@@ -167,6 +168,7 @@
                     android:layout_weight="1"
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
+                    app:passwordToggleEnabled="true"
                     app:boxCornerRadiusBottomStart="10dp"
                     app:boxCornerRadiusTopEnd="10dp"
                     app:boxCornerRadiusTopStart="10dp"
@@ -186,6 +188,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    app:passwordToggleEnabled="true"
                     android:layout_weight="1"
                     app:boxBackgroundColor="@color/RGB_Gray1"
                     app:boxCornerRadiusBottomEnd="10dp"
