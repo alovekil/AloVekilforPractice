@@ -156,9 +156,9 @@ class CustomerOtpFragment : Fragment() {
                         inputCstmCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
-                val amount = phoneNumber
-                val bundle = bundleOf("csnumber" to phoneNumber )
-                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment,bundle)
+                editor.putString("csmnumber",phoneNumber).apply()
+                editor.commit()
+                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -329,10 +329,9 @@ class CustomerOtpFragment : Fragment() {
             .addOnSuccessListener {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
-                editor.putString("phone_number",phone).apply()
+                editor.putString("csmnumber",phone).apply()
                 editor.commit()
-                val bundle = bundleOf("csnumber" to phoneNumber )
-                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment,bundle)
+                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

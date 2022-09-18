@@ -92,7 +92,7 @@ class LawyerRegister1 : Fragment() {
             val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
             val phoneNumberForLawyer = view.findViewById<TextView>(R.id.editPhoneNumberLawyer)
-            phoneNumberForLawyer.text = arguments?.getString("lwnumber")
+            phoneNumberForLawyer.text = sharedPreferences.getString("lwynumber","+99455123456")
             val phonelawyer = phoneNumberForLawyer.toString().trim()
 
             if (userlawyerName.isEmpty()){
