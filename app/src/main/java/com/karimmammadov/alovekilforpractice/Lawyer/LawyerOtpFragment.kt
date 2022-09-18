@@ -126,15 +126,6 @@ class LawyerOtpFragment : Fragment() {
                     requireContext(),
                     "Please enter phone number",
                     Toast.LENGTH_SHORT
-                )
-                    .show()
-            }
-
-            if (TextUtils.isEmpty(phone)) {
-                Toast.makeText(
-                    requireContext(),
-                    "Please enter phone number",
-                    Toast.LENGTH_SHORT
                 ).show()
             } else {
                 //new changes
