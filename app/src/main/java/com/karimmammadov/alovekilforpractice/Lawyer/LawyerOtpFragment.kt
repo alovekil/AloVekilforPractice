@@ -2,7 +2,6 @@ package com.karimmammadov.alovekilforpractice.Lawyer
 
 import android.app.ProgressDialog
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
@@ -14,20 +13,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-import com.google.firebase.firestore.auth.User
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.karimmammadov.alovekilforpractice.R
-import com.karimmammadov.alovekilforpractice.constant.UserNumbers
-import kotlinx.android.synthetic.main.fragment_customer_otp.*
-import kotlinx.android.synthetic.main.fragment_customer_otp.view.*
 import kotlinx.android.synthetic.main.fragment_lawyer_otp.*
 import kotlinx.android.synthetic.main.fragment_lawyer_otp.view.*
 import java.util.concurrent.TimeUnit

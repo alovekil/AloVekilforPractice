@@ -13,7 +13,6 @@ import androidx.navigation.fragment.findNavController
 import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.api.RetrofitClient
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
-import com.karimmammadov.alovekilforpractice.constant.UserNumbers
 import com.karimmammadov.alovekilforpractice.models.CustomerModels
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
 import kotlinx.android.synthetic.main.fragment_customer_register.*

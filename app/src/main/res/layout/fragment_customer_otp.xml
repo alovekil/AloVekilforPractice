@@ -10,17 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/RGB_white"
-        android:gravity="center_horizontal">
-
+        android:gravity="center_horizontal"
+        tools:context=".LawyerOtpActivity">
 
         <ImageView
             android:id="@+id/back_signupcustomer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="18dp"
-            android:layout_marginTop="38.34dp"
+            android:layout_marginTop="38dp"
             android:background="@drawable/vector"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,35 +29,37 @@
             android:id="@+id/tv_numberCustomerHighlight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="33.34dp"
+            android:layout_marginTop="34dp"
             android:layout_marginEnd="40dp"
             android:text="Customer"
             android:textColor="@color/RGB_blue"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.54"
             app:layout_constraintStart_toEndOf="@+id/back_signupcustomer"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <TextView
             android:id="@+id/tv_enteryourphonenumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="178dp"
             android:layout_marginRight="25dp"
+            android:gravity="center_vertical"
             android:text="@string/enterphonenumber"
             android:textColor="@color/RGB_black"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:visibility="gone"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sendCstmOtp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.68"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_numberCustomerHighlight" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_numberCustomerHighlight"
+            app:layout_constraintVertical_bias="0.38" />
+
 
         <LinearLayout
             android:id="@+id/ll_NumberArea"
@@ -66,7 +68,7 @@
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:orientation="horizontal"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/btn_sendCstmOtp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +135,7 @@
             android:textColor="@color/RGB_white"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -148,7 +150,7 @@
             android:textColor="@color/RGB_blue"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -165,7 +167,7 @@
             android:textColor="@color/RGB_black"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/btn_nextCstmRegister"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.404"
@@ -183,7 +185,7 @@
             android:text="Code sent to number +994 44 220 00 01"
             android:textColor="@color/RGB_black"
             android:textSize="16sp"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.309"
             app:layout_constraintStart_toStartOf="parent"
@@ -195,7 +197,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="24dp"
             android:orientation="horizontal"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/numberCustomerDescription">
@@ -305,7 +307,7 @@
             android:textColor="@color/RGB_white"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

@@ -14,10 +14,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.R
-import com.karimmammadov.alovekilforpractice.constant.UserNumbers
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.view.*
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
 import java.util.*
 
