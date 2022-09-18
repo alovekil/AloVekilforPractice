@@ -115,9 +115,9 @@ private fun checkpaswordequal() {
             editor.commit()
             val islawyer = sharedPreferences.getBoolean("isLawyer",false)
             if(islawyer){
-                findNavController().navigate(R.id.action_createPasswordCustomer_to_profileFragmentCustomer)
+                findNavController().navigate(R.id.action_createPasswordCustomer_to_customerRegisterFragment)
             }else{
-                findNavController().navigate(R.id.action_createPasswordCustomer_to_alertDialogLawyer)
+                findNavController().navigate(R.id.action_createPasswordCustomer_to_lawyerRegister1)
             }
             Toast.makeText(requireContext(), "Succesfully", Toast.LENGTH_LONG)
         }

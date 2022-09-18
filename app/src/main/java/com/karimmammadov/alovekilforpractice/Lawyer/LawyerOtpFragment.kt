@@ -51,7 +51,7 @@ class LawyerOtpFragment : Fragment() {
     ): View? {
         val view =inflater.inflate(R.layout.fragment_lawyer_otp, container, false)
 
-        sharedPreferences = context!!.getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
         view.back_signuplawyer.setOnClickListener {
@@ -151,7 +151,7 @@ class LawyerOtpFragment : Fragment() {
                 addtoFirestore(phoneNumber)
                 editor.putString("lwynumber",phoneNumber).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
+                findNavController().navigate(R.id.action_lawyerOtpFragment_to_createPasswordCustomer)
 
             } else {
                 Toast.makeText(
@@ -325,7 +325,7 @@ class LawyerOtpFragment : Fragment() {
                 val phone = firebaseAuth.currentUser?.phoneNumber
                 editor.putString("lwynumber",phone).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
+                findNavController().navigate(R.id.action_lawyerOtpFragment_to_createPasswordCustomer)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

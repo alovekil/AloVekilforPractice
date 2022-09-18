@@ -55,13 +55,13 @@ class LawyerRegister1 : Fragment() {
         val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,genders)
         completeText.setAdapter(adapter)
 
-        val completeTextUniversity = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_universtiy)
+/*        val completeTextUniversity = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_universtiy)
         val universities = ArrayList<String>()
         universities.add("BMU")
         universities.add("BDU")
         universities.add("ADA")
         val adapterUniversity = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,universities)
-        completeTextUniversity.setAdapter(adapterUniversity)
+        completeTextUniversity.setAdapter(adapterUniversity)*/
 
         tvDatePicker = view.findViewById(R.id.tvDateofBirth)
         val myCalendar = Calendar.getInstance()
@@ -87,7 +87,7 @@ class LawyerRegister1 : Fragment() {
             val userlawyerFatherName = view.editlawyerFatherName.text.toString().trim()
             val lawyergender = view.dropdown_gender.text.toString().trim()
             val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
-            val lawyerUniversity = view.dropdown_universtiy.text.toString().trim()
+            val lawyerUniversity = view.textInputUniversity.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
             val phoneNumberForLawyer = view.findViewById<TextView>(R.id.editPhoneNumberLawyer)
             phoneNumberForLawyer.text = sharedPreferences.getString("lwynumber","+99455123456")
@@ -96,6 +96,11 @@ class LawyerRegister1 : Fragment() {
             if (userlawyerName.isEmpty()){
                 editlawyerName.error = "Name required"
                 editlawyerName.requestFocus()
+                block = false
+            }
+            if (lawyerUniversity.isEmpty()){
+                textInputUniversity.error = "University required"
+                textInputUniversity.requestFocus()
                 block = false
             }
             if (userlawyerSurname.isEmpty()){

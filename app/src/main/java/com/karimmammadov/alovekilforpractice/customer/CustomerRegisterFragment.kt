@@ -92,7 +92,7 @@ class CustomerRegisterFragment : Fragment() {
                         editor.putString(MyConstants.userEmail,email)
                         editor.putBoolean(MyConstants.args,true)
                         editor.commit()
-                     findNavController().navigate(R.id.action_customerRegisterFragment_to_createPasswordCustomer)
+                     findNavController().navigate(R.id.action_customerRegisterFragment_to_profileFragmentCustomer)
 
                     }
 

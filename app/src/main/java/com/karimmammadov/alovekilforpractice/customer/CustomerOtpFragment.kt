@@ -156,7 +156,7 @@ class CustomerOtpFragment : Fragment() {
                 addtoFirestore(phoneNumber)
                 editor.putString("csmnumber",phoneNumber).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
+                findNavController().navigate(R.id.action_customerOtpFragment_to_createPasswordCustomer)
             } else {
                 Toast.makeText(
                     requireContext(),
@@ -329,7 +329,7 @@ class CustomerOtpFragment : Fragment() {
                 val phone = firebaseAuth.currentUser?.phoneNumber
                 editor.putString("csmnumber",phone).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
+                findNavController().navigate(R.id.action_customerOtpFragment_to_createPasswordCustomer)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

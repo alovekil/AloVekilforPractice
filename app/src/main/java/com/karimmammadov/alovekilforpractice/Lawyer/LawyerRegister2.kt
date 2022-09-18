@@ -273,7 +273,7 @@ class LawyerRegister2 : Fragment() {
                         Toast.makeText(requireContext(),"successfully regitered a new user.", Toast.LENGTH_SHORT).show()
                        // val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
                        // startActivity(intent)
-                        findNavController().navigate(R.id.action_lawyerRegister2_to_createPasswordCustomer)
+                        findNavController().navigate(R.id.action_lawyerRegister2_to_alertDialogLawyer)
 
                     }
 
@@ -420,13 +420,13 @@ class LawyerRegister2 : Fragment() {
                                 selectedPictureCertificate!!
                             )
                             selectedBitmapCertificate = ImageDecoder.decodeBitmap(source)
-                            view!!.certificateImage.setImageBitmap(selectedBitmapCertificate)
+                            requireView().certificateImage.setImageBitmap(selectedBitmapCertificate)
                         } else {
                             selectedBitmapCertificate = MediaStore.Images.Media.getBitmap(
                                 requireContext().contentResolver,
                                 selectedPictureCertificate
                             )
-                            view!!.certificateImage.setImageBitmap(selectedBitmapCertificate)
+                            requireView().certificateImage.setImageBitmap(selectedBitmapCertificate)
                         }
                         lawyerCertificate.setText(selectedPictureCertificate?.path)
                     } catch (e: IOException) {
@@ -480,13 +480,13 @@ class LawyerRegister2 : Fragment() {
                                 selectedPictureDiploma!!
                             )
                             selectedBitmapDiploma = ImageDecoder.decodeBitmap(source)
-                            view!!.diplomaImage.setImageBitmap(selectedBitmapDiploma)
+                            requireView().diplomaImage.setImageBitmap(selectedBitmapDiploma)
                         } else {
                             selectedBitmapDiploma = MediaStore.Images.Media.getBitmap(
                                 requireContext().contentResolver,
                                 selectedPictureDiploma
                             )
-                            view!!.diplomaImage.setImageBitmap(selectedBitmapDiploma)
+                            requireView().diplomaImage.setImageBitmap(selectedBitmapDiploma)
                         }
                         editDiplomaLawyer.setText(selectedPictureDiploma?.path)
                     } catch (e: IOException) {
