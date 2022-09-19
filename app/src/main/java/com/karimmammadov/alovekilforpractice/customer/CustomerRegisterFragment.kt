@@ -25,6 +25,7 @@ class CustomerRegisterFragment : Fragment() {
 
     private lateinit var sharedPreferences: SharedPreferences
     lateinit var customerModels: CustomerModels
+    private  var block : Boolean  =true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,44 +38,51 @@ class CustomerRegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_customer_register, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("customer", Context.MODE_PRIVATE)
-
+        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
         view.bck_signActivity.setOnClickListener {
             findNavController().navigate(R.id.action_customerRegisterFragment_to_chooseSignUpFragment)
         }
 
-        val loginSharedPreferences = requireContext().getSharedPreferences("Myprefs",0)
-        val editor = loginSharedPreferences.edit()
+
+
         val phonenumberCustomer =  view.findViewById<TextView>(R.id.editphoneNumberCustomer)
         phonenumberCustomer.text = sharedPreferences.getString("csmnumber","+99455494495")
+
         view.savebtn.setOnClickListener {
+            block =true
             val email = view.editEmail.text.toString().trim()
             val name = view.editFirstName.text.toString().trim()
             val secondName = view.editSecondName.text.toString().trim()
             val password = view.editPassword.text.toString().trim()
             val confirmPassword = view.editConfirmPassword.text.toString().trim()
 
-            val phonecustomer = phonenumberCustomer.toString().trim()
+            val phonecustomer = sharedPreferences.getString("csmnumber","+99455494495").toString()
             if (email.isEmpty()){
                 editEmail.error = "Email required"
                 editEmail.requestFocus()
+                block =false
             }
             if (name.isEmpty()){
                 editFirstName.error = "First name required"
                 editFirstName.requestFocus()
+                block =false
             }
             if (secondName.isEmpty()){
                 editSecondName.error = "Second name required"
                 editSecondName.requestFocus()
+                block =false
             }
             if (password.isEmpty()){
                 editPassword.error = "Password required"
                 editPassword.requestFocus()
+                block =false
 
             }
             if (confirmPassword.isEmpty()){
                 editConfirmPassword.error = "Confirm Password required"
                 editConfirmPassword.requestFocus()
+                block =false
             }
 
 
@@ -92,8 +100,9 @@ class CustomerRegisterFragment : Fragment() {
                         editor.putString(MyConstants.userEmail,email)
                         editor.putBoolean(MyConstants.args,true)
                         editor.commit()
-                     findNavController().navigate(R.id.action_customerRegisterFragment_to_createPasswordCustomer)
-
+                        if(block) {
+                            findNavController().navigate(R.id.action_customerRegisterFragment_to_createPasswordCustomer)
+                        }
                     }
 
                     override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
