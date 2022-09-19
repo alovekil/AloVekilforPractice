@@ -71,6 +71,21 @@ class LawyerOtpFragment : Fragment() {
         view.btn_nextLawyerRegister.visibility = View.GONE
 
 
+
+
+        view.back_signuplawyer.visibility = View.GONE
+        view.tv_numberLawyerHighlight.visibility = View.GONE
+        view.tv_enteryourphonenumberLawyer.visibility = View.GONE
+        view.ll_NumberLawyerArea.visibility = View.GONE
+        view.btn_sendLwyOtp.visibility = View.GONE
+
+        view.tv_otpLawyerHighlight.visibility = View.VISIBLE
+        view.tv_enterverificationcodeLawyer.visibility = View.VISIBLE
+        view.numberLawyerDescription.visibility = View.VISIBLE
+        view.ll_otpLawyerArea.visibility = View.VISIBLE
+        view.btn_nextLawyerRegister.visibility = View.VISIBLE
+
+
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(requireContext())
         progressDialog.setTitle("Please Wait")
@@ -119,6 +134,8 @@ class LawyerOtpFragment : Fragment() {
             }
         }
 
+
+
         view.btn_sendLwyOtp.setOnClickListener {
             val phone = phoneNumberLawyer.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
@@ -135,6 +152,8 @@ class LawyerOtpFragment : Fragment() {
             }
         }
 
+
+
         view.btn_nextLawyerRegister.setOnClickListener {
             if (!inputLwyCode1.text.toString().trim().isEmpty() && !inputLwyCode2.text.toString().trim()
                     .isEmpty() && !inputLwyCode3.text.toString().trim().isEmpty() &&
@@ -147,9 +166,10 @@ class LawyerOtpFragment : Fragment() {
                         inputLwyCode4.text.toString() +
                         inputLwyCode5.text.toString() +
                         inputLwyCode6.text.toString()
-                verifyingPhoneNumberWithCode(mVerificationId, code)
-                addtoFirestore(phoneNumber)
-                editor.putString("lwynumber",phoneNumber).apply()
+               // verifyingPhoneNumberWithCode(mVerificationId, code)
+               // addtoFirestore(phoneNumber)
+//                editor.putString("lwynumber",phoneNumber).apply()
+                editor.putInt("savefragments",R.id.action_splashScreenFragment_to_lawyerRegister1).apply()
                 editor.commit()
                 findNavController().navigate(R.id.action_lawyerOtpFragment_to_createPasswordCustomer)
 
@@ -324,6 +344,7 @@ class LawyerOtpFragment : Fragment() {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
                 editor.putString("lwynumber",phone).apply()
+                editor.putInt("savefragments",R.id.action_splashScreenFragment_to_lawyerRegister1).apply()
                 editor.commit()
                 findNavController().navigate(R.id.action_lawyerOtpFragment_to_createPasswordCustomer)
             }
@@ -332,5 +353,7 @@ class LawyerOtpFragment : Fragment() {
                 Toast.makeText(requireContext(), "${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
+
 
 }

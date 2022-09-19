@@ -155,6 +155,7 @@ class CustomerOtpFragment : Fragment() {
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
                 editor.putString("csmnumber",phoneNumber).apply()
+                editor.putInt("savefragments",R.id.action_splashScreenFragment_to_customerRegisterFragment).apply()
                 editor.commit()
                 findNavController().navigate(R.id.action_customerOtpFragment_to_createPasswordCustomer)
             } else {
@@ -328,6 +329,7 @@ class CustomerOtpFragment : Fragment() {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
                 editor.putString("csmnumber",phone).apply()
+                editor.putInt("savefragments",R.id.action_splashScreenFragment_to_customerRegisterFragment).apply()
                 editor.commit()
                 findNavController().navigate(R.id.action_customerOtpFragment_to_createPasswordCustomer)
             }

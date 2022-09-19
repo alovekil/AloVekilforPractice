@@ -19,6 +19,12 @@
             app:destination="@id/pinCodeFragment"
             app:popUpTo="@id/splashScreenFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_lawyerRegister1"
+            app:destination="@id/lawyerRegister1" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_customerRegisterFragment"
+            app:destination="@id/customerRegisterFragment" />
     </fragment>
     <fragment
         android:id="@+id/signInUpFragment"
@@ -55,6 +61,9 @@
         <action
             android:id="@+id/action_customerOtpFragment_to_createPasswordCustomer"
             app:destination="@id/createPasswordCustomer" />
+        <action
+            android:id="@+id/action_customerOtpFragment_to_customerRegisterFragment"
+            app:destination="@id/customerRegisterFragment" />
     </fragment>
     <fragment
         android:id="@+id/customerRegisterFragment"
@@ -72,6 +81,9 @@
         <action
             android:id="@+id/action_customerRegisterFragment_to_profileFragmentCustomer"
             app:destination="@id/profileFragmentCustomer" />
+        <action
+            android:id="@+id/action_customerRegisterFragment_to_createPasswordCustomer"
+            app:destination="@id/createPasswordCustomer" />
     </fragment>
     <fragment
         android:id="@+id/createPasswordCustomer"
@@ -104,6 +116,9 @@
         <action
             android:id="@+id/action_lawyerOtpFragment_to_createPasswordCustomer"
             app:destination="@id/createPasswordCustomer" />
+        <action
+            android:id="@+id/action_lawyerOtpFragment_to_lawyerRegister1"
+            app:destination="@id/lawyerRegister1" />
     </fragment>
     <fragment
         android:id="@+id/lawyerRegister1"
@@ -138,6 +153,9 @@
         <action
             android:id="@+id/action_lawyerRegister2_to_alertDialogLawyer"
             app:destination="@id/alertDialogLawyer" />
+        <action
+            android:id="@+id/action_lawyerRegister2_to_createPasswordCustomer"
+            app:destination="@id/createPasswordCustomer" />
     </fragment>
     <fragment
         android:id="@+id/profileFragmentLawyer"

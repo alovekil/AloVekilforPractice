@@ -25,7 +25,7 @@ class SplashScreenFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_splash_screen, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("password", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
         val countDownTimer = object : CountDownTimer(3000, 1000) {
@@ -37,7 +37,12 @@ class SplashScreenFragment : Fragment() {
                 if (sharedPreferences.getBoolean("create_password", false)) {
                    findNavController().navigate(R.id.action_splashScreenFragment_to_pinCodeFragment)
                 } else {
-                        findNavController().navigate(R.id.action_splashScreenFragment_to_signInUpFragment)
+                    if(sharedPreferences.getInt("savefragments",0)==0)
+                    {
+                        findNavController().navigate(R.id.action_splashScreenFragment_to_signInUpFragment) }
+                    else{
+                        findNavController().navigate(sharedPreferences.getInt("savefragments",0))
+                    }
                     }
                 }
             }.start()
