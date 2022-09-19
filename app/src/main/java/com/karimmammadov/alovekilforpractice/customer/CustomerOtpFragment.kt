@@ -135,6 +135,7 @@ class CustomerOtpFragment : Fragment() {
             } else {
                 //new changes
                 phoneNumber = phone
+                startPhoneNumberVerification(phone)
                 isPhoneNumberExist(phone)
                 Log.d(TAG, "onCreateView: ")
             }
@@ -331,7 +332,7 @@ class CustomerOtpFragment : Fragment() {
                 editor.putString("csmnumber",phone).apply()
                 editor.putInt("savefragments",R.id.action_splashScreenFragment_to_customerRegisterFragment).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_customerOtpFragment_to_createPasswordCustomer)
+                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

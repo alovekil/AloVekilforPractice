@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "506357721584",
-    "project_id": "alovekil-f4762",
-    "storage_bucket": "alovekil-f4762.appspot.com"
+    "project_number": "966267351926",
+    "project_id": "alo-vekil",
+    "storage_bucket": "alo-vekil.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:506357721584:android:5017f9ef6c0d70f517d535",
+        "mobilesdk_app_id": "1:966267351926:android:b20d6b0791292ccfb74057",
         "android_client_info": {
           "package_name": "com.karimmammadov.alovekilforpractice"
         }
       },
       "oauth_client": [
         {
-          "client_id": "506357721584-6tcsradvp87e910btu3c7e6dqoligc71.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.karimmammadov.alovekilforpractice",
-            "certificate_hash": "d2124ebeded13f1a0f13f77a36f27915d38b746e"
-          }
-        },
-        {
-          "client_id": "506357721584-n9do92fs0voh9ih59mbobrmkk2279rfd.apps.googleusercontent.com",
+          "client_id": "966267351926-33hu9fc7i1t6db1b4297vtsb8i44dll2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCZeQQM9aBGFJC8WrpKA1dHVrQAAuxx9Hg"
+          "current_key": "AIzaSyBMLaYlp3wiVpv5QE-Z1_6-Ffij2vLpRvo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "506357721584-n9do92fs0voh9ih59mbobrmkk2279rfd.apps.googleusercontent.com",
+              "client_id": "966267351926-33hu9fc7i1t6db1b4297vtsb8i44dll2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

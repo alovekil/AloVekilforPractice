@@ -70,22 +70,6 @@ class LawyerOtpFragment : Fragment() {
         view.ll_otpLawyerArea.visibility = View.GONE
         view.btn_nextLawyerRegister.visibility = View.GONE
 
-
-
-
-        view.back_signuplawyer.visibility = View.GONE
-        view.tv_numberLawyerHighlight.visibility = View.GONE
-        view.tv_enteryourphonenumberLawyer.visibility = View.GONE
-        view.ll_NumberLawyerArea.visibility = View.GONE
-        view.btn_sendLwyOtp.visibility = View.GONE
-
-        view.tv_otpLawyerHighlight.visibility = View.VISIBLE
-        view.tv_enterverificationcodeLawyer.visibility = View.VISIBLE
-        view.numberLawyerDescription.visibility = View.VISIBLE
-        view.ll_otpLawyerArea.visibility = View.VISIBLE
-        view.btn_nextLawyerRegister.visibility = View.VISIBLE
-
-
         firebaseAuth = FirebaseAuth.getInstance()
         progressDialog = ProgressDialog(requireContext())
         progressDialog.setTitle("Please Wait")
@@ -147,7 +131,8 @@ class LawyerOtpFragment : Fragment() {
             } else {
                 //new changes
                 phoneNumber = phone
-                isPhoneNumberExist(phone)
+                startPhoneNumberVerification(phone)
+              isPhoneNumberExist(phone)
                 Log.d(TAG, "onCreateView: ")
             }
         }
@@ -166,9 +151,9 @@ class LawyerOtpFragment : Fragment() {
                         inputLwyCode4.text.toString() +
                         inputLwyCode5.text.toString() +
                         inputLwyCode6.text.toString()
-               // verifyingPhoneNumberWithCode(mVerificationId, code)
-               // addtoFirestore(phoneNumber)
-//                editor.putString("lwynumber",phoneNumber).apply()
+               verifyingPhoneNumberWithCode(mVerificationId, code)
+              addtoFirestore(phoneNumber)
+            editor.putString("lwynumber",phoneNumber).apply()
                 editor.putInt("savefragments",R.id.action_splashScreenFragment_to_lawyerRegister1).apply()
                 editor.commit()
                 findNavController().navigate(R.id.action_lawyerOtpFragment_to_createPasswordCustomer)
@@ -328,8 +313,6 @@ class LawyerOtpFragment : Fragment() {
             Toast.makeText(requireContext(), it.localizedMessage, Toast.LENGTH_SHORT).show()
         }
     }
-
-
     private  fun verifyingPhoneNumberWithCode(verificationId: String?, code: String) {
         progressDialog.setMessage("Verifying Code...")
         progressDialog.show()
@@ -346,7 +329,7 @@ class LawyerOtpFragment : Fragment() {
                 editor.putString("lwynumber",phone).apply()
                 editor.putInt("savefragments",R.id.action_splashScreenFragment_to_lawyerRegister1).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_lawyerOtpFragment_to_createPasswordCustomer)
+                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()
