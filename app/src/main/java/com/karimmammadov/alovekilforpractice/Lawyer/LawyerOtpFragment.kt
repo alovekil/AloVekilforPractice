@@ -329,7 +329,8 @@ class LawyerOtpFragment : Fragment() {
                 editor.putString("lwynumber",phone).apply()
                 editor.putInt("savefragments",R.id.action_splashScreenFragment_to_lawyerRegister1).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
+
+                //findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()

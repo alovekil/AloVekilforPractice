@@ -48,7 +48,7 @@ class CustomerOtpFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_customer_otp, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("customer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
         view.back_signupcustomer.setOnClickListener {
@@ -332,7 +332,7 @@ class CustomerOtpFragment : Fragment() {
                 editor.putString("csmnumber",phone).apply()
                 editor.putInt("savefragments",R.id.action_splashScreenFragment_to_customerRegisterFragment).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
+                //findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
             }
             .addOnFailureListener { e ->
                 progressDialog.dismiss()
