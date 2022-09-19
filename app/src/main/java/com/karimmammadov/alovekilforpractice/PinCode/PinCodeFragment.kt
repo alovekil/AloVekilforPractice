@@ -81,7 +81,7 @@ class PinCodeFragment : Fragment() {
 
         checkBiometricSupport()
         //   binding=DataBindingUtil.inflate(layoutInflater,R.layout.activity_pin_code,null,false)
-        sharedPreferences=requireContext().getSharedPreferences("password", Context.MODE_PRIVATE)
+        sharedPreferences=requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         editor=sharedPreferences.edit()
         radioList1.add(view.circle1)
         radioList1.add(view.circle2)
@@ -114,15 +114,15 @@ class PinCodeFragment : Fragment() {
                 .setTitle("Title of Prompt")
                 .setSubtitle("Authentication is required")
                 .setDescription("This app uses fingerprint")
-                .setNegativeButton("Cancel",this!!.activity!!.mainExecutor,
+                .setNegativeButton("Cancel",this!!.requireActivity().mainExecutor,
                     DialogInterface.OnClickListener { dialogInterface, i ->
                         notifyUser("Authentication is cancelled")
                     }).build()
-            biometricPrompt.authenticate(getCancellationSignal(),activity!!.mainExecutor,authenticationCallback)
+            biometricPrompt.authenticate(getCancellationSignal(),requireActivity().mainExecutor,authenticationCallback)
         }
         view.cancelTextView.setOnClickListener {
             startActivity(Intent(activity, MainActivity::class.java))
-            activity!!.finish()
+            requireActivity().finish()
         }
 
         val handler = Handler()
@@ -180,16 +180,16 @@ class PinCodeFragment : Fragment() {
         }
     }
     private fun checkBiometricSupport():Boolean {
-        val keyguardmanager=context!!.getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+        val keyguardmanager=requireContext().getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
         if(!keyguardmanager.isKeyguardSecure){
             notifyUser("Fingerprint authentication has not been enabled in Settings")
             return false
         }
-        if(ActivityCompat.checkSelfPermission(context!!,android.Manifest.permission.USE_BIOMETRIC)!= PackageManager.PERMISSION_GRANTED){
+        if(ActivityCompat.checkSelfPermission(requireContext(),android.Manifest.permission.USE_BIOMETRIC)!= PackageManager.PERMISSION_GRANTED){
             notifyUser("Fingerprint authentication has not been enabled ")
             return false
         }
-        return if(activity!!.packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)){
+        return if(requireActivity().packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)){
             true
         }else true
     }

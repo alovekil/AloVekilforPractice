@@ -273,7 +273,7 @@ class LawyerRegister2 : Fragment() {
                         Toast.makeText(requireContext(),"successfully regitered a new user.", Toast.LENGTH_SHORT).show()
                        // val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
                        // startActivity(intent)
-                        findNavController().navigate(R.id.action_lawyerRegister2_to_alertDialogLawyer)
+                        findNavController().navigate(R.id.action_lawyerRegister2_to_createPasswordCustomer)
 
                     }
 
