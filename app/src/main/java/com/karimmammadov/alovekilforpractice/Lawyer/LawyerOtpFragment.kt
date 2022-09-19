@@ -156,7 +156,7 @@ class LawyerOtpFragment : Fragment() {
             editor.putString("lwynumber",phoneNumber).apply()
                 editor.putInt("savefragments",R.id.action_splashScreenFragment_to_lawyerRegister1).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_lawyerOtpFragment_to_createPasswordCustomer)
+                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
 
             } else {
                 Toast.makeText(

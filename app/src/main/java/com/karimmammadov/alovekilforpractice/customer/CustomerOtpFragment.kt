@@ -158,7 +158,7 @@ class CustomerOtpFragment : Fragment() {
                 editor.putString("csmnumber",phoneNumber).apply()
                 editor.putInt("savefragments",R.id.action_splashScreenFragment_to_customerRegisterFragment).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_customerOtpFragment_to_createPasswordCustomer)
+                findNavController().navigate(R.id.action_customerOtpFragment_to_customerRegisterFragment)
             } else {
                 Toast.makeText(
                     requireContext(),
