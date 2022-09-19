@@ -45,15 +45,15 @@ class CustomerRegisterFragment : Fragment() {
 
         val loginSharedPreferences = requireContext().getSharedPreferences("Myprefs",0)
         val editor = loginSharedPreferences.edit()
-
+        val phonenumberCustomer =  view.findViewById<TextView>(R.id.editphoneNumberCustomer)
+        phonenumberCustomer.text = sharedPreferences.getString("csmnumber","+99455494495")
         view.savebtn.setOnClickListener {
             val email = view.editEmail.text.toString().trim()
             val name = view.editFirstName.text.toString().trim()
             val secondName = view.editSecondName.text.toString().trim()
             val password = view.editPassword.text.toString().trim()
             val confirmPassword = view.editConfirmPassword.text.toString().trim()
-            val phonenumberCustomer =  view.findViewById<TextView>(R.id.editphoneNumberCustomer)
-            phonenumberCustomer.text = sharedPreferences.getString("csmnumber","+99455494495")
+
             val phonecustomer = phonenumberCustomer.toString().trim()
             if (email.isEmpty()){
                 editEmail.error = "Email required"

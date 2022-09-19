@@ -116,7 +116,7 @@ class LawyerRegister2 : Fragment() {
                     stringBuilder.append(selectedLanguage.get(0).language)
                 }
                 lawyerLanguages.clear()
-                for(l in 0..selectedLanguage.size-1){
+                for(l in 1..selectedLanguage.size-1){
                     lawyerLanguages.add(selectedLanguage.get(l).id)
                     stringBuilder.append(", ${selectedLanguage.get(l).language}")
                 }
@@ -156,7 +156,7 @@ class LawyerRegister2 : Fragment() {
                     stringBuilder.append(selectedArea.get(0).service_name)
                 }
                 lawyerAreas.clear()
-                for(l in 0..selectedArea.size-1){
+                for(l in 1..selectedArea.size-1){
                     lawyerAreas.add(selectedArea.get(l).id)
                     stringBuilder.append(", ${selectedArea.get(l).service_name}")
                 }
