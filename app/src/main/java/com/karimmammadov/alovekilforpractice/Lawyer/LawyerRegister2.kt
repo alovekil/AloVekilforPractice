@@ -53,7 +53,7 @@ class LawyerRegister2 : Fragment() {
     val lawyerAreas = ArrayList<Int>()
     lateinit var lawyerModels: LawyerModels
     private lateinit var profileSharedPreferences: SharedPreferences
-
+    private  var block : Boolean  =true
 
     //Image
     var selectedPictureCertificate : Uri? = null
@@ -123,15 +123,15 @@ class LawyerRegister2 : Fragment() {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
                 val selectedLanguage = GetManageInstance.getLanguage()
-                if (selectedLanguage.isNotEmpty()){
+                if (selectedLanguage.isEmpty()){
                     stringBuilder.append(selectedLanguage.get(0).language)
                 }
                 lawyerLanguages.clear()
-                for(l in 1..selectedLanguage.size-1){
+                for(l in 0..selectedLanguage.size-1){
                     lawyerLanguages.add(selectedLanguage.get(l).id)
                     stringBuilder.append(", ${selectedLanguage.get(l).language}")
                 }
-                languageTextView.setText(stringBuilder)
+                languageTextView.setText(stringBuilder.substring(1,stringBuilder.length))
             }
         }
 
@@ -163,15 +163,15 @@ class LawyerRegister2 : Fragment() {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
                 val selectedArea = GetManageInstanceAreas.getArea()
-                if(selectedArea.isNotEmpty()){
+                if(selectedArea.isEmpty()){
                     stringBuilder.append(selectedArea.get(0).service_name)
                 }
                 lawyerAreas.clear()
-                for(l in 1..selectedArea.size-1){
+                for(l in 0..selectedArea.size-1){
                     lawyerAreas.add(selectedArea.get(l).id)
                     stringBuilder.append(", ${selectedArea.get(l).service_name}")
                 }
-                areasTextView.setText(stringBuilder)
+                areasTextView.setText(stringBuilder.substring(1,stringBuilder.length))
             }
         }
 
@@ -192,7 +192,7 @@ class LawyerRegister2 : Fragment() {
 
         view.saveButton.setOnClickListener {
 
-
+            block = true
             val lglexperience = view.editLegalExperience.text.toString().trim()
             val lawyerExperience = view.editLawyerExperience.text.toString().trim()
             val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
@@ -203,27 +203,29 @@ class LawyerRegister2 : Fragment() {
             if (lglexperience.isEmpty()){
                 editLegalExperience.error = "Legal Experience required"
                 editLegalExperience.requestFocus()
+                block = false
             }
             if (lawyerExperience.isEmpty()){
                 editLawyerExperience.error = "Lawyer Experience required"
                 editLawyerExperience.requestFocus()
+                block = false
             }
             if (lawyerTaxVoen.isEmpty()){
                 lawyerVoen.error = "Voen required"
                 lawyerVoen.requestFocus()
+                block = false
             }
             if (lawyerfirstPassword.isEmpty()){
                 editPasswordLawyer.error = "Password required"
                 editPasswordLawyer.requestFocus()
+                block = false
             }
             if (lawyerconfrimPassword.isEmpty()){
                 editConfirmPasswordLawyer.error = "Confirm Password required"
                 editConfirmPasswordLawyer.requestFocus()
+                block = false
             }
-            if (lawyerconfrimPassword.isEmpty()){
-                editConfirmPasswordLawyer.error = "Confirm Password required"
-                editConfirmPasswordLawyer.requestFocus()
-            }
+
 
 
             view.certificateImage.invalidate()
@@ -286,8 +288,9 @@ class LawyerRegister2 : Fragment() {
                         Toast.makeText(requireContext(),"successfully regitered a new user.", Toast.LENGTH_SHORT).show()
                        // val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
                        // startActivity(intent)
-                        findNavController().navigate(R.id.action_lawyerRegister2_to_createPasswordCustomer)
-
+                        if(block ){
+                            findNavController().navigate(R.id.action_lawyerRegister2_to_createPasswordCustomer)
+                        }
                     }
 
                 }

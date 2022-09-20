@@ -108,7 +108,7 @@ class LawyerRegister1 : Fragment() {
             val lawyerUniversity = view.textInputUniversity.text.toString().trim()
             val lawyerEmail = view.editLawyerEmail.text.toString().trim()
 
-            val phonelawyer = phoneNumberForLawyer.toString().trim()
+            val phonelawyer =sharedPreferences.getString("lwynumber","+99455123456").toString()
 
             if (userlawyerName.isEmpty()){
                 editlawyerName.error = "Name required"
