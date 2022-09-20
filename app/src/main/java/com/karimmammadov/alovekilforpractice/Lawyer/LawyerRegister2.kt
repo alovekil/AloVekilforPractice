@@ -27,6 +27,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.snackbar.Snackbar
 import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
@@ -44,6 +45,7 @@ import java.io.IOException
 
 
 class LawyerRegister2 : Fragment() {
+    private lateinit var viewPager: ViewPager2
     val BASE_URL = "http://38.242.221.247/api/"
     lateinit var myCheckBoxItemsAdapter: MyCheckBoxItemsAdapter
     lateinit var myCheckBoxAreasAdapter: MyCheckBoxAreasAdapter
@@ -80,7 +82,7 @@ class LawyerRegister2 : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register2, container, false)
-
+        viewPager= activity?.findViewById<ViewPager2>(R.id.viewPager)!!
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         var editor :SharedPreferences.Editor = sharedPreferences.edit()
         getMyData()
@@ -104,11 +106,6 @@ class LawyerRegister2 : Fragment() {
             recyclerView.adapter = myCheckBoxItemsAdapter
 
 
-            view.editLegalExperience.text.toString().trim()
-            view.editLawyerExperience.text.toString().trim()
-            view.lawyerVoen.text.toString().trim()
-            view.editPasswordLawyer.text.toString().trim()
-            view.editConfirmPasswordLawyer.text.toString().trim()
 
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_clearAll).setOnClickListener {
                 myCheckBoxItemsAdapter.notifyItemRangeChanged(0, lawyerlanguageitems.size )
@@ -187,7 +184,7 @@ class LawyerRegister2 : Fragment() {
         view.moveBackBtn.setOnClickListener {
             editor.putBoolean("lawyerBack" , true).apply()
             editor.commit()
-
+            viewPager?.currentItem = -1
         }
 
         view.saveButton.setOnClickListener {
