@@ -154,9 +154,9 @@ class LawyerOtpFragment : Fragment() {
                verifyingPhoneNumberWithCode(mVerificationId, code)
               addtoFirestore(phoneNumber)
             editor.putString("lwynumber",phoneNumber).apply()
-                editor.putInt("savefragments",R.id.action_splashScreenFragment_to_lawyerRegister1).apply()
+                editor.putInt("savefragments",R.id.action_splashScreenFragment_to_viewPagerFragment).apply()
                 editor.commit()
-                findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)
+                findNavController().navigate(R.id.action_lawyerOtpFragment_to_viewPagerFragment)
 
             } else {
                 Toast.makeText(
@@ -327,7 +327,7 @@ class LawyerOtpFragment : Fragment() {
                 progressDialog.dismiss()
                 val phone = firebaseAuth.currentUser?.phoneNumber
                 editor.putString("lwynumber",phone).apply()
-                editor.putInt("savefragments",R.id.action_splashScreenFragment_to_lawyerRegister1).apply()
+                editor.putInt("savefragments",R.id.action_splashScreenFragment_to_viewPagerFragment).apply()
                 editor.commit()
 
                 //findNavController().navigate(R.id.action_lawyerOtpFragment_to_lawyerRegister1)

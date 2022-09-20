@@ -44,7 +44,7 @@ class LawyerRegister1 : Fragment() {
 
         // Inflate the layout for this fragment
          val view  = inflater.inflate(R.layout.fragment_lawyer_register1, container, false)
-        viewPager=view.findViewById(R.id.view_pager)
+        viewPager= activity?.findViewById<ViewPager2>(R.id.viewPager)!!
             //val pagerAdapter=LawyerRegister1(this)
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
@@ -52,7 +52,7 @@ class LawyerRegister1 : Fragment() {
         // val phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....")
         //  editPhoneNumberLawyer.setText(phoneNumberForLawyer)
         view.moveSignupFragment.setOnClickListener {
-            findNavController().navigate(R.id.action_lawyerRegister1_to_chooseSignUpFragment)
+            findNavController().navigate(R.id.action_viewPagerFragment_to_chooseSignUpFragment)
         }
         val completeText = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_gender)
         val genders = ArrayList<String>()
@@ -169,56 +169,64 @@ class LawyerRegister1 : Fragment() {
 //                }
 
 
-                findNavController().navigate(R.id.action_lawyerRegister1_to_lawyerRegister2)
+                viewPager?.currentItem = 1
 //                ft.commit()
             }
         }
 
         return view
     }
-/*
-    override fun onPause() {
 
-        val userlawyerName = view!!.editlawyerName.text.toString().trim()
-        val userlawyerSurname = view!!.editlawyerSurname.text.toString().trim()
-        val userlawyerFatherName = view!!.editlawyerFatherName.text.toString().trim()
-        val lawyergender = view!!.dropdown_gender.text.toString().trim()
-        val lawyerdatebirth = view!!.tvDateofBirth.text.toString().trim()
-        val lawyerUniversity = view!!.dropdown_universtiy.text.toString().trim()
-        val lawyerEmail = view!!.editLawyerEmail.text.toString().trim()
-        val phoneNumberForLawyer = view!!.editPhoneNumberLawyer.text.toString().trim()
+    override fun onPause() {
+        block = true
+        val userlawyerName = view?.editlawyerName?.text.toString().trim()
+        val userlawyerSurname = view?.editlawyerSurname?.text.toString().trim()
+        val userlawyerFatherName = view?.editlawyerFatherName?.text.toString().trim()
+        val lawyergender = view?.dropdown_gender?.text.toString().trim()
+        val lawyerdatebirth = view?.tvDateofBirth?.text.toString().trim()
+        val lawyerUniversity = view?.textInputUniversity?.text.toString().trim()
+        val lawyerEmail = view?.editLawyerEmail?.text.toString().trim()
+        val phoneNumberForLawyer = view?.editPhoneNumberLawyer?.text.toString().trim()
 
         if (userlawyerName.isEmpty()){
             editlawyerName.error = "Name required"
             editlawyerName.requestFocus()
+            block = false
         }
         if (userlawyerSurname.isEmpty()){
             editlawyerSurname.error = "Surname required"
             editlawyerSurname.requestFocus()
+            block = false
         }
         if (userlawyerFatherName.isEmpty()){
             editlawyerFatherName.error = "Father name required"
             editlawyerFatherName.requestFocus()
+            block = false
         }
         if (lawyerEmail.isEmpty()){
             editLawyerEmail.error = "Email required"
             editLawyerEmail.requestFocus()
+            block = false
         }
         if (lawyergender.isEmpty()){
             dropdown_gender.error = "Gender required"
             dropdown_gender.requestFocus()
+            block = false
         }
         if (lawyerUniversity.isEmpty()){
-            dropdown_universtiy.error = "University required"
-            dropdown_universtiy.requestFocus()
+            textInputUniversity.error = "University required"
+            textInputUniversity.requestFocus()
+            block = false
         }
         if (lawyerdatebirth.isEmpty()){
             tvDateofBirth.error = "Date of birth required"
             tvDateofBirth.requestFocus()
+            block = false
         }
         if (phoneNumberForLawyer.isEmpty()){
             editPhoneNumberLawyer.error = "Phone Number required"
             editPhoneNumberLawyer.requestFocus()
+            block = false
         }
 
         editor.putString("userLawyerName",userlawyerName).apply()
@@ -235,7 +243,6 @@ class LawyerRegister1 : Fragment() {
     }
 
 
- */
 
     private fun updateLable(myCalendar : Calendar){
         val myFormat = "yyyy-MM-dd"

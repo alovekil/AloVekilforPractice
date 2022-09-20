@@ -187,7 +187,7 @@ class LawyerRegister2 : Fragment() {
         view.moveBackBtn.setOnClickListener {
             editor.putBoolean("lawyerBack" , true).apply()
             editor.commit()
-            findNavController().navigate(R.id.action_lawyerRegister2_to_lawyerRegister12)
+
         }
 
         view.saveButton.setOnClickListener {
@@ -289,7 +289,7 @@ class LawyerRegister2 : Fragment() {
                        // val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
                        // startActivity(intent)
                         if(block ){
-                            findNavController().navigate(R.id.action_lawyerRegister2_to_createPasswordCustomer)
+                            findNavController().navigate(R.id.action_viewPagerFragment_to_createPasswordCustomer)
                         }
                     }
 

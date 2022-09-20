@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_navhost"
-    app:startDestination="@id/lawyerRegister1">
+    app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.karimmammadov.alovekilforpractice.SplashScreenFragment"
@@ -20,11 +20,13 @@
             app:popUpTo="@id/splashScreenFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_splashScreenFragment_to_lawyerRegister1"
-            app:destination="@id/lawyerRegister1" />
-        <action
             android:id="@+id/action_splashScreenFragment_to_customerRegisterFragment"
             app:destination="@id/customerRegisterFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signInUpFragment"
@@ -97,8 +99,8 @@
             android:id="@+id/action_createPasswordCustomer_to_customerRegisterFragment"
             app:destination="@id/customerRegisterFragment" />
         <action
-            android:id="@+id/action_createPasswordCustomer_to_lawyerRegister1"
-            app:destination="@id/lawyerRegister1" />
+            android:id="@+id/action_createPasswordCustomer_to_alertDialogLawyer2"
+            app:destination="@id/alertDialogLawyer" />
     </fragment>
     <fragment
         android:id="@+id/profileFragmentCustomer"
@@ -117,41 +119,8 @@
             android:id="@+id/action_lawyerOtpFragment_to_createPasswordCustomer"
             app:destination="@id/createPasswordCustomer" />
         <action
-            android:id="@+id/action_lawyerOtpFragment_to_lawyerRegister1"
-            app:destination="@id/lawyerRegister1" />
-    </fragment>
-    <fragment
-        android:id="@+id/lawyerRegister1"
-        android:name="com.karimmammadov.alovekilforpractice.Lawyer.LawyerRegister1"
-        android:label="fragment_lawyer_register1"
-        tools:layout="@layout/fragment_lawyer_register1" >
-        <action
-            android:id="@+id/action_lawyerRegister1_to_lawyerRegister2"
-            app:destination="@id/lawyerRegister2" />
-        <action
-            android:id="@+id/action_lawyerRegister1_to_chooseSignUpFragment"
-            app:destination="@id/chooseSignUpFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/lawyerRegister2"
-        android:name="com.karimmammadov.alovekilforpractice.Lawyer.LawyerRegister2"
-        android:label="fragment_lawyer_register2"
-        tools:layout="@layout/fragment_lawyer_register2" >
-        <action
-            android:id="@+id/action_lawyerRegister2_to_lawyerRegister1"
-            app:destination="@id/lawyerRegister1" />
-        <action
-            android:id="@+id/action_lawyerRegister2_to_profileFragmentLawyer"
-            app:destination="@id/profileFragmentLawyer" />
-        <action
-            android:id="@+id/action_lawyerRegister2_to_lawyerRegister12"
-            app:destination="@id/lawyerRegister1" />
-        <action
-            android:id="@+id/action_lawyerRegister2_to_alertDialogLawyer"
-            app:destination="@id/alertDialogLawyer" />
-        <action
-            android:id="@+id/action_lawyerRegister2_to_createPasswordCustomer"
-            app:destination="@id/createPasswordCustomer" />
+            android:id="@+id/action_lawyerOtpFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragmentLawyer"
@@ -181,5 +150,17 @@
         <action
             android:id="@+id/action_alertDialogLawyer_to_profileFragmentLawyer"
             app:destination="@id/profileFragmentLawyer" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.karimmammadov.alovekilforpractice.adapters.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_createPasswordCustomer"
+            app:destination="@id/createPasswordCustomer" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_chooseSignUpFragment"
+            app:destination="@id/chooseSignUpFragment" />
     </fragment>
 </navigation>
