@@ -7,10 +7,21 @@
     tools:context=".Lawyer.LawyerRegister1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/RGB_white"
-        android:orientation="vertical"
+        android:id="@+id/constraintlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/RGB_white"
+        android:orientation="vertical">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
@@ -206,13 +217,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:background="@drawable/backgroundgrayboxwords"
                         android:hint="@string/university"
                         android:inputType="textCapWords"
-                        android:background="@drawable/backgroundgrayboxwords"
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -256,9 +267,9 @@
                         android:id="@+id/editPhoneNumberLawyer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Phone Number"
                         android:editable="false"
                         android:focusable="false"
+                        android:hint="Phone Number"
                         android:inputType="none"
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2" />
@@ -307,8 +318,6 @@
 
 
         </ScrollView>
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

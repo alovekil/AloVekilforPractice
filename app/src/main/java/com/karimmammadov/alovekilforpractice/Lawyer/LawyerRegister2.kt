@@ -82,9 +82,12 @@ class LawyerRegister2 : Fragment() {
         val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register2, container, false)
 
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        var editor :SharedPreferences.Editor = sharedPreferences.edit()
         getMyData()
         getMyAreasData()
         val languageTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_languages)
+
+
         languageTextView.setOnClickListener {
             GetManageInstance.removeAllItems()
             val builder: AlertDialog.Builder = AlertDialog.Builder(
@@ -99,6 +102,14 @@ class LawyerRegister2 : Fragment() {
             myCheckBoxItemsAdapter = MyCheckBoxItemsAdapter(requireContext(), lawyerlanguageitems)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.adapter = myCheckBoxItemsAdapter
+
+
+            view.editLegalExperience.text.toString().trim()
+            view.editLawyerExperience.text.toString().trim()
+            view.lawyerVoen.text.toString().trim()
+            view.editPasswordLawyer.text.toString().trim()
+            view.editConfirmPasswordLawyer.text.toString().trim()
+
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_clearAll).setOnClickListener {
                 myCheckBoxItemsAdapter.notifyItemRangeChanged(0, lawyerlanguageitems.size )
                 GetManageInstance.removeAllItems()
@@ -174,6 +185,8 @@ class LawyerRegister2 : Fragment() {
             selectedDiploma(it)
         }
         view.moveBackBtn.setOnClickListener {
+            editor.putBoolean("lawyerBack" , true).apply()
+            editor.commit()
             findNavController().navigate(R.id.action_lawyerRegister2_to_lawyerRegister12)
         }
 
@@ -428,7 +441,8 @@ class LawyerRegister2 : Fragment() {
                             )
                             requireView().certificateImage.setImageBitmap(selectedBitmapCertificate)
                         }
-                        lawyerCertificate.setText(selectedPictureCertificate?.path)
+                        val cervicatePath = selectedPictureCertificate?.path
+                        lawyerCertificate.setText(cervicatePath!!.substring((cervicatePath.length - 8) , cervicatePath.length)+".JPG")
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
@@ -488,7 +502,9 @@ class LawyerRegister2 : Fragment() {
                             )
                             requireView().diplomaImage.setImageBitmap(selectedBitmapDiploma)
                         }
-                        editDiplomaLawyer.setText(selectedPictureDiploma?.path)
+                        val pathImage = selectedPictureDiploma?.path
+                            editDiplomaLawyer.setText(pathImage!!.substring((pathImage.length -8) , pathImage.length)+".JPG")
+
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }

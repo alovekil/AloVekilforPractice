@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_navhost"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/lawyerRegister1">
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.karimmammadov.alovekilforpractice.SplashScreenFragment"
@@ -131,10 +131,6 @@
         <action
             android:id="@+id/action_lawyerRegister1_to_chooseSignUpFragment"
             app:destination="@id/chooseSignUpFragment" />
-        <argument
-            android:name="lawyernumber"
-            app:argType="integer"
-            android:defaultValue="1" />
     </fragment>
     <fragment
         android:id="@+id/lawyerRegister2"

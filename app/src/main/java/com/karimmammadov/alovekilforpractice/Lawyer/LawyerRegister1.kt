@@ -10,8 +10,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
@@ -21,8 +23,10 @@ import java.util.*
 
 
 class LawyerRegister1 : Fragment() {
-
+    private lateinit var viewPager: ViewPager2
     private lateinit var tvDatePicker : TextView
+    var f: LawyerRegister1? = null
+    var layout: ConstraintLayout? = null
     private lateinit var nextBtn : Button
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
@@ -37,9 +41,11 @@ class LawyerRegister1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view  = inflater.inflate(R.layout.fragment_lawyer_register1, container, false)
 
+        // Inflate the layout for this fragment
+         val view  = inflater.inflate(R.layout.fragment_lawyer_register1, container, false)
+        viewPager=view.findViewById(R.id.view_pager)
+            //val pagerAdapter=LawyerRegister1(this)
         sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
@@ -55,6 +61,17 @@ class LawyerRegister1 : Fragment() {
         val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_list_item_1,genders)
         completeText.setAdapter(adapter)
 
+        /////////////////////////////////////////////////////////////////////
+        if(sharedPreferences.getBoolean("lawyerBack" , false)){
+            view?.editlawyerName?.setText(sharedPreferences.getString("userLawyerName" , ""))
+            view?.editlawyerSurname?.setText(sharedPreferences.getString("userLawyerSurname" , ""))
+            view?.editlawyerFatherName?.setText(sharedPreferences.getString("userLawyerFatherName" , ""))
+            view?.dropdown_gender?.setText(sharedPreferences.getString("userLawyerGender" , ""))
+            view?.tvDateofBirth?.setText(sharedPreferences.getString("lawyerDateBirth" , ""))
+            view?.textInputUniversity?.setText(sharedPreferences.getString("lawyerUniversity" , ""))
+            view?.editLawyerEmail?.setText(sharedPreferences.getString("lawyeremail" , ""))
+        }
+//////////////////////////////////////////////////////////////////////////////////
 /*        val completeTextUniversity = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_universtiy)
         val universities = ArrayList<String>()
         universities.add("BMU")
@@ -133,11 +150,28 @@ class LawyerRegister1 : Fragment() {
             editor.putString("lawyerUniversity",lawyerUniversity).apply()
             editor.putString("lawyeremail",lawyerEmail).apply()
             editor.putString("lawyerPhoneNumber",phonelawyer).apply()
+            editor.putBoolean("lawyerBack" , false).apply()
             editor.commit()
 
             if(block ){
-            findNavController().navigate(R.id.action_lawyerRegister1_to_lawyerRegister2)
-        }
+//                val ft: FragmentTransaction = activity?.supportFragmentManager!!.beginTransaction()
+//                ft.setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out)
+//                if(f!!.isHidden){
+//                    ft.show(f!!)
+//                    layout!!.visibility=View.VISIBLE
+//                    nextBtn.setText("HIDE")
+//                }
+//                else{
+//                    ft.hide(f!!)
+//                    layout!!.visibility=View.GONE
+//                    nextBtn.setText("SHOW")
+//
+//                }
+
+
+                findNavController().navigate(R.id.action_lawyerRegister1_to_lawyerRegister2)
+//                ft.commit()
+            }
         }
 
         return view
@@ -200,7 +234,9 @@ class LawyerRegister1 : Fragment() {
         super.onPause()
     }
 
+
  */
+
     private fun updateLable(myCalendar : Calendar){
         val myFormat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myFormat, Locale.UK)
