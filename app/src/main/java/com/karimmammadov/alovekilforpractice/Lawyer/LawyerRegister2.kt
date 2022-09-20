@@ -36,6 +36,7 @@ import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
 import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.models.*
 import kotlinx.android.synthetic.main.fragment_customer_register.view.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register1.view.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
 import retrofit2.*
@@ -54,6 +55,7 @@ class LawyerRegister2 : Fragment() {
     val lawyerLanguages = ArrayList<Int>()
     val lawyerAreas = ArrayList<Int>()
     lateinit var lawyerModels: LawyerModels
+    private lateinit var editor: SharedPreferences.Editor
     private lateinit var profileSharedPreferences: SharedPreferences
     private  var block : Boolean  =true
 
@@ -87,6 +89,7 @@ class LawyerRegister2 : Fragment() {
         var editor :SharedPreferences.Editor = sharedPreferences.edit()
         getMyData()
         getMyAreasData()
+        savelawyerpage2datas()
         val languageTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_languages)
 
 
@@ -181,124 +184,164 @@ class LawyerRegister2 : Fragment() {
         view.editDiplomaLawyer.setOnClickListener {
             selectedDiploma(it)
         }
+        val lawyerlanguages = view.tv_languages.text.toString().trim()
+        val lawyerares = view.tv_areas.text.toString().trim()
+        val lawyervoen = view.lawyerVoen.text.toString().trim()
+        val lawyerlegalexperience = view.editLegalExperience.text.toString().trim()
+        val lawyerexperience = view.editLawyerExperience.text.toString().trim()
+        val lawyerpassword = view.editPasswordLawyer.text.toString().trim()
+        val lawyerconfirmpassword = view.editConfirmPasswordLawyer.text.toString().trim()
+
         view.moveBackBtn.setOnClickListener {
+            if(!lawyerlanguages.isEmpty()) {
+                editor.putString("lawyerlanguages", lawyerlanguages).apply()
+                editor.commit()
+            }
+            if(lawyerares.isEmpty()){
+                editor.putString("servicesareas", tv_areas.toString()).apply()
+            }
+            if(lawyervoen.isEmpty()){
+                editor.putString("lawyerVoen",lawyerVoen.toString()).apply()
+            }
+            if(lawyerexperience.isEmpty()){
+                editor.putString("lawyerexperince",editLegalExperience.toString()).apply()
+            }
+            if(lawyerlegalexperience.isEmpty()){
+                editor.putString("lawyerlegalexperince",editLegalExperience.toString()).apply()
+            }
+            if(lawyerpassword.isEmpty()){
+                editor.putString("lawyerpassword",editLegalExperience.toString()).apply()
+            }
+            if(lawyerconfirmpassword.isEmpty()){
+                editor.putString("lawyerconfirmpassword",editLegalExperience.toString()).apply()
+            }
             editor.putBoolean("lawyerBack" , true).apply()
             editor.commit()
             viewPager?.currentItem = -1
         }
 
         view.saveButton.setOnClickListener {
-
-            block = true
-            val lglexperience = view.editLegalExperience.text.toString().trim()
-            val lawyerExperience = view.editLawyerExperience.text.toString().trim()
-            val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
-            val lawyerfirstPassword = view.editPasswordLawyer.text.toString().trim()
-            val lawyerconfrimPassword = view.editConfirmPasswordLawyer.text.toString().trim()
-
-
-            if (lglexperience.isEmpty()){
-                editLegalExperience.error = "Legal Experience required"
-                editLegalExperience.requestFocus()
-                block = false
-            }
-            if (lawyerExperience.isEmpty()){
-                editLawyerExperience.error = "Lawyer Experience required"
-                editLawyerExperience.requestFocus()
-                block = false
-            }
-            if (lawyerTaxVoen.isEmpty()){
-                lawyerVoen.error = "Voen required"
-                lawyerVoen.requestFocus()
-                block = false
-            }
-            if (lawyerfirstPassword.isEmpty()){
-                editPasswordLawyer.error = "Password required"
-                editPasswordLawyer.requestFocus()
-                block = false
-            }
-            if (lawyerconfrimPassword.isEmpty()){
-                editConfirmPasswordLawyer.error = "Confirm Password required"
-                editConfirmPasswordLawyer.requestFocus()
-                block = false
-            }
+            if (view.tv_languages.text.toString().equals("") ||
+                view.tv_areas.text.toString().equals("")||
+                view.lawyerVoen.text.toString().equals("")||
+                view.editLegalExperience.text.toString().equals("")||
+                view.editLawyerExperience.text.toString().equals("")||
+                view.editPasswordLawyer.text.toString().equals("")||
+                view.editConfirmPasswordLawyer.text.toString().equals("")
+            ){
+                Toast.makeText(requireContext(), "Please,Enter full information", Toast.LENGTH_LONG).show()
+            }else{
+                block = true
+                val lglexperience = view.editLegalExperience.text.toString().trim()
+                val lawyerExperience = view.editLawyerExperience.text.toString().trim()
+                val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
+                val lawyerfirstPassword = view.editPasswordLawyer.text.toString().trim()
+                val lawyerconfrimPassword = view.editConfirmPasswordLawyer.text.toString().trim()
 
 
+                if (lglexperience.isEmpty()){
+                    editLegalExperience.error = "Legal Experience required"
+                    editLegalExperience.requestFocus()
+                    block = false
+                }
+                if (lawyerExperience.isEmpty()){
+                    editLawyerExperience.error = "Lawyer Experience required"
+                    editLawyerExperience.requestFocus()
+                    block = false
+                }
+                if (lawyerTaxVoen.isEmpty()){
+                    lawyerVoen.error = "Voen required"
+                    lawyerVoen.requestFocus()
+                    block = false
+                }
+                if (lawyerfirstPassword.isEmpty()){
+                    editPasswordLawyer.error = "Password required"
+                    editPasswordLawyer.requestFocus()
+                    block = false
+                }
+                if (lawyerconfrimPassword.isEmpty()){
+                    editConfirmPasswordLawyer.error = "Confirm Password required"
+                    editConfirmPasswordLawyer.requestFocus()
+                    block = false
+                }
 
-            view.certificateImage.invalidate()
-            var bitmapC = view.certificateImage.getDrawable().toBitmap()
-            val streamC = ByteArrayOutputStream()
-            bitmapC.compress(Bitmap.CompressFormat.JPEG, 100, streamC)
-            val byteArrayC = streamC.toByteArray()
-            val encodedStringC = Base64.encodeToString(byteArrayC, Base64.DEFAULT)
-            println(encodedStringC)
-
-            view.diplomaImage.invalidate()
-            var bitmapD = view.diplomaImage.getDrawable().toBitmap()
-            val streamD = ByteArrayOutputStream()
-            bitmapD.compress(Bitmap.CompressFormat.JPEG, 100, streamD)
-            val byteArrayD = streamD.toByteArray()
-            val encodedStringD = Base64.encodeToString(byteArrayD, Base64.DEFAULT)
-            println(encodedStringD)
-
-            val listCertificate = ArrayList<String>()
-            listCertificate.add(encodedStringC)
-
-            var diploma = encodedStringD
 
 
-            val birth_date = sharedPreferences.getString("lawyerDateBirth","null")!!
-            val certificate = listCertificate
-            val father_name = sharedPreferences.getString("userLawyerFatherName","null")!!
-            val gender = sharedPreferences.getString("userLawyerGender","null")!!
-            val law_practice = lglexperience
-            val lawyer_practice = lawyerExperience
-            val lawyer_card = diploma
-            val service_languages = lawyerLanguages
-            val service_types = lawyerAreas
-            val university = sharedPreferences.getString("lawyerUniversity","null")!!
-            val voen = lawyerTaxVoen
+                view.certificateImage.invalidate()
+                var bitmapC = view.certificateImage.getDrawable().toBitmap()
+                val streamC = ByteArrayOutputStream()
+                bitmapC.compress(Bitmap.CompressFormat.JPEG, 100, streamC)
+                val byteArrayC = streamC.toByteArray()
+                val encodedStringC = Base64.encodeToString(byteArrayC, Base64.DEFAULT)
+                println(encodedStringC)
 
-            lawyer = Lawyer(birth_date, certificate, father_name, gender, law_practice, lawyer_card,
-                lawyer_practice, service_languages, service_types, university, voen)
+                view.diplomaImage.invalidate()
+                var bitmapD = view.diplomaImage.getDrawable().toBitmap()
+                val streamD = ByteArrayOutputStream()
+                bitmapD.compress(Bitmap.CompressFormat.JPEG, 100, streamD)
+                val byteArrayD = streamD.toByteArray()
+                val encodedStringD = Base64.encodeToString(byteArrayD, Base64.DEFAULT)
+                println(encodedStringD)
 
-            val  lawyerModels_lawyer = lawyer
+                val listCertificate = ArrayList<String>()
+                listCertificate.add(encodedStringC)
 
-            val emailLawyer = sharedPreferences.getString("lawyeremail","null")!!
-            val first_name = sharedPreferences.getString("userLawyerName","null")!!
-            val last_name = sharedPreferences.getString("userLawyerSurname","null")!!
-            val phone =sharedPreferences.getString("lawyerPhoneNumber","null")!!
-            val password = lawyerfirstPassword
-            val password2 = lawyerconfrimPassword
+                var diploma = encodedStringD
 
-            lawyerModels = LawyerModels(emailLawyer,first_name,last_name,lawyerModels_lawyer,password,password2,phone)
 
-            RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object :
-                Callback<DefaultResponse> {
-                override fun onResponse(
-                    call: Call<DefaultResponse>,
-                    response: Response<DefaultResponse>
-                ) {
-                    println(response.message() + "Success")
-                    if(response.body()?.response.equals("successfully regitered a new user.")){
-                        val myresponse : String = response.body()?.response.toString()
-                        Toast.makeText(requireContext(),"successfully regitered a new user.", Toast.LENGTH_SHORT).show()
-                       // val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
-                       // startActivity(intent)
-                        if(block ){
-                            findNavController().navigate(R.id.action_viewPagerFragment_to_createPasswordCustomer)
+                val birth_date = sharedPreferences.getString("lawyerDateBirth","null")!!
+                val certificate = listCertificate
+                val father_name = sharedPreferences.getString("userLawyerFatherName","null")!!
+                val gender = sharedPreferences.getString("userLawyerGender","null")!!
+                val law_practice = lglexperience
+                val lawyer_practice = lawyerExperience
+                val lawyer_card = diploma
+                val service_languages = lawyerLanguages
+                val service_types = lawyerAreas
+                val university = sharedPreferences.getString("lawyerUniversity","null")!!
+                val voen = lawyerTaxVoen
+
+                lawyer = Lawyer(birth_date, certificate, father_name, gender, law_practice, lawyer_card,
+                    lawyer_practice, service_languages, service_types, university, voen)
+
+                val  lawyerModels_lawyer = lawyer
+
+                val emailLawyer = sharedPreferences.getString("lawyeremail","null")!!
+                val first_name = sharedPreferences.getString("userLawyerName","null")!!
+                val last_name = sharedPreferences.getString("userLawyerSurname","null")!!
+                val phone =sharedPreferences.getString("lawyerPhoneNumber","null")!!
+                val password = lawyerfirstPassword
+                val password2 = lawyerconfrimPassword
+
+                lawyerModels = LawyerModels(emailLawyer,first_name,last_name,lawyerModels_lawyer,password,password2,phone)
+
+                RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object :
+                    Callback<DefaultResponse> {
+                    override fun onResponse(
+                        call: Call<DefaultResponse>,
+                        response: Response<DefaultResponse>
+                    ) {
+                        println(response.message() + "Success")
+                        if(response.body()?.response.equals("successfully regitered a new user.")){
+                            val myresponse : String = response.body()?.response.toString()
+                            Toast.makeText(requireContext(),"successfully regitered a new user.", Toast.LENGTH_SHORT).show()
+                            // val intent = Intent(context!!.applicationContext, CreatePasswordActivity::class.java)
+                            // startActivity(intent)
+                            if(block ){
+                                findNavController().navigate(R.id.action_viewPagerFragment_to_createPasswordCustomer)
+                            }
                         }
+
                     }
 
-                }
-
-                override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                    val myString : String = t.message.toString()
-                    Toast.makeText(requireContext(),myString, Toast.LENGTH_LONG).show()
-                }
+                    override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                        val myString : String = t.message.toString()
+                        Toast.makeText(requireContext(),myString, Toast.LENGTH_LONG).show()
+                    }
 
 
-            })
+                })
+            }
 
 
             /*
@@ -348,6 +391,21 @@ class LawyerRegister2 : Fragment() {
 
 
 
+private fun savelawyerpage2datas(){
+    println("LC LOG: "+sharedPreferences.getString("lawyerlanguages",""))
+
+        view?.lawyerCertificate?.setText(sharedPreferences.getString("lawyercertificateimage",""))
+        view?.tv_languages?.setText(sharedPreferences.getString("lawyerlanguages",""))
+        view?.tv_areas?.setText(sharedPreferences.getString("servicesareas",""))
+        view?.lawyerVoen?.setText(sharedPreferences.getString("lawyerVoen",""))
+        view?.editLegalExperience?.setText(sharedPreferences.getString("lawyerlegalexperince",""))
+        view?.editDiplomaLawyer?.setText(sharedPreferences.getString("lawyercertificateimage",""))
+        view?.editLegalExperience?.setText(sharedPreferences.getString("lawyerexperince",""))
+        view?.editPasswordLawyer?.setText(sharedPreferences.getString("lawyerpassword",""))
+        view?.editConfirmPasswordLawyer?.setText(sharedPreferences.getString("lawyerconfirmpassword",""))
+
+
+}
     private fun getMyData(){
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())

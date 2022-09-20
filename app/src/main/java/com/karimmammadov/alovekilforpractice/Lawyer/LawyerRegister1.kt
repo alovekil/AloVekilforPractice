@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -18,6 +19,7 @@ import com.google.android.material.textfield.MaterialAutoCompleteTextView
 import com.karimmammadov.alovekilforpractice.R
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register1.view.*
+import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -99,61 +101,73 @@ class LawyerRegister1 : Fragment() {
         val phoneNumberForLawyer = view.findViewById<TextView>(R.id.editPhoneNumberLawyer)
         phoneNumberForLawyer.text = sharedPreferences.getString("lwynumber","+99455123456")
         view.nextBtn.setOnClickListener {
-            block = true
-            val userlawyerName = view.editlawyerName.text.toString().trim()
-            val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
-            val userlawyerFatherName = view.editlawyerFatherName.text.toString().trim()
-            val lawyergender = view.dropdown_gender.text.toString().trim()
-            val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
-            val lawyerUniversity = view.textInputUniversity.text.toString().trim()
-            val lawyerEmail = view.editLawyerEmail.text.toString().trim()
+            if(view.editlawyerName.text.toString().equals("") ||
+                view.editlawyerSurname.text.toString().equals("")||
+                view.editlawyerFatherName.text.toString().equals("")||
+                view.dropdown_gender.text.toString().equals("")||
+                view.tvDateofBirth.text.toString().equals("")||
+                view.textInputUniversity.text.toString().equals("")||
+                view.editLawyerEmail.text.toString().equals("")
 
-            val phonelawyer =sharedPreferences.getString("lwynumber","+99455123456").toString()
+            ){
+                Toast.makeText(requireContext(), "Please,Enter full information", Toast.LENGTH_LONG).show()
 
-            if (userlawyerName.isEmpty()){
-                editlawyerName.error = "Name required"
-                editlawyerName.requestFocus()
-                block = false
-            }
-            if (lawyerUniversity.isEmpty()){
-                textInputUniversity.error = "University required"
-                textInputUniversity.requestFocus()
-                block = false
-            }
-            if (userlawyerSurname.isEmpty()){
-                editlawyerSurname.error = "Surname required"
-                editlawyerSurname.requestFocus()
-                block = false
-            }
-            if (userlawyerFatherName.isEmpty()){
-                editlawyerFatherName.error = "Father name required"
-                editlawyerFatherName.requestFocus()
-                block = false
-            }
-            if (lawyerEmail.isEmpty()){
-                editLawyerEmail.error = "Email required"
-                editLawyerEmail.requestFocus()
-                block = false
-            }
-            if (phonelawyer.isEmpty()){
-                editPhoneNumberLawyer.error = "Phone required"
-                editPhoneNumberLawyer.requestFocus()
-                block = false
-            }
+            }else{
+                block = true
+                val userlawyerName = view.editlawyerName.text.toString().trim()
+                val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
+                val userlawyerFatherName = view.editlawyerFatherName.text.toString().trim()
+                val lawyergender = view.dropdown_gender.text.toString().trim()
+                val lawyerdatebirth = view.tvDateofBirth.text.toString().trim()
+                val lawyerUniversity = view.textInputUniversity.text.toString().trim()
+                val lawyerEmail = view.editLawyerEmail.text.toString().trim()
+
+                val phonelawyer =sharedPreferences.getString("lwynumber","+99455123456").toString()
+
+                if (userlawyerName.isEmpty()){
+                    editlawyerName.error = "Name required"
+                    editlawyerName.requestFocus()
+                    block = false
+                }
+                if (lawyerUniversity.isEmpty()){
+                    textInputUniversity.error = "University required"
+                    textInputUniversity.requestFocus()
+                    block = false
+                }
+                if (userlawyerSurname.isEmpty()){
+                    editlawyerSurname.error = "Surname required"
+                    editlawyerSurname.requestFocus()
+                    block = false
+                }
+                if (userlawyerFatherName.isEmpty()){
+                    editlawyerFatherName.error = "Father name required"
+                    editlawyerFatherName.requestFocus()
+                    block = false
+                }
+                if (lawyerEmail.isEmpty()){
+                    editLawyerEmail.error = "Email required"
+                    editLawyerEmail.requestFocus()
+                    block = false
+                }
+                if (phonelawyer.isEmpty()){
+                    editPhoneNumberLawyer.error = "Phone required"
+                    editPhoneNumberLawyer.requestFocus()
+                    block = false
+                }
 
 
-            editor.putString("userLawyerName",userlawyerName).apply()
-            editor.putString("userLawyerSurname",userlawyerSurname).apply()
-            editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
-            editor.putString("userLawyerGender",lawyergender).apply()
-            editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
-            editor.putString("lawyerUniversity",lawyerUniversity).apply()
-            editor.putString("lawyeremail",lawyerEmail).apply()
-            editor.putString("lawyerPhoneNumber",phonelawyer).apply()
-            editor.putBoolean("lawyerBack" , false).apply()
-            editor.commit()
+                editor.putString("userLawyerName",userlawyerName).apply()
+                editor.putString("userLawyerSurname",userlawyerSurname).apply()
+                editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
+                editor.putString("userLawyerGender",lawyergender).apply()
+                editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
+                editor.putString("lawyerUniversity",lawyerUniversity).apply()
+                editor.putString("lawyeremail",lawyerEmail).apply()
+                editor.putString("lawyerPhoneNumber",phonelawyer).apply()
+                editor.putBoolean("lawyerBack" , false).apply()
+                editor.commit()
 
-            if(block ){
+                if(block ){
 //                val ft: FragmentTransaction = activity?.supportFragmentManager!!.beginTransaction()
 //                ft.setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out)
 //                if(f!!.isHidden){
@@ -169,7 +183,10 @@ class LawyerRegister1 : Fragment() {
 //                }
 
 
-                viewPager?.currentItem = 1
+                    viewPager?.currentItem = 1
+            }
+
+
 //                ft.commit()
             }
         }
