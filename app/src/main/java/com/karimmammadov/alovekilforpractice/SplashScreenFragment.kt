@@ -25,7 +25,7 @@ class SplashScreenFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_splash_screen, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
         val countDownTimer = object : CountDownTimer(3000, 1000) {

@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.api
+package com.karimmammadov.alovekilforpractice.api.forlawyer
 
 import android.util.Base64
 import okhttp3.OkHttpClient

@@ -172,7 +172,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Voen"
-                        android:inputType="textPersonName"
+                        android:inputType="number"
                         android:textColor="@color/RGB_black"
                         android:textColorHint="@color/RGB_Gray2" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -265,7 +265,7 @@
                     app:boxStrokeWidth="0dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/editPasswordLawyer"
+                        android:id="@+id/editPasswordLogin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Password"

@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.api
+package com.karimmammadov.alovekilforpractice.api.forcustomer
 
 import com.karimmammadov.alovekilforpractice.models.CustomerModels
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse

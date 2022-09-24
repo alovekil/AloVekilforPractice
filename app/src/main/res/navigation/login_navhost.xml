@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_signInUpFragment_to_chooseSignUpFragment"
             app:destination="@id/chooseSignUpFragment" />
+        <action
+            android:id="@+id/action_signInUpFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
     </fragment>
     <fragment
         android:id="@+id/chooseSignUpFragment"
@@ -96,11 +99,8 @@
             android:id="@+id/action_createPasswordCustomer_to_alertDialogLawyer"
             app:destination="@id/alertDialogLawyer" />
         <action
-            android:id="@+id/action_createPasswordCustomer_to_customerRegisterFragment"
-            app:destination="@id/customerRegisterFragment" />
-        <action
-            android:id="@+id/action_createPasswordCustomer_to_alertDialogLawyer2"
-            app:destination="@id/alertDialogLawyer" />
+            android:id="@+id/action_createPasswordCustomer_to_profileFragmentCustomer"
+            app:destination="@id/profileFragmentCustomer" />
     </fragment>
     <fragment
         android:id="@+id/profileFragmentCustomer"
@@ -162,5 +162,28 @@
         <action
             android:id="@+id/action_viewPagerFragment_to_chooseSignUpFragment"
             app:destination="@id/chooseSignUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.karimmammadov.alovekilforpractice.SignIn.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_createPasswordCustomer"
+            app:destination="@id/createPasswordCustomer" />
+        <action
+            android:id="@+id/action_signInFragment_to_forgetThePasswordFragment"
+            app:destination="@id/forgetThePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetThePasswordFragment"
+        android:name="com.karimmammadov.alovekilforpractice.SignIn.ForgetThePasswordFragment"
+        android:label="fragment_forget_the_password"
+        tools:layout="@layout/fragment_forget_the_password" >
+        <action
+            android:id="@+id/action_forgetThePasswordFragment_to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/forgetThePasswordFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

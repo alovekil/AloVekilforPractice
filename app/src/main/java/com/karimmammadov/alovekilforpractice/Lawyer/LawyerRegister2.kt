@@ -32,11 +32,9 @@ import com.google.android.material.snackbar.Snackbar
 import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxAreasAdapter
 import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
-import com.karimmammadov.alovekilforpractice.api.ApiForLawyer
-import com.karimmammadov.alovekilforpractice.api.RetrofitClientForLawyer
+import com.karimmammadov.alovekilforpractice.api.forlawyer.ApiForLawyer
+import com.karimmammadov.alovekilforpractice.api.forlawyer.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.models.*
-import kotlinx.android.synthetic.main.fragment_customer_register.view.*
-import kotlinx.android.synthetic.main.fragment_lawyer_register1.view.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
 import retrofit2.*
@@ -55,8 +53,7 @@ class LawyerRegister2 : Fragment() {
     val lawyerLanguages = ArrayList<Int>()
     val lawyerAreas = ArrayList<Int>()
     lateinit var lawyerModels: LawyerModels
-    private lateinit var editor: SharedPreferences.Editor
-    private lateinit var profileSharedPreferences: SharedPreferences
+     lateinit var editor: SharedPreferences.Editor
     private  var block : Boolean  =true
 
     //Image
@@ -71,8 +68,16 @@ class LawyerRegister2 : Fragment() {
     private lateinit var activityResultLauncherDiploma: ActivityResultLauncher<Intent>
     private lateinit var permissionLauncherDiploma: ActivityResultLauncher<String>
 
-    val lawyerlanguageitems = ArrayList<LawyerLanguageItems>()
-    val lawyerareastype = ArrayList<LawyerAreaTypes>()
+ val lawyerlanguageitems = ArrayList<LawyerLanguageItems>()
+  val  lawyerareastype = ArrayList<LawyerAreaTypes>()
+   lateinit var  lawyerlanguages:String
+   lateinit var  lawyerares :String
+   lateinit var  lawyervoen :String
+   lateinit var  lawyerlegalexperience :String
+   lateinit var lawyerexperience :String
+   lateinit var  lawyerpassword :String
+    lateinit var lawyerconfirmpassword :String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,11 +90,24 @@ class LawyerRegister2 : Fragment() {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(com.karimmammadov.alovekilforpractice.R.layout.fragment_lawyer_register2, container, false)
         viewPager= activity?.findViewById<ViewPager2>(R.id.viewPager)!!
-        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
-        var editor :SharedPreferences.Editor = sharedPreferences.edit()
+        sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
+        editor = sharedPreferences.edit()
         getMyData()
         getMyAreasData()
-        savelawyerpage2datas()
+
+        /////////////////////////
+        view?.lawyerCertificate?.setText(sharedPreferences.getString("lawyercertificateimage",""))
+        view?.tv_languages?.setText(sharedPreferences.getString("lawyerlanguages",""))
+        view?.tv_areas?.setText(sharedPreferences.getString("servicesareas",""))
+        view?.lawyerVoen?.setText(sharedPreferences.getString("lawyerVoen",""))
+        view?.editLegalExperience?.setText(sharedPreferences.getString("lawyerlegalexperince",""))
+        view?.editDiplomaLawyer?.setText(sharedPreferences.getString("lawyercertificateimage",""))
+        view?.editLegalExperience?.setText(sharedPreferences.getString("lawyerexperince",""))
+        view?.editPasswordLogin?.setText(sharedPreferences.getString("lawyerpassword",""))
+        view?.editConfirmPasswordLawyer?.setText(sharedPreferences.getString("lawyerconfirmpassword",""))
+        //////////////////////////////////
+
+
         val languageTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_languages)
 
 
@@ -184,39 +202,33 @@ class LawyerRegister2 : Fragment() {
         view.editDiplomaLawyer.setOnClickListener {
             selectedDiploma(it)
         }
-        val lawyerlanguages = view.tv_languages.text.toString().trim()
-        val lawyerares = view.tv_areas.text.toString().trim()
-        val lawyervoen = view.lawyerVoen.text.toString().trim()
-        val lawyerlegalexperience = view.editLegalExperience.text.toString().trim()
-        val lawyerexperience = view.editLawyerExperience.text.toString().trim()
-        val lawyerpassword = view.editPasswordLawyer.text.toString().trim()
-        val lawyerconfirmpassword = view.editConfirmPasswordLawyer.text.toString().trim()
+
 
         view.moveBackBtn.setOnClickListener {
-            if(!lawyerlanguages.isEmpty()) {
-                editor.putString("lawyerlanguages", lawyerlanguages).apply()
-                editor.commit()
-            }
-            if(lawyerares.isEmpty()){
-                editor.putString("servicesareas", tv_areas.toString()).apply()
-            }
-            if(lawyervoen.isEmpty()){
-                editor.putString("lawyerVoen",lawyerVoen.toString()).apply()
-            }
-            if(lawyerexperience.isEmpty()){
-                editor.putString("lawyerexperince",editLegalExperience.toString()).apply()
-            }
-            if(lawyerlegalexperience.isEmpty()){
-                editor.putString("lawyerlegalexperince",editLegalExperience.toString()).apply()
-            }
-            if(lawyerpassword.isEmpty()){
-                editor.putString("lawyerpassword",editLegalExperience.toString()).apply()
-            }
-            if(lawyerconfirmpassword.isEmpty()){
-                editor.putString("lawyerconfirmpassword",editLegalExperience.toString()).apply()
-            }
-            editor.putBoolean("lawyerBack" , true).apply()
-            editor.commit()
+//            if(!lawyerlanguages.isEmpty()) {
+//                editor.putString("lawyerlanguages", lawyerlanguages).apply()
+//                editor.commit()
+//            }
+//            if(lawyerares.isEmpty()){
+//                editor.putString("servicesareas", tv_areas.toString()).apply()
+//            }
+//            if(lawyervoen.isEmpty()){
+//                editor.putString("lawyerVoen",lawyerVoen.toString()).apply()
+//            }
+//            if(lawyerexperience.isEmpty()){
+//                editor.putString("lawyerexperince",editLegalExperience.toString()).apply()
+//            }
+//            if(lawyerlegalexperience.isEmpty()){
+//                editor.putString("lawyerlegalexperince",editLegalExperience.toString()).apply()
+//            }
+//            if(lawyerpassword.isEmpty()){
+//                editor.putString("lawyerpassword",editLegalExperience.toString()).apply()
+//            }
+//            if(lawyerconfirmpassword.isEmpty()){
+//                editor.putString("lawyerconfirmpassword",editLegalExperience.toString()).apply()
+//            }
+//
+//            editor.commit()
             viewPager?.currentItem = -1
         }
 
@@ -226,7 +238,7 @@ class LawyerRegister2 : Fragment() {
                 view.lawyerVoen.text.toString().equals("")||
                 view.editLegalExperience.text.toString().equals("")||
                 view.editLawyerExperience.text.toString().equals("")||
-                view.editPasswordLawyer.text.toString().equals("")||
+                view.editPasswordLogin.text.toString().equals("")||
                 view.editConfirmPasswordLawyer.text.toString().equals("")
             ){
                 Toast.makeText(requireContext(), "Please,Enter full information", Toast.LENGTH_LONG).show()
@@ -235,7 +247,7 @@ class LawyerRegister2 : Fragment() {
                 val lglexperience = view.editLegalExperience.text.toString().trim()
                 val lawyerExperience = view.editLawyerExperience.text.toString().trim()
                 val lawyerTaxVoen = view.lawyerVoen.text.toString().trim()
-                val lawyerfirstPassword = view.editPasswordLawyer.text.toString().trim()
+                val lawyerfirstPassword = view.editPasswordLogin.text.toString().trim()
                 val lawyerconfrimPassword = view.editConfirmPasswordLawyer.text.toString().trim()
 
 
@@ -255,8 +267,8 @@ class LawyerRegister2 : Fragment() {
                     block = false
                 }
                 if (lawyerfirstPassword.isEmpty()){
-                    editPasswordLawyer.error = "Password required"
-                    editPasswordLawyer.requestFocus()
+                    editPasswordLogin.error = "Password required"
+                    editPasswordLogin.requestFocus()
                     block = false
                 }
                 if (lawyerconfrimPassword.isEmpty()){
@@ -394,15 +406,7 @@ class LawyerRegister2 : Fragment() {
 private fun savelawyerpage2datas(){
     println("LC LOG: "+sharedPreferences.getString("lawyerlanguages",""))
 
-        view?.lawyerCertificate?.setText(sharedPreferences.getString("lawyercertificateimage",""))
-        view?.tv_languages?.setText(sharedPreferences.getString("lawyerlanguages",""))
-        view?.tv_areas?.setText(sharedPreferences.getString("servicesareas",""))
-        view?.lawyerVoen?.setText(sharedPreferences.getString("lawyerVoen",""))
-        view?.editLegalExperience?.setText(sharedPreferences.getString("lawyerlegalexperince",""))
-        view?.editDiplomaLawyer?.setText(sharedPreferences.getString("lawyercertificateimage",""))
-        view?.editLegalExperience?.setText(sharedPreferences.getString("lawyerexperince",""))
-        view?.editPasswordLawyer?.setText(sharedPreferences.getString("lawyerpassword",""))
-        view?.editConfirmPasswordLawyer?.setText(sharedPreferences.getString("lawyerconfirmpassword",""))
+
 
 
 }
@@ -584,4 +588,66 @@ private fun savelawyerpage2datas(){
     }
 
 
+
+    override fun onPause() {
+
+        getTextvalues()
+//
+//        view?.lawyerCertificate?.setText(sharedPreferences.getString("lawyercertificateimage",""))
+//        view?.tv_languages?.setText(sharedPreferences.getString("lawyerlanguages",""))
+//        view?.tv_areas?.setText(sharedPreferences.getString("servicesareas",""))
+//        view?.lawyerVoen?.setText(sharedPreferences.getString("lawyerVoen",""))
+//        view?.editLegalExperience?.setText(sharedPreferences.getString("lawyerlegalexperince",""))
+//        view?.editDiplomaLawyer?.setText(sharedPreferences.getString("lawyercertificateimage",""))
+//        view?.editLegalExperience?.setText(sharedPreferences.getString("lawyerexperince",""))
+//        view?.editPasswordLawyer?.setText(sharedPreferences.getString("lawyerpassword",""))
+//        view?.editConfirmPasswordLawyer?.setText(sharedPreferences.getString("lawyerconfirmpassword",""))
+
+//        editor.putString("lawyercertificateimage",cer).apply()
+//        editor.putString("lawyercerdiplomaimage",dipl).apply()
+
+//        editor.commit()
+
+        super.onPause()
+    }
+
+    fun getTextvalues(){
+
+        if(!tv_languages.text?.isEmpty()!!) {
+            lawyerlanguages = view?.tv_languages?.text.toString().trim()
+            editor.putString("lawyerlanguages",lawyerlanguages).apply()
+        }
+        if(!tv_areas.text?.isEmpty()!!) {
+            lawyerares = view?.tv_areas?.text.toString().trim()
+
+        }
+        if(!lawyerVoen.text?.isEmpty()!!) {
+            lawyervoen = view?.lawyerVoen?.text.toString().trim()
+            editor.putString("lawyerVoen",lawyervoen).apply()
+        }
+        if(!editLegalExperience.text?.isEmpty()!!) {
+            lawyerlegalexperience = view?.editLegalExperience?.text.toString().trim()
+            editor.putString("lawyerlegalexperince",lawyerlegalexperience).apply()
+        }
+        if(!editLawyerExperience.text?.isEmpty()!!) {
+            lawyerexperience = view?.editLawyerExperience?.text.toString().trim()
+            editor.putString("lawyerexperince",lawyerexperience).apply()
+        }
+        if(!editPasswordLogin.text?.isEmpty()!!) {
+            lawyerpassword = view?.editPasswordLogin?.text.toString().trim()
+            editor.putString("lawyerpassword",lawyerpassword).apply()
+        }
+        if(!editConfirmPasswordLawyer.text?.isEmpty()!!) {
+            lawyerconfirmpassword = view?.editConfirmPasswordLawyer?.text.toString().trim()
+            editor.putString("lawyerconfirmpassword",lawyerconfirmpassword).apply()
+        }
+        editor.commit()
+
+//        editor.putString("servicesareas",are).apply()
+
+
+/////////  isleyir avi hersey
+
+
+    }
 }

@@ -31,7 +31,7 @@ class CreatePasswordFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_create_password_customer, container, false)
 
         view.EnterConfirmPassword.visibility = View.GONE
-        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
         radioList1.add(view.circle1)
         radioList1.add(view.circle2)
@@ -113,9 +113,9 @@ private fun checkpaswordequal() {
             editor.putString("password", password1)
             editor.putBoolean("create_password", true)
             editor.commit()
-            val islawyer = sharedPreferences.getBoolean("isLawyer",false)
-            if(islawyer){
-                findNavController().navigate(R.id.action_createPasswordCustomer_to_alertDialogLawyer)
+            val islawyer = sharedPreferences.getString("usertype","")
+            if(islawyer!!.equals("customer")){
+                findNavController().navigate(R.id.action_createPasswordCustomer_to_profileFragmentCustomer)
             }else{
                 findNavController().navigate(R.id.action_createPasswordCustomer_to_alertDialogLawyer)
             }

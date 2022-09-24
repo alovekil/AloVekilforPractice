@@ -48,7 +48,7 @@ class LawyerRegister1 : Fragment() {
          val view  = inflater.inflate(R.layout.fragment_lawyer_register1, container, false)
         viewPager= activity?.findViewById<ViewPager2>(R.id.viewPager)!!
             //val pagerAdapter=LawyerRegister1(this)
-        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
         // val phoneNumberForLawyer = sharedPreferences.getString("lawyerPhoneNumber","+994....")
@@ -64,7 +64,7 @@ class LawyerRegister1 : Fragment() {
         completeText.setAdapter(adapter)
 
         /////////////////////////////////////////////////////////////////////
-        if(sharedPreferences.getBoolean("lawyerBack" , false)){
+//        if(sharedPreferences.getBoolean("lawyerBack" , false)){
             view?.editlawyerName?.setText(sharedPreferences.getString("userLawyerName" , ""))
             view?.editlawyerSurname?.setText(sharedPreferences.getString("userLawyerSurname" , ""))
             view?.editlawyerFatherName?.setText(sharedPreferences.getString("userLawyerFatherName" , ""))
@@ -72,7 +72,7 @@ class LawyerRegister1 : Fragment() {
             view?.tvDateofBirth?.setText(sharedPreferences.getString("lawyerDateBirth" , ""))
             view?.textInputUniversity?.setText(sharedPreferences.getString("lawyerUniversity" , ""))
             view?.editLawyerEmail?.setText(sharedPreferences.getString("lawyeremail" , ""))
-        }
+//        }
 //////////////////////////////////////////////////////////////////////////////////
 /*        val completeTextUniversity = view.findViewById<MaterialAutoCompleteTextView>(R.id.dropdown_universtiy)
         val universities = ArrayList<String>()
@@ -155,17 +155,17 @@ class LawyerRegister1 : Fragment() {
                     block = false
                 }
 
-
-                editor.putString("userLawyerName",userlawyerName).apply()
-                editor.putString("userLawyerSurname",userlawyerSurname).apply()
-                editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
-                editor.putString("userLawyerGender",lawyergender).apply()
-                editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
-                editor.putString("lawyerUniversity",lawyerUniversity).apply()
-                editor.putString("lawyeremail",lawyerEmail).apply()
-                editor.putString("lawyerPhoneNumber",phonelawyer).apply()
-                editor.putBoolean("lawyerBack" , false).apply()
-                editor.commit()
+//
+//                editor.putString("userLawyerName",userlawyerName).apply()
+//                editor.putString("userLawyerSurname",userlawyerSurname).apply()
+//                editor.putString("userLawyerFatherName",userlawyerFatherName).apply()
+//                editor.putString("userLawyerGender",lawyergender).apply()
+//                editor.putString("lawyerDateBirth",lawyerdatebirth).apply()
+//                editor.putString("lawyerUniversity",lawyerUniversity).apply()
+//                editor.putString("lawyeremail",lawyerEmail).apply()
+//                editor.putString("lawyerPhoneNumber",phonelawyer).apply()
+//                editor.putBoolean("lawyerBack" , false).apply()
+//                editor.commit()
 
                 if(block ){
 //                val ft: FragmentTransaction = activity?.supportFragmentManager!!.beginTransaction()
@@ -254,6 +254,7 @@ class LawyerRegister1 : Fragment() {
         editor.putString("lawyerUniversity",lawyerUniversity).apply()
         editor.putString("lawyeremail",lawyerEmail).apply()
         editor.putString("lawyerPhoneNumber",phoneNumberForLawyer).apply()
+        editor.putBoolean("lawyerBack" , false).apply()
         editor.commit()
 
         super.onPause()

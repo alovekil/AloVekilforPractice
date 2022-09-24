@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.api
+package com.karimmammadov.alovekilforpractice.api.forlawyer
 
 import com.karimmammadov.alovekilforpractice.models.*
 import retrofit2.Call

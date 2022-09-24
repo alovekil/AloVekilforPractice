@@ -51,7 +51,7 @@ class LawyerOtpFragment : Fragment() {
     ): View? {
         val view =inflater.inflate(R.layout.fragment_lawyer_otp, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
         view.back_signuplawyer.setOnClickListener {

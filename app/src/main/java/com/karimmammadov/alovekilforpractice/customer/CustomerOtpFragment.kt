@@ -13,7 +13,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -48,7 +47,7 @@ class CustomerOtpFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_customer_otp, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
         view.back_signupcustomer.setOnClickListener {
@@ -59,7 +58,7 @@ class CustomerOtpFragment : Fragment() {
         view.tv_numberCustomerHighlight.visibility = View.VISIBLE
         view.tv_enteryourphonenumber.visibility = View.VISIBLE
         view.ll_NumberArea.visibility = View.VISIBLE
-        view.btn_sendCstmOtp.visibility = View.VISIBLE
+        view.btn_logIn.visibility = View.VISIBLE
 
         view.tv_otpcustomerHighlight.visibility = View.GONE
         view.tv_enterverificationcode.visibility = View.GONE
@@ -97,7 +96,7 @@ class CustomerOtpFragment : Fragment() {
                 view.tv_numberCustomerHighlight.visibility = View.GONE
                 view.tv_enteryourphonenumber.visibility = View.GONE
                 view.ll_NumberArea.visibility = View.GONE
-                view.btn_sendCstmOtp.visibility = View.GONE
+                view.btn_logIn.visibility = View.GONE
 
                 view.tv_otpcustomerHighlight.visibility = View.VISIBLE
                 view.tv_enterverificationcode.visibility = View.VISIBLE
@@ -105,7 +104,7 @@ class CustomerOtpFragment : Fragment() {
                 view.ll_otpArea.visibility = View.VISIBLE
                 view.btn_nextCstmRegister.visibility = View.VISIBLE
 
-                view.numberCustomerDescription.text = "Code sent to number +994${phoneNumberCustomer.text.toString().trim()}"
+                view.numberCustomerDescription.text = "Code sent to number +994${phoneNumberSignIn.text.toString().trim()}"
 
                 Toast.makeText(
                     requireContext(),
@@ -115,8 +114,8 @@ class CustomerOtpFragment : Fragment() {
             }
         }
 
-        view.btn_sendCstmOtp.setOnClickListener {
-            val phone = phoneNumberCustomer.text.toString().trim()
+        view.btn_logIn.setOnClickListener {
+            val phone = phoneNumberSignIn.text.toString().trim()
             if (TextUtils.isEmpty(phone)) {
                 Toast.makeText(
                     requireContext(),

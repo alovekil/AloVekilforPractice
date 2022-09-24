@@ -27,7 +27,7 @@ class ChooseSignUpFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_choose_sign_up, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("signup",Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("Myprefs",Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
 
         view.btn_backsigninupfragment.setOnClickListener {
@@ -35,12 +35,12 @@ class ChooseSignUpFragment : Fragment() {
         }
 
         view.appCompatButtonCustomer.setOnClickListener {
-            editor.putBoolean("isLawyer",false).apply()
+            editor.putString("usertype","customer").apply()
             editor.commit()
             findNavController().navigate(R.id.action_chooseSignUpFragment_to_customerOtpFragment)
         }
         view.appCompatButtonLawyer.setOnClickListener {
-            editor.putBoolean("isLawyer",true).apply()
+            editor.putString("usertype","lawyer").apply()
             editor.commit()
             findNavController().navigate(R.id.action_chooseSignUpFragment_to_lawyerOtpFragment)
         }

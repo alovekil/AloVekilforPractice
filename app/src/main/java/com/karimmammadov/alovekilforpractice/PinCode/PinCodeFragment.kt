@@ -81,7 +81,7 @@ class PinCodeFragment : Fragment() {
 
         checkBiometricSupport()
         //   binding=DataBindingUtil.inflate(layoutInflater,R.layout.activity_pin_code,null,false)
-        sharedPreferences=requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences=requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor=sharedPreferences.edit()
         radioList1.add(view.circle1)
         radioList1.add(view.circle2)
@@ -161,9 +161,9 @@ class PinCodeFragment : Fragment() {
             if(password1.equals(sharedPreferences.getString("password","862186214632"))){
                 //  Pin_CodeText.setVisibility(View.VISIBLE)
                 val mySharedPreferences = requireContext().getSharedPreferences("Myprefs", 0)
-                val islawyer = mySharedPreferences.getBoolean("isLawyer",false)
+                val islawyer = mySharedPreferences.getString("usertype","")
                 Log.d(ContentValues.TAG, "onFinish: $islawyer")
-                    if (islawyer) {
+                    if (islawyer!!.equals("customer")) {
                         findNavController().navigate(R.id.action_pinCodeFragment_to_profileFragmentCustomer)
                     } else {
                         findNavController().navigate(R.id.action_pinCodeFragment_to_alertDialogLawyer)

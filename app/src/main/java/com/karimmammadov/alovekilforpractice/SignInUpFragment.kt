@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 import kotlinx.android.synthetic.main.fragment_sign_in_up.*
 import kotlinx.android.synthetic.main.fragment_sign_in_up.view.*
 
@@ -24,6 +25,9 @@ class SignInUpFragment : Fragment() {
 
         view.button_signUp.setOnClickListener {
             findNavController().navigate(R.id.action_signInUpFragment_to_chooseSignUpFragment)
+        }
+        view.login.setOnClickListener {
+            findNavController().navigate(R.id.action_signInUpFragment_to_signInFragment)
         }
         return  view
     }

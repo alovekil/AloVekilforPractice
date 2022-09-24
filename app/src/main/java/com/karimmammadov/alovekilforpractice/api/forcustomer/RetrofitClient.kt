@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.api
+package com.karimmammadov.alovekilforpractice.api.forcustomer
 
 import android.util.Base64
 import okhttp3.OkHttpClient
@@ -7,8 +7,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
-    private val AUTH = "Basic " + Base64.encodeToString("Kerim:kerim123".toByteArray(), Base64.NO_WRAP)
+    val AUTH = "Basic " + Base64.encodeToString("Kerim:kerim123".toByteArray(), Base64.NO_WRAP)
     private  val BASE_URL = "http://38.242.221.247/api/users/"
+
 
 
     private val  okHttpClient = OkHttpClient.Builder()
@@ -30,5 +31,7 @@ object RetrofitClient {
             .build()
         retrofit.create(ApiForCustomer::class.java)
     }
+
+
 
 }

@@ -11,7 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.karimmammadov.alovekilforpractice.R
-import com.karimmammadov.alovekilforpractice.api.RetrofitClient
+import com.karimmammadov.alovekilforpractice.api.forcustomer.RetrofitClient
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
 import com.karimmammadov.alovekilforpractice.models.CustomerModels
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
@@ -38,7 +38,7 @@ class CustomerRegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_customer_register, container, false)
 
-        sharedPreferences = requireContext().getSharedPreferences("lawyer", Context.MODE_PRIVATE)
+        sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         view.bck_signActivity.setOnClickListener {
             findNavController().navigate(R.id.action_customerRegisterFragment_to_chooseSignUpFragment)
