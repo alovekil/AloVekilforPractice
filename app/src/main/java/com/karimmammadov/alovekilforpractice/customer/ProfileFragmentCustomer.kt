@@ -1,5 +1,6 @@
 package com.karimmammadov.alovekilforpractice.customer
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -21,10 +22,10 @@ class ProfileFragmentCustomer : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_profile_customer, container, false)
 
-        profileSharedPreferences = requireContext().getSharedPreferences("Myprefs",0)
-        val profileName = profileSharedPreferences.getString(MyConstants.userName,null)
-        val profileSecondName = profileSharedPreferences.getString(MyConstants.userSecondName,null)
-        val profileEmail = profileSharedPreferences.getString(MyConstants.userEmail,null)
+        profileSharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
+        val profileName = profileSharedPreferences.getString("customerName1","null")!!
+        val profileSecondName = profileSharedPreferences.getString("customerSurname1","null")!!
+        val profileEmail = profileSharedPreferences.getString("customerEmail1","null")!!
         view.profileUserName.text = profileName + " " + profileSecondName
         view.profileEmailxml.text = profileEmail
 

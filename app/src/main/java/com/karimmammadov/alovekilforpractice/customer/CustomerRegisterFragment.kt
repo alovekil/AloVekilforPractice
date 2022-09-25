@@ -95,10 +95,9 @@ class CustomerRegisterFragment : Fragment() {
                         response: Response<DefaultResponse>
                     ) {
                         Toast.makeText(requireContext(),response.body()?.response, Toast.LENGTH_SHORT).show()
-                        editor.putString(MyConstants.userName,name)
-                        editor.putString(MyConstants.userSecondName,secondName)
-                        editor.putString(MyConstants.userEmail,email)
-                        editor.putBoolean(MyConstants.args,true)
+                        editor.putString("customerName1",name).apply()
+                        editor.putString("customerSurname1",secondName).apply()
+                        editor.putString("customerEmail1",email).apply()
                         editor.commit()
                         if(block) {
                             findNavController().navigate(R.id.action_customerRegisterFragment_to_createPasswordCustomer)
