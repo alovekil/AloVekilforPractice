@@ -66,7 +66,16 @@ class PinCodeFragment : Fragment() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult?) {
                     super.onAuthenticationSucceeded(result)
-                    findNavController().navigate(R.id.action_pinCodeFragment_to_alertDialogLawyer)
+                    val mySharedPreferences = requireContext().getSharedPreferences("Myprefs", 0)
+                    val islawyer = mySharedPreferences.getString("usertype","")
+                    Log.d(ContentValues.TAG, "onFinish: $islawyer")
+                    if (islawyer!!.equals("customer")) {
+                        findNavController().navigate(R.id.action_pinCodeFragment_to_profileFragmentCustomer)
+                    } else {
+                        findNavController().navigate(R.id.action_pinCodeFragment_to_alertDialogLawyer)
+                    }
+                    Toast.makeText(context,"succes login" , Toast.LENGTH_SHORT).show()
+                   /* findNavController().navigate(R.id.action_pinCodeFragment_to_alertDialogLawyer)*/
                     // startActivity(Intent(this@PinCodeActivity, ProfileActivity::class.java))
                     // finish()
                 }
