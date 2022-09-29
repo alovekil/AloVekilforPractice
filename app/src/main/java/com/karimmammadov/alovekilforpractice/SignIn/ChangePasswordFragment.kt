@@ -94,14 +94,13 @@ class ChangePasswordFragment : Fragment() {
             .create(ApiforgetPassword::class.java)
         val retrofitData = retrofitBuilder.createnewPassword(forgetPasswordRequest)
 
-        retrofitBuilder.createnewPassword(forgetPasswordRequest)
-            .enqueue(object : Callback<ForgetpasswordResponse> {
+        retrofitData.enqueue(object : Callback<ForgetpasswordResponse> {
                 override fun onResponse(
                     call: Call<ForgetpasswordResponse>,
                     response: Response<ForgetpasswordResponse>
                 ) {
 
-                    if(response.body()?.message == null){
+                    if(response.body()?.message != null){
                         editor.putString("tokenvalue", response.body()!!.user_token)
                         editor.putString("usertype",response.body()!!.status)
                         editor.putInt("code",response.body()!!.code)
@@ -115,7 +114,8 @@ class ChangePasswordFragment : Fragment() {
                 }
 
                 override fun onFailure(call: Call<ForgetpasswordResponse>, t: Throwable) {
-                    Toast.makeText(requireContext(), t.message, Toast.LENGTH_SHORT).show()
+                    println(t)
+//                    Toast.makeText(requireContext(), t.message, Toast.LENGTH_SHORT).show()
                 }
 
 

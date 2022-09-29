@@ -83,7 +83,7 @@ class SignInFragment :Fragment() {
                     response: Response<LoginResponse>
                 ) {
 
-                    if(response.body()?.non_field_errors == null){
+                    if(response.body()?.non_field_errors != null){
                         editor.putString("tokenvalue", response.body()!!.token)
                         editor.putString("usertype",response.body()!!.user_type)
                         editor.commit()
