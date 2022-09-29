@@ -8,8 +8,8 @@ import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.karimmammadov.alovekilforpractice.R
-import com.karimmammadov.alovekilforpractice.models.GetManageInstance
-import com.karimmammadov.alovekilforpractice.models.LawyerLanguageItems
+import com.karimmammadov.alovekilforpractice.models.forlawyer.GetManageInstance
+import com.karimmammadov.alovekilforpractice.models.forlawyer.LawyerLanguageItems
 import kotlinx.android.synthetic.main.checkbox_items.view.*
 
 class MyCheckBoxItemsAdapter(val context: Context, val languageList: List<LawyerLanguageItems>):

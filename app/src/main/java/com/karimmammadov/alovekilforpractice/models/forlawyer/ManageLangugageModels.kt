@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.models
+package com.karimmammadov.alovekilforpractice.models.forlawyer
 
 interface LanguageInterface {
     fun getLanguage():List<LawyerLanguageItems>
@@ -8,7 +8,7 @@ interface LanguageInterface {
     fun removeAllItems()
 }
 
-private class ManageLanguageModels : LanguageInterface{
+private class ManageLanguageModels : LanguageInterface {
 
     private var languageSortedList = ArrayList<LawyerLanguageItems>()
 

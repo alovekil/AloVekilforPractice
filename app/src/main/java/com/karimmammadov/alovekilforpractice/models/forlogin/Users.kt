@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.models
+package com.karimmammadov.alovekilforpractice.models.forlogin
 
 data class Users(
     val username: String,

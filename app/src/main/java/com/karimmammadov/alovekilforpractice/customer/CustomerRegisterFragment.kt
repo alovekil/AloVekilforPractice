@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.api.forcustomer.RetrofitClient
 import com.karimmammadov.alovekilforpractice.constant.MyConstants
-import com.karimmammadov.alovekilforpractice.models.CustomerModels
+import com.karimmammadov.alovekilforpractice.models.forcustomer.CustomerModels
 import com.karimmammadov.alovekilforpractice.models.DefaultResponse
 import kotlinx.android.synthetic.main.fragment_customer_register.*
 import kotlinx.android.synthetic.main.fragment_customer_register.view.*
@@ -26,7 +26,12 @@ class CustomerRegisterFragment : Fragment() {
     private lateinit var sharedPreferences: SharedPreferences
     lateinit var customerModels: CustomerModels
     private  var block : Boolean  =true
-
+    lateinit var  customername:String
+    lateinit var editor: SharedPreferences.Editor
+    lateinit var  customersurname :String
+    lateinit var  customeremail:String
+    lateinit var  customerpassword :String
+    lateinit var customerconfirmpassword :String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,7 +44,8 @@ class CustomerRegisterFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_customer_register, container, false)
 
         sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
+
+         editor = sharedPreferences.edit()
         view.bck_signActivity.setOnClickListener {
             findNavController().navigate(R.id.action_customerRegisterFragment_to_chooseSignUpFragment)
         }
@@ -48,6 +54,22 @@ class CustomerRegisterFragment : Fragment() {
 
         val phonenumberCustomer =  view.findViewById<TextView>(R.id.editphoneNumberCustomer)
         phonenumberCustomer.text = sharedPreferences.getString("csmnumber","+99455494495")
+
+        val customername =  view.findViewById<TextView>(R.id.editFirstName)
+        customername.text = sharedPreferences.getString("customername","")
+
+        val customersurname =  view.findViewById<TextView>(R.id.editSecondName)
+        customersurname.text = sharedPreferences.getString("customersurname","")
+
+        val customeremail =  view.findViewById<TextView>(R.id.editEmail)
+        customeremail.text = sharedPreferences.getString("customeremail","")
+
+        val customerpassword =  view.findViewById<TextView>(R.id.editPassword)
+        customerpassword.text = sharedPreferences.getString("customerpassword","")
+
+        val customerconfirmpassword =  view.findViewById<TextView>(R.id.editConfirmPassword)
+        customerconfirmpassword.text = sharedPreferences.getString("customerconfirmpassword","")
+
 
         view.savebtn.setOnClickListener {
             block =true
@@ -112,5 +134,34 @@ class CustomerRegisterFragment : Fragment() {
                 })
         }
         return view
+    }
+
+    override fun onPause() {
+        getvalues()
+        super.onPause()
+    }
+    fun getvalues(){
+        if(!editFirstName.text?.isEmpty()!!){
+            customername=view?.editFirstName?.text.toString().trim()
+            editor.putString("customername",customername).apply()
+        }
+        if(!editSecondName.text?.isEmpty()!!){
+            customersurname=view?.editSecondName?.text.toString().trim()
+            editor.putString("customersurname",customersurname).apply()
+        }
+        if(!editEmail.text?.isEmpty()!!){
+            customeremail=view?.editEmail?.text.toString().trim()
+            editor.putString("customeremail",customeremail).apply()
+        }
+        if(!editPassword.text?.isEmpty()!!){
+            customerpassword=view?.editPassword?.text.toString().trim()
+            editor.putString("customerpassword",customerpassword).apply()
+        }
+        if(!editConfirmPassword.text?.isEmpty()!!){
+            customerconfirmpassword=view?.editConfirmPassword?.text.toString().trim()
+            editor.putString("customerconfirmpassword",customerconfirmpassword).apply()
+        }
+        editor.commit()
+
     }
 }

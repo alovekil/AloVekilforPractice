@@ -35,6 +35,7 @@ import com.karimmammadov.alovekilforpractice.adapters.MyCheckBoxItemsAdapter
 import com.karimmammadov.alovekilforpractice.api.forlawyer.ApiForLawyer
 import com.karimmammadov.alovekilforpractice.api.forlawyer.RetrofitClientForLawyer
 import com.karimmammadov.alovekilforpractice.models.*
+import com.karimmammadov.alovekilforpractice.models.forlawyer.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
 import retrofit2.*
@@ -53,8 +54,8 @@ class LawyerRegister2 : Fragment() {
     val lawyerLanguages = ArrayList<Int>()
     val lawyerAreas = ArrayList<Int>()
     lateinit var lawyerModels: LawyerModels
-     lateinit var editor: SharedPreferences.Editor
     private  var block : Boolean  =true
+    lateinit var editor: SharedPreferences.Editor
 
     //Image
     var selectedPictureCertificate : Uri? = null

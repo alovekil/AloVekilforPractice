@@ -1,13 +1,12 @@
-package com.karimmammadov.alovekilforpractice.models
+package com.karimmammadov.alovekilforpractice.models.forlawyer
 
 
 import android.content.Context
 import android.util.Log
-import android.widget.Toast
 
 interface AreaInterface {
     fun getArea():List<LawyerAreaTypes>
-    fun setArea(items: LawyerAreaTypes,context: Context):Boolean
+    fun setArea(items: LawyerAreaTypes, context: Context):Boolean
     fun searchExistence(id:Int):Boolean
     fun removeItem(lawyerAreaTypes: LawyerAreaTypes)
     fun removeAllItems()

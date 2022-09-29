@@ -1,4 +1,4 @@
-package com.karimmammadov.alovekilforpractice.models
+package com.karimmammadov.alovekilforpractice.models.forlawyer
 
 data class Lawyer(
     var birth_date: String,

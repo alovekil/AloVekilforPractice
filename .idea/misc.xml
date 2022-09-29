@@ -70,22 +70,26 @@
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/activity_pin_code.xml" value="0.1" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/arter_dialog.xml" value="0.25" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/checkbox_items.xml" value="0.25" />
+        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/checkboxareas_items.xml" value="0.24230072463768115" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_alert_dialog_lawyer.xml" value="0.2359375" />
-        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_choose_sign_up.xml" value="0.1515625" />
+        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_choose_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_create_password_customer.xml" value="0.25" />
-        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_customer_otp.xml" value="0.25" />
+        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_customer_otp.xml" value="0.18143459915611815" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_customer_register.xml" value="0.25" />
-        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_forget_the_password.xml" value="0.2" />
+        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_forget_the_password.xml" value="0.264" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_lawyer_otp.xml" value="0.2359375" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_lawyer_register1.xml" value="0.2391304347826087" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_lawyer_register2.xml" value="0.22540983606557377" />
+        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_otp_for_forget_password.xml" value="0.18695652173913044" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_pin_code.xml" value="0.25" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_profile_customer.xml" value="0.25" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_profile_lawyer.xml" value="0.25" />
+        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_set_on_new_password.xml" value="0.24230072463768115" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_sign_in_up.xml" value="0.25" />
-        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_splash_screen.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/fragment_splash_screen.xml" value="0.176" />
         <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/layout/layout_spinnerareas.xml" value="0.25" />
+        <entry key="..\:/Users/Muhammed-Emin/Documents/GitHub/AloVekilforPractice/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1445" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/backgroudnblackbox.xml" value="0.1145" />
         <entry key="..\:/Users/Public/AndroidStudioProjects/AloVekilForPractice/app/src/main/res/drawable/backgroundbox.xml" value="0.1145" />

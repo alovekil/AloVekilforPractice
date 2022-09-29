@@ -8,23 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.karimmammadov.alovekilforpractice.R
-import com.karimmammadov.alovekilforpractice.api.forcustomer.RetrofitClient
-import com.karimmammadov.alovekilforpractice.api.forlawyer.ApiForLawyer
 
 import com.karimmammadov.alovekilforpractice.api.forlogin.ApiForLogin
 import com.karimmammadov.alovekilforpractice.api.forlogin.RemoteDataSourceforLogin
-import com.karimmammadov.alovekilforpractice.constant.MyConstants
-import com.karimmammadov.alovekilforpractice.databinding.FragmentSignInBinding
-import com.karimmammadov.alovekilforpractice.models.LoginResponse
-import com.karimmammadov.alovekilforpractice.models.LawyerAreaTypes
-import com.karimmammadov.alovekilforpractice.models.Users
-import kotlinx.android.synthetic.main.fragment_customer_otp.view.*
+import com.karimmammadov.alovekilforpractice.models.forlogin.LoginResponse
+import com.karimmammadov.alovekilforpractice.models.forlogin.Users
 import kotlinx.android.synthetic.main.fragment_customer_otp.view.btn_logIn
 import kotlinx.android.synthetic.main.fragment_customer_otp.view.phoneNumberSignIn
-import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.editPasswordLogin
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
 import retrofit2.Call
@@ -50,9 +42,7 @@ class SignInFragment :Fragment() {
 
         sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
-        view.forgetthepassword.setOnClickListener {
-            findNavController().navigate(R.id.action_signInFragment_to_forgetThePasswordFragment)
-        }
+
         view.btn_logIn.setOnClickListener {
             val number="+994"+view.phoneNumberSignIn.text.toString().trim()
             val password=view.editPasswordLogin.text.toString().trim()
@@ -67,8 +57,14 @@ class SignInFragment :Fragment() {
                 view.editPasswordLogin.requestFocus()
                 return@setOnClickListener
             }
-            users=Users(number,password)
+            users= Users(number,password)
             getMyAreasData()
+        }
+        view.forgetthepassword.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_otpForForgetPassword2)
+        }
+        view.back_login.setOnClickListener{
+            findNavController().navigate(R.id.action_signInFragment_to_signInUpFragment)
         }
         return view
     }
@@ -93,7 +89,9 @@ class SignInFragment :Fragment() {
                         editor.commit()
                         Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT)
                             .show()
+
                         findNavController().navigate(R.id.action_signInFragment_to_createPasswordCustomer)
+
 
                     }
 

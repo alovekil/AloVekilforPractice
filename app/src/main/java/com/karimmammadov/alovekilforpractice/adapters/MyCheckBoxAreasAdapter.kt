@@ -1,7 +1,6 @@
 package com.karimmammadov.alovekilforpractice.adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +9,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.karimmammadov.alovekilforpractice.R
-import com.karimmammadov.alovekilforpractice.models.GetManageInstanceAreas
-import com.karimmammadov.alovekilforpractice.models.LawyerAreaTypes
+import com.karimmammadov.alovekilforpractice.models.forlawyer.GetManageInstanceAreas
+import com.karimmammadov.alovekilforpractice.models.forlawyer.LawyerAreaTypes
 import kotlinx.android.synthetic.main.checkboxareas_items.view.*
 
 
