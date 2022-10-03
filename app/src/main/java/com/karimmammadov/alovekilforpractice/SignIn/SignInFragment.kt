@@ -76,8 +76,8 @@ class SignInFragment :Fragment() {
             .create(ApiForLogin::class.java)
         val retrofitData = retrofitBuilder.userlogin(users)
 
-            retrofitBuilder.userlogin(users)
-            .enqueue(object : Callback<LoginResponse> {
+           /* retrofitBuilder.userlogin(users)*/
+            retrofitData.enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(
                     call: Call<LoginResponse>,
                     response: Response<LoginResponse>
