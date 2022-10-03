@@ -23,7 +23,6 @@ class MyCheckBoxAreasAdapter (val context: Context, val areasList: List<LawyerAr
         init {
 
             areaType = itemView.areas_sort
-            
             checkBox = itemView.checkboxAreas
         }
         fun onClickListener(position: Int){
