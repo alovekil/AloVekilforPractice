@@ -18,6 +18,8 @@ import com.karimmammadov.alovekilforpractice.models.forlogin.Users
 import kotlinx.android.synthetic.main.fragment_customer_otp.view.phoneNumberSignIn
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.editPasswordLogin
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
+import okhttp3.MediaType
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -68,12 +70,15 @@ class SignInFragment :Fragment() {
         return view
     }
     private  fun getMyAreasData() {
+        var reguesUserName =  RequestBody.create(MediaType.parse("text/plain") , users.username)
+        var reguesUserPassword =  RequestBody.create(MediaType.parse("text/plain") , users.password)
+
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URLLOGIN)
             .build()
             .create(ApiForLogin::class.java)
-        val retrofitData = retrofitBuilder.userlogin(users)
+        val retrofitData = retrofitBuilder.userlogin(reguesUserName , reguesUserPassword )
 
            /* retrofitBuilder.userlogin(users)*/
             retrofitData.enqueue(object : Callback<LoginResponse> {
@@ -82,7 +87,7 @@ class SignInFragment :Fragment() {
                     response: Response<LoginResponse>
                 ) {
 
-                    if(response.body()?.non_field_errors != null){
+                    if(response.body()?.non_field_errors == null){
                         editor.putString("tokenvalue", response.body()!!.token)
                         editor.putString("usertype",response.body()!!.user_type)
                         editor.commit()
@@ -90,8 +95,6 @@ class SignInFragment :Fragment() {
                             .show()
 
                         findNavController().navigate(R.id.action_signInFragment_to_createPasswordCustomer)
-
-
                     }
 
                 }

@@ -79,7 +79,7 @@ class CustomerRegisterFragment : Fragment() {
             val password = view.editPassword.text.toString().trim()
             val confirmPassword = view.editConfirmPassword.text.toString().trim()
 
-            val phonecustomer = sharedPreferences.getString("csmnumber","+99455494495").toString()
+           val phonecustomer = sharedPreferences.getString("csmnumber","+99455494495").toString()
             if (email.isEmpty()){
                 editEmail.error = "Email required"
                 editEmail.requestFocus()

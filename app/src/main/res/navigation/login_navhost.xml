@@ -187,10 +187,8 @@
         android:label="fragment_forget_the_password"
         tools:layout="@layout/fragment_forget_the_password" >
         <action
-            android:id="@+id/action_forgetThePasswordFragment_to_signInFragment"
-            app:destination="@id/signInFragment"
-            app:popUpTo="@id/forgetThePasswordFragment"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_forgetThePasswordFragment_to_createPasswordCustomer"
+            app:destination="@id/createPasswordCustomer" />
     </fragment>
     <fragment
         android:id="@+id/otpForForgetPassword"

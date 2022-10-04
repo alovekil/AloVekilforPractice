@@ -159,7 +159,7 @@ class OtpForForgetPassword : Fragment() {
                         inputchangepasswordCode6.text.toString()
                 verifyingPhoneNumberWithCode(mVerificationId, code)
                 addtoFirestore(phoneNumber)
-                editor.putString("forgetpassword",phoneNumber).apply()
+                editor.putString("forgetpasswordforPhone",phoneNumber).apply()
                 editor.putInt("savefragments",R.id.action_splashScreenFragment_to_forgetThePasswordFragment).apply()
                 editor.commit()
                 findNavController().navigate(R.id.action_otpForForgetPassword_to_forgetThePasswordFragment)

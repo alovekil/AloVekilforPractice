@@ -2,22 +2,17 @@ package com.karimmammadov.alovekilforpractice.api.forforgetPassword
 
 import com.karimmammadov.alovekilforpractice.models.forforgetpassword.ForgetPasswordRequest
 import com.karimmammadov.alovekilforpractice.models.forforgetpassword.ForgetpasswordResponse
+import com.karimmammadov.alovekilforpractice.models.forlogin.LoginResponse
+import okhttp3.RequestBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.PUT
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ApiforgetPassword {
+ @Multipart
 @PUT("reset-password/")
-    fun createnewPassword(
-    @Body forgetpasswordRequest: ForgetPasswordRequest
-/*    @Path("token") token:String,
-    @Field("phone") phone:String,
-    @Field("password") password:String,
-    @Field("password2") password2:String*/
-/*
-    forgetpasswordRequest:ForgetPasswordRequest
-*/
+ fun resetpassword(
+     @Part ("phone") name: RequestBody,
+     @Part ("password") password: RequestBody,
+     @Part ("password2") password2: RequestBody
 ):Call<ForgetpasswordResponse>
 }

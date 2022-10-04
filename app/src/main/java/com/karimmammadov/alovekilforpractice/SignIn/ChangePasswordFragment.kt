@@ -26,6 +26,8 @@ import kotlinx.android.synthetic.main.fragment_forget_the_password.view.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
 import kotlinx.android.synthetic.main.fragment_otp_for_forget_password.view.*
 import kotlinx.android.synthetic.main.fragment_sign_in.*
+import okhttp3.MediaType
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -51,9 +53,12 @@ class ChangePasswordFragment : Fragment() {
         sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
-        view.savebtn.setOnClickListener {
+        val phoneNumberForForget = view.findViewById<TextView>(R.id.editPhoneNumberForget)
+        phoneNumberForForget.text = sharedPreferences.getString("forgetpasswordforPhone","+99455123456")
+        view.savebtnforforget.setOnClickListener {
             val passsword=view.editPasswordforForget.text.toString().trim()
             val confirmpasssword=view.confirmpassword.text.toString().trim()
+            val phoneForForget = sharedPreferences.getString("forgetpasswordforPhone","+99455494495").toString()
             if(passsword.isEmpty()){
                 view.editPasswordforForget.error="Password required"
                 view.editPasswordforForget.requestFocus()
@@ -72,27 +77,26 @@ class ChangePasswordFragment : Fragment() {
                     view.confirmpassword.requestFocus()
                     return@setOnClickListener
 
-            }else{
-                findNavController().navigate(R.id.action_forgetThePasswordFragment_to_signInFragment)
             }
             /*val phone = view.phoneNumberlogin.text.toString().trim()*/
-            phoneNumber=
-                sharedPreferences.getString("forgetpassword","+99455123456").toString()/*phone.toString()*/
-            editor.putString("forgetnumber",phoneNumber).apply()
-            editor.commit()
-            forgetPasswordRequest= ForgetPasswordRequest(phoneNumber,passsword,confirmpasssword)
+            forgetPasswordRequest= ForgetPasswordRequest(phoneForForget,passsword,confirmpasssword)
             sendMyAreasData()
         }
 
         return view
     }
     private  fun sendMyAreasData() {
+
+        var requestPhone =  RequestBody.create(MediaType.parse("text/plain") , forgetPasswordRequest.phone)
+        var reguesUserPassword =  RequestBody.create(MediaType.parse("text/plain") , forgetPasswordRequest.password)
+        var reguesUserConfirmPassword =  RequestBody.create(MediaType.parse("text/plain") , forgetPasswordRequest.password2)
+
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BASE_URL)
             .build()
             .create(ApiforgetPassword::class.java)
-        val retrofitData = retrofitBuilder.createnewPassword(forgetPasswordRequest)
+        val retrofitData = retrofitBuilder.resetpassword(requestPhone,reguesUserPassword,reguesUserConfirmPassword)
 
         retrofitData.enqueue(object : Callback<ForgetpasswordResponse> {
                 override fun onResponse(
@@ -100,14 +104,14 @@ class ChangePasswordFragment : Fragment() {
                     response: Response<ForgetpasswordResponse>
                 ) {
 
-                    if(response.body()?.message != null){
+                    if(response.body()?.message == null){
                         editor.putString("tokenvalue", response.body()!!.user_token)
                         editor.putString("usertype",response.body()!!.status)
                         editor.putInt("code",response.body()!!.code)
                         editor.commit()
-                        Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT)
+                        Toast.makeText(requireContext(), "Password Changed", Toast.LENGTH_SHORT)
                             .show()
-                        findNavController().navigate(R.id.action_signInFragment_to_createPasswordCustomer)
+                        findNavController().navigate(R.id.action_forgetThePasswordFragment_to_createPasswordCustomer)
 
                     }
 
