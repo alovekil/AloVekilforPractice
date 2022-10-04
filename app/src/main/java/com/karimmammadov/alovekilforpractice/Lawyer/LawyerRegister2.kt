@@ -243,7 +243,15 @@ class LawyerRegister2 : Fragment() {
                 view.editConfirmPasswordLawyer.text.toString().equals("")
             ){
                 Toast.makeText(requireContext(), "Please,Enter full information", Toast.LENGTH_LONG).show()
-            }else{
+                if (!view.editPasswordLogin.equals(view.editConfirmPasswordLawyer) ){
+                    Toast.makeText(requireContext(),"Password Not matching",Toast.LENGTH_LONG).show()
+                    block=false
+
+                }
+            }
+
+
+            else{
                 block = true
                 val lglexperience = view.editLegalExperience.text.toString().trim()
                 val lawyerExperience = view.editLawyerExperience.text.toString().trim()

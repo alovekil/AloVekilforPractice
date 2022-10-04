@@ -15,7 +15,6 @@ import com.karimmammadov.alovekilforpractice.api.forlogin.ApiForLogin
 import com.karimmammadov.alovekilforpractice.api.forlogin.RemoteDataSourceforLogin
 import com.karimmammadov.alovekilforpractice.models.forlogin.LoginResponse
 import com.karimmammadov.alovekilforpractice.models.forlogin.Users
-import kotlinx.android.synthetic.main.fragment_customer_otp.view.btn_logIn
 import kotlinx.android.synthetic.main.fragment_customer_otp.view.phoneNumberSignIn
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.editPasswordLogin
 import kotlinx.android.synthetic.main.fragment_sign_in.view.*
@@ -43,7 +42,7 @@ class SignInFragment :Fragment() {
         sharedPreferences = requireContext().getSharedPreferences("Myprefs", Context.MODE_PRIVATE)
         editor  =  sharedPreferences.edit()
 
-        view.btn_logIn.setOnClickListener {
+        view.btn_signinfirst.setOnClickListener {
             val number="+994"+view.phoneNumberSignIn.text.toString().trim()
             val password=view.editPasswordLogin.text.toString().trim()
 
