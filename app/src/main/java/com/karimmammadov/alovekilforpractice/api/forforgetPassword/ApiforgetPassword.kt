@@ -13,6 +13,7 @@ interface ApiforgetPassword {
  fun resetpassword(
      @Part ("phone") name: RequestBody,
      @Part ("password") password: RequestBody,
-     @Part ("password2") password2: RequestBody
+     @Part ("password2") password2: RequestBody,
+     @Header("Authorization")Authorization:String
 ):Call<ForgetpasswordResponse>
 }

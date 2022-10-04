@@ -45,7 +45,7 @@ class SignInFragment :Fragment() {
         editor  =  sharedPreferences.edit()
 
         view.btn_signinfirst.setOnClickListener {
-            val number="+994"+view.phoneNumberSignIn.text.toString().trim()
+            val number=view.phoneNumberSignIn.text.toString().trim()
             val password=view.editPasswordLogin.text.toString().trim()
 
             if(number.isEmpty()){
@@ -87,7 +87,7 @@ class SignInFragment :Fragment() {
                     response: Response<LoginResponse>
                 ) {
 
-                    if(response.body()?.non_field_errors == null){
+                    if(response.body()?.token!=null){
                         editor.putString("tokenvalue", response.body()!!.token)
                         editor.putString("usertype",response.body()!!.user_type)
                         editor.commit()

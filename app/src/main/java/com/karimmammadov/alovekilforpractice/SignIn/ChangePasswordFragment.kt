@@ -70,13 +70,11 @@ class ChangePasswordFragment : Fragment() {
                 return@setOnClickListener
             }
             if(passsword!=confirmpasssword){
-
                     view.editPasswordforForget.error = "Password and Confirm Password must be same"
                     view.editPasswordforForget.requestFocus()
                     view.confirmpassword.error = "Password and Confirm Password must be same"
                     view.confirmpassword.requestFocus()
                     return@setOnClickListener
-
             }
             /*val phone = view.phoneNumberlogin.text.toString().trim()*/
             forgetPasswordRequest= ForgetPasswordRequest(phoneForForget,passsword,confirmpasssword)
@@ -96,7 +94,7 @@ class ChangePasswordFragment : Fragment() {
             .baseUrl(BASE_URL)
             .build()
             .create(ApiforgetPassword::class.java)
-        val retrofitData = retrofitBuilder.resetpassword(requestPhone,reguesUserPassword,reguesUserConfirmPassword)
+        val retrofitData = retrofitBuilder.resetpassword(requestPhone,reguesUserPassword,reguesUserConfirmPassword,"Token b9279e23f0ecb3249562ab589928ce1666fee13c")
 
         retrofitData.enqueue(object : Callback<ForgetpasswordResponse> {
                 override fun onResponse(
@@ -104,10 +102,10 @@ class ChangePasswordFragment : Fragment() {
                     response: Response<ForgetpasswordResponse>
                 ) {
 
-                    if(response.body()?.message == null){
+                    if(response.body()?.code == 200){
                         editor.putString("tokenvalue", response.body()!!.user_token)
                         editor.putString("usertype",response.body()!!.status)
-                        editor.putInt("code",response.body()!!.code)
+                        /*editor.putInt("code",response.body()!!.mes)*/
                         editor.commit()
                         Toast.makeText(requireContext(), "Password Changed", Toast.LENGTH_SHORT)
                             .show()

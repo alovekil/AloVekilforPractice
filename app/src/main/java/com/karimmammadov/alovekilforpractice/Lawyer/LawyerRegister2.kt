@@ -234,6 +234,8 @@ class LawyerRegister2 : Fragment() {
         }
 
         view.saveButton.setOnClickListener {
+            val passwordlogin= view.editPasswordLogin.text.toString().trim()
+            val passwordconfirmlogin= view.editConfirmPasswordLawyer.text.toString().trim()
             if (view.tv_languages.text.toString().equals("") ||
                 view.tv_areas.text.toString().equals("")||
                 view.lawyerVoen.text.toString().equals("")||
@@ -245,7 +247,7 @@ class LawyerRegister2 : Fragment() {
                 Toast.makeText(requireContext(), "Please,Enter full information", Toast.LENGTH_LONG).show()
 
             }
-            if (view.editPasswordLogin!=view.editConfirmPasswordLawyer ){
+            if (passwordlogin!=passwordconfirmlogin ){
                 Toast.makeText(requireContext(),"Password Not matching",Toast.LENGTH_LONG).show()
             }
 
