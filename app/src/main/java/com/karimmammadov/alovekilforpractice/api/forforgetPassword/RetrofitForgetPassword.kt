@@ -6,11 +6,15 @@ import com.karimmammadov.alovekilforpractice.api.forcustomer.RetrofitClient
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 object RetrofitForgetPassword {
     val AUTH = "Basic " + Base64.encodeToString("Kerim:kerim123".toByteArray(), Base64.NO_WRAP)
     private  val BASE_URL = "http://38.242.221.247/api/"
     private val  okHttpClient = OkHttpClient.Builder()
+        .connectTimeout(60, TimeUnit.SECONDS)
+        .writeTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(30, TimeUnit.SECONDS)
         .addInterceptor { chain->
             val original = chain.request()
             val requestBuilder = original.newBuilder()
