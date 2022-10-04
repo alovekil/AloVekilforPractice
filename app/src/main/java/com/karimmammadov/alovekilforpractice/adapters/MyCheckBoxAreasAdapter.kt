@@ -21,6 +21,7 @@ class MyCheckBoxAreasAdapter (val context: Context, val areasList: List<LawyerAr
         val checkBox: CheckBox
 
         init {
+
             areaType = itemView.areas_sort
             checkBox = itemView.checkboxAreas
         }
