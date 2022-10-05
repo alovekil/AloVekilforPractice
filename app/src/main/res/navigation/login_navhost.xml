@@ -147,6 +147,9 @@
         <action
             android:id="@+id/action_pinCodeFragment_to_signInUpFragment"
             app:destination="@id/signInUpFragment" />
+        <action
+            android:id="@+id/action_pinCodeFragment_to_createPasswordCustomer"
+            app:destination="@id/createPasswordCustomer" />
     </fragment>
     <fragment
         android:id="@+id/alertDialogLawyer"

@@ -305,9 +305,9 @@ class LawyerRegister2 : Fragment() {
                 println(encodedStringD)
 
                 val listCertificate = ArrayList<String>()
-                listCertificate.add(encodedStringC)
+                listCertificate.add("null")
 
-                var diploma = encodedStringD
+                var diploma = "null"
 
 
                 val birth_date = sharedPreferences.getString("lawyerDateBirth","null")!!

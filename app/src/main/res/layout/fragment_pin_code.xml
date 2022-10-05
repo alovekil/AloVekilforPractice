@@ -312,7 +312,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView4"
+                            android:id="@+id/forgetAccessCodeText"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
                             android:layout_marginTop="20dp"
