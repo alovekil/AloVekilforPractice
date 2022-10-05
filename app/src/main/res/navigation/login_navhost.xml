@@ -144,6 +144,9 @@
         <action
             android:id="@+id/action_pinCodeFragment_to_alertDialogLawyer"
             app:destination="@id/alertDialogLawyer" />
+        <action
+            android:id="@+id/action_pinCodeFragment_to_signInUpFragment"
+            app:destination="@id/signInUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/alertDialogLawyer"

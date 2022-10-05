@@ -130,8 +130,7 @@ class PinCodeFragment : Fragment() {
             biometricPrompt.authenticate(getCancellationSignal(),requireActivity().mainExecutor,authenticationCallback)
         }
         view.cancelTextView.setOnClickListener {
-            startActivity(Intent(activity, MainActivity::class.java))
-            requireActivity().finish()
+            findNavController().navigate(R.id.action_pinCodeFragment_to_signInUpFragment)
         }
 
         val handler = Handler()
