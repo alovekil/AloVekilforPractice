@@ -115,9 +115,9 @@ class PinCodeFragment : Fragment() {
             }
 
         }
-            view.forgetAccessCodeText.setOnClickListener {
+/*            view.forgetAccessCodeText.setOnClickListener {
                 findNavController().navigate(R.id.action_pinCodeFragment_to_createPasswordCustomer)
-            }
+            }*/
 
         useTouchid = view.useTouchid
         useTouchid.setOnClickListener {
