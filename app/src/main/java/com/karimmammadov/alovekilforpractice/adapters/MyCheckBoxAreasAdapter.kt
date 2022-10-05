@@ -39,6 +39,10 @@ class MyCheckBoxAreasAdapter (val context: Context, val areasList: List<LawyerAr
             }
         }
 
+        fun setChecked(area: List<LawyerAreaTypes>) {
+
+        }
+
     }
 
 
@@ -49,12 +53,12 @@ class MyCheckBoxAreasAdapter (val context: Context, val areasList: List<LawyerAr
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.checkBox.isChecked = false
+        holder.setChecked(GetManageInstanceAreas.getArea())
         holder.areaType.text = areasList[position].service_name
         holder.onClickListener(position)
     }
 
     override fun getItemCount(): Int {
-       return areasList.size
+        return areasList.size
     }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_navhost"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/viewPagerFragment">
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="com.karimmammadov.alovekilforpractice.SplashScreenFragment"
