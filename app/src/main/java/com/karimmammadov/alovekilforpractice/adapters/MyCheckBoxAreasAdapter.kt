@@ -1,6 +1,7 @@
 package com.karimmammadov.alovekilforpractice.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.karimmammadov.alovekilforpractice.R
 import com.karimmammadov.alovekilforpractice.models.forlawyer.GetManageInstanceAreas
 import com.karimmammadov.alovekilforpractice.models.forlawyer.LawyerAreaTypes
 import kotlinx.android.synthetic.main.checkboxareas_items.view.*
+import kotlin.math.log
 
 
 class MyCheckBoxAreasAdapter (val context: Context, val areasList: List<LawyerAreaTypes>):
@@ -39,9 +41,8 @@ class MyCheckBoxAreasAdapter (val context: Context, val areasList: List<LawyerAr
             }
         }
 
-        fun setChecked(area: List<LawyerAreaTypes>) {
 
-        }
+
 
     }
 
@@ -56,9 +57,21 @@ class MyCheckBoxAreasAdapter (val context: Context, val areasList: List<LawyerAr
         holder.checkBox.isChecked = false
         holder.areaType.text = areasList[position].service_name
         holder.onClickListener(position)
+        holder.checkBox.isChecked = isCheckedFromHistory(areasList[position].service_name)
+
     }
 
     override fun getItemCount(): Int {
-        return areasList.size
+       return areasList.size
+    }
+
+    private fun isCheckedFromHistory(item:String):Boolean{
+        val singleAreaList = GetManageInstanceAreas.getArea().map{
+            it.service_name
+        }
+
+        Log.d("MyTagHere", "isCheckedFromHistory: $singleAreaList")
+
+        return singleAreaList.contains(item)
     }
 }

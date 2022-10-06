@@ -14,7 +14,7 @@ interface AreaInterface {
 
 private class ManageAreaModels : AreaInterface {
         private val TAG = "myTag"
-    private var areaSortedList = ArrayList<LawyerAreaTypes>()
+    private val areaSortedList = ArrayList<LawyerAreaTypes>()
     override fun getArea(): List<LawyerAreaTypes> {
        return areaSortedList
     }
@@ -42,7 +42,7 @@ private class ManageAreaModels : AreaInterface {
     }
 
     override fun removeAllItems() {
-        areaSortedList = ArrayList<LawyerAreaTypes>()
+        areaSortedList.removeAll(areaSortedList.toSet())
     }
 }
 val GetManageInstanceAreas : AreaInterface = ManageAreaModels()

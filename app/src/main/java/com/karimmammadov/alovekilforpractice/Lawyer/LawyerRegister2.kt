@@ -113,7 +113,7 @@ class LawyerRegister2 : Fragment() {
 
 
         languageTextView.setOnClickListener {
-            GetManageInstance.removeAllItems()
+
             val builder: AlertDialog.Builder = AlertDialog.Builder(
                 requireContext()
             )
@@ -135,13 +135,17 @@ class LawyerRegister2 : Fragment() {
             }
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_cancel).setOnClickListener {
                 builderCreate.dismiss()
-                GetManageInstance.removeAllItems()
+
             }
 
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_Ok).setOnClickListener {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
                 val selectedLanguage = GetManageInstance.getLanguage()
+                if(selectedLanguage.isEmpty()) {
+                    return@setOnClickListener
+
+                }
                 if (selectedLanguage.isEmpty()){
                     stringBuilder.append(selectedLanguage.get(0).language)
                 }
@@ -156,7 +160,7 @@ class LawyerRegister2 : Fragment() {
 
         val areasTextView = view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_areas)
         areasTextView.setOnClickListener {
-            GetManageInstanceAreas.removeAllItems()
+//            GetManageInstanceAreas.removeAllItems()
             val builder: AlertDialog.Builder = AlertDialog.Builder(
                 requireContext()
             )
@@ -175,13 +179,17 @@ class LawyerRegister2 : Fragment() {
             }
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_cancelAreas).setOnClickListener {
                 builderCreate.dismiss()
-                GetManageInstanceAreas.removeAllItems()
+//                GetManageInstanceAreas.removeAllItems()
             }
 
             view.findViewById<TextView>(com.karimmammadov.alovekilforpractice.R.id.tv_OkAreas).setOnClickListener {
                 val stringBuilder = StringBuilder()
                 builderCreate.dismiss()
                 val selectedArea = GetManageInstanceAreas.getArea()
+                if(selectedArea.isEmpty()) {
+                    return@setOnClickListener
+
+                }
                 if(selectedArea.isEmpty()){
                     stringBuilder.append(selectedArea.get(0).service_name)
                 }
