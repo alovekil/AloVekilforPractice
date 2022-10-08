@@ -6,7 +6,7 @@
 
     <solid
 
-        android:color="@color/RGB_Gray1" />
+        android:color="@color/RGB_blue" />
     <size
         android:width="25dp"
         android:height="25dp" />

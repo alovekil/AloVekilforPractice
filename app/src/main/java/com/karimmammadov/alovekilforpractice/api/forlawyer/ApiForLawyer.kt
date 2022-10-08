@@ -9,6 +9,11 @@ import retrofit2.http.*
 
 interface ApiForLawyer {
 
+    @Multipart
+    @PUT("lawyer/register/")
+
+
+
     @POST("lawyer/register/")
     fun createUserLawyer(
       @Body lawyerModels: LawyerModels
