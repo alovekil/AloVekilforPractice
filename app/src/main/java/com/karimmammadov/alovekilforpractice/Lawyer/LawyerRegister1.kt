@@ -100,19 +100,9 @@ class LawyerRegister1 : Fragment() {
 
         val phoneNumberForLawyer = view.findViewById<TextView>(R.id.editPhoneNumberLawyer)
         phoneNumberForLawyer.text = sharedPreferences.getString("lwynumber","+99455123456")
+
         view.nextBtn.setOnClickListener {
-            if(view.editlawyerName.text.toString().equals("") ||
-                view.editlawyerSurname.text.toString().equals("")||
-                view.editlawyerFatherName.text.toString().equals("")||
-                view.dropdown_gender.text.toString().equals("")||
-                view.tvDateofBirth.text.toString().equals("")||
-                view.textInputUniversity.text.toString().equals("")||
-                view.editLawyerEmail.text.toString().equals("")
 
-            ){
-                Toast.makeText(requireContext(), "Please,Enter full information", Toast.LENGTH_LONG).show()
-
-            }else{
                 block = true
                 val userlawyerName = view.editlawyerName.text.toString().trim()
                 val userlawyerSurname = view.editlawyerSurname.text.toString().trim()
@@ -155,6 +145,8 @@ class LawyerRegister1 : Fragment() {
                     block = false
                 }
 
+
+
 //
 //                editor.putString("userLawyerName",userlawyerName).apply()
 //                editor.putString("userLawyerSurname",userlawyerSurname).apply()
@@ -189,7 +181,7 @@ class LawyerRegister1 : Fragment() {
 
 //                ft.commit()
             }
-        }
+
 
         return view
     }

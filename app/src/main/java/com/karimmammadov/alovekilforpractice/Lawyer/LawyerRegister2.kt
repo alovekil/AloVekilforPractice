@@ -242,24 +242,6 @@ class LawyerRegister2 : Fragment() {
         }
 
         view.saveButton.setOnClickListener {
-            val passwordlogin= view.editPasswordLogin.text.toString().trim()
-            val passwordconfirmlogin= view.editConfirmPasswordLawyer.text.toString().trim()
-            if (view.tv_languages.text.toString().equals("") ||
-                view.tv_areas.text.toString().equals("")||
-                view.lawyerVoen.text.toString().equals("")||
-                view.editLegalExperience.text.toString().equals("")||
-                view.editLawyerExperience.text.toString().equals("")||
-                view.editPasswordLogin.text.toString().equals("")||
-                view.editConfirmPasswordLawyer.text.toString().equals("")
-            ){
-                Toast.makeText(requireContext(), "Please,Enter full information", Toast.LENGTH_LONG).show()
-
-            }
-            if (passwordlogin!=passwordconfirmlogin ){
-                Toast.makeText(requireContext(),"Password Not matching",Toast.LENGTH_LONG).show()
-            }
-
-            else{
                 block = true
                 val lglexperience = view.editLegalExperience.text.toString().trim()
                 val lawyerExperience = view.editLawyerExperience.text.toString().trim()
@@ -370,7 +352,7 @@ class LawyerRegister2 : Fragment() {
 
 
                 })
-            }
+
 
 
             /*
@@ -418,15 +400,6 @@ class LawyerRegister2 : Fragment() {
         return view
     }
 
-
-
-private fun savelawyerpage2datas(){
-    println("LC LOG: "+sharedPreferences.getString("lawyerlanguages",""))
-
-
-
-
-}
     private fun getMyData(){
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
@@ -473,11 +446,9 @@ private fun savelawyerpage2datas(){
                     lawyerareastype.add(lawyerAreaTypes)
                 }
             }
-
             override fun onFailure(call: Call<List<LawyerAreaTypes>?>, t: Throwable) {
 
             }
-
         })
     }
 
