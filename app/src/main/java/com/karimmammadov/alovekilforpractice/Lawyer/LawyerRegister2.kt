@@ -38,9 +38,13 @@ import com.karimmammadov.alovekilforpractice.models.*
 import com.karimmammadov.alovekilforpractice.models.forlawyer.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.*
 import kotlinx.android.synthetic.main.fragment_lawyer_register2.view.*
+import okhttp3.MediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.ByteArrayOutputStream
+import java.io.File
 import java.io.IOException
 
 
@@ -324,9 +328,13 @@ class LawyerRegister2 : Fragment() {
                 val password = lawyerfirstPassword
                 val password2 = lawyerconfrimPassword
 
+                val file=File("")//file yolu
+
+                val requestBody=RequestBody.create(MediaType.parse("image/*"),file)
+                val image:MultipartBody.Part=MultipartBody.Part.createFormData("image",file.name,requestBody)
                 lawyerModels = LawyerModels(emailLawyer,first_name,last_name,lawyerModels_lawyer,password,password2,phone)
 
-                RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object :
+                RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels,image).enqueue(object :
                     Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,
@@ -453,6 +461,7 @@ class LawyerRegister2 : Fragment() {
     }
 
     private fun selectCertificate(view:View){
+
         if (ContextCompat.checkSelfPermission(requireContext(), android.Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
                 Snackbar.make(view, "Permission needed for gallery", Snackbar.LENGTH_INDEFINITE).setAction("Give Permission",
