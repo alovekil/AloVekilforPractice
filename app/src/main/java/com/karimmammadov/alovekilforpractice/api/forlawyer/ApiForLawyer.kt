@@ -13,8 +13,8 @@ interface ApiForLawyer {
     @Multipart
     @POST("lawyer/register/")
     fun createUserLawyer(
-      @Body lawyerModels: LawyerModels,
-       @Part Image:MultipartBody.Part
+      @Body lawyerModels: LawyerModels/*,
+       @Part Image:MultipartBody.Part*/
     ) : Call<DefaultResponse>
 
     @GET("service-languages")

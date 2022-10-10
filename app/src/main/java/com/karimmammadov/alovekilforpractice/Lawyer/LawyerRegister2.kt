@@ -328,13 +328,13 @@ class LawyerRegister2 : Fragment() {
                 val password = lawyerfirstPassword
                 val password2 = lawyerconfrimPassword
 
-                val file=File("")//file yolu
+                //val file=File("")//file yolu
 
-                val requestBody=RequestBody.create(MediaType.parse("image/*"),file)
-                val image:MultipartBody.Part=MultipartBody.Part.createFormData("image",file.name,requestBody)
+               // val requestBody=RequestBody.create(MediaType.parse("image/*"),file)
+               // val image:MultipartBody.Part=MultipartBody.Part.createFormData("image",file.name,requestBody)
                 lawyerModels = LawyerModels(emailLawyer,first_name,last_name,lawyerModels_lawyer,password,password2,phone)
 
-                RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels,image).enqueue(object :
+                RetrofitClientForLawyer.instance.createUserLawyer(lawyerModels).enqueue(object :
                     Callback<DefaultResponse> {
                     override fun onResponse(
                         call: Call<DefaultResponse>,

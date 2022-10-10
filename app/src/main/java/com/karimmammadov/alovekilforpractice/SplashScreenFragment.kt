@@ -41,6 +41,7 @@ class SplashScreenFragment : Fragment() {
                     {
                         findNavController().navigate(R.id.action_splashScreenFragment_to_signInUpFragment) }
                     else{
+
                         findNavController().navigate(sharedPreferences.getInt("savefragments",573478))
                     }
                     }
