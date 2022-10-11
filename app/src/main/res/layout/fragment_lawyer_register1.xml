@@ -158,6 +158,8 @@
                         android:paddingTop="10dp"
                         android:paddingBottom="10dp"
                         android:text="Gender"
+                        android:hint="Gender"
+                        android:textColorHint="@color/RGB_Gray2"
                         android:textColor="@color/RGB_black" />
                 </com.google.android.material.textfield.TextInputLayout>
 
